@@ -57,7 +57,7 @@ Message from BAD to the Client.
 The Autonomy system must receive this message.
 
 - plan route according to received commands,
-- change/drive car state according to commands which it  receives
+- change/drive car state according to commands which it receives
 
 
 [CarStateProtocol]: ./CarStateProtocol.proto
