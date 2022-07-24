@@ -24,6 +24,24 @@ If the message filed is not mandatory then it's marked as OPTIONAL by "OPTIONAL"
 as the last comment in documentation for the given field.
 Optional fields has defaults as described in [ProtoBuf] v3 doc.
 
+# Repo structure
+
+## protobuf
+
+TODO
+
+### Compilation
+TODO
+
+**C++**
+TODO
+
+**C#**
+TODO
+
+**Python**
+TODO
+
 
 [BringAutoDaemon.proto]: ./BringAutoDaemon.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
