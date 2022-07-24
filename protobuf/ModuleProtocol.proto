@@ -1,0 +1,78 @@
+/**
+ * Detailed description can be found at Module protocol
+ * document located at our Google Disk
+ * TODO
+ *
+ */
+
+syntax = "proto3";
+
+/*
+ * Module protocol contains messages for module protocol control, specific module status, command and error messages can be found in modules folder
+ */
+package ModuleProtocol;
+option go_package = "../internal/pkg/ba_proto;ba_proto";
+option csharp_namespace = "Google.Protobuf.ba_proto";
+
+/**
+ * Device connect information.
+ * Device connect message is used for establishing connection from module client to module server
+ * send as first message from module client to module server
+ */
+message deviceConnect{
+  /**
+    * enum containing all known modules, can be appended with new modules without loosing backward compatibility
+   */
+  enum Module{
+    /**
+      * Device is part of autonomy module
+     */
+   AUTONOMY_MODULE = 0;
+    /**
+      * Device is part of action module
+     */
+   ACTION_MODULE = 1;
+  }
+  /**
+   * Which module have to be used for this device
+   */
+  Module module = 1;
+  /**
+   * Module specific device type, device should be supported by chosen module
+   */
+  int32 deviceType = 2;
+  /**
+   * Unique device name
+   */
+  string deviceName = 3;
+}
+
+/**
+ * Device connect response information.
+ * Device connect response message is used for establishing connection from module client to module server
+ * send as response to deviceConnect message from module server to module client
+ */
+message deviceConnectResponse{
+  /**
+   * Indicates if connection was successful or which error occurred
+   */
+  enum ResponseType{
+    /**
+     * Connection successful
+     */
+    OK = 0;
+    /**
+     * Device with given name is already connected
+     */
+    ALREADY_CONNECTED = 1;
+    /**
+     * Module server does not support given module
+     */
+    MODULE_NOT_SUPPORTED = 2;
+    /**
+     * Module loaded by module server does not recognize given device type
+     */
+    DEVICE_NOT_SUPPORTED = 3;
+  }
+  ResponseType responseType = 1;
+}
