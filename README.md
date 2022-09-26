@@ -1,4 +1,3 @@
-
 # Fleet protocol
 
 Fleet protocol is a communication protocol developed by BringAuto to allow simple and reliable communication between multiple devices and cloud infrastructure. 
@@ -34,7 +33,9 @@ TODO
 TODO
 
 **C++**
-TODO
+```
+protoc -I=./ --cpp_out=./ *.proto
+```
 
 **C#**
 TODO
