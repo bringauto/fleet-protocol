@@ -43,6 +43,10 @@ TODO
 **Python**
 TODO
 
+**GO**
+```
+protoc -I=./ --go_out=./ *.proto
+```
 
 [BringAutoDaemon.proto]: ./BringAutoDaemon.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
