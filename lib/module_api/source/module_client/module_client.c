@@ -6,7 +6,7 @@ void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned 
     return NULL;
 }
 
-int destroy(void *context){
+int destroy(void **context){
     return -1;
 }
 

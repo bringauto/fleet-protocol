@@ -39,7 +39,7 @@ void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned 
  *
  * @return 0 if successful, -1 if an error occurred
  */
-int destroy(void *context);
+int destroy(void **context);
 
 /**
  * @short Function sends given status data to module server using given context and receives command.
