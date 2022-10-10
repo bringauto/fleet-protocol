@@ -1,23 +1,27 @@
 /**
- * Detailed description can be found at Car State Prorocol
+ * Detailed description can be found at Autonomy module
  * document located at our Google Disk
- * https://drive.google.com/drive/folders/1ZE9VRs86QtP6GqTJBl6vRJLmkh1lTEc5
+ * TODO
  *
  */
 
 syntax = "proto3";
 
-package CarStateProtocol;
+/*
+ * Autonomy module contains support only for one device - autonomy
+ */
+package AutonomyModule;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
 /**
- * Car status information.
- * From Client to Server only
+ * Autonomy status information.
+ * Autonomy module specific status
  */
-message CarStatus {
+message AutonomyStatus {
 
   message Telemetry {
+
     /**
      * vehicle speed in [m/s]
      * - positive value implies Forward car moving,
@@ -35,8 +39,8 @@ message CarStatus {
     double fuel = 2;
 
     /**
-     * Car position in the global map (WGS84)
-     */
+      * Car position in the global map (WGS84)
+      */
     Position position = 3;
   }
 
@@ -45,21 +49,17 @@ message CarStatus {
      * WGS84 latitude,
      */
     double latitude = 1;
-
     /**
-     * WGS84 longitude
-     */
+    * WGS84 latitude,
+    */
     double longitude = 2;
-
     /**
-     * altitude in [m]
-     */
+    * WGS84 latitude,
+    */
     double altitude = 3;
   }
-
   /**
-   * State of the car according to The Autonomy system.
-   * Change of the State is only possible as described - no side effects allowed!
+   * WGS84 latitude,
    */
   enum State {
     /**
@@ -92,7 +92,6 @@ message CarStatus {
      */
     ERROR = 4;
   }
-
   /**
    * Telemetry
    */
@@ -112,38 +111,36 @@ message CarStatus {
   Stop stop = 3;
 }
 
-
-
 /**
- * Car commands received from BringAuto cloud
- * From BAD to Client only.
+ * Autonomy commands received from BringAuto cloud
+ * Autonomy module specific command
  */
-message CarCommand {
+message AutonomyCommand {
+
+  /**
+   * Action which car must take.
+   * Received action has an immediate effect to the state of the car (CarStatus::state)
+   * @see AutonomyStatus::State
+   */
+  enum Action {
+    /**
+     * No action performed. Used as a default value.
+     * Does not interact with CarCommand::stops logic.
+     */
+    NO_ACTION = 0;
 
     /**
-     * Action which car must take.
-     * Received action has an immediate effect to the state of the car (CarStatus::state)
-     * @see CarStatus::State
+     * Stop The car!
+     * Independent on content of CarCommands::stops
      */
-    enum Action {
-      /**
-       * No action performed. Used as a default value.
-       * Does not interact with CarCommand::stops logic.
-       */
-      NO_ACTION = 0;
+    STOP = 1;
 
-      /**
-       * Stop The car!
-       * Independent on content of CarCommands::stops
-       */
-      STOP = 1;
-
-      /**
-       * Start the car!
-       * If there are stops in CarCommands::stops the car shall start driving to the next stop.
-       */
-      START = 2;
-    }
+    /**
+     * Start the car!
+     * If there are stops in CarCommands::stops the car shall start driving to the next stop.
+     */
+    START = 2;
+  }
 
   /**
    * List of stops where the car shall go. Car goes from one stop to another by the order specified by the list.
@@ -152,7 +149,32 @@ message CarCommand {
   repeated Stop stops = 1;
 
   Action action = 2;
+}
 
+/**
+ * Autonomy error for reporting lost information during outage of connection between car and cloud
+ * Autonomy module specific error
+ */
+message AutonomyError {
+  /**
+   * Type of error
+   */
+  enum Type {
+    /**
+     * No information was lost during connection outage
+     */
+    OK = 0;
+    /**
+     * Information lost during outage, error data are set
+     */
+    SERVER_ERROR = 1;
+  }
+  Type type = 1;
+
+  /**
+   * All stops, which were finished, when the server has been down
+   */
+  repeated Stop stops = 2;
 }
 
 /**

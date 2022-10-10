@@ -1,0 +1,143 @@
+/**
+ * Detailed description can be found at Fleet protocol
+ * document located at our Google Disk
+ * TODO
+ *
+ */
+syntax = "proto3";
+/*
+ * FleetProtocol package contains fleet protocol messages
+ */
+package FleetProtocol;
+
+import "modules/AutonomyModule.proto";
+import "modules/ActionModule.proto";
+option go_package = "../internal/pkg/ba_proto;ba_proto";
+option csharp_namespace = "Google.Protobuf.ba_proto";
+
+/**
+ * Special message which contains other fleet server messages
+ * Every message of this type can contain only one of the fleet server messages
+ * From Server to Client only.
+ */
+message FleetServer {
+    oneof MessageType {
+        ConnectResponse connectReponse = 1;
+        StatusResponse statusResponse = 2;
+        Command command = 3;
+    }
+}
+
+/**
+ * Special message which contains other fleet client messages
+ * Every message of this type can contain only one of the fleet client messages
+ * From Client to Server only.
+ */
+message FleetClient {
+    oneof MessageType {
+        Connect connect = 1;
+        Status status = 2;
+        CommandResponse commandResponse = 3;
+    }
+}
+
+/**
+ * Connect message information
+ * First message in new communication.
+ */
+message Connect {
+    /*
+     * sessionId of the car
+     * - generated before sending first message
+     * - stays same in each session
+     * - is for check if server communicates with the same car
+     */
+    string sessionId = 1;
+    /*
+     * Company name
+     */
+    string company = 2;
+    /*
+     * Car name
+     */
+    string vehicleName = 3;
+    /*
+     * Unique names of all connected devices
+     */
+    repeated string deviceNames = 4;
+}
+
+/**
+ * ConnectResponse information
+ * Response only to Connect message
+ */
+message ConnectResponse {
+    enum Type {
+        OK = 0;
+        /**
+          * If some car is already logged in under same company and name
+          */
+        ALREADY_LOGGED = 1;
+    }
+    string sessionId = 1;
+    Type type = 2;
+}
+
+//todo reserved statuses and errors and commands
+/**
+ * Status information with error type, contains status from a device
+ */
+message Status {
+    string sessionId = 1;
+    /**
+     * Module specific status message
+     */
+    oneof StatusType {
+    	AutonomyModule.AutonomyStatus autonomyStatus = 2;
+    	ActionModule.ActionStatus actionStatus = 4;
+    }
+
+    /**
+     * Module specific error message
+     */
+    oneof ErrorType {
+        AutonomyModule.AutonomyError autonomyError = 3;
+        ActionModule.ActionError actionError = 5;
+    }
+}
+
+/**
+ * StatusResponse information
+ * Response only to Status message
+ */
+message StatusResponse {
+    enum Type {
+        OK = 0;
+    }
+    string sessionId = 1;
+    Type type = 2;
+}
+
+/**
+ * Command message information
+ * - contains command for a device
+ */
+message Command {
+    string sessionId = 1;
+    oneof CommandType {
+    	AutonomyModule.AutonomyCommand autonomyCommand = 2;
+    	ActionModule.ActionCommand actionCommand = 3;
+    }
+}
+
+/**
+ * CommandResponse information
+ * Response only to Command message
+ */
+message CommandResponse {
+    enum Type {
+        OK = 0;
+    }
+    string sessionId = 1;
+    Type type = 2;
+}

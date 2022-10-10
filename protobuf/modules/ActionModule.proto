@@ -1,0 +1,173 @@
+/**
+ * Detailed description can be found at Action module
+ * document located at our Google Disk
+ * TODO
+ */
+
+syntax = "proto3";
+/*
+ * Action module contains support only for BringAuto devices
+ */
+package ActionModule;
+option go_package = "../internal/pkg/ba_proto;ba_proto";
+option csharp_namespace = "Google.Protobuf.ba_proto";
+
+/**
+ * Action status information, contains status message of one of supported device
+ */
+message ActionStatus {
+	/*
+	 * Information about source device
+	 */
+	Device device = 1;
+	/*
+	 * Device specific status message
+	 */
+	oneof DeviceStatusType{
+		SystemLoggerStatus systemLoggerStatus = 2;
+		GreenButtonStatus greenButtonStatus = 3;
+		RedButtonStatus redButtonStatus = 4;
+		WatchdogStatus watchdogStatus = 5;
+	}
+}
+
+/**
+ * Action command information, contains command message of one of supported device
+ */
+message ActionCommand {
+	/*F
+	 * Information about target device
+	 */
+	Device device = 1;
+	/*
+	 * Device specific command message
+	 */
+	oneof DeviceCommandType{
+		GreenButtonCommand greenButtonCommand = 2;
+		RedButtonCommand redButtonCommand = 3;
+		WatchdogCommand watchdogCommand = 4;
+		SystemLoggerCommand systemLoggerCommand = 5;
+	}
+}
+
+/**
+ * Action error information, contains error message of one of supported device
+ */
+message ActionError {
+	/*
+	 * Type of error, if connection between car and cloud is down, after reconnection if any important
+	 * information was missed by the cloud ServerError::Type SERVER_ERROR is set and error information is set
+	 */
+	enum Type {
+	OK = 0;
+	SERVER_ERROR = 1;
+	}
+	/*
+	 * Information about source device
+	 */
+	Device device = 1;
+	Type type = 2;
+	/*
+	 * Device specific error message
+	 */
+	oneof DeviceErrorType{
+		GreenButtonError greenButtonError = 3;
+		RedButtonError redButtonError = 4;
+		WatchdogError watchdogError = 5;
+		SystemLoggerError systemLoggerError = 6;
+	}
+}
+
+/*
+ * Message contains information about device
+ */
+message Device{
+	/*
+	 * Enum contains all device types supported by module, when module client is connecting, deviceType value should be set according to this enum
+	 */
+	enum DeviceType{
+		GREEN_BUTTON = 0;
+		RED_BUTTON = 1;
+		WATCHDOG = 2;
+		LOGGER = 3;
+	}
+	DeviceType deviceType = 1;
+	/*
+	 * Unique device name
+	 */
+	string deviceName = 2;
+}
+
+/////////////////////////////////
+message SystemLoggerStatus{
+	enum Verbosity{
+		DEBUG = 0;
+		INFO = 5;
+		WARNING = 10;
+		ERROR = 15;
+	}
+	string sourceDevice = 1;
+	repeated string logs = 2;
+	Verbosity verbosity = 3;
+}
+
+message GreenButtonStatus{
+	bool isPressed = 1;
+	bool isAlive = 2;
+}
+
+message RedButtonStatus{
+	bool isPressed = 1;
+}
+
+message WatchdogStatus{
+	bool isAlive = 1;
+	string state = 2;
+}
+//////////////////////////////////////////////////
+
+message SystemLoggerCommand{
+	enum Command{
+		LOG = 0;
+	}
+	Command command = 1;
+}
+
+message GreenButtonCommand{
+	enum Command{
+		PRESS = 0;
+	}
+	Command command = 1;
+}
+
+message RedButtonCommand{
+	enum Command{
+		PRESS = 0;
+	}
+	Command command = 1;
+}
+
+message WatchdogCommand{
+	enum Command{
+		RESET = 0;
+	}
+	Command command = 1;
+}
+
+//////////////////////////////////////////////////
+
+message SystemLoggerError{
+	string errorMessage = 1;
+}
+
+message GreenButtonError{
+	string errorMessage = 1;
+}
+
+message RedButtonError{
+	string errorMessage = 1;
+}
+
+message WatchdogError{
+	string errorMessage = 1;
+}
