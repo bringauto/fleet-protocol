@@ -26,7 +26,7 @@ As a transfer layer the TCP/IP is chosen. Daemon listens on localhost network un
 **In order to receive data from BAD you must send CarStatus message first. If you do not send CarStatus message
 no data will be sent from BAD to Client!**
 
-detailed description at [BringAuto Autonomy Host Protocol](https://docs.google.com/document/d/1jgSrBhZm73j_DkxNMtRgBLvnh_K-MUsL7z576hUat-I/edit)
+detailed description at [BringAuto Autonomy Host Protocol]
 
 ## Protocol messages
 
@@ -63,4 +63,4 @@ The Autonomy system must receive this message.
 
 [BringAutoDaemon.proto]: ./BringAutoDaemon.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
-[BringAuto Autonomy Host Protocol]: https://drive.google.com/drive/folders/1-cfU5wgbO1O8DOk4bDOufZ_aqJ0U61nP
+[BringAuto Autonomy Host Protocol]: https://docs.google.com/document/d/1jgSrBhZm73j_DkxNMtRgBLvnh_K-MUsL7z576hUat-I/
