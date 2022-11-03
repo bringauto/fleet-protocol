@@ -40,23 +40,6 @@ message CarStatus {
     Position position = 3;
   }
 
-  message Position {
-    /**
-     * WGS84 latitude,
-     */
-    double latitude = 1;
-
-    /**
-     * WGS84 longitude
-     */
-    double longitude = 2;
-
-    /**
-     * altitude in [m]
-     */
-    double altitude = 3;
-  }
-
   /**
    * State of the car according to The Autonomy system.
    * Change of the State is only possible as described - no side effects allowed!
@@ -112,7 +95,22 @@ message CarStatus {
   Stop stop = 3;
 }
 
+message Position {
+    /**
+     * WGS84 latitude,
+     */
+    double latitude = 1;
 
+    /**
+     * WGS84 longitude
+     */
+    double longitude = 2;
+
+    /**
+     * altitude in [m]
+     */
+    double altitude = 3;
+}
 
 /**
  * Car commands received from BringAuto cloud
@@ -154,10 +152,12 @@ message CarCommand {
   Action action = 2;
 
   string route = 3;
+
+  repeated Station routeStations = 4;
 }
 
 /**
- * Stop on the route.
+ * Mission for the car.
  */
 message Stop {
 
@@ -167,3 +167,19 @@ message Stop {
   string to = 1;
 
 }
+
+/**
+ * Station on the route.
+ */
+message Station {
+
+    /**
+     * The name of the station.
+     */
+    string name = 1;
+
+    /**
+     * The position of the station.
+     */
+    Position position = 2;
+  }
