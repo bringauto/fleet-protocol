@@ -39,6 +39,24 @@ message CarStatus {
      */
     Position position = 3;
   }
+  
+  // GPS position of the car
+  message Position {
+    /**
+     * WGS84 latitude,
+     */
+    double latitude = 1;
+
+    /**
+     * WGS84 longitude
+     */
+    double longitude = 2;
+
+    /**
+     * altitude in [m]
+     */
+    double altitude = 3;
+}
 
   /**
    * State of the car according to The Autonomy system.
@@ -93,23 +111,6 @@ message CarStatus {
    * OPTIONAL
    */
   Stop stop = 3;
-}
-
-message Position {
-    /**
-     * WGS84 latitude,
-     */
-    double latitude = 1;
-
-    /**
-     * WGS84 longitude
-     */
-    double longitude = 2;
-
-    /**
-     * altitude in [m]
-     */
-    double altitude = 3;
 }
 
 /**
@@ -172,6 +173,23 @@ message Stop {
  * Station on the route.
  */
 message Station {
+	// GPS position added in v1.2, must be on both places (here and Status) because of backwards compability
+	message Position {
+		/**
+		 * WGS84 latitude,
+		 */
+		double latitude = 1;
+
+		/**
+		 * WGS84 longitude
+		 */
+		double longitude = 2;
+
+		/**
+		 * altitude in [m]
+		 */
+		double altitude = 3;
+	}
 
     /**
      * The name of the station.
