@@ -4,18 +4,20 @@
 /**
  * @short Update command message.
  *
- * When a module server receives a new command message from the _external_ client, module server
- * saves and replaces the old message with the incomming one.
+ * Replaces the actual command message with the provided one.
+ *
+ * @param command_message new command message
  */
-void update_command();
+void update_command(void *command_message);
 
 /**
  * @short Get command message.
  *
- * When a device has command to do and finishes its task, he needs to update this command. So he provides
- * a status message with finished state and gets a new updated command.
+ * After providing a status message, the actual command message is updated and returned.
  *
- * @return Command message if successes, null pointer if an error occurred
+ * @param status_message new status message
+ *
+ * @return command message if successes, null pointer if an error occurred
  */
 void *get_command(void *status_message);
 
