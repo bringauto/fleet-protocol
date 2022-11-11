@@ -7,7 +7,7 @@
  * This example module contains devices Blinker and Lights.
  * For an example of the blinker behavior, there would be two distinct devices of type BLINKER, but one would be named
  * RightBlinker and would get command TURN_ON when the blinker lever would be pushed up.
- * The second one would be named LeftBlinker and would get command TURN_ON when the lever would be pushed down.
+ * The second one would be named LeftBlinker and would get the command TURN_ON when the lever would be pushed down.
  * Both would get TURN_OFF in the lever's neutral position.
  *
  * The LIGHTS device has only a button, which switches them on and off.
