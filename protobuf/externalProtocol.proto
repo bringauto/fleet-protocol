@@ -89,9 +89,10 @@ message ConnectResponse {
  */
 message Status {
     enum DeviceState {
-        RUNNING = 0;
-        ERROR = 1;
-        DISCONNECT = 2;
+        CONNECTING = 0;
+        RUNNING = 1;
+        ERROR = 2;
+        DISCONNECT = 3;
     }
     string sessionId = 1;
     /**
@@ -152,6 +153,7 @@ message Command {
 message CommandResponse {
     enum Type {
         OK = 0;
+        DEVICE_NOT_CONNECTED = 1;
     }
     string sessionId = 1;
     Type type = 2;
