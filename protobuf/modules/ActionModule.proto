@@ -35,7 +35,7 @@ message ActionStatus {
  * Action command information, contains command message of one of supported device
  */
 message ActionCommand {
-	/*F
+	/*
 	 * Information about target device
 	 */
 	Device device = 1;
