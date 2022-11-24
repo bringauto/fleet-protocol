@@ -63,5 +63,4 @@ The Autonomy system must receive this message.
 [CarStateProtocol]: ./CarStateProtocol.proto
 [IndustrialPortalProtocol]: ./IndustrialPortalProtocol.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
-[Car State Protocol]: https://docs.google.com/document/d/1cW5t_ue0wQmp-InI-M2fug6mxXvLrYcfVjTRHR4et_c/edit?usp=sharing
-[Industrial Portal Protocol]: https://docs.google.com/document/d/1sjIE4_c9NrQCpUvlgOwejVMWf6U-QSh_9qobpMqOIRU/edit?usp=sharing
+[BringAuto Autonomy Host Protocol]: https://docs.google.com/document/d/1jgSrBhZm73j_DkxNMtRgBLvnh_K-MUsL7z576hUat-I/
