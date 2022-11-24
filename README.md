@@ -26,7 +26,7 @@ As a transfer layer the TCP/IP is chosen for comunication between modules and da
 **In order to receive data from BAD you must send CarStatus message first. If you do not send CarStatus message
 no data will be sent from BAD to Client!**
 
-detailed description at [Car State Protocol] and [Industrial Portal Protocol]
+detailed description at [BringAuto Autonomy Host Protocol].
 
 ## Protocol messages
 
