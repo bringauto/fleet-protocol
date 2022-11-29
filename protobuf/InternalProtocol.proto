@@ -45,6 +45,10 @@ message deviceConnect{
    * Unique device name
    */
   string deviceName = 3;
+  /**
+   * Priority of device
+   */
+  int32 priority = 4;
 }
 
 /**
