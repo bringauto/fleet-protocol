@@ -20,7 +20,7 @@ option csharp_namespace = "Google.Protobuf.ba_proto";
  * Every message of this type can contain only one of the fleet server messages
  * From Server to Client only.
  */
-message FleetServer {
+message ExternalServer {
     oneof MessageType {
         ConnectResponse connectReponse = 1;
         StatusResponse statusResponse = 2;
@@ -33,7 +33,7 @@ message FleetServer {
  * Every message of this type can contain only one of the fleet client messages
  * From Client to Server only.
  */
-message FleetClient {
+message ExternalClient {
     oneof MessageType {
         Connect connect = 1;
         Status status = 2;
