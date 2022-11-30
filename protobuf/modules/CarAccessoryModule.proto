@@ -91,5 +91,5 @@ message ButtonCommand{
 }
 
 message ButtonError{
-  string errorMessage = 1;
+  int32 pressCount = 1;
 }
