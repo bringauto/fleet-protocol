@@ -10,7 +10,7 @@ syntax = "proto3";
  */
 package FleetProtocol;
 
-import "modules/AutonomyModule.proto";
+import "modules/MissionModule.proto";
 import "modules/ActionModule.proto";
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
@@ -110,7 +110,6 @@ message Status {
     	AutonomyModule.AutonomyStatus autonomyStatus = 4;
     	ActionModule.ActionStatus actionStatus = 6;
     }
-
     /**
      * Module specific error message
      */

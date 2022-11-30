@@ -77,6 +77,10 @@ message deviceConnectResponse{
      * Module loaded by module server does not recognize given device type
      */
     DEVICE_NOT_SUPPORTED = 3;
+    /**
+     * Device of the same deviceType with higher priority is already connected
+     */
+    HIGHER_PRIORITY_ALREADY_CONNECTED = 4;
   }
   ResponseType responseType = 1;
 }

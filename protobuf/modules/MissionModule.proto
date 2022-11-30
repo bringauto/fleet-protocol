@@ -1,5 +1,5 @@
 /**
- * Detailed description can be found at Autonomy module
+ * Detailed description can be found at Mission module
  * document located at our Google Disk
  * TODO
  *
@@ -8,17 +8,16 @@
 syntax = "proto3";
 
 /*
- * Autonomy module contains support only for one device - autonomy
+ * Mission module contains support for controlling stations to which the car will drive
  */
-package AutonomyModule;
+package MissionModule;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
 /**
- * Autonomy status information.
- * Autonomy module specific status
+ * Mission status information.
  */
-message AutonomyStatus {
+message MissionStatus {
 
   message Telemetry {
 
@@ -44,22 +43,8 @@ message AutonomyStatus {
     Position position = 3;
   }
 
-  message Position {
-    /**
-     * WGS84 latitude,
-     */
-    double latitude = 1;
-    /**
-    * WGS84 latitude,
-    */
-    double longitude = 2;
-    /**
-    * WGS84 latitude,
-    */
-    double altitude = 3;
-  }
   /**
-   * WGS84 latitude,
+   * Actual state of the Car.
    */
   enum State {
     /**
@@ -92,35 +77,34 @@ message AutonomyStatus {
      */
     ERROR = 4;
   }
-  /**
-   * Telemetry
-   */
+
   Telemetry telemetry = 1;
 
   /**
-   * State of the Car.
    * If not set Car is in the IDLE state!
-   * OPTIONAL
    */
   State state = 2;
 
   /**
-   * Name of the stop as specified in CarCommand::stops.
-   * OPTIONAL
+   * Name of the route, that the autonomy will follow
    */
-  Stop stop = 3;
+  string route = 3;
+
+  /**
+   * Name of the stop as specified in CarCommand::stops.
+   * will not be defined if there is no station in the mission
+   */
+  optional Station nextStop = 4;
 }
 
 /**
- * Autonomy commands received from BringAuto cloud
- * Autonomy module specific command
+ * Mission commands received from Fleet management
  */
-message AutonomyCommand {
-
+message MissionCommand {
   /**
-   * Action which car must take.
+   * Action which the autonomy must take.
    * Received action has an immediate effect to the state of the car (CarStatus::state)
-   * @see AutonomyStatus::State
+   * @see MissionStatus::State
    */
   enum Action {
     /**
@@ -143,48 +127,52 @@ message AutonomyCommand {
   }
 
   /**
-   * List of stops where the car shall go. Car goes from one stop to another by the order specified by the list.
-   * OPTIONAL
+   * List of stops where the car shall go. Car goes from one stop to another following the order specified by the list.
+   * May be empty
    */
-  repeated Stop stops = 1;
+  repeated Station stops = 1;
 
   Action action = 2;
 }
 
 /**
- * Autonomy error for reporting lost information during outage of connection between car and cloud
- * Autonomy module specific error
+ * Mission error for reporting lost information during outage of connection between car and cloud
  */
-message AutonomyError {
-  /**
-   * Type of error
-   */
-  enum Type {
-    /**
-     * No information was lost during connection outage
-     */
-    OK = 0;
-    /**
-     * Information lost during outage, error data are set
-     */
-    SERVER_ERROR = 1;
-  }
-  Type type = 1;
-
+message MissionError {
   /**
    * All stops, which were finished, when the server has been down
    */
-  repeated Stop stops = 2;
+  repeated Station finishedStops = 2;
 }
 
 /**
  * Stop on the route.
  */
-message Stop {
+message Station {
+  /**
+   * The name of the station.
+   */
+  string name = 1;
 
   /**
-   * The name of the stop where to go.
+   * Position of the station
    */
-  string to = 1;
+  Position position = 2;
+}
 
+message Position {
+  /**
+   * WGS84 latitude,
+   */
+  double latitude = 1;
+
+  /**
+   * WGS84 longitude
+   */
+  double longitude = 2;
+
+  /**
+   * altitude in [m]
+   */
+  double altitude = 3;
 }
