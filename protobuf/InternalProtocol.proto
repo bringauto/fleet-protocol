@@ -37,7 +37,7 @@ message deviceConnect{
     /**
      * Numbers reserved for BringAuto
      */
-    reserved 4 to 999;
+    reserved 3 to 999;
   }
   /**
    * Which module have to be used for this device

@@ -12,7 +12,6 @@ package FleetProtocol;
 
 import "modules/MissionModule.proto";
 import "modules/CarAccessoryModule.proto";
-import "modules/ExampleModule.proto";
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
