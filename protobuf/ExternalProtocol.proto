@@ -1,7 +1,7 @@
 /**
  * Detailed description can be found at Fleet protocol
  * document located at our Google Disk
- * TODO
+ * https://docs.google.com/document/d/1ts1DDmu5vxEagHPvB-IHTW-5ts06XoZTdIjUIOGylGo/
  *
  */
 syntax = "proto3";
@@ -11,7 +11,8 @@ syntax = "proto3";
 package FleetProtocol;
 
 import "modules/MissionModule.proto";
-import "modules/ActionModule.proto";
+import "modules/CarAccessoryModule.proto";
+import "modules/ExampleModule.proto";
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
@@ -86,6 +87,8 @@ message ConnectResponse {
 //todo reserved statuses and errors and commands
 /**
  * Status information with error type, contains status from a device
+ * Enumeration of the statusTypes and errorTypes is done according to the module number
+ * statusTypeNum = 4 + (ModuleNumber * 2)  ,  errorTypeNum = statusTypeNum + 1
  */
 message Status {
     enum DeviceState {
@@ -107,15 +110,17 @@ message Status {
      * Module specific status message
      */
     oneof StatusType {
-    	AutonomyModule.AutonomyStatus autonomyStatus = 4;
-    	ActionModule.ActionStatus actionStatus = 6;
+        // Field number 4 is reserved for the RESERVED_MODULE status
+        MissionModule.MissionStatus missionStatus = 6;
+        CarAccessoryModule.CarAccessoryStatus carAccessoryStatus = 8;
     }
     /**
      * Module specific error message
      */
     oneof ErrorType {
-        AutonomyModule.AutonomyError autonomyError = 5;
-        ActionModule.ActionError actionError = 7;
+        // Field number 5 is reserved for the RESERVED_MODULE error
+        MissionModule.MissionError missionError = 7;
+        CarAccessoryModule.CarAccessoryError carAccessoryError = 9;
     }
 }
 
@@ -140,8 +145,9 @@ message Command {
     string sessionId = 1;
     uint32 messageCounter = 2;
     oneof CommandType {
-    	AutonomyModule.AutonomyCommand autonomyCommand = 3;
-    	ActionModule.ActionCommand actionCommand = 4;
+        // Field number 3 is reserved for RESERVED_MODULE command
+        MissionModule.MissionCommand missionCommand = 4;
+        CarAccessoryModule.CarAccessoryCommand CarAccessoryCommand = 5;
     }
 }
 

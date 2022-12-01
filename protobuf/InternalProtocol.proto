@@ -1,7 +1,7 @@
 /**
  * Detailed description can be found at Module protocol
  * document located at our Google Disk
- * TODO
+ * https://docs.google.com/document/d/1ts1DDmu5vxEagHPvB-IHTW-5ts06XoZTdIjUIOGylGo/
  *
  */
 
@@ -33,17 +33,11 @@ message deviceConnect{
     MISSION_MODULE = 1;
     // Control of car accessories
     CAR_ACCESSORY_MODULE = 2;
-    // Device is part of action module
-    ACTION_MODULE = 3;
-    /**
-     * Example module for proof of concept and documentation
-     */
-    EXAMPLE_MODULE = 999;
 
     /**
      * Numbers reserved for BringAuto
      */
-    reserved 4 to 998;
+    reserved 4 to 999;
   }
   /**
    * Which module have to be used for this device
