@@ -12,6 +12,75 @@ option csharp_namespace = "Google.Protobuf.ba_proto";
  */
 message MissionStatus {
 
+  /*
+	 * Information about source device
+	 */
+  Device device = 1;
+
+  oneof DeviceStatusType {
+    AutonomyStatus autonomyStatus = 2;
+  }
+}
+
+/**
+ * Mission commands received from Fleet management
+ */
+message MissionCommand {
+
+  /*
+	 * Information about source device
+	 */
+  Device device = 1;
+
+  oneof DeviceCommandType {
+    AutonomyCommand autonomyCommand = 2;
+  }
+}
+
+/**
+ * Mission error for reporting lost information during outage of connection between car and cloud
+ */
+message MissionError {
+  /*
+	 * Information about source device
+	 */
+  Device device = 1;
+
+  oneof DeviceErrorType {
+    AutonomyError autonomyError = 2;
+  }
+}
+
+/*
+ * Message contains information about device
+ */
+message Device{
+  enum Module {
+    RESERVED_MODULE = 0;
+    MISSION_MODULE = 1;
+  }
+  /*
+   * Enum contains all device types supported by module, when module client is connecting, deviceType value should be set according to this enum
+   */
+  enum DeviceType{
+    AUTONOMY = 0;
+  }
+
+  Module module = 1;
+
+  DeviceType deviceType = 2;
+
+  /*
+   * Unique device name
+   */
+  string deviceName = 3;
+}
+
+
+// ------------------------------------------------------ //
+
+message AutonomyStatus{
+
   message Telemetry {
 
     /**
@@ -37,7 +106,7 @@ message MissionStatus {
   }
 
   /**
-   * Actual state of the Car.
+   * Current state of the Car.
    */
   enum State {
     /**
@@ -70,38 +139,29 @@ message MissionStatus {
      */
     ERROR = 4;
   }
-
-  /*
-	 * Information about source device
-	 */
-  Device device = 1;
-
   /*
    * Information about the car position, speed and fuel level
    */
-  Telemetry telemetry = 2;
+  Telemetry telemetry = 1;
 
   /**
-   * If not set Car is in the IDLE state!
+   * Current state. If not set Car is in the IDLE state!
    */
-  State state = 3;
+  State state = 2;
 
   /**
    * Name of the stop as specified in CarCommand::stops.
    * will not be defined if there is no station in the mission
    */
-  optional Station nextStop = 4;
+  optional Station nextStop = 3;
 }
 
-/**
- * Mission commands received from Fleet management
- */
-message MissionCommand {
+message AutonomyCommand{
   /**
-   * Action which the autonomy must take.
-   * Received action has an immediate effect to the state of the car (CarStatus::state)
-   * @see MissionStatus::State
-   */
+ * Action which the autonomy must take.
+ * Received action has an immediate effect to the state of the car (CarStatus::state)
+ * @see MissionStatus::State
+ */
   enum Action {
     /**
      * No action performed. Used as a default value.
@@ -122,64 +182,28 @@ message MissionCommand {
     START = 2;
   }
 
-  /*
-	 * Information about source device
-	 */
-  Device device = 1;
-
   /**
    * List of stops where the car shall go. Car goes from one stop to another following the order specified by the list.
    * May be empty
    */
-  repeated Station stops = 2;
+  repeated Station stops = 1;
 
   /**
    * Name of the route, that the autonomy will follow
    */
-  string route = 3;
+  string route = 2;
 
-  Action action = 4;
+  Action action = 3;
 }
 
-/**
- * Mission error for reporting lost information during outage of connection between car and cloud
- */
-message MissionError {
-  /*
-	 * Information about source device
-	 */
-  Device device = 1;
-
+message AutonomyError{
   /**
    * All stops, which were finished, when the server has been down
    */
-  repeated Station finishedStops = 2;
+  repeated Station finishedStops = 1;
 }
 
-/*
- * Message contains information about device
- */
-message Device{
-  enum Module {
-    RESERVED_MODULE = 0;
-    MISSION_MODULE = 1;
-  }
-  /*
-   * Enum contains all device types supported by module, when module client is connecting, deviceType value should be set according to this enum
-   */
-  enum DeviceType{
-    AUTONOMY = 0;
-  }
-
-  Module module = 1;
-
-  DeviceType deviceType = 2;
-
-  /*
-   * Unique device name
-   */
-  string deviceName = 3;
-}
+// ------------------------------------------------------ //
 
 /**
  * Stop on the route.
@@ -196,6 +220,9 @@ message Station {
   Position position = 2;
 }
 
+/*
+ * GPS position
+ */
 message Position {
   /**
    * WGS84 latitude,
