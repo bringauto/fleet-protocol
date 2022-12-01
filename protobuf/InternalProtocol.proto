@@ -25,13 +25,25 @@ message deviceConnect{
    */
   enum Module{
     /**
-      * Device is part of autonomy module
+     * This is reserved place for a control module, which is default for devices that didn't set correct module
+     * TODO will be implemented
      */
-   AUTONOMY_MODULE = 0;
+    RESERVED_MODULE = 0;
+    // Sending missions with the information about the route and stops to the autonomy
+    MISSION_MODULE = 1;
+    // Control of car accessories
+    CAR_ACCESSORY_MODULE = 2;
+    // Device is part of action module
+    ACTION_MODULE = 3;
     /**
-      * Device is part of action module
+     * Example module for proof of concept and documentation
      */
-   ACTION_MODULE = 1;
+    EXAMPLE_MODULE = 999;
+
+    /**
+     * Numbers reserved for BringAuto
+     */
+    reserved 4 to 998;
   }
   /**
    * Which module have to be used for this device

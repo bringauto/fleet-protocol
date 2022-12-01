@@ -7,7 +7,7 @@
 syntax = "proto3";
 
 /*
- * Car accessory module contains support for generic car accessories
+ * Car accessory module contains controls for generic car accessories
  */
 package CarAccessoryModule;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
@@ -69,18 +69,25 @@ message CarAccessoryError {
  * Message contains information about device
  */
 message Device{
+  enum Module {
+    RESERVED_MODULE = 0;
+    CAR_ACCESSORY_MODULE = 2;
+  }
   /*
    * Enum contains all device types supported by module, when module client is connecting, deviceType value should be set according to this enum
    */
   enum DeviceType{
     BUTTON = 0;
   }
-  DeviceType deviceType = 1;
+
+  Module module = 1;
+
+  DeviceType deviceType = 2;
 
   /*
    * Unique device name
    */
-  string deviceName = 2;
+  string deviceName = 3;
 }
 
 message ButtonStatus{

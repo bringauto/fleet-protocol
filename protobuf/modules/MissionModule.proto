@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 /*
- * Mission module contains support for controlling stations to which the car will drive
+ * Mission module contains support for controlling stations to which the autonomy will drive
  */
 package MissionModule;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
@@ -71,12 +71,20 @@ message MissionStatus {
     ERROR = 4;
   }
 
-  Telemetry telemetry = 1;
+  /*
+	 * Information about source device
+	 */
+  Device device = 1;
+
+  /*
+   * Information about the car position, speed and fuel level
+   */
+  Telemetry telemetry = 2;
 
   /**
    * If not set Car is in the IDLE state!
    */
-  State state = 2;
+  State state = 3;
 
   /**
    * Name of the stop as specified in CarCommand::stops.
@@ -114,28 +122,63 @@ message MissionCommand {
     START = 2;
   }
 
+  /*
+	 * Information about source device
+	 */
+  Device device = 1;
+
   /**
    * List of stops where the car shall go. Car goes from one stop to another following the order specified by the list.
    * May be empty
    */
-  repeated Station stops = 1;
+  repeated Station stops = 2;
 
   /**
    * Name of the route, that the autonomy will follow
    */
-  string route = 2;
+  string route = 3;
 
-  Action action = 3;
+  Action action = 4;
 }
 
 /**
  * Mission error for reporting lost information during outage of connection between car and cloud
  */
 message MissionError {
+  /*
+	 * Information about source device
+	 */
+  Device device = 1;
+
   /**
    * All stops, which were finished, when the server has been down
    */
   repeated Station finishedStops = 2;
+}
+
+/*
+ * Message contains information about device
+ */
+message Device{
+  enum Module {
+    RESERVED_MODULE = 0;
+    MISSION_MODULE = 1;
+  }
+  /*
+   * Enum contains all device types supported by module, when module client is connecting, deviceType value should be set according to this enum
+   */
+  enum DeviceType{
+    AUTONOMY = 0;
+  }
+
+  Module module = 1;
+
+  DeviceType deviceType = 2;
+
+  /*
+   * Unique device name
+   */
+  string deviceName = 3;
 }
 
 /**
