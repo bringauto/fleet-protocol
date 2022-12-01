@@ -74,14 +74,20 @@ message ExampleError {
 
 /*
  * Message contains information about device.
- * The message Device must always have the SAME structure, only the values of the enum DeviceType are changing.
+ * The message Device must always have the SAME structure, only the values of the enums DeviceType and Module are changing.
  */
 message Device{
+	/*
+	 * Enum for specification to which module the messages should be forwarded by internal server.
+	 * Must mirror the enum number in InternalProtocol.proto
+	 * RESERVED_MODULE is default module taking control of unspecified messages.
+	 */
 	enum Module{
 		RESERVED_MODULE = 0;
 		reserved 1 to 998;
 		EXAMPLE_MODULE = 999;
 	}
+
 	/*
 	 * Enum contains all device types supported by module, when module client is connecting, set deviceType value according to this enum
 	 */
