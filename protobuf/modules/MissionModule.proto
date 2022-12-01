@@ -1,10 +1,3 @@
-/**
- * Detailed description can be found at Mission module
- * document located at our Google Disk
- * TODO
- *
- */
-
 syntax = "proto3";
 
 /*
@@ -86,11 +79,6 @@ message MissionStatus {
   State state = 2;
 
   /**
-   * Name of the route, that the autonomy will follow
-   */
-  string route = 3;
-
-  /**
    * Name of the stop as specified in CarCommand::stops.
    * will not be defined if there is no station in the mission
    */
@@ -132,7 +120,12 @@ message MissionCommand {
    */
   repeated Station stops = 1;
 
-  Action action = 2;
+  /**
+   * Name of the route, that the autonomy will follow
+   */
+  string route = 2;
+
+  Action action = 3;
 }
 
 /**
