@@ -1,5 +1,5 @@
 /**
- * Detailed description can be found at Module protocol
+ * Detailed description can be found at Message structure
  * document located at our Google Disk
  * https://docs.google.com/document/d/1ts1DDmu5vxEagHPvB-IHTW-5ts06XoZTdIjUIOGylGo/
  *
@@ -8,9 +8,10 @@
 syntax = "proto3";
 
 /*
- * Module protocol contains messages for module protocol control, specific module status, command and error messages can be found in modules folder
+ * Internal protocol contains messages for module control.
+ * Specific module status, command and error messages can be found in modules folder
  */
-package ModuleProtocol;
+package InternalProtocol;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 

@@ -1,14 +1,14 @@
 /**
- * Detailed description can be found at Fleet protocol
+ * Detailed description can be found at Message structure
  * document located at our Google Disk
  * https://docs.google.com/document/d/1ts1DDmu5vxEagHPvB-IHTW-5ts06XoZTdIjUIOGylGo/
  *
  */
 syntax = "proto3";
 /*
- * FleetProtocol package contains fleet protocol messages
+ * ExternalProtocol package contains external protocol messages. Those are the messages between the robot and cloud.
  */
-package FleetProtocol;
+package ExternalProtocol;
 
 import "modules/MissionModule.proto";
 import "modules/CarAccessoryModule.proto";
