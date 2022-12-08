@@ -7,9 +7,9 @@ SET(CMAKE_CXX_STANDARD 17)
 FIND_PACKAGE(Protobuf 3.17.3 REQUIRED)
 SET(PROTO_DIR "${CMAKE_CURRENT_SOURCE_DIR}/proto_compiled/")
 
-ADD_LIBRARY(protobuf_lib STATIC ${PROTO_DIR}/ExternalProtocol.pb.cc ${PROTO_DIR}/InternalProtocol.pb.cc ${PROTO_DIR}/modules/CarAccessoryModule.pb.cc ${PROTO_DIR}/modules/MissionModule.pb.cc)
+ADD_LIBRARY(protobuf_lib STATIC ${PROTO_DIR}/ExternalProtocol.pb.cc ${PROTO_DIR}/InternalProtocol.pb.cc ${PROTO_DIR}/modules/ExampleModule.pb.cc)
 TARGET_LINK_LIBRARIES(protobuf_lib PUBLIC protobuf::libprotobuf)
 TARGET_INCLUDE_DIRECTORIES(protobuf_lib PUBLIC "${PROTO_DIR}")
 
-ADD_EXECUTABLE(protobuf_parser main.cpp ProtobufHelper.cpp ProtobufHelper.h)
+ADD_EXECUTABLE(protobuf_parser main.cpp ProtobufHelper.cpp ProtobufHelper.h ModuleMaintainer.cpp ModuleMaintainer.hpp ProtocolMaintainer.cpp ProtocolMaintainer.hpp)
 TARGET_LINK_LIBRARIES(protobuf_parser protobuf_lib)

@@ -14,4 +14,6 @@ int main(int argc, char **argv){
 	*/
 	// TODO udelat vuci Example module
 	// zabaleni clienta, rozbaleni internal serveru, zabaleni externim, rozbaleni externim
+
+	// Funkce rozdelit do trid ModuleMaintainer a ProtocolMaintainer podle toho, kdo jakou funkci potrebuje / dela
 }

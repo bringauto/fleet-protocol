@@ -6,7 +6,7 @@
 class ProtobufHelper {
 public:
     ///fleet client messages
-    static ExternalProtocol::ExternalClient createConnect(const std::string& sessionId, const std::string& company, const std::string& vehicleName, const std::vector<std::string>& deviceList);
+    static ExternalProtocol::ExternalClient createExternalConnect(const std::string& sessionId, const std::string& company, const std::string& vehicleName, const std::vector<std::string>& deviceList);
     static ExternalProtocol::ExternalClient createCommandResponse();
 
 	static ExternalProtocol::ExternalClient createMissionStatus();
