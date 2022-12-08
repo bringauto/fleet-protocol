@@ -35,7 +35,7 @@ message CarAccessoryStatus {
  * Car accessory command information, contains command message of one of supported device
  */
 message CarAccessoryCommand {
-  /*F
+  /*
    * Information about target device
    */
   Device device = 1;
@@ -102,5 +102,5 @@ message ButtonCommand{
 }
 
 message ButtonError{
-  int32 pressCount = 1;
+  uint32 pressCount = 1;
 }

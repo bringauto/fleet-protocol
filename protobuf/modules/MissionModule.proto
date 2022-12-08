@@ -1,7 +1,8 @@
 syntax = "proto3";
 
 /*
- * Mission module contains support for controlling stations to which the autonomy will drive
+ * Mission module contains support for controlling the missions of a CAR.
+ * Missions are a set of destination points, that the CAR should drive to and stop there.
  */
 package MissionModule;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
@@ -78,7 +79,9 @@ message Device{
 
 
 // ------------------------------------------------------ //
-
+/*
+ * Message sent by the autonomy, containing its telemetry information, state and next destination
+ */
 message AutonomyStatus{
 
   message Telemetry {
@@ -156,6 +159,9 @@ message AutonomyStatus{
   optional Station nextStop = 3;
 }
 
+/*
+ * Command for the autonomy, containing Action and list of destinations where the autonomy should go.
+ */
 message AutonomyCommand{
   /**
  * Action which the autonomy must take.
@@ -196,6 +202,10 @@ message AutonomyCommand{
   Action action = 3;
 }
 
+/*
+ * Autonomy error message containing list of Stops that the autonomy has finished.
+ * The server marks the stops of a mission as finished based on this list.
+ */
 message AutonomyError{
   /**
    * All stops, which were finished, when the server has been down
