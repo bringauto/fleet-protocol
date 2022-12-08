@@ -1,11 +1,11 @@
 #include "ProtobufHelper.h"
 
-FleetProtocol::FleetClient
+ExternalProtocol::ExternalClient
 ProtobufHelper::createConnect(const std::string& sessionId, const std::string &company, const std::string &vehicleName,
                               const std::vector<std::string> &deviceList) {
 
-    FleetProtocol::FleetClient connectMessage;
-    auto allocatedConnect = new FleetProtocol::Connect();
+    ExternalProtocol::ExternalClient connectMessage;
+    auto allocatedConnect = new ExternalProtocol::Connect();
 
     allocatedConnect->set_sessionid(sessionId);
     allocatedConnect->set_company(company);
@@ -20,28 +20,28 @@ ProtobufHelper::createConnect(const std::string& sessionId, const std::string &c
     return connectMessage;
 }
 
-void ProtobufHelper::printFleetClientMessage(const std::string& serializedMessage) {
-    FleetProtocol::FleetClient message;
+void ProtobufHelper::printExternalClientMessage(const std::string& serializedMessage) {
+    ExternalProtocol::ExternalClient message;
 
     message.ParseFromString(serializedMessage);
 
     switch(message.MessageType_case()){
-        case FleetProtocol::FleetClient::kConnect:
+        case ExternalProtocol::ExternalClient::kConnect:
             printConnect(message.connect());
             break;
-        case FleetProtocol::FleetClient::kStatus:
+        case ExternalProtocol::ExternalClient::kStatus:
             printStatus(message.status());
             break;
-        case FleetProtocol::FleetClient::kCommandResponse:
+        case ExternalProtocol::ExternalClient::kCommandResponse:
             std::cout << "[ERROR] Command response print not implemented";
             break;
-        case FleetProtocol::FleetClient::MESSAGETYPE_NOT_SET:
+        case ExternalProtocol::ExternalClient::MESSAGETYPE_NOT_SET:
             std::cout << "[ERROR] Unknown message type";
             break;
     }
 }
 
-void ProtobufHelper::printConnect(const FleetProtocol::Connect &connectMessage) {
+void ProtobufHelper::printConnect(const ExternalProtocol::Connect &connectMessage) {
     std::cout << "[INFO] Received connect message:" << std::endl;
     std::cout << "Session id: " << connectMessage.sessionid() << std::endl;
     std::cout << "Company: " << connectMessage.company() << std::endl;
@@ -54,7 +54,7 @@ void ProtobufHelper::printConnect(const FleetProtocol::Connect &connectMessage) 
     std::cout << "Connected devices: " << devices << std::endl;
 }
 
-FleetProtocol::FleetClient
+ExternalProtocol::ExternalClient
 ProtobufHelper::createAutonomyStatus(const std::string& sessionId, float speed, float fuel, float latitude, float longitude, float altitude,
                                      AutonomyModule::AutonomyStatus_State state, const std::string& stopTo) {
 
@@ -84,32 +84,32 @@ ProtobufHelper::createAutonomyStatus(const std::string& sessionId, float speed, 
     autonomyError->set_type(AutonomyModule::AutonomyError_Type_OK);
 
     ///create fleet status
-    auto status = new FleetProtocol::Status();
+    auto status = new ExternalProtocol::Status();
     status->set_sessionid(sessionId);
     status->set_allocated_autonomystatus(autonomyStatus);
     status->set_allocated_autonomyerror(autonomyError);
 
-    FleetProtocol::FleetClient fleetMessage;
+    ExternalProtocol::ExternalClient fleetMessage;
     fleetMessage.set_allocated_status(status);
 
     return fleetMessage;
 }
 
-void ProtobufHelper::printStatus(const FleetProtocol::Status &statusMessage) {
+void ProtobufHelper::printStatus(const ExternalProtocol::Status &statusMessage) {
     std::cout << "[INFO] Received status message" << std::endl;
     std::cout << "Session id: " << statusMessage.sessionid() << std::endl;
 
     switch(statusMessage.StatusType_case()){
-        case FleetProtocol::Status::kAutonomyStatus:
+        case ExternalProtocol::Status::kAutonomyStatus:
             std::cout << "Module: Autonomy module" << std::endl;
             printAutonomyStatus(statusMessage.autonomystatus());
             printAutonomyError(statusMessage.autonomyerror());
             break;
-        case FleetProtocol::Status::kActionStatus:
+        case ExternalProtocol::Status::kActionStatus:
             std::cout << "Module: Action module" << std::endl;
             std::cout << "Error: Action module print is not supported" << std::endl;
             break;
-        case FleetProtocol::Status::STATUSTYPE_NOT_SET:
+        case ExternalProtocol::Status::STATUSTYPE_NOT_SET:
             break;
     }
 }
@@ -148,23 +148,23 @@ void ProtobufHelper::printAutonomyError(const AutonomyModule::AutonomyError &err
 
 }
 
-void ProtobufHelper::printFleetServerMessage(const std::string &serializedMessage) {
-    FleetProtocol::FleetServer message;
+void ProtobufHelper::printExternalServerMessage(const std::string &serializedMessage) {
+    ExternalProtocol::ExternalServer message;
 
     message.ParseFromString(serializedMessage);
 
     switch(message.MessageType_case()){
 
-        case FleetProtocol::FleetServer::kConnectReponse:
+        case ExternalProtocol::ExternalServer::kConnectReponse:
             std::cout << "[ERROR] Connect response print not implemented";
             break;
-        case FleetProtocol::FleetServer::kStatusResponse:
+        case ExternalProtocol::ExternalServer::kStatusResponse:
             std::cout << "[ERROR] Status response print not implemented";
             break;
-        case FleetProtocol::FleetServer::kCommand:
+        case ExternalProtocol::ExternalServer::kCommand:
             printCommand(message.command());
             break;
-        case FleetProtocol::FleetServer::MESSAGETYPE_NOT_SET:
+        case ExternalProtocol::ExternalServer::MESSAGETYPE_NOT_SET:
             std::cout << "[ERROR] Unknown message type";
             break;
     }
@@ -172,7 +172,7 @@ void ProtobufHelper::printFleetServerMessage(const std::string &serializedMessag
 
 }
 
-FleetProtocol::FleetServer ProtobufHelper::createWatchdogCommand(const std::string& sessionId, ActionModule::Device_DeviceType deviceType, const std::string& deviceName, ActionModule::WatchdogCommand_Command watchdogCommandEnum) {
+ExternalProtocol::ExternalServer ProtobufHelper::createWatchdogCommand(const std::string& sessionId, ActionModule::Device_DeviceType deviceType, const std::string& deviceName, ActionModule::WatchdogCommand_Command watchdogCommandEnum) {
 
     auto watchdogCommand = new ActionModule::WatchdogCommand();
     watchdogCommand->set_command(watchdogCommandEnum);
@@ -185,30 +185,30 @@ FleetProtocol::FleetServer ProtobufHelper::createWatchdogCommand(const std::stri
     actionCommand->set_allocated_device(device);
     actionCommand->set_allocated_watchdogcommand(watchdogCommand);
 
-    auto command = new FleetProtocol::Command();
+    auto command = new ExternalProtocol::Command();
     command->set_sessionid(sessionId);
     command->set_allocated_actioncommand(actionCommand);
 
-    FleetProtocol::FleetServer fleetServer;
+    ExternalProtocol::ExternalServer fleetServer;
     fleetServer.set_allocated_command(command);
 
     return fleetServer;
 }
 
-void ProtobufHelper::printCommand(const FleetProtocol::Command &commandMessage) {
+void ProtobufHelper::printCommand(const ExternalProtocol::Command &commandMessage) {
     std::cout << "[INFO] Received Command message" << std::endl;
     std::cout << "Session id: " << commandMessage.sessionid() << std::endl;
 
     switch(commandMessage.CommandType_case()){
-        case FleetProtocol::Command::kAutonomyCommand:
+        case ExternalProtocol::Command::kAutonomyCommand:
             std::cout << "Module: Autonomy module" << std::endl;
             std::cout << "Error autonomy command print not implemented" << std::endl;
             break;
-        case FleetProtocol::Command::kActionCommand:
+        case ExternalProtocol::Command::kActionCommand:
             std::cout << "Module: Action module" << std::endl;
             printActionCommand(commandMessage.actioncommand());
             break;
-        case FleetProtocol::Command::COMMANDTYPE_NOT_SET:
+        case ExternalProtocol::Command::COMMANDTYPE_NOT_SET:
             break;
     }
 }

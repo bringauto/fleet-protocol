@@ -7,7 +7,7 @@ SET(CMAKE_CXX_STANDARD 17)
 FIND_PACKAGE(Protobuf 3.17.3 REQUIRED)
 SET(PROTO_DIR "${CMAKE_CURRENT_SOURCE_DIR}/proto_compiled/")
 
-ADD_LIBRARY(protobuf_lib STATIC ${PROTO_DIR}/FleetProtocol.pb.cc ${PROTO_DIR}/ModuleProtocol.pb.cc ${PROTO_DIR}/modules/ActionModule.pb.cc ${PROTO_DIR}/modules/AutonomyModule.pb.cc)
+ADD_LIBRARY(protobuf_lib STATIC ${PROTO_DIR}/ExternalProtocol.pb.cc ${PROTO_DIR}/InternalProtocol.pb.cc ${PROTO_DIR}/modules/CarAccessoryModule.pb.cc ${PROTO_DIR}/modules/MissionModule.pb.cc)
 TARGET_LINK_LIBRARIES(protobuf_lib PUBLIC protobuf::libprotobuf)
 TARGET_INCLUDE_DIRECTORIES(protobuf_lib PUBLIC "${PROTO_DIR}")
 
