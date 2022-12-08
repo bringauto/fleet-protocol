@@ -1,9 +1,7 @@
 #pragma once
 
 #include <ExternalProtocol.pb.h>
-#include <modules/MissionModule.pb.h>
-#include <modules/CarAccessoryModule.pb.h>
-
+#include <modules/ExampleModule.pb.h>
 
 class ProtobufHelper {
 public:
