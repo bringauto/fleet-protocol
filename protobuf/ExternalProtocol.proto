@@ -10,8 +10,7 @@ syntax = "proto3";
  */
 package ExternalProtocol;
 
-import "modules/MissionModule.proto";
-import "modules/CarAccessoryModule.proto";
+import "InternalProtocol.proto";
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
@@ -86,8 +85,6 @@ message ConnectResponse {
 //todo reserved statuses and errors and commands
 /**
  * Status information with error type, contains status from a device
- * Enumeration of the statusTypes and errorTypes is done according to the module number
- * statusTypeNum = 4 + (ModuleNumber * 2)  ,  errorTypeNum = statusTypeNum + 1
  */
 message Status {
     enum DeviceState {
@@ -106,21 +103,13 @@ message Status {
      */
     uint32 messageCounter = 3;
     /**
-     * Module specific status message
+     * Device specific status message, containing device information and status data
      */
-    oneof StatusType {
-        // Field number 4 is reserved for the RESERVED_MODULE status
-        MissionModule.MissionStatus missionStatus = 6;
-        CarAccessoryModule.CarAccessoryStatus carAccessoryStatus = 8;
-    }
+    InternalProtocol.DeviceStatus deviceStatus = 4;
     /**
-     * Module specific error message
+     * Device specific error message
      */
-    oneof ErrorType {
-        // Field number 5 is reserved for the RESERVED_MODULE error
-        MissionModule.MissionError missionError = 7;
-        CarAccessoryModule.CarAccessoryError carAccessoryError = 9;
-    }
+    optional bytes errorMessage = 5;
 }
 
 /**
@@ -143,14 +132,16 @@ message StatusResponse {
 message Command {
     string sessionId = 1;
     uint32 messageCounter = 2;
+
     /**
-     * Command Type number is set by the equation: x = 3 + ModuleNumber
+     * command destination device
      */
-    oneof CommandType {
-        // Field number 3 is reserved for RESERVED_MODULE command
-        MissionModule.MissionCommand missionCommand = 4;
-        CarAccessoryModule.CarAccessoryCommand CarAccessoryCommand = 5;
-    }
+    InternalProtocol.Device device = 3;
+
+    /**
+     * command binary data
+     */
+    InternalProtocol.DeviceCommand deviceCommand = 4;
 }
 
 /**
