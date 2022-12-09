@@ -20,7 +20,7 @@ message ActionStatus {
 	 * Information about source device
 	 */
 	Device device = 1;
-	/* TODO predelat pouzne na binarni data a dat do internalProtocolu
+	/* TODO make only binary data, the rest us handled by internalProtocol
 	 * Device specific status message
 	 */
 	oneof DeviceStatusType{
