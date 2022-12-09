@@ -41,7 +41,7 @@ message ExampleStatus {
  * Example module specific command
  */
 message ExampleCommand {
-	/*F
+	/*
 	 * Information about target device
 	 */
 	Device device = 1;

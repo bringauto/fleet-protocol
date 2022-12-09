@@ -20,7 +20,7 @@ option csharp_namespace = "Google.Protobuf.ba_proto";
  * Device connect message is used for establishing connection from module client to module server
  * send as first message from module client to module server
  */
-message deviceConnect{
+message DeviceConnect{
   /**
     * enum containing all known modules, can be appended with new modules without loosing backward compatibility
    */
@@ -47,7 +47,7 @@ message deviceConnect{
   /**
    * Module specific device type, device should be supported by chosen module
    */
-  int32 deviceType = 2;
+  uint32 deviceType = 2;
   /**
    * Unique device name
    */
@@ -63,7 +63,7 @@ message deviceConnect{
  * Device connect response message is used for establishing connection from module client to module server
  * send as response to deviceConnect message from module server to module client
  */
-message deviceConnectResponse{
+message DeviceConnectResponse{
   /**
    * Indicates if connection was successful or which error occurred
    */
