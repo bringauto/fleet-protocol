@@ -55,93 +55,93 @@ struct TableStruct_InternalProtocol_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_InternalProtocol_2eproto;
 namespace InternalProtocol {
-class deviceConnect;
-struct deviceConnectDefaultTypeInternal;
-extern deviceConnectDefaultTypeInternal _deviceConnect_default_instance_;
-class deviceConnectResponse;
-struct deviceConnectResponseDefaultTypeInternal;
-extern deviceConnectResponseDefaultTypeInternal _deviceConnectResponse_default_instance_;
+class DeviceConnect;
+struct DeviceConnectDefaultTypeInternal;
+extern DeviceConnectDefaultTypeInternal _DeviceConnect_default_instance_;
+class DeviceConnectResponse;
+struct DeviceConnectResponseDefaultTypeInternal;
+extern DeviceConnectResponseDefaultTypeInternal _DeviceConnectResponse_default_instance_;
 }  // namespace InternalProtocol
 PROTOBUF_NAMESPACE_OPEN
-template<> ::InternalProtocol::deviceConnect* Arena::CreateMaybeMessage<::InternalProtocol::deviceConnect>(Arena*);
-template<> ::InternalProtocol::deviceConnectResponse* Arena::CreateMaybeMessage<::InternalProtocol::deviceConnectResponse>(Arena*);
+template<> ::InternalProtocol::DeviceConnect* Arena::CreateMaybeMessage<::InternalProtocol::DeviceConnect>(Arena*);
+template<> ::InternalProtocol::DeviceConnectResponse* Arena::CreateMaybeMessage<::InternalProtocol::DeviceConnectResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace InternalProtocol {
 
-enum deviceConnect_Module : int {
-  deviceConnect_Module_RESERVED_MODULE = 0,
-  deviceConnect_Module_MISSION_MODULE = 1,
-  deviceConnect_Module_CAR_ACCESSORY_MODULE = 2,
-  deviceConnect_Module_deviceConnect_Module_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  deviceConnect_Module_deviceConnect_Module_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+enum DeviceConnect_Module : int {
+  DeviceConnect_Module_RESERVED_MODULE = 0,
+  DeviceConnect_Module_MISSION_MODULE = 1,
+  DeviceConnect_Module_CAR_ACCESSORY_MODULE = 2,
+  DeviceConnect_Module_DeviceConnect_Module_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  DeviceConnect_Module_DeviceConnect_Module_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool deviceConnect_Module_IsValid(int value);
-constexpr deviceConnect_Module deviceConnect_Module_Module_MIN = deviceConnect_Module_RESERVED_MODULE;
-constexpr deviceConnect_Module deviceConnect_Module_Module_MAX = deviceConnect_Module_CAR_ACCESSORY_MODULE;
-constexpr int deviceConnect_Module_Module_ARRAYSIZE = deviceConnect_Module_Module_MAX + 1;
+bool DeviceConnect_Module_IsValid(int value);
+constexpr DeviceConnect_Module DeviceConnect_Module_Module_MIN = DeviceConnect_Module_RESERVED_MODULE;
+constexpr DeviceConnect_Module DeviceConnect_Module_Module_MAX = DeviceConnect_Module_CAR_ACCESSORY_MODULE;
+constexpr int DeviceConnect_Module_Module_ARRAYSIZE = DeviceConnect_Module_Module_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* deviceConnect_Module_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DeviceConnect_Module_descriptor();
 template<typename T>
-inline const std::string& deviceConnect_Module_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, deviceConnect_Module>::value ||
+inline const std::string& DeviceConnect_Module_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, DeviceConnect_Module>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function deviceConnect_Module_Name.");
+    "Incorrect type passed to function DeviceConnect_Module_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    deviceConnect_Module_descriptor(), enum_t_value);
+    DeviceConnect_Module_descriptor(), enum_t_value);
 }
-inline bool deviceConnect_Module_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, deviceConnect_Module* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<deviceConnect_Module>(
-    deviceConnect_Module_descriptor(), name, value);
+inline bool DeviceConnect_Module_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, DeviceConnect_Module* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<DeviceConnect_Module>(
+    DeviceConnect_Module_descriptor(), name, value);
 }
-enum deviceConnectResponse_ResponseType : int {
-  deviceConnectResponse_ResponseType_OK = 0,
-  deviceConnectResponse_ResponseType_ALREADY_CONNECTED = 1,
-  deviceConnectResponse_ResponseType_MODULE_NOT_SUPPORTED = 2,
-  deviceConnectResponse_ResponseType_DEVICE_NOT_SUPPORTED = 3,
-  deviceConnectResponse_ResponseType_HIGHER_PRIORITY_ALREADY_CONNECTED = 4,
-  deviceConnectResponse_ResponseType_deviceConnectResponse_ResponseType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  deviceConnectResponse_ResponseType_deviceConnectResponse_ResponseType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+enum DeviceConnectResponse_ResponseType : int {
+  DeviceConnectResponse_ResponseType_OK = 0,
+  DeviceConnectResponse_ResponseType_ALREADY_CONNECTED = 1,
+  DeviceConnectResponse_ResponseType_MODULE_NOT_SUPPORTED = 2,
+  DeviceConnectResponse_ResponseType_DEVICE_NOT_SUPPORTED = 3,
+  DeviceConnectResponse_ResponseType_HIGHER_PRIORITY_ALREADY_CONNECTED = 4,
+  DeviceConnectResponse_ResponseType_DeviceConnectResponse_ResponseType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  DeviceConnectResponse_ResponseType_DeviceConnectResponse_ResponseType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool deviceConnectResponse_ResponseType_IsValid(int value);
-constexpr deviceConnectResponse_ResponseType deviceConnectResponse_ResponseType_ResponseType_MIN = deviceConnectResponse_ResponseType_OK;
-constexpr deviceConnectResponse_ResponseType deviceConnectResponse_ResponseType_ResponseType_MAX = deviceConnectResponse_ResponseType_HIGHER_PRIORITY_ALREADY_CONNECTED;
-constexpr int deviceConnectResponse_ResponseType_ResponseType_ARRAYSIZE = deviceConnectResponse_ResponseType_ResponseType_MAX + 1;
+bool DeviceConnectResponse_ResponseType_IsValid(int value);
+constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse_ResponseType_ResponseType_MIN = DeviceConnectResponse_ResponseType_OK;
+constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse_ResponseType_ResponseType_MAX = DeviceConnectResponse_ResponseType_HIGHER_PRIORITY_ALREADY_CONNECTED;
+constexpr int DeviceConnectResponse_ResponseType_ResponseType_ARRAYSIZE = DeviceConnectResponse_ResponseType_ResponseType_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* deviceConnectResponse_ResponseType_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DeviceConnectResponse_ResponseType_descriptor();
 template<typename T>
-inline const std::string& deviceConnectResponse_ResponseType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, deviceConnectResponse_ResponseType>::value ||
+inline const std::string& DeviceConnectResponse_ResponseType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, DeviceConnectResponse_ResponseType>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function deviceConnectResponse_ResponseType_Name.");
+    "Incorrect type passed to function DeviceConnectResponse_ResponseType_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    deviceConnectResponse_ResponseType_descriptor(), enum_t_value);
+    DeviceConnectResponse_ResponseType_descriptor(), enum_t_value);
 }
-inline bool deviceConnectResponse_ResponseType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, deviceConnectResponse_ResponseType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<deviceConnectResponse_ResponseType>(
-    deviceConnectResponse_ResponseType_descriptor(), name, value);
+inline bool DeviceConnectResponse_ResponseType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, DeviceConnectResponse_ResponseType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<DeviceConnectResponse_ResponseType>(
+    DeviceConnectResponse_ResponseType_descriptor(), name, value);
 }
 // ===================================================================
 
-class deviceConnect final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:InternalProtocol.deviceConnect) */ {
+class DeviceConnect final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:InternalProtocol.DeviceConnect) */ {
  public:
-  inline deviceConnect() : deviceConnect(nullptr) {}
-  ~deviceConnect() override;
-  explicit constexpr deviceConnect(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline DeviceConnect() : DeviceConnect(nullptr) {}
+  ~DeviceConnect() override;
+  explicit constexpr DeviceConnect(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  deviceConnect(const deviceConnect& from);
-  deviceConnect(deviceConnect&& from) noexcept
-    : deviceConnect() {
+  DeviceConnect(const DeviceConnect& from);
+  DeviceConnect(DeviceConnect&& from) noexcept
+    : DeviceConnect() {
     *this = ::std::move(from);
   }
 
-  inline deviceConnect& operator=(const deviceConnect& from) {
+  inline DeviceConnect& operator=(const DeviceConnect& from) {
     CopyFrom(from);
     return *this;
   }
-  inline deviceConnect& operator=(deviceConnect&& from) noexcept {
+  inline DeviceConnect& operator=(DeviceConnect&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -160,20 +160,20 @@ class deviceConnect final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const deviceConnect& default_instance() {
+  static const DeviceConnect& default_instance() {
     return *internal_default_instance();
   }
-  static inline const deviceConnect* internal_default_instance() {
-    return reinterpret_cast<const deviceConnect*>(
-               &_deviceConnect_default_instance_);
+  static inline const DeviceConnect* internal_default_instance() {
+    return reinterpret_cast<const DeviceConnect*>(
+               &_DeviceConnect_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(deviceConnect& a, deviceConnect& b) {
+  friend void swap(DeviceConnect& a, DeviceConnect& b) {
     a.Swap(&b);
   }
-  inline void Swap(deviceConnect* other) {
+  inline void Swap(DeviceConnect* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -181,7 +181,7 @@ class deviceConnect final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(deviceConnect* other) {
+  void UnsafeArenaSwap(DeviceConnect* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -189,17 +189,17 @@ class deviceConnect final :
 
   // implements Message ----------------------------------------------
 
-  inline deviceConnect* New() const final {
-    return new deviceConnect();
+  inline DeviceConnect* New() const final {
+    return new DeviceConnect();
   }
 
-  deviceConnect* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<deviceConnect>(arena);
+  DeviceConnect* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeviceConnect>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const deviceConnect& from);
+  void CopyFrom(const DeviceConnect& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const deviceConnect& from);
+  void MergeFrom(const DeviceConnect& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -216,13 +216,13 @@ class deviceConnect final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(deviceConnect* other);
+  void InternalSwap(DeviceConnect* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "InternalProtocol.deviceConnect";
+    return "InternalProtocol.DeviceConnect";
   }
   protected:
-  explicit deviceConnect(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit DeviceConnect(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -236,36 +236,36 @@ class deviceConnect final :
 
   // nested types ----------------------------------------------------
 
-  typedef deviceConnect_Module Module;
+  typedef DeviceConnect_Module Module;
   static constexpr Module RESERVED_MODULE =
-    deviceConnect_Module_RESERVED_MODULE;
+    DeviceConnect_Module_RESERVED_MODULE;
   static constexpr Module MISSION_MODULE =
-    deviceConnect_Module_MISSION_MODULE;
+    DeviceConnect_Module_MISSION_MODULE;
   static constexpr Module CAR_ACCESSORY_MODULE =
-    deviceConnect_Module_CAR_ACCESSORY_MODULE;
+    DeviceConnect_Module_CAR_ACCESSORY_MODULE;
   static inline bool Module_IsValid(int value) {
-    return deviceConnect_Module_IsValid(value);
+    return DeviceConnect_Module_IsValid(value);
   }
   static constexpr Module Module_MIN =
-    deviceConnect_Module_Module_MIN;
+    DeviceConnect_Module_Module_MIN;
   static constexpr Module Module_MAX =
-    deviceConnect_Module_Module_MAX;
+    DeviceConnect_Module_Module_MAX;
   static constexpr int Module_ARRAYSIZE =
-    deviceConnect_Module_Module_ARRAYSIZE;
+    DeviceConnect_Module_Module_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
   Module_descriptor() {
-    return deviceConnect_Module_descriptor();
+    return DeviceConnect_Module_descriptor();
   }
   template<typename T>
   static inline const std::string& Module_Name(T enum_t_value) {
     static_assert(::std::is_same<T, Module>::value ||
       ::std::is_integral<T>::value,
       "Incorrect type passed to function Module_Name.");
-    return deviceConnect_Module_Name(enum_t_value);
+    return DeviceConnect_Module_Name(enum_t_value);
   }
   static inline bool Module_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
       Module* value) {
-    return deviceConnect_Module_Parse(name, value);
+    return DeviceConnect_Module_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -290,22 +290,22 @@ class deviceConnect final :
   std::string* _internal_mutable_devicename();
   public:
 
-  // .InternalProtocol.deviceConnect.Module module = 1;
+  // .InternalProtocol.DeviceConnect.Module module = 1;
   void clear_module();
-  ::InternalProtocol::deviceConnect_Module module() const;
-  void set_module(::InternalProtocol::deviceConnect_Module value);
+  ::InternalProtocol::DeviceConnect_Module module() const;
+  void set_module(::InternalProtocol::DeviceConnect_Module value);
   private:
-  ::InternalProtocol::deviceConnect_Module _internal_module() const;
-  void _internal_set_module(::InternalProtocol::deviceConnect_Module value);
+  ::InternalProtocol::DeviceConnect_Module _internal_module() const;
+  void _internal_set_module(::InternalProtocol::DeviceConnect_Module value);
   public:
 
-  // int32 deviceType = 2;
+  // uint32 deviceType = 2;
   void clear_devicetype();
-  ::PROTOBUF_NAMESPACE_ID::int32 devicetype() const;
-  void set_devicetype(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 devicetype() const;
+  void set_devicetype(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_devicetype() const;
-  void _internal_set_devicetype(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_devicetype() const;
+  void _internal_set_devicetype(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // int32 priority = 4;
@@ -317,7 +317,7 @@ class deviceConnect final :
   void _internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:InternalProtocol.deviceConnect)
+  // @@protoc_insertion_point(class_scope:InternalProtocol.DeviceConnect)
  private:
   class _Internal;
 
@@ -326,31 +326,31 @@ class deviceConnect final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr devicename_;
   int module_;
-  ::PROTOBUF_NAMESPACE_ID::int32 devicetype_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 devicetype_;
   ::PROTOBUF_NAMESPACE_ID::int32 priority_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_InternalProtocol_2eproto;
 };
 // -------------------------------------------------------------------
 
-class deviceConnectResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:InternalProtocol.deviceConnectResponse) */ {
+class DeviceConnectResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:InternalProtocol.DeviceConnectResponse) */ {
  public:
-  inline deviceConnectResponse() : deviceConnectResponse(nullptr) {}
-  ~deviceConnectResponse() override;
-  explicit constexpr deviceConnectResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline DeviceConnectResponse() : DeviceConnectResponse(nullptr) {}
+  ~DeviceConnectResponse() override;
+  explicit constexpr DeviceConnectResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  deviceConnectResponse(const deviceConnectResponse& from);
-  deviceConnectResponse(deviceConnectResponse&& from) noexcept
-    : deviceConnectResponse() {
+  DeviceConnectResponse(const DeviceConnectResponse& from);
+  DeviceConnectResponse(DeviceConnectResponse&& from) noexcept
+    : DeviceConnectResponse() {
     *this = ::std::move(from);
   }
 
-  inline deviceConnectResponse& operator=(const deviceConnectResponse& from) {
+  inline DeviceConnectResponse& operator=(const DeviceConnectResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline deviceConnectResponse& operator=(deviceConnectResponse&& from) noexcept {
+  inline DeviceConnectResponse& operator=(DeviceConnectResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -369,20 +369,20 @@ class deviceConnectResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const deviceConnectResponse& default_instance() {
+  static const DeviceConnectResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const deviceConnectResponse* internal_default_instance() {
-    return reinterpret_cast<const deviceConnectResponse*>(
-               &_deviceConnectResponse_default_instance_);
+  static inline const DeviceConnectResponse* internal_default_instance() {
+    return reinterpret_cast<const DeviceConnectResponse*>(
+               &_DeviceConnectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(deviceConnectResponse& a, deviceConnectResponse& b) {
+  friend void swap(DeviceConnectResponse& a, DeviceConnectResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(deviceConnectResponse* other) {
+  inline void Swap(DeviceConnectResponse* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -390,7 +390,7 @@ class deviceConnectResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(deviceConnectResponse* other) {
+  void UnsafeArenaSwap(DeviceConnectResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -398,17 +398,17 @@ class deviceConnectResponse final :
 
   // implements Message ----------------------------------------------
 
-  inline deviceConnectResponse* New() const final {
-    return new deviceConnectResponse();
+  inline DeviceConnectResponse* New() const final {
+    return new DeviceConnectResponse();
   }
 
-  deviceConnectResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<deviceConnectResponse>(arena);
+  DeviceConnectResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeviceConnectResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const deviceConnectResponse& from);
+  void CopyFrom(const DeviceConnectResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const deviceConnectResponse& from);
+  void MergeFrom(const DeviceConnectResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -425,13 +425,13 @@ class deviceConnectResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(deviceConnectResponse* other);
+  void InternalSwap(DeviceConnectResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "InternalProtocol.deviceConnectResponse";
+    return "InternalProtocol.DeviceConnectResponse";
   }
   protected:
-  explicit deviceConnectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit DeviceConnectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -445,40 +445,40 @@ class deviceConnectResponse final :
 
   // nested types ----------------------------------------------------
 
-  typedef deviceConnectResponse_ResponseType ResponseType;
+  typedef DeviceConnectResponse_ResponseType ResponseType;
   static constexpr ResponseType OK =
-    deviceConnectResponse_ResponseType_OK;
+    DeviceConnectResponse_ResponseType_OK;
   static constexpr ResponseType ALREADY_CONNECTED =
-    deviceConnectResponse_ResponseType_ALREADY_CONNECTED;
+    DeviceConnectResponse_ResponseType_ALREADY_CONNECTED;
   static constexpr ResponseType MODULE_NOT_SUPPORTED =
-    deviceConnectResponse_ResponseType_MODULE_NOT_SUPPORTED;
+    DeviceConnectResponse_ResponseType_MODULE_NOT_SUPPORTED;
   static constexpr ResponseType DEVICE_NOT_SUPPORTED =
-    deviceConnectResponse_ResponseType_DEVICE_NOT_SUPPORTED;
+    DeviceConnectResponse_ResponseType_DEVICE_NOT_SUPPORTED;
   static constexpr ResponseType HIGHER_PRIORITY_ALREADY_CONNECTED =
-    deviceConnectResponse_ResponseType_HIGHER_PRIORITY_ALREADY_CONNECTED;
+    DeviceConnectResponse_ResponseType_HIGHER_PRIORITY_ALREADY_CONNECTED;
   static inline bool ResponseType_IsValid(int value) {
-    return deviceConnectResponse_ResponseType_IsValid(value);
+    return DeviceConnectResponse_ResponseType_IsValid(value);
   }
   static constexpr ResponseType ResponseType_MIN =
-    deviceConnectResponse_ResponseType_ResponseType_MIN;
+    DeviceConnectResponse_ResponseType_ResponseType_MIN;
   static constexpr ResponseType ResponseType_MAX =
-    deviceConnectResponse_ResponseType_ResponseType_MAX;
+    DeviceConnectResponse_ResponseType_ResponseType_MAX;
   static constexpr int ResponseType_ARRAYSIZE =
-    deviceConnectResponse_ResponseType_ResponseType_ARRAYSIZE;
+    DeviceConnectResponse_ResponseType_ResponseType_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
   ResponseType_descriptor() {
-    return deviceConnectResponse_ResponseType_descriptor();
+    return DeviceConnectResponse_ResponseType_descriptor();
   }
   template<typename T>
   static inline const std::string& ResponseType_Name(T enum_t_value) {
     static_assert(::std::is_same<T, ResponseType>::value ||
       ::std::is_integral<T>::value,
       "Incorrect type passed to function ResponseType_Name.");
-    return deviceConnectResponse_ResponseType_Name(enum_t_value);
+    return DeviceConnectResponse_ResponseType_Name(enum_t_value);
   }
   static inline bool ResponseType_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
       ResponseType* value) {
-    return deviceConnectResponse_ResponseType_Parse(name, value);
+    return DeviceConnectResponse_ResponseType_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -486,16 +486,16 @@ class deviceConnectResponse final :
   enum : int {
     kResponseTypeFieldNumber = 1,
   };
-  // .InternalProtocol.deviceConnectResponse.ResponseType responseType = 1;
+  // .InternalProtocol.DeviceConnectResponse.ResponseType responseType = 1;
   void clear_responsetype();
-  ::InternalProtocol::deviceConnectResponse_ResponseType responsetype() const;
-  void set_responsetype(::InternalProtocol::deviceConnectResponse_ResponseType value);
+  ::InternalProtocol::DeviceConnectResponse_ResponseType responsetype() const;
+  void set_responsetype(::InternalProtocol::DeviceConnectResponse_ResponseType value);
   private:
-  ::InternalProtocol::deviceConnectResponse_ResponseType _internal_responsetype() const;
-  void _internal_set_responsetype(::InternalProtocol::deviceConnectResponse_ResponseType value);
+  ::InternalProtocol::DeviceConnectResponse_ResponseType _internal_responsetype() const;
+  void _internal_set_responsetype(::InternalProtocol::DeviceConnectResponse_ResponseType value);
   public:
 
-  // @@protoc_insertion_point(class_scope:InternalProtocol.deviceConnectResponse)
+  // @@protoc_insertion_point(class_scope:InternalProtocol.DeviceConnectResponse)
  private:
   class _Internal;
 
@@ -515,84 +515,84 @@ class deviceConnectResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// deviceConnect
+// DeviceConnect
 
-// .InternalProtocol.deviceConnect.Module module = 1;
-inline void deviceConnect::clear_module() {
+// .InternalProtocol.DeviceConnect.Module module = 1;
+inline void DeviceConnect::clear_module() {
   module_ = 0;
 }
-inline ::InternalProtocol::deviceConnect_Module deviceConnect::_internal_module() const {
-  return static_cast< ::InternalProtocol::deviceConnect_Module >(module_);
+inline ::InternalProtocol::DeviceConnect_Module DeviceConnect::_internal_module() const {
+  return static_cast< ::InternalProtocol::DeviceConnect_Module >(module_);
 }
-inline ::InternalProtocol::deviceConnect_Module deviceConnect::module() const {
-  // @@protoc_insertion_point(field_get:InternalProtocol.deviceConnect.module)
+inline ::InternalProtocol::DeviceConnect_Module DeviceConnect::module() const {
+  // @@protoc_insertion_point(field_get:InternalProtocol.DeviceConnect.module)
   return _internal_module();
 }
-inline void deviceConnect::_internal_set_module(::InternalProtocol::deviceConnect_Module value) {
+inline void DeviceConnect::_internal_set_module(::InternalProtocol::DeviceConnect_Module value) {
   
   module_ = value;
 }
-inline void deviceConnect::set_module(::InternalProtocol::deviceConnect_Module value) {
+inline void DeviceConnect::set_module(::InternalProtocol::DeviceConnect_Module value) {
   _internal_set_module(value);
-  // @@protoc_insertion_point(field_set:InternalProtocol.deviceConnect.module)
+  // @@protoc_insertion_point(field_set:InternalProtocol.DeviceConnect.module)
 }
 
-// int32 deviceType = 2;
-inline void deviceConnect::clear_devicetype() {
-  devicetype_ = 0;
+// uint32 deviceType = 2;
+inline void DeviceConnect::clear_devicetype() {
+  devicetype_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 deviceConnect::_internal_devicetype() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeviceConnect::_internal_devicetype() const {
   return devicetype_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 deviceConnect::devicetype() const {
-  // @@protoc_insertion_point(field_get:InternalProtocol.deviceConnect.deviceType)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeviceConnect::devicetype() const {
+  // @@protoc_insertion_point(field_get:InternalProtocol.DeviceConnect.deviceType)
   return _internal_devicetype();
 }
-inline void deviceConnect::_internal_set_devicetype(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void DeviceConnect::_internal_set_devicetype(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   devicetype_ = value;
 }
-inline void deviceConnect::set_devicetype(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void DeviceConnect::set_devicetype(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_devicetype(value);
-  // @@protoc_insertion_point(field_set:InternalProtocol.deviceConnect.deviceType)
+  // @@protoc_insertion_point(field_set:InternalProtocol.DeviceConnect.deviceType)
 }
 
 // string deviceName = 3;
-inline void deviceConnect::clear_devicename() {
+inline void DeviceConnect::clear_devicename() {
   devicename_.ClearToEmpty();
 }
-inline const std::string& deviceConnect::devicename() const {
-  // @@protoc_insertion_point(field_get:InternalProtocol.deviceConnect.deviceName)
+inline const std::string& DeviceConnect::devicename() const {
+  // @@protoc_insertion_point(field_get:InternalProtocol.DeviceConnect.deviceName)
   return _internal_devicename();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void deviceConnect::set_devicename(ArgT0&& arg0, ArgT... args) {
+void DeviceConnect::set_devicename(ArgT0&& arg0, ArgT... args) {
  
  devicename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:InternalProtocol.deviceConnect.deviceName)
+  // @@protoc_insertion_point(field_set:InternalProtocol.DeviceConnect.deviceName)
 }
-inline std::string* deviceConnect::mutable_devicename() {
+inline std::string* DeviceConnect::mutable_devicename() {
   std::string* _s = _internal_mutable_devicename();
-  // @@protoc_insertion_point(field_mutable:InternalProtocol.deviceConnect.deviceName)
+  // @@protoc_insertion_point(field_mutable:InternalProtocol.DeviceConnect.deviceName)
   return _s;
 }
-inline const std::string& deviceConnect::_internal_devicename() const {
+inline const std::string& DeviceConnect::_internal_devicename() const {
   return devicename_.Get();
 }
-inline void deviceConnect::_internal_set_devicename(const std::string& value) {
+inline void DeviceConnect::_internal_set_devicename(const std::string& value) {
   
   devicename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* deviceConnect::_internal_mutable_devicename() {
+inline std::string* DeviceConnect::_internal_mutable_devicename() {
   
   return devicename_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* deviceConnect::release_devicename() {
-  // @@protoc_insertion_point(field_release:InternalProtocol.deviceConnect.deviceName)
+inline std::string* DeviceConnect::release_devicename() {
+  // @@protoc_insertion_point(field_release:InternalProtocol.DeviceConnect.deviceName)
   return devicename_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void deviceConnect::set_allocated_devicename(std::string* devicename) {
+inline void DeviceConnect::set_allocated_devicename(std::string* devicename) {
   if (devicename != nullptr) {
     
   } else {
@@ -600,51 +600,51 @@ inline void deviceConnect::set_allocated_devicename(std::string* devicename) {
   }
   devicename_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), devicename,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:InternalProtocol.deviceConnect.deviceName)
+  // @@protoc_insertion_point(field_set_allocated:InternalProtocol.DeviceConnect.deviceName)
 }
 
 // int32 priority = 4;
-inline void deviceConnect::clear_priority() {
+inline void DeviceConnect::clear_priority() {
   priority_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 deviceConnect::_internal_priority() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 DeviceConnect::_internal_priority() const {
   return priority_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 deviceConnect::priority() const {
-  // @@protoc_insertion_point(field_get:InternalProtocol.deviceConnect.priority)
+inline ::PROTOBUF_NAMESPACE_ID::int32 DeviceConnect::priority() const {
+  // @@protoc_insertion_point(field_get:InternalProtocol.DeviceConnect.priority)
   return _internal_priority();
 }
-inline void deviceConnect::_internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void DeviceConnect::_internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   priority_ = value;
 }
-inline void deviceConnect::set_priority(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void DeviceConnect::set_priority(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_priority(value);
-  // @@protoc_insertion_point(field_set:InternalProtocol.deviceConnect.priority)
+  // @@protoc_insertion_point(field_set:InternalProtocol.DeviceConnect.priority)
 }
 
 // -------------------------------------------------------------------
 
-// deviceConnectResponse
+// DeviceConnectResponse
 
-// .InternalProtocol.deviceConnectResponse.ResponseType responseType = 1;
-inline void deviceConnectResponse::clear_responsetype() {
+// .InternalProtocol.DeviceConnectResponse.ResponseType responseType = 1;
+inline void DeviceConnectResponse::clear_responsetype() {
   responsetype_ = 0;
 }
-inline ::InternalProtocol::deviceConnectResponse_ResponseType deviceConnectResponse::_internal_responsetype() const {
-  return static_cast< ::InternalProtocol::deviceConnectResponse_ResponseType >(responsetype_);
+inline ::InternalProtocol::DeviceConnectResponse_ResponseType DeviceConnectResponse::_internal_responsetype() const {
+  return static_cast< ::InternalProtocol::DeviceConnectResponse_ResponseType >(responsetype_);
 }
-inline ::InternalProtocol::deviceConnectResponse_ResponseType deviceConnectResponse::responsetype() const {
-  // @@protoc_insertion_point(field_get:InternalProtocol.deviceConnectResponse.responseType)
+inline ::InternalProtocol::DeviceConnectResponse_ResponseType DeviceConnectResponse::responsetype() const {
+  // @@protoc_insertion_point(field_get:InternalProtocol.DeviceConnectResponse.responseType)
   return _internal_responsetype();
 }
-inline void deviceConnectResponse::_internal_set_responsetype(::InternalProtocol::deviceConnectResponse_ResponseType value) {
+inline void DeviceConnectResponse::_internal_set_responsetype(::InternalProtocol::DeviceConnectResponse_ResponseType value) {
   
   responsetype_ = value;
 }
-inline void deviceConnectResponse::set_responsetype(::InternalProtocol::deviceConnectResponse_ResponseType value) {
+inline void DeviceConnectResponse::set_responsetype(::InternalProtocol::DeviceConnectResponse_ResponseType value) {
   _internal_set_responsetype(value);
-  // @@protoc_insertion_point(field_set:InternalProtocol.deviceConnectResponse.responseType)
+  // @@protoc_insertion_point(field_set:InternalProtocol.DeviceConnectResponse.responseType)
 }
 
 #ifdef __GNUC__
@@ -659,15 +659,15 @@ inline void deviceConnectResponse::set_responsetype(::InternalProtocol::deviceCo
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::InternalProtocol::deviceConnect_Module> : ::std::true_type {};
+template <> struct is_proto_enum< ::InternalProtocol::DeviceConnect_Module> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::InternalProtocol::deviceConnect_Module>() {
-  return ::InternalProtocol::deviceConnect_Module_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::InternalProtocol::DeviceConnect_Module>() {
+  return ::InternalProtocol::DeviceConnect_Module_descriptor();
 }
-template <> struct is_proto_enum< ::InternalProtocol::deviceConnectResponse_ResponseType> : ::std::true_type {};
+template <> struct is_proto_enum< ::InternalProtocol::DeviceConnectResponse_ResponseType> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::InternalProtocol::deviceConnectResponse_ResponseType>() {
-  return ::InternalProtocol::deviceConnectResponse_ResponseType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::InternalProtocol::DeviceConnectResponse_ResponseType>() {
+  return ::InternalProtocol::DeviceConnectResponse_ResponseType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

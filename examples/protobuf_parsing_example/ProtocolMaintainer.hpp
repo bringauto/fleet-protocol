@@ -6,7 +6,7 @@
 
 class ProtocolMaintainer {
 public:
-	void createDeviceConnectMessage(std::string device_name, uint32_t device_type);
+	static InternalProtocol::DeviceConnect createDeviceConnectMessage(std::string device_name, uint32_t device_type, uint32_t priority);
 
 	void parseDeviceConnectMessage();
 
