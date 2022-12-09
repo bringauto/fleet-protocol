@@ -47,7 +47,7 @@ message DeviceConnect{
   /**
    * Module specific device type, device should be supported by chosen module
    */
-  int32 deviceType = 2;
+  uint32 deviceType = 2;
   /**
    * Unique device name
    */
