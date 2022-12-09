@@ -143,6 +143,9 @@ message StatusResponse {
 message Command {
     string sessionId = 1;
     uint32 messageCounter = 2;
+    /**
+     * Command Type number is set by the equation: x = 3 + ModuleNumber
+     */
     oneof CommandType {
         // Field number 3 is reserved for RESERVED_MODULE command
         MissionModule.MissionCommand missionCommand = 4;
