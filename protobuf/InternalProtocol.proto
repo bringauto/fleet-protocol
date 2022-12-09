@@ -21,41 +21,12 @@ option csharp_namespace = "Google.Protobuf.ba_proto";
  * send as first message from module client to module server
  */
 message DeviceConnect{
-  /**
-    * enum containing all known modules, can be appended with new modules without loosing backward compatibility
-   */
-  enum Module{
-    /**
-     * This is reserved place for a control module, which is default for devices that didn't set correct module
-     * TODO will be implemented
-     */
-    RESERVED_MODULE = 0;
-    // Sending missions with the information about the route and stops to the autonomy
-    MISSION_MODULE = 1;
-    // Control of car accessories
-    CAR_ACCESSORY_MODULE = 2;
+  Device device = 1;
 
-    /**
-     * Numbers reserved for BringAuto
-     */
-    reserved 3 to 999;
-  }
-  /**
-   * Which module have to be used for this device
+  /*
+   * Priority of the device. Max priority = 0
    */
-  Module module = 1;
-  /**
-   * Module specific device type, device should be supported by chosen module
-   */
-  uint32 deviceType = 2;
-  /**
-   * Unique device name
-   */
-  string deviceName = 3;
-  /**
-   * Priority of device
-   */
-  int32 priority = 4;
+  uint32 priority = 2;
 }
 
 /**
@@ -90,4 +61,52 @@ message DeviceConnectResponse{
     HIGHER_PRIORITY_ALREADY_CONNECTED = 4;
   }
   ResponseType responseType = 1;
+}
+
+message DeviceStatus{
+  Device device = 1;
+
+  bytes statusData = 2;
+}
+
+/*
+ * binary command data
+ */
+message DeviceCommand{
+  bytes commandData = 1;
+}
+
+message Device{
+  /*
+   * Enum for specification to which module the messages should be forwarded by internal server.
+   * Must mirror the enum number in InternalProtocol.proto
+   * RESERVED_MODULE is default module taking control of unspecified messages.
+   */
+  enum Module{
+    /**
+     * This is reserved place for a control module, which is default for devices that didn't set correct module
+     * It may serve for messages that are not aggregated. TODO will be implemented
+     */
+    RESERVED_MODULE = 0;
+    // Sending missions with the information about the route and stops to the autonomy
+    MISSION_MODULE = 1;
+    // Control of car accessories
+    CAR_ACCESSORY_MODULE = 2;
+    reserved 3 to 998;
+    EXAMPLE_MODULE = 999;
+  }
+
+  /**
+   * This module will always be the same. Serves for internal client to forward message to the correct module.
+   */
+  Module module = 1;
+
+  /*
+   * Device type is module implementation dependent, it is recommended to be implemented as enumeration.
+   */
+  uint32 deviceType = 2;
+  /*
+   * Unique device name
+   */
+  string deviceName = 3;
 }
