@@ -34,6 +34,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "modules/MissionModule.pb.h"
 #include "modules/CarAccessoryModule.pb.h"
+#include "modules/ExampleModule.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_ExternalProtocol_2eproto
@@ -1044,12 +1045,14 @@ class Status final :
   enum StatusTypeCase {
     kMissionStatus = 6,
     kCarAccessoryStatus = 8,
+    kExampleStatus = 2002,
     STATUSTYPE_NOT_SET = 0,
   };
 
   enum ErrorTypeCase {
     kMissionError = 7,
     kCarAccessoryError = 9,
+    kExampleError = 2003,
     ERRORTYPE_NOT_SET = 0,
   };
 
@@ -1168,8 +1171,10 @@ class Status final :
     kMessageCounterFieldNumber = 3,
     kMissionStatusFieldNumber = 6,
     kCarAccessoryStatusFieldNumber = 8,
+    kExampleStatusFieldNumber = 2002,
     kMissionErrorFieldNumber = 7,
     kCarAccessoryErrorFieldNumber = 9,
+    kExampleErrorFieldNumber = 2003,
   };
   // string sessionId = 1;
   void clear_sessionid();
@@ -1239,6 +1244,24 @@ class Status final :
       ::CarAccessoryModule::CarAccessoryStatus* caraccessorystatus);
   ::CarAccessoryModule::CarAccessoryStatus* unsafe_arena_release_caraccessorystatus();
 
+  // .ExampleModule.ExampleStatus exampleStatus = 2002;
+  bool has_examplestatus() const;
+  private:
+  bool _internal_has_examplestatus() const;
+  public:
+  void clear_examplestatus();
+  const ::ExampleModule::ExampleStatus& examplestatus() const;
+  PROTOBUF_MUST_USE_RESULT ::ExampleModule::ExampleStatus* release_examplestatus();
+  ::ExampleModule::ExampleStatus* mutable_examplestatus();
+  void set_allocated_examplestatus(::ExampleModule::ExampleStatus* examplestatus);
+  private:
+  const ::ExampleModule::ExampleStatus& _internal_examplestatus() const;
+  ::ExampleModule::ExampleStatus* _internal_mutable_examplestatus();
+  public:
+  void unsafe_arena_set_allocated_examplestatus(
+      ::ExampleModule::ExampleStatus* examplestatus);
+  ::ExampleModule::ExampleStatus* unsafe_arena_release_examplestatus();
+
   // .MissionModule.MissionError missionError = 7;
   bool has_missionerror() const;
   private:
@@ -1275,6 +1298,24 @@ class Status final :
       ::CarAccessoryModule::CarAccessoryError* caraccessoryerror);
   ::CarAccessoryModule::CarAccessoryError* unsafe_arena_release_caraccessoryerror();
 
+  // .ExampleModule.ExampleError exampleError = 2003;
+  bool has_exampleerror() const;
+  private:
+  bool _internal_has_exampleerror() const;
+  public:
+  void clear_exampleerror();
+  const ::ExampleModule::ExampleError& exampleerror() const;
+  PROTOBUF_MUST_USE_RESULT ::ExampleModule::ExampleError* release_exampleerror();
+  ::ExampleModule::ExampleError* mutable_exampleerror();
+  void set_allocated_exampleerror(::ExampleModule::ExampleError* exampleerror);
+  private:
+  const ::ExampleModule::ExampleError& _internal_exampleerror() const;
+  ::ExampleModule::ExampleError* _internal_mutable_exampleerror();
+  public:
+  void unsafe_arena_set_allocated_exampleerror(
+      ::ExampleModule::ExampleError* exampleerror);
+  ::ExampleModule::ExampleError* unsafe_arena_release_exampleerror();
+
   void clear_StatusType();
   StatusTypeCase StatusType_case() const;
   void clear_ErrorType();
@@ -1284,8 +1325,10 @@ class Status final :
   class _Internal;
   void set_has_missionstatus();
   void set_has_caraccessorystatus();
+  void set_has_examplestatus();
   void set_has_missionerror();
   void set_has_caraccessoryerror();
+  void set_has_exampleerror();
 
   inline bool has_StatusType() const;
   inline void clear_has_StatusType();
@@ -1304,12 +1347,14 @@ class Status final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::MissionModule::MissionStatus* missionstatus_;
     ::CarAccessoryModule::CarAccessoryStatus* caraccessorystatus_;
+    ::ExampleModule::ExampleStatus* examplestatus_;
   } StatusType_;
   union ErrorTypeUnion {
     constexpr ErrorTypeUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::MissionModule::MissionError* missionerror_;
     ::CarAccessoryModule::CarAccessoryError* caraccessoryerror_;
+    ::ExampleModule::ExampleError* exampleerror_;
   } ErrorType_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[2];
@@ -1554,6 +1599,7 @@ class Command final :
   enum CommandTypeCase {
     kMissionCommand = 4,
     kCarAccessoryCommand = 5,
+    kExampleCommand = 1002,
     COMMANDTYPE_NOT_SET = 0,
   };
 
@@ -1637,6 +1683,7 @@ class Command final :
     kMessageCounterFieldNumber = 2,
     kMissionCommandFieldNumber = 4,
     kCarAccessoryCommandFieldNumber = 5,
+    kExampleCommandFieldNumber = 1002,
   };
   // string sessionId = 1;
   void clear_sessionid();
@@ -1697,6 +1744,24 @@ class Command final :
       ::CarAccessoryModule::CarAccessoryCommand* caraccessorycommand);
   ::CarAccessoryModule::CarAccessoryCommand* unsafe_arena_release_caraccessorycommand();
 
+  // .ExampleModule.ExampleCommand exampleCommand = 1002;
+  bool has_examplecommand() const;
+  private:
+  bool _internal_has_examplecommand() const;
+  public:
+  void clear_examplecommand();
+  const ::ExampleModule::ExampleCommand& examplecommand() const;
+  PROTOBUF_MUST_USE_RESULT ::ExampleModule::ExampleCommand* release_examplecommand();
+  ::ExampleModule::ExampleCommand* mutable_examplecommand();
+  void set_allocated_examplecommand(::ExampleModule::ExampleCommand* examplecommand);
+  private:
+  const ::ExampleModule::ExampleCommand& _internal_examplecommand() const;
+  ::ExampleModule::ExampleCommand* _internal_mutable_examplecommand();
+  public:
+  void unsafe_arena_set_allocated_examplecommand(
+      ::ExampleModule::ExampleCommand* examplecommand);
+  ::ExampleModule::ExampleCommand* unsafe_arena_release_examplecommand();
+
   void clear_CommandType();
   CommandTypeCase CommandType_case() const;
   // @@protoc_insertion_point(class_scope:ExternalProtocol.Command)
@@ -1704,6 +1769,7 @@ class Command final :
   class _Internal;
   void set_has_missioncommand();
   void set_has_caraccessorycommand();
+  void set_has_examplecommand();
 
   inline bool has_CommandType() const;
   inline void clear_has_CommandType();
@@ -1718,6 +1784,7 @@ class Command final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::MissionModule::MissionCommand* missioncommand_;
     ::CarAccessoryModule::CarAccessoryCommand* caraccessorycommand_;
+    ::ExampleModule::ExampleCommand* examplecommand_;
   } CommandType_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2906,6 +2973,72 @@ inline ::CarAccessoryModule::CarAccessoryStatus* Status::mutable_caraccessorysta
   return _msg;
 }
 
+// .ExampleModule.ExampleStatus exampleStatus = 2002;
+inline bool Status::_internal_has_examplestatus() const {
+  return StatusType_case() == kExampleStatus;
+}
+inline bool Status::has_examplestatus() const {
+  return _internal_has_examplestatus();
+}
+inline void Status::set_has_examplestatus() {
+  _oneof_case_[0] = kExampleStatus;
+}
+inline ::ExampleModule::ExampleStatus* Status::release_examplestatus() {
+  // @@protoc_insertion_point(field_release:ExternalProtocol.Status.exampleStatus)
+  if (_internal_has_examplestatus()) {
+    clear_has_StatusType();
+      ::ExampleModule::ExampleStatus* temp = StatusType_.examplestatus_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    StatusType_.examplestatus_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ExampleModule::ExampleStatus& Status::_internal_examplestatus() const {
+  return _internal_has_examplestatus()
+      ? *StatusType_.examplestatus_
+      : reinterpret_cast< ::ExampleModule::ExampleStatus&>(::ExampleModule::_ExampleStatus_default_instance_);
+}
+inline const ::ExampleModule::ExampleStatus& Status::examplestatus() const {
+  // @@protoc_insertion_point(field_get:ExternalProtocol.Status.exampleStatus)
+  return _internal_examplestatus();
+}
+inline ::ExampleModule::ExampleStatus* Status::unsafe_arena_release_examplestatus() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:ExternalProtocol.Status.exampleStatus)
+  if (_internal_has_examplestatus()) {
+    clear_has_StatusType();
+    ::ExampleModule::ExampleStatus* temp = StatusType_.examplestatus_;
+    StatusType_.examplestatus_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Status::unsafe_arena_set_allocated_examplestatus(::ExampleModule::ExampleStatus* examplestatus) {
+  clear_StatusType();
+  if (examplestatus) {
+    set_has_examplestatus();
+    StatusType_.examplestatus_ = examplestatus;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ExternalProtocol.Status.exampleStatus)
+}
+inline ::ExampleModule::ExampleStatus* Status::_internal_mutable_examplestatus() {
+  if (!_internal_has_examplestatus()) {
+    clear_StatusType();
+    set_has_examplestatus();
+    StatusType_.examplestatus_ = CreateMaybeMessage< ::ExampleModule::ExampleStatus >(GetArenaForAllocation());
+  }
+  return StatusType_.examplestatus_;
+}
+inline ::ExampleModule::ExampleStatus* Status::mutable_examplestatus() {
+  ::ExampleModule::ExampleStatus* _msg = _internal_mutable_examplestatus();
+  // @@protoc_insertion_point(field_mutable:ExternalProtocol.Status.exampleStatus)
+  return _msg;
+}
+
 // .MissionModule.MissionError missionError = 7;
 inline bool Status::_internal_has_missionerror() const {
   return ErrorType_case() == kMissionError;
@@ -3035,6 +3168,72 @@ inline ::CarAccessoryModule::CarAccessoryError* Status::_internal_mutable_caracc
 inline ::CarAccessoryModule::CarAccessoryError* Status::mutable_caraccessoryerror() {
   ::CarAccessoryModule::CarAccessoryError* _msg = _internal_mutable_caraccessoryerror();
   // @@protoc_insertion_point(field_mutable:ExternalProtocol.Status.carAccessoryError)
+  return _msg;
+}
+
+// .ExampleModule.ExampleError exampleError = 2003;
+inline bool Status::_internal_has_exampleerror() const {
+  return ErrorType_case() == kExampleError;
+}
+inline bool Status::has_exampleerror() const {
+  return _internal_has_exampleerror();
+}
+inline void Status::set_has_exampleerror() {
+  _oneof_case_[1] = kExampleError;
+}
+inline ::ExampleModule::ExampleError* Status::release_exampleerror() {
+  // @@protoc_insertion_point(field_release:ExternalProtocol.Status.exampleError)
+  if (_internal_has_exampleerror()) {
+    clear_has_ErrorType();
+      ::ExampleModule::ExampleError* temp = ErrorType_.exampleerror_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    ErrorType_.exampleerror_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ExampleModule::ExampleError& Status::_internal_exampleerror() const {
+  return _internal_has_exampleerror()
+      ? *ErrorType_.exampleerror_
+      : reinterpret_cast< ::ExampleModule::ExampleError&>(::ExampleModule::_ExampleError_default_instance_);
+}
+inline const ::ExampleModule::ExampleError& Status::exampleerror() const {
+  // @@protoc_insertion_point(field_get:ExternalProtocol.Status.exampleError)
+  return _internal_exampleerror();
+}
+inline ::ExampleModule::ExampleError* Status::unsafe_arena_release_exampleerror() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:ExternalProtocol.Status.exampleError)
+  if (_internal_has_exampleerror()) {
+    clear_has_ErrorType();
+    ::ExampleModule::ExampleError* temp = ErrorType_.exampleerror_;
+    ErrorType_.exampleerror_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Status::unsafe_arena_set_allocated_exampleerror(::ExampleModule::ExampleError* exampleerror) {
+  clear_ErrorType();
+  if (exampleerror) {
+    set_has_exampleerror();
+    ErrorType_.exampleerror_ = exampleerror;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ExternalProtocol.Status.exampleError)
+}
+inline ::ExampleModule::ExampleError* Status::_internal_mutable_exampleerror() {
+  if (!_internal_has_exampleerror()) {
+    clear_ErrorType();
+    set_has_exampleerror();
+    ErrorType_.exampleerror_ = CreateMaybeMessage< ::ExampleModule::ExampleError >(GetArenaForAllocation());
+  }
+  return ErrorType_.exampleerror_;
+}
+inline ::ExampleModule::ExampleError* Status::mutable_exampleerror() {
+  ::ExampleModule::ExampleError* _msg = _internal_mutable_exampleerror();
+  // @@protoc_insertion_point(field_mutable:ExternalProtocol.Status.exampleError)
   return _msg;
 }
 
@@ -3345,6 +3544,72 @@ inline ::CarAccessoryModule::CarAccessoryCommand* Command::_internal_mutable_car
 inline ::CarAccessoryModule::CarAccessoryCommand* Command::mutable_caraccessorycommand() {
   ::CarAccessoryModule::CarAccessoryCommand* _msg = _internal_mutable_caraccessorycommand();
   // @@protoc_insertion_point(field_mutable:ExternalProtocol.Command.CarAccessoryCommand)
+  return _msg;
+}
+
+// .ExampleModule.ExampleCommand exampleCommand = 1002;
+inline bool Command::_internal_has_examplecommand() const {
+  return CommandType_case() == kExampleCommand;
+}
+inline bool Command::has_examplecommand() const {
+  return _internal_has_examplecommand();
+}
+inline void Command::set_has_examplecommand() {
+  _oneof_case_[0] = kExampleCommand;
+}
+inline ::ExampleModule::ExampleCommand* Command::release_examplecommand() {
+  // @@protoc_insertion_point(field_release:ExternalProtocol.Command.exampleCommand)
+  if (_internal_has_examplecommand()) {
+    clear_has_CommandType();
+      ::ExampleModule::ExampleCommand* temp = CommandType_.examplecommand_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    CommandType_.examplecommand_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ExampleModule::ExampleCommand& Command::_internal_examplecommand() const {
+  return _internal_has_examplecommand()
+      ? *CommandType_.examplecommand_
+      : reinterpret_cast< ::ExampleModule::ExampleCommand&>(::ExampleModule::_ExampleCommand_default_instance_);
+}
+inline const ::ExampleModule::ExampleCommand& Command::examplecommand() const {
+  // @@protoc_insertion_point(field_get:ExternalProtocol.Command.exampleCommand)
+  return _internal_examplecommand();
+}
+inline ::ExampleModule::ExampleCommand* Command::unsafe_arena_release_examplecommand() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:ExternalProtocol.Command.exampleCommand)
+  if (_internal_has_examplecommand()) {
+    clear_has_CommandType();
+    ::ExampleModule::ExampleCommand* temp = CommandType_.examplecommand_;
+    CommandType_.examplecommand_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Command::unsafe_arena_set_allocated_examplecommand(::ExampleModule::ExampleCommand* examplecommand) {
+  clear_CommandType();
+  if (examplecommand) {
+    set_has_examplecommand();
+    CommandType_.examplecommand_ = examplecommand;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ExternalProtocol.Command.exampleCommand)
+}
+inline ::ExampleModule::ExampleCommand* Command::_internal_mutable_examplecommand() {
+  if (!_internal_has_examplecommand()) {
+    clear_CommandType();
+    set_has_examplecommand();
+    CommandType_.examplecommand_ = CreateMaybeMessage< ::ExampleModule::ExampleCommand >(GetArenaForAllocation());
+  }
+  return CommandType_.examplecommand_;
+}
+inline ::ExampleModule::ExampleCommand* Command::mutable_examplecommand() {
+  ::ExampleModule::ExampleCommand* _msg = _internal_mutable_examplecommand();
+  // @@protoc_insertion_point(field_mutable:ExternalProtocol.Command.exampleCommand)
   return _msg;
 }
 

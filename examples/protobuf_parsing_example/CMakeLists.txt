@@ -11,5 +11,5 @@ ADD_LIBRARY(protobuf_lib STATIC ${PROTO_DIR}/ExternalProtocol.pb.cc ${PROTO_DIR}
 TARGET_LINK_LIBRARIES(protobuf_lib PUBLIC protobuf::libprotobuf)
 TARGET_INCLUDE_DIRECTORIES(protobuf_lib PUBLIC "${PROTO_DIR}")
 
-ADD_EXECUTABLE(protobuf_parser main.cpp ProtobufHelper.cpp ProtobufHelper.h ModuleMaintainer.cpp ModuleMaintainer.hpp ProtocolMaintainer.cpp ProtocolMaintainer.hpp)
+ADD_EXECUTABLE(protobuf_parser main.cpp ModuleMaintainer.cpp ModuleMaintainer.hpp ProtocolMaintainer.cpp ProtocolMaintainer.hpp)
 TARGET_LINK_LIBRARIES(protobuf_parser protobuf_lib)

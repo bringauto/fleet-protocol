@@ -12,6 +12,7 @@ package ExternalProtocol;
 
 import "modules/MissionModule.proto";
 import "modules/CarAccessoryModule.proto";
+import "modules/ExampleModule.proto";
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
@@ -112,6 +113,8 @@ message Status {
         // Field number 4 is reserved for the RESERVED_MODULE status
         MissionModule.MissionStatus missionStatus = 6;
         CarAccessoryModule.CarAccessoryStatus carAccessoryStatus = 8;
+
+        ExampleModule.ExampleStatus exampleStatus = 2002;
     }
     /**
      * Module specific error message
@@ -120,6 +123,8 @@ message Status {
         // Field number 5 is reserved for the RESERVED_MODULE error
         MissionModule.MissionError missionError = 7;
         CarAccessoryModule.CarAccessoryError carAccessoryError = 9;
+
+        ExampleModule.ExampleError exampleError = 2003;
     }
 }
 
@@ -147,6 +152,8 @@ message Command {
         // Field number 3 is reserved for RESERVED_MODULE command
         MissionModule.MissionCommand missionCommand = 4;
         CarAccessoryModule.CarAccessoryCommand CarAccessoryCommand = 5;
+
+        ExampleModule.ExampleCommand exampleCommand = 1002;
     }
 }
 

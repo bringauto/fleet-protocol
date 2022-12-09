@@ -182,6 +182,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_ExternalProtocol_2eproto::offs
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, StatusType_),
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, ErrorType_),
   ~0u,  // no _has_bits_
@@ -201,6 +203,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_ExternalProtocol_2eproto::offs
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, messagecounter_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, CommandType_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _internal_metadata_),
@@ -217,9 +220,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 18, -1, sizeof(::ExternalProtocol::Connect)},
   { 27, -1, sizeof(::ExternalProtocol::ConnectResponse)},
   { 34, -1, sizeof(::ExternalProtocol::Status)},
-  { 48, -1, sizeof(::ExternalProtocol::StatusResponse)},
-  { 56, -1, sizeof(::ExternalProtocol::Command)},
-  { 66, -1, sizeof(::ExternalProtocol::CommandResponse)},
+  { 50, -1, sizeof(::ExternalProtocol::StatusResponse)},
+  { 58, -1, sizeof(::ExternalProtocol::Command)},
+  { 69, -1, sizeof(::ExternalProtocol::CommandResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -236,57 +239,63 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_ExternalProtocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\026ExternalProtocol.proto\022\020ExternalProtoc"
   "ol\032\033modules/MissionModule.proto\032 modules"
-  "/CarAccessoryModule.proto\"\306\001\n\016ExternalSe"
-  "rver\022;\n\016connectReponse\030\001 \001(\0132!.ExternalP"
-  "rotocol.ConnectResponseH\000\022:\n\016statusRespo"
-  "nse\030\002 \001(\0132 .ExternalProtocol.StatusRespo"
-  "nseH\000\022,\n\007command\030\003 \001(\0132\031.ExternalProtoco"
-  "l.CommandH\000B\r\n\013MessageType\"\267\001\n\016ExternalC"
-  "lient\022,\n\007connect\030\001 \001(\0132\031.ExternalProtoco"
-  "l.ConnectH\000\022*\n\006status\030\002 \001(\0132\030.ExternalPr"
-  "otocol.StatusH\000\022<\n\017commandResponse\030\003 \001(\013"
-  "2!.ExternalProtocol.CommandResponseH\000B\r\n"
-  "\013MessageType\"W\n\007Connect\022\021\n\tsessionId\030\001 \001"
-  "(\t\022\017\n\007company\030\002 \001(\t\022\023\n\013vehicleName\030\003 \001(\t"
-  "\022\023\n\013deviceNames\030\004 \003(\t\"~\n\017ConnectResponse"
-  "\022\021\n\tsessionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.Exte"
-  "rnalProtocol.ConnectResponse.Type\"\"\n\004Typ"
-  "e\022\006\n\002OK\020\000\022\022\n\016ALREADY_LOGGED\020\001\"\306\003\n\006Status"
-  "\022\021\n\tsessionId\030\001 \001(\t\0229\n\013deviceState\030\002 \001(\016"
-  "2$.ExternalProtocol.Status.DeviceState\022\026"
-  "\n\016messageCounter\030\003 \001(\r\0225\n\rmissionStatus\030"
-  "\006 \001(\0132\034.MissionModule.MissionStatusH\000\022D\n"
-  "\022carAccessoryStatus\030\010 \001(\0132&.CarAccessory"
-  "Module.CarAccessoryStatusH\000\0223\n\014missionEr"
-  "ror\030\007 \001(\0132\033.MissionModule.MissionErrorH\001"
-  "\022B\n\021carAccessoryError\030\t \001(\0132%.CarAccesso"
-  "ryModule.CarAccessoryErrorH\001\"E\n\013DeviceSt"
-  "ate\022\016\n\nCONNECTING\020\000\022\013\n\007RUNNING\020\001\022\t\n\005ERRO"
-  "R\020\002\022\016\n\nDISCONNECT\020\003B\014\n\nStatusTypeB\013\n\tErr"
-  "orType\"\200\001\n\016StatusResponse\022\021\n\tsessionId\030\001"
-  " \001(\t\0223\n\004type\030\002 \001(\0162%.ExternalProtocol.St"
-  "atusResponse.Type\022\026\n\016messageCounter\030\003 \001("
-  "\r\"\016\n\004Type\022\006\n\002OK\020\000\"\304\001\n\007Command\022\021\n\tsession"
-  "Id\030\001 \001(\t\022\026\n\016messageCounter\030\002 \001(\r\0227\n\016miss"
-  "ionCommand\030\004 \001(\0132\035.MissionModule.Mission"
-  "CommandH\000\022F\n\023CarAccessoryCommand\030\005 \001(\0132\'"
-  ".CarAccessoryModule.CarAccessoryCommandH"
-  "\000B\r\n\013CommandType\"\234\001\n\017CommandResponse\022\021\n\t"
-  "sessionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.External"
-  "Protocol.CommandResponse.Type\022\026\n\016message"
-  "Counter\030\003 \001(\r\"(\n\004Type\022\006\n\002OK\020\000\022\030\n\024DEVICE_"
-  "NOT_CONNECTED\020\001B>Z!../internal/pkg/ba_pr"
-  "oto;ba_proto\252\002\030Google.Protobuf.ba_protob"
-  "\006proto3"
+  "/CarAccessoryModule.proto\032\033modules/Examp"
+  "leModule.proto\"\306\001\n\016ExternalServer\022;\n\016con"
+  "nectReponse\030\001 \001(\0132!.ExternalProtocol.Con"
+  "nectResponseH\000\022:\n\016statusResponse\030\002 \001(\0132 "
+  ".ExternalProtocol.StatusResponseH\000\022,\n\007co"
+  "mmand\030\003 \001(\0132\031.ExternalProtocol.CommandH\000"
+  "B\r\n\013MessageType\"\267\001\n\016ExternalClient\022,\n\007co"
+  "nnect\030\001 \001(\0132\031.ExternalProtocol.ConnectH\000"
+  "\022*\n\006status\030\002 \001(\0132\030.ExternalProtocol.Stat"
+  "usH\000\022<\n\017commandResponse\030\003 \001(\0132!.External"
+  "Protocol.CommandResponseH\000B\r\n\013MessageTyp"
+  "e\"W\n\007Connect\022\021\n\tsessionId\030\001 \001(\t\022\017\n\007compa"
+  "ny\030\002 \001(\t\022\023\n\013vehicleName\030\003 \001(\t\022\023\n\013deviceN"
+  "ames\030\004 \003(\t\"~\n\017ConnectResponse\022\021\n\tsession"
+  "Id\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.ExternalProtoco"
+  "l.ConnectResponse.Type\"\"\n\004Type\022\006\n\002OK\020\000\022\022"
+  "\n\016ALREADY_LOGGED\020\001\"\264\004\n\006Status\022\021\n\tsession"
+  "Id\030\001 \001(\t\0229\n\013deviceState\030\002 \001(\0162$.External"
+  "Protocol.Status.DeviceState\022\026\n\016messageCo"
+  "unter\030\003 \001(\r\0225\n\rmissionStatus\030\006 \001(\0132\034.Mis"
+  "sionModule.MissionStatusH\000\022D\n\022carAccesso"
+  "ryStatus\030\010 \001(\0132&.CarAccessoryModule.CarA"
+  "ccessoryStatusH\000\0226\n\rexampleStatus\030\322\017 \001(\013"
+  "2\034.ExampleModule.ExampleStatusH\000\0223\n\014miss"
+  "ionError\030\007 \001(\0132\033.MissionModule.MissionEr"
+  "rorH\001\022B\n\021carAccessoryError\030\t \001(\0132%.CarAc"
+  "cessoryModule.CarAccessoryErrorH\001\0224\n\014exa"
+  "mpleError\030\323\017 \001(\0132\033.ExampleModule.Example"
+  "ErrorH\001\"E\n\013DeviceState\022\016\n\nCONNECTING\020\000\022\013"
+  "\n\007RUNNING\020\001\022\t\n\005ERROR\020\002\022\016\n\nDISCONNECT\020\003B\014"
+  "\n\nStatusTypeB\013\n\tErrorType\"\200\001\n\016StatusResp"
+  "onse\022\021\n\tsessionId\030\001 \001(\t\0223\n\004type\030\002 \001(\0162%."
+  "ExternalProtocol.StatusResponse.Type\022\026\n\016"
+  "messageCounter\030\003 \001(\r\"\016\n\004Type\022\006\n\002OK\020\000\"\376\001\n"
+  "\007Command\022\021\n\tsessionId\030\001 \001(\t\022\026\n\016messageCo"
+  "unter\030\002 \001(\r\0227\n\016missionCommand\030\004 \001(\0132\035.Mi"
+  "ssionModule.MissionCommandH\000\022F\n\023CarAcces"
+  "soryCommand\030\005 \001(\0132\'.CarAccessoryModule.C"
+  "arAccessoryCommandH\000\0228\n\016exampleCommand\030\352"
+  "\007 \001(\0132\035.ExampleModule.ExampleCommandH\000B\r"
+  "\n\013CommandType\"\234\001\n\017CommandResponse\022\021\n\tses"
+  "sionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.ExternalPro"
+  "tocol.CommandResponse.Type\022\026\n\016messageCou"
+  "nter\030\003 \001(\r\"(\n\004Type\022\006\n\002OK\020\000\022\030\n\024DEVICE_NOT"
+  "_CONNECTED\020\001B>Z!../internal/pkg/ba_proto"
+  ";ba_proto\252\002\030Google.Protobuf.ba_protob\006pr"
+  "oto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ExternalProtocol_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ExternalProtocol_2eproto_deps[3] = {
   &::descriptor_table_modules_2fCarAccessoryModule_2eproto,
+  &::descriptor_table_modules_2fExampleModule_2eproto,
   &::descriptor_table_modules_2fMissionModule_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ExternalProtocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ExternalProtocol_2eproto = {
-  false, false, 1727, descriptor_table_protodef_ExternalProtocol_2eproto, "ExternalProtocol.proto", 
-  &descriptor_table_ExternalProtocol_2eproto_once, descriptor_table_ExternalProtocol_2eproto_deps, 2, 8,
+  false, false, 1924, descriptor_table_protodef_ExternalProtocol_2eproto, "ExternalProtocol.proto", 
+  &descriptor_table_ExternalProtocol_2eproto_once, descriptor_table_ExternalProtocol_2eproto_deps, 3, 8,
   schemas, file_default_instances, TableStruct_ExternalProtocol_2eproto::offsets,
   file_level_metadata_ExternalProtocol_2eproto, file_level_enum_descriptors_ExternalProtocol_2eproto, file_level_service_descriptors_ExternalProtocol_2eproto,
 };
@@ -1659,8 +1668,10 @@ class Status::_Internal {
  public:
   static const ::MissionModule::MissionStatus& missionstatus(const Status* msg);
   static const ::CarAccessoryModule::CarAccessoryStatus& caraccessorystatus(const Status* msg);
+  static const ::ExampleModule::ExampleStatus& examplestatus(const Status* msg);
   static const ::MissionModule::MissionError& missionerror(const Status* msg);
   static const ::CarAccessoryModule::CarAccessoryError& caraccessoryerror(const Status* msg);
+  static const ::ExampleModule::ExampleError& exampleerror(const Status* msg);
 };
 
 const ::MissionModule::MissionStatus&
@@ -1671,6 +1682,10 @@ const ::CarAccessoryModule::CarAccessoryStatus&
 Status::_Internal::caraccessorystatus(const Status* msg) {
   return *msg->StatusType_.caraccessorystatus_;
 }
+const ::ExampleModule::ExampleStatus&
+Status::_Internal::examplestatus(const Status* msg) {
+  return *msg->StatusType_.examplestatus_;
+}
 const ::MissionModule::MissionError&
 Status::_Internal::missionerror(const Status* msg) {
   return *msg->ErrorType_.missionerror_;
@@ -1678,6 +1693,10 @@ Status::_Internal::missionerror(const Status* msg) {
 const ::CarAccessoryModule::CarAccessoryError&
 Status::_Internal::caraccessoryerror(const Status* msg) {
   return *msg->ErrorType_.caraccessoryerror_;
+}
+const ::ExampleModule::ExampleError&
+Status::_Internal::exampleerror(const Status* msg) {
+  return *msg->ErrorType_.exampleerror_;
 }
 void Status::set_allocated_missionstatus(::MissionModule::MissionStatus* missionstatus) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -1725,6 +1744,31 @@ void Status::clear_caraccessorystatus() {
   if (_internal_has_caraccessorystatus()) {
     if (GetArenaForAllocation() == nullptr) {
       delete StatusType_.caraccessorystatus_;
+    }
+    clear_has_StatusType();
+  }
+}
+void Status::set_allocated_examplestatus(::ExampleModule::ExampleStatus* examplestatus) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_StatusType();
+  if (examplestatus) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(examplestatus));
+    if (message_arena != submessage_arena) {
+      examplestatus = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, examplestatus, submessage_arena);
+    }
+    set_has_examplestatus();
+    StatusType_.examplestatus_ = examplestatus;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ExternalProtocol.Status.exampleStatus)
+}
+void Status::clear_examplestatus() {
+  if (_internal_has_examplestatus()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete StatusType_.examplestatus_;
     }
     clear_has_StatusType();
   }
@@ -1779,6 +1823,31 @@ void Status::clear_caraccessoryerror() {
     clear_has_ErrorType();
   }
 }
+void Status::set_allocated_exampleerror(::ExampleModule::ExampleError* exampleerror) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_ErrorType();
+  if (exampleerror) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(exampleerror));
+    if (message_arena != submessage_arena) {
+      exampleerror = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, exampleerror, submessage_arena);
+    }
+    set_has_exampleerror();
+    ErrorType_.exampleerror_ = exampleerror;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ExternalProtocol.Status.exampleError)
+}
+void Status::clear_exampleerror() {
+  if (_internal_has_exampleerror()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete ErrorType_.exampleerror_;
+    }
+    clear_has_ErrorType();
+  }
+}
 Status::Status(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1809,6 +1878,10 @@ Status::Status(const Status& from)
       _internal_mutable_caraccessorystatus()->::CarAccessoryModule::CarAccessoryStatus::MergeFrom(from._internal_caraccessorystatus());
       break;
     }
+    case kExampleStatus: {
+      _internal_mutable_examplestatus()->::ExampleModule::ExampleStatus::MergeFrom(from._internal_examplestatus());
+      break;
+    }
     case STATUSTYPE_NOT_SET: {
       break;
     }
@@ -1821,6 +1894,10 @@ Status::Status(const Status& from)
     }
     case kCarAccessoryError: {
       _internal_mutable_caraccessoryerror()->::CarAccessoryModule::CarAccessoryError::MergeFrom(from._internal_caraccessoryerror());
+      break;
+    }
+    case kExampleError: {
+      _internal_mutable_exampleerror()->::ExampleModule::ExampleError::MergeFrom(from._internal_exampleerror());
       break;
     }
     case ERRORTYPE_NOT_SET: {
@@ -1883,6 +1960,12 @@ void Status::clear_StatusType() {
       }
       break;
     }
+    case kExampleStatus: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete StatusType_.examplestatus_;
+      }
+      break;
+    }
     case STATUSTYPE_NOT_SET: {
       break;
     }
@@ -1902,6 +1985,12 @@ void Status::clear_ErrorType() {
     case kCarAccessoryError: {
       if (GetArenaForAllocation() == nullptr) {
         delete ErrorType_.caraccessoryerror_;
+      }
+      break;
+    }
+    case kExampleError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete ErrorType_.exampleerror_;
       }
       break;
     }
@@ -1983,6 +2072,20 @@ const char* Status::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_caraccessoryerror(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .ExampleModule.ExampleStatus exampleStatus = 2002;
+      case 2002:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
+          ptr = ctx->ParseMessage(_internal_mutable_examplestatus(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .ExampleModule.ExampleError exampleError = 2003;
+      case 2003:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
+          ptr = ctx->ParseMessage(_internal_mutable_exampleerror(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2070,6 +2173,22 @@ failure:
         9, _Internal::caraccessoryerror(this), target, stream);
   }
 
+  // .ExampleModule.ExampleStatus exampleStatus = 2002;
+  if (_internal_has_examplestatus()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2002, _Internal::examplestatus(this), target, stream);
+  }
+
+  // .ExampleModule.ExampleError exampleError = 2003;
+  if (_internal_has_exampleerror()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2003, _Internal::exampleerror(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2121,6 +2240,13 @@ size_t Status::ByteSizeLong() const {
           *StatusType_.caraccessorystatus_);
       break;
     }
+    // .ExampleModule.ExampleStatus exampleStatus = 2002;
+    case kExampleStatus: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *StatusType_.examplestatus_);
+      break;
+    }
     case STATUSTYPE_NOT_SET: {
       break;
     }
@@ -2138,6 +2264,13 @@ size_t Status::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *ErrorType_.caraccessoryerror_);
+      break;
+    }
+    // .ExampleModule.ExampleError exampleError = 2003;
+    case kExampleError: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *ErrorType_.exampleerror_);
       break;
     }
     case ERRORTYPE_NOT_SET: {
@@ -2190,6 +2323,10 @@ void Status::MergeFrom(const Status& from) {
       _internal_mutable_caraccessorystatus()->::CarAccessoryModule::CarAccessoryStatus::MergeFrom(from._internal_caraccessorystatus());
       break;
     }
+    case kExampleStatus: {
+      _internal_mutable_examplestatus()->::ExampleModule::ExampleStatus::MergeFrom(from._internal_examplestatus());
+      break;
+    }
     case STATUSTYPE_NOT_SET: {
       break;
     }
@@ -2201,6 +2338,10 @@ void Status::MergeFrom(const Status& from) {
     }
     case kCarAccessoryError: {
       _internal_mutable_caraccessoryerror()->::CarAccessoryModule::CarAccessoryError::MergeFrom(from._internal_caraccessoryerror());
+      break;
+    }
+    case kExampleError: {
+      _internal_mutable_exampleerror()->::ExampleModule::ExampleError::MergeFrom(from._internal_exampleerror());
       break;
     }
     case ERRORTYPE_NOT_SET: {
@@ -2516,6 +2657,7 @@ class Command::_Internal {
  public:
   static const ::MissionModule::MissionCommand& missioncommand(const Command* msg);
   static const ::CarAccessoryModule::CarAccessoryCommand& caraccessorycommand(const Command* msg);
+  static const ::ExampleModule::ExampleCommand& examplecommand(const Command* msg);
 };
 
 const ::MissionModule::MissionCommand&
@@ -2525,6 +2667,10 @@ Command::_Internal::missioncommand(const Command* msg) {
 const ::CarAccessoryModule::CarAccessoryCommand&
 Command::_Internal::caraccessorycommand(const Command* msg) {
   return *msg->CommandType_.caraccessorycommand_;
+}
+const ::ExampleModule::ExampleCommand&
+Command::_Internal::examplecommand(const Command* msg) {
+  return *msg->CommandType_.examplecommand_;
 }
 void Command::set_allocated_missioncommand(::MissionModule::MissionCommand* missioncommand) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -2576,6 +2722,31 @@ void Command::clear_caraccessorycommand() {
     clear_has_CommandType();
   }
 }
+void Command::set_allocated_examplecommand(::ExampleModule::ExampleCommand* examplecommand) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_CommandType();
+  if (examplecommand) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(examplecommand));
+    if (message_arena != submessage_arena) {
+      examplecommand = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, examplecommand, submessage_arena);
+    }
+    set_has_examplecommand();
+    CommandType_.examplecommand_ = examplecommand;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ExternalProtocol.Command.exampleCommand)
+}
+void Command::clear_examplecommand() {
+  if (_internal_has_examplecommand()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete CommandType_.examplecommand_;
+    }
+    clear_has_CommandType();
+  }
+}
 Command::Command(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2602,6 +2773,10 @@ Command::Command(const Command& from)
     }
     case kCarAccessoryCommand: {
       _internal_mutable_caraccessorycommand()->::CarAccessoryModule::CarAccessoryCommand::MergeFrom(from._internal_caraccessorycommand());
+      break;
+    }
+    case kExampleCommand: {
+      _internal_mutable_examplecommand()->::ExampleModule::ExampleCommand::MergeFrom(from._internal_examplecommand());
       break;
     }
     case COMMANDTYPE_NOT_SET: {
@@ -2654,6 +2829,12 @@ void Command::clear_CommandType() {
     case kCarAccessoryCommand: {
       if (GetArenaForAllocation() == nullptr) {
         delete CommandType_.caraccessorycommand_;
+      }
+      break;
+    }
+    case kExampleCommand: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete CommandType_.examplecommand_;
       }
       break;
     }
@@ -2710,6 +2891,13 @@ const char* Command::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_caraccessorycommand(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .ExampleModule.ExampleCommand exampleCommand = 1002;
+      case 1002:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr = ctx->ParseMessage(_internal_mutable_examplecommand(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2774,6 +2962,14 @@ failure:
         5, _Internal::caraccessorycommand(this), target, stream);
   }
 
+  // .ExampleModule.ExampleCommand exampleCommand = 1002;
+  if (_internal_has_examplecommand()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1002, _Internal::examplecommand(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2817,6 +3013,13 @@ size_t Command::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *CommandType_.caraccessorycommand_);
+      break;
+    }
+    // .ExampleModule.ExampleCommand exampleCommand = 1002;
+    case kExampleCommand: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *CommandType_.examplecommand_);
       break;
     }
     case COMMANDTYPE_NOT_SET: {
@@ -2864,6 +3067,10 @@ void Command::MergeFrom(const Command& from) {
     }
     case kCarAccessoryCommand: {
       _internal_mutable_caraccessorycommand()->::CarAccessoryModule::CarAccessoryCommand::MergeFrom(from._internal_caraccessorycommand());
+      break;
+    }
+    case kExampleCommand: {
+      _internal_mutable_examplecommand()->::ExampleModule::ExampleCommand::MergeFrom(from._internal_examplecommand());
       break;
     }
     case COMMANDTYPE_NOT_SET: {

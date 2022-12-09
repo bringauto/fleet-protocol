@@ -18,5 +18,6 @@ int main(int argc, char **argv){
 
 	// Funkce rozdelit do trid ModuleMaintainer a ProtocolMaintainer podle toho, kdo jakou funkci potrebuje / dela
 
-	ProtocolMaintainer::createDeviceConnectMessage("leftBlinker", ExampleModule::Device_DeviceType_BLINKER, 0);
+	auto connectMessage = ProtocolMaintainer::createDeviceConnectMessage("leftBlinker", ExampleModule::Device_DeviceType_BLINKER, 0);
+	ProtocolMaintainer::parseDeviceConnectMessage(connectMessage);
 }
