@@ -110,10 +110,10 @@ message Device{
   uint32 deviceType = 2;
 
   /**
-   * name of datatype that the device provides, serves for distinction of backup devices
-   * plays role in device connection, where only single device of a dataProvider type can be connected to a module.
+   * name of role that the device provides, serves for distinction of devices
+   * important in device connection, where only single device of a deviceRole type can be connected to a module.
    */
-  string dataProvider = 3;
+  string deviceRole = 3;
 
   /*
    * device name
