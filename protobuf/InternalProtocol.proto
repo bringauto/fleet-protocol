@@ -76,6 +76,9 @@ message DeviceCommand{
   bytes commandData = 1;
 }
 
+/*
+ * Identification of a device. Only devices with unique module-deviceType-dataProvider combination can be connected.
+ */
 message Device{
   /*
    * Enum for specification to which module the messages should be forwarded by internal server.
@@ -97,16 +100,23 @@ message Device{
   }
 
   /**
-   * This module will always be the same. Serves for internal client to forward message to the correct module.
+   * Serves for internal client to forward message to the correct module.
    */
   Module module = 1;
 
   /*
-   * Device type is module implementation dependent, it is recommended to be implemented as enumeration.
+   * Device type is module implementation dependent, it is recommended to implement as enumeration.
    */
   uint32 deviceType = 2;
-  /*
-   * Unique device name
+
+  /**
+   * name of datatype that the device provides, serves for distinction of backup devices
+   * plays role in device connection, where only single device of a dataProvider type can be connected to a module.
    */
-  string deviceName = 3;
+  string dataProvider = 3;
+
+  /*
+   * device name
+   */
+  string deviceName = 4;
 }
