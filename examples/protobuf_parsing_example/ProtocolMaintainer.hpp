@@ -6,18 +6,23 @@
 
 class ProtocolMaintainer {
 public:
+	static InternalProtocol::Device *
+	createDevice(std::string device_role, uint32_t device_type, std::string device_name);
+
 	static InternalProtocol::DeviceConnect
-	createDeviceConnectMessage(std::string device_role, uint32_t device_type, std::string device_name,
-							   uint32_t priority);
+	createDeviceConnectMessage(InternalProtocol::Device *device, uint32_t priority);
 
 	static void parseDeviceConnectMessage(InternalProtocol::DeviceConnect deviceConnectMessage);
 
-	void createDeviceConnectResponseMessage();
+	static InternalProtocol::DeviceConnectResponse createDeviceConnectResponseMessage(
+			InternalProtocol::DeviceConnectResponse::ResponseType responseType);
+
+	static void parseDeviceConnectResponseMessage(InternalProtocol::DeviceConnectResponse deviceConnectResponse);
 
 	/**
 	 * @brief Function for packing messages into Module messages
 	 */
-	void createExampleModuleStatus();
+	static InternalProtocol::DeviceStatus createExampleModuleStatus(InternalProtocol::Device *device, std::string statusData);
 
 	void parseExampleModuleCommand();
 

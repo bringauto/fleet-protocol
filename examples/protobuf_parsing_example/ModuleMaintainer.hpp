@@ -11,12 +11,12 @@ public:
 		LIGHTS = 1
 	};
 
-	void createBlinkerStatus();
-	void createLightsStatus();
+	static ExampleModule::BlinkerStatus createBlinkerStatus(bool isFlashing);
+	static ExampleModule::LightsStatus createLightsStatus(bool isOn);
 
-	void parseBlinkerStatus();
+	static void parseDeviceStatus(InternalProtocol::DeviceStatus deviceStatus);
 
-	void createBlinkerCommand();
+	static void createBlinkerCommand();
 
 	void parseBlinkerCommand();
 	void parseLightsCommand();
