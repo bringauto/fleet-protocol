@@ -28,7 +28,7 @@ enum mc_error_codes {
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
  */
-void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, char *device_role, unsigned device_priority);
+void *init_connection(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, char *device_role, unsigned device_priority);
 
 /**
  * @short Clean up.
@@ -41,7 +41,7 @@ void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned 
  *
  * @return 0 if successful, -1 if an error occurred
  */
-int destroy(void **context);
+int destroy_connection(void **context);
 
 /**
  * @short Function sends given status data to module server using given context and receives command.

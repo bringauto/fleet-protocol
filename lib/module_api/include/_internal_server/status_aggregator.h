@@ -13,7 +13,7 @@
  *
  * @return 0 if initialization was successful, -1 if an error occurred
  */
-int init();
+int init_status_aggregator();
 
 /**
  * @short Clean up.
@@ -23,7 +23,7 @@ int init();
  *
  * @return 0 if successful, -1 if an error occurred
  */
-int destroy(); ///module specific
+int destroy_status_aggregator(); ///module specific
 
 /**
  * @short Clear states and messages for all devices.
