@@ -23,11 +23,12 @@ enum mc_error_codes {
  * @param port port of module server
  * @param device_name null terminated name of device
  * @param device_type integer specifying module specific device type, device type is defined in specific module header
+ * @param device_role null terminated role of device
  * @param device_priority integer specifying priority of device, smaller number equals higher priority (0 is highest)
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
  */
-void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, unsigned device_priority);
+void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, char *device_role, unsigned device_priority);
 
 /**
  * @short Clean up.
