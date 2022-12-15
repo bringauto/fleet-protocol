@@ -2,6 +2,7 @@
 
 #include <modules/ExampleModule.pb.h>
 #include "ProtocolMaintainer.hpp"
+#include "ModuleMaintainer.hpp"
 
 int main(int argc, char **argv){
     /*auto connect = ProtobufHelper::createConnect("01ad25e", "BringAuto", "TPCi", {"autonomy", "green_button", "red_button", "watchdog", "system_logger"});
@@ -18,6 +19,7 @@ int main(int argc, char **argv){
 
 	// Funkce rozdelit do trid ModuleMaintainer a ProtocolMaintainer podle toho, kdo jakou funkci potrebuje / dela
 
-	auto connectMessage = ProtocolMaintainer::createDeviceConnectMessage("leftBlinker", ExampleModule::Device_DeviceType_BLINKER, 0);
+	auto connectMessage = ProtocolMaintainer::createDeviceConnectMessage(
+			"leftBlinker", ModuleMaintainer::BLINKER, "blinkerA1", 0);
 	ProtocolMaintainer::parseDeviceConnectMessage(connectMessage);
 }

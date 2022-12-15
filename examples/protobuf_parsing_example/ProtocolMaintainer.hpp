@@ -6,7 +6,9 @@
 
 class ProtocolMaintainer {
 public:
-	static InternalProtocol::DeviceConnect createDeviceConnectMessage(std::string device_name, uint32_t device_type, uint32_t priority);
+	static InternalProtocol::DeviceConnect
+	createDeviceConnectMessage(std::string device_role, uint32_t device_type, std::string device_name,
+							   uint32_t priority);
 
 	static void parseDeviceConnectMessage(InternalProtocol::DeviceConnect deviceConnectMessage);
 
@@ -26,6 +28,6 @@ public:
 
 private:
 	/// Module enum. It is constant for every device / module
-	static constexpr ExampleModule::Device_Module module_ = ExampleModule::Device_Module_EXAMPLE_MODULE;
+	static constexpr InternalProtocol::Device_Module module_ = InternalProtocol::Device_Module_EXAMPLE_MODULE;
 	std::string sessionId {"8p2HPtE9"}; 		/// session ID should be randomly generated and prepended with robot ID
 };
