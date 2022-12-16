@@ -54,7 +54,7 @@ InternalProtocol::DeviceStatus
 ProtocolMaintainer::createExampleModuleStatus(InternalProtocol::Device *device, std::string statusData) {
 	InternalProtocol::DeviceStatus deviceStatus ;
 
-	deviceStatus.mutable_device() //TODO zjistit jak funguje
+	deviceStatus.mutable_device(); //TODO zjistit jak funguje
 	deviceStatus.set_statusdata(statusData);
 
 	deviceStatus.release_device();
