@@ -1,16 +1,17 @@
 /**
- * Detailed description can be found at Module protocol
+ * Detailed description can be found at Message structure
  * document located at our Google Disk
- * TODO
+ * https://docs.google.com/document/d/1ts1DDmu5vxEagHPvB-IHTW-5ts06XoZTdIjUIOGylGo/
  *
  */
 
 syntax = "proto3";
 
 /*
- * Module protocol contains messages for module protocol control, specific module status, command and error messages can be found in modules folder
+ * Internal protocol contains messages for module control.
+ * Specific module status, command and error messages can be found in modules folder
  */
-package ModuleProtocol;
+package InternalProtocol;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
@@ -19,36 +20,13 @@ option csharp_namespace = "Google.Protobuf.ba_proto";
  * Device connect message is used for establishing connection from module client to module server
  * send as first message from module client to module server
  */
-message deviceConnect{
-  /**
-    * enum containing all known modules, can be appended with new modules without loosing backward compatibility
+message DeviceConnect{
+  Device device = 1;
+
+  /*
+   * Priority of the device. Max priority = 0
    */
-  enum Module{
-    /**
-      * Device is part of autonomy module
-     */
-   AUTONOMY_MODULE = 0;
-    /**
-      * Device is part of action module
-     */
-   ACTION_MODULE = 1;
-  }
-  /**
-   * Which module have to be used for this device
-   */
-  Module module = 1;
-  /**
-   * Module specific device type, device should be supported by chosen module
-   */
-  int32 deviceType = 2;
-  /**
-   * Unique device name
-   */
-  string deviceName = 3;
-  /**
-   * Priority of device
-   */
-  int32 priority = 4;
+  uint32 priority = 2;
 }
 
 /**
@@ -56,7 +34,7 @@ message deviceConnect{
  * Device connect response message is used for establishing connection from module client to module server
  * send as response to deviceConnect message from module server to module client
  */
-message deviceConnectResponse{
+message DeviceConnectResponse{
   /**
    * Indicates if connection was successful or which error occurred
    */
@@ -77,6 +55,68 @@ message deviceConnectResponse{
      * Module loaded by module server does not recognize given device type
      */
     DEVICE_NOT_SUPPORTED = 3;
+    /**
+     * Device of the same deviceType with higher priority is already connected
+     */
+    HIGHER_PRIORITY_ALREADY_CONNECTED = 4;
   }
   ResponseType responseType = 1;
+}
+
+message DeviceStatus{
+  Device device = 1;
+
+  bytes statusData = 2;
+}
+
+/*
+ * binary command data
+ */
+message DeviceCommand{
+  bytes commandData = 1;
+}
+
+/*
+ * Identification of a device. Only devices with unique module-deviceType-dataProvider combination can be connected.
+ */
+message Device{
+  /*
+   * Enum for specification to which module the messages should be forwarded by internal server.
+   * Must mirror the enum number in InternalProtocol.proto
+   * RESERVED_MODULE is default module taking control of unspecified messages.
+   */
+  enum Module{
+    /**
+     * This is reserved place for a control module, which is default for devices that didn't set correct module
+     * It may serve for messages that are not aggregated. TODO will be implemented
+     */
+    RESERVED_MODULE = 0;
+    // Sending missions with the information about the route and stops to the autonomy
+    MISSION_MODULE = 1;
+    // Control of car accessories
+    CAR_ACCESSORY_MODULE = 2;
+    reserved 3 to 998;
+    EXAMPLE_MODULE = 999;
+  }
+
+  /**
+   * Serves for internal client to forward message to the correct module.
+   */
+  Module module = 1;
+
+  /*
+   * Device type is module implementation dependent, it is recommended to implement as enumeration.
+   */
+  uint32 deviceType = 2;
+
+  /**
+   * name of role that the device provides, serves for distinction of devices
+   * important in device connection, where only single device of a deviceRole type can be connected to a module.
+   */
+  string deviceRole = 3;
+
+  /*
+   * device name
+   */
+  string deviceName = 4;
 }

@@ -1,24 +1,18 @@
-/**
- * Detailed description can be found at Autonomy module
- * document located at our Google Disk
- * TODO
- *
- */
-
 syntax = "proto3";
 
 /*
- * Autonomy module contains support only for one device - autonomy
+ * Mission module contains support for controlling the missions of a CAR.
+ * Missions are a set of destination points, that the CAR should drive to and stop there.
  */
-package AutonomyModule;
+package MissionModule;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
-/**
- * Autonomy status information.
- * Autonomy module specific status
+
+/*
+ * Message sent by the autonomy, containing its telemetry information, state and next destination
  */
-message AutonomyStatus {
+message AutonomyStatus{
 
   message Telemetry {
 
@@ -44,22 +38,8 @@ message AutonomyStatus {
     Position position = 3;
   }
 
-  message Position {
-    /**
-     * WGS84 latitude,
-     */
-    double latitude = 1;
-    /**
-    * WGS84 latitude,
-    */
-    double longitude = 2;
-    /**
-    * WGS84 latitude,
-    */
-    double altitude = 3;
-  }
   /**
-   * WGS84 latitude,
+   * Current state of the Car.
    */
   enum State {
     /**
@@ -92,36 +72,32 @@ message AutonomyStatus {
      */
     ERROR = 4;
   }
-  /**
-   * Telemetry
+  /*
+   * Information about the car position, speed and fuel level
    */
   Telemetry telemetry = 1;
 
   /**
-   * State of the Car.
-   * If not set Car is in the IDLE state!
-   * OPTIONAL
+   * Current state. If not set Car is in the IDLE state!
    */
   State state = 2;
 
   /**
    * Name of the stop as specified in CarCommand::stops.
-   * OPTIONAL
+   * will not be defined if there is no station in the mission
    */
-  Stop stop = 3;
+  optional Station nextStop = 3;
 }
 
-/**
- * Autonomy commands received from BringAuto cloud
- * Autonomy module specific command
+/*
+ * Command for the autonomy, containing Action and list of destinations where the autonomy should go.
  */
-message AutonomyCommand {
-
+message AutonomyCommand{
   /**
-   * Action which car must take.
-   * Received action has an immediate effect to the state of the car (CarStatus::state)
-   * @see AutonomyStatus::State
-   */
+ * Action which the autonomy must take.
+ * Received action has an immediate effect to the state of the car (CarStatus::state)
+ * @see MissionStatus::State
+ */
   enum Action {
     /**
      * No action performed. Used as a default value.
@@ -143,48 +119,63 @@ message AutonomyCommand {
   }
 
   /**
-   * List of stops where the car shall go. Car goes from one stop to another by the order specified by the list.
-   * OPTIONAL
+   * List of stops where the car shall go. Car goes from one stop to another following the order specified by the list.
+   * May be empty
    */
-  repeated Stop stops = 1;
+  repeated Station stops = 1;
 
-  Action action = 2;
+  /**
+   * Name of the route, that the autonomy will follow
+   */
+  string route = 2;
+
+  Action action = 3;
 }
 
-/**
- * Autonomy error for reporting lost information during outage of connection between car and cloud
- * Autonomy module specific error
+/*
+ * Autonomy error message containing list of Stops that the autonomy has finished.
+ * The server marks the stops of a mission as finished based on this list.
  */
-message AutonomyError {
-  /**
-   * Type of error
-   */
-  enum Type {
-    /**
-     * No information was lost during connection outage
-     */
-    OK = 0;
-    /**
-     * Information lost during outage, error data are set
-     */
-    SERVER_ERROR = 1;
-  }
-  Type type = 1;
-
+message AutonomyError{
   /**
    * All stops, which were finished, when the server has been down
    */
-  repeated Stop stops = 2;
+  repeated Station finishedStops = 1;
 }
+
+// ------------------------------------------------------ //
 
 /**
  * Stop on the route.
  */
-message Stop {
+message Station {
+  /**
+   * The name of the station.
+   */
+  string name = 1;
 
   /**
-   * The name of the stop where to go.
+   * Position of the station
    */
-  string to = 1;
+  Position position = 2;
+}
 
+/*
+ * GPS position
+ */
+message Position {
+  /**
+   * WGS84 latitude,
+   */
+  double latitude = 1;
+
+  /**
+   * WGS84 longitude
+   */
+  double longitude = 2;
+
+  /**
+   * altitude in [m]
+   */
+  double altitude = 3;
 }

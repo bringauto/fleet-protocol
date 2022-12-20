@@ -1,17 +1,16 @@
 /**
- * Detailed description can be found at Fleet protocol
+ * Detailed description can be found at Message structure
  * document located at our Google Disk
- * TODO
+ * https://docs.google.com/document/d/1ts1DDmu5vxEagHPvB-IHTW-5ts06XoZTdIjUIOGylGo/
  *
  */
 syntax = "proto3";
 /*
- * FleetProtocol package contains fleet protocol messages
+ * ExternalProtocol package contains external protocol messages. Those are the messages between the robot and cloud.
  */
-package FleetProtocol;
+package ExternalProtocol;
 
-import "modules/AutonomyModule.proto";
-import "modules/ActionModule.proto";
+import "InternalProtocol.proto";
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
@@ -64,7 +63,7 @@ message Connect {
     /*
      * Unique names of all connected devices
      */
-    repeated string deviceNames = 4;
+    repeated InternalProtocol.Device devices = 4;
 }
 
 /**
@@ -104,20 +103,13 @@ message Status {
      */
     uint32 messageCounter = 3;
     /**
-     * Module specific status message
+     * Device specific status message, containing device information and status data
      */
-    oneof StatusType {
-    	AutonomyModule.AutonomyStatus autonomyStatus = 4;
-    	ActionModule.ActionStatus actionStatus = 6;
-    }
-
+    InternalProtocol.DeviceStatus deviceStatus = 4;
     /**
-     * Module specific error message
+     * Device specific error message
      */
-    oneof ErrorType {
-        AutonomyModule.AutonomyError autonomyError = 5;
-        ActionModule.ActionError actionError = 7;
-    }
+    optional bytes errorMessage = 5;
 }
 
 /**
@@ -140,10 +132,16 @@ message StatusResponse {
 message Command {
     string sessionId = 1;
     uint32 messageCounter = 2;
-    oneof CommandType {
-    	AutonomyModule.AutonomyCommand autonomyCommand = 3;
-    	ActionModule.ActionCommand actionCommand = 4;
-    }
+
+    /**
+     * command destination device
+     */
+    InternalProtocol.Device device = 3;
+
+    /**
+     * command binary data
+     */
+    InternalProtocol.DeviceCommand deviceCommand = 4;
 }
 
 /**
