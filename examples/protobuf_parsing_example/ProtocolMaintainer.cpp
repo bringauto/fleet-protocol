@@ -1,13 +1,13 @@
 #include "ProtocolMaintainer.hpp"
 
-InternalProtocol::Device *
+InternalProtocol::Device
 ProtocolMaintainer::createDevice(std::string device_role, uint32_t device_type, std::string device_name) {
-	auto deviceMessage = new InternalProtocol::Device();
+	InternalProtocol::Device deviceMessage;
 
-	deviceMessage->set_module(module_);
-	deviceMessage->set_devicerole(device_role);
-	deviceMessage->set_devicename(device_name);
-	deviceMessage->set_devicetype(device_type);
+	deviceMessage.set_module(module_);
+	deviceMessage.set_devicerole(device_role);
+	deviceMessage.set_devicename(device_name);
+	deviceMessage.set_devicetype(device_type);
 
 	//deviceMessage->release_devicename();
 	//deviceMessage->release_devicerole();
@@ -15,10 +15,13 @@ ProtocolMaintainer::createDevice(std::string device_role, uint32_t device_type, 
 }
 
 InternalProtocol::DeviceConnect
-ProtocolMaintainer::createDeviceConnectMessage(InternalProtocol::Device *device, uint32_t priority) {
+ProtocolMaintainer::createDeviceConnectMessage(InternalProtocol::Device device, uint32_t priority) {
 	InternalProtocol::DeviceConnect deviceConnectMessage;
 
-	deviceConnectMessage.unsafe_arena_set_allocated_device(device);
+	//deviceConnectMessage.mutable_device() = device;
+
+	InternalProtocol::Device* tmpDev = deviceConnectMessage.mutable_device();
+	tmpDev->CopyFrom(device);
 	deviceConnectMessage.set_priority(priority);
 
 	//deviceConnectMessage.release_device(); /// release_* prevents protobuf from deleting the object, we need to use device more times, therefore we need to call release
@@ -51,13 +54,14 @@ void ProtocolMaintainer::parseDeviceConnectResponseMessage(InternalProtocol::Dev
 }
 
 InternalProtocol::DeviceStatus
-ProtocolMaintainer::createExampleModuleStatus(InternalProtocol::Device *device, std::string statusData) {
-	InternalProtocol::DeviceStatus deviceStatus ;
+ProtocolMaintainer::createExampleModuleStatus(InternalProtocol::Device device, std::string statusData) {
+	InternalProtocol::DeviceStatus deviceStatus;
 
-	deviceStatus.mutable_device(); //TODO zjistit jak funguje
+	InternalProtocol::Device* tmpDev = deviceStatus.mutable_device();
+	tmpDev->CopyFrom(device);
+
 	deviceStatus.set_statusdata(statusData);
 
-	deviceStatus.release_device();
 	return deviceStatus;
 }
 

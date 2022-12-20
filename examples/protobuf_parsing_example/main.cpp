@@ -37,5 +37,4 @@ int main(int argc, char **argv) {
 	auto deviceStatus = ProtocolMaintainer::createExampleModuleStatus(device, bytes);
 
 	ModuleMaintainer::parseDeviceStatus(deviceStatus);
-	delete device;
 }
