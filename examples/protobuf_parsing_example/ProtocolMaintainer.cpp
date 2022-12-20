@@ -15,7 +15,7 @@ ProtocolMaintainer::createDevice(std::string device_role, uint32_t device_type, 
 }
 
 InternalProtocol::DeviceConnect
-ProtocolMaintainer::createDeviceConnectMessage(InternalProtocol::Device device, uint32_t priority) {
+ProtocolMaintainer::createDeviceConnectMessage(const InternalProtocol::Device& device, uint32_t priority) {
 	InternalProtocol::DeviceConnect deviceConnectMessage;
 
 	//deviceConnectMessage.mutable_device() = device;
@@ -29,7 +29,7 @@ ProtocolMaintainer::createDeviceConnectMessage(InternalProtocol::Device device, 
 	return deviceConnectMessage;
 }
 
-void ProtocolMaintainer::parseDeviceConnectMessage(InternalProtocol::DeviceConnect deviceConnectMessage) {
+void ProtocolMaintainer::parseDeviceConnectMessage(const InternalProtocol::DeviceConnect& deviceConnectMessage) {
 	const InternalProtocol::Device &deviceMessage = deviceConnectMessage.device();
 
 	if(deviceMessage.module())
@@ -49,12 +49,12 @@ InternalProtocol::DeviceConnectResponse ProtocolMaintainer::createDeviceConnectR
 	return deviceConnectResponse;
 }
 
-void ProtocolMaintainer::parseDeviceConnectResponseMessage(InternalProtocol::DeviceConnectResponse deviceConnectResponse) {
+void ProtocolMaintainer::parseDeviceConnectResponseMessage(const InternalProtocol::DeviceConnectResponse& deviceConnectResponse) {
 	std::cout << "Got connect response message with type: " << deviceConnectResponse.responsetype() << std::endl;
 }
 
 InternalProtocol::DeviceStatus
-ProtocolMaintainer::createExampleModuleStatus(InternalProtocol::Device device, std::string statusData) {
+ProtocolMaintainer::createExampleModuleStatus(const InternalProtocol::Device& device, std::string statusData) {
 	InternalProtocol::DeviceStatus deviceStatus;
 
 	InternalProtocol::Device* tmpDev = deviceStatus.mutable_device();
