@@ -46,6 +46,6 @@ public:
 
 private:
 	/// Module enum. It is constant for every device / module
-	static constexpr InternalProtocol::Device_Module module = InternalProtocol::Device_Module_EXAMPLE_MODULE;
+	static constexpr InternalProtocol::Device_Module module_ = InternalProtocol::Device_Module_EXAMPLE_MODULE;
 
 };
