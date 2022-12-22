@@ -7,34 +7,40 @@
 
 
 int main(int argc, char **argv) {
-	/*auto connect = ProtobufHelper::createConnect("01ad25e", "BringAuto", "TPCi", {"autonomy", "green_button", "red_button", "watchdog", "system_logger"});
-	ProtobufHelper::printExternalClientMessage(connect.SerializeAsString());
+	// creating device
+	auto device = ProtocolMaintainer::createDevice("leftBlinker", ModuleMaintainer::BLINKER, "blinkerA1"); // Internal Client
 
-	auto autonomyStatus = ProtobufHelper::createAutonomyStatus("01ad25e", 15.6,99.9,69.4875,63.5445, 1584.54, AutonomyModule::AutonomyStatus_State_DRIVE, "Zastavka 1");
-	ProtobufHelper::printExternalClientMessage(autonomyStatus.SerializeAsString());
+	// Connection //
 
-	auto watchdogCommand = ProtobufHelper::createWatchdogCommand("01ad25e", ActionModule::Device_DeviceType_WATCHDOG, "watchdog", ActionModule::WatchdogCommand_Command_RESET);
-	ProtobufHelper::printExternalServerMessage(watchdogCommand.SerializeAsString());
-	*/
-	// TODO udelat vuci Example module
-	// zabaleni clienta, rozbaleni internal serveru, zabaleni externim, rozbaleni externim
-
-	// Funkce rozdelit do trid ModuleMaintainer a ProtocolMaintainer podle toho, kdo jakou funkci potrebuje / dela
-
-
-	auto device = ProtocolMaintainer::createDevice("leftBlinker", ModuleMaintainer::BLINKER, "blinkerA1");
-	auto connectMessage = ProtocolMaintainer::createDeviceConnectMessage(device, 0);
-	ProtocolMaintainer::parseDeviceConnectMessage(connectMessage);
+	auto connectMessage = ProtocolMaintainer::createDeviceConnectMessage(device, 1); // Internal Client
+	ProtocolMaintainer::parseDeviceConnectMessage(connectMessage); // Internal Server
 
 	auto deviceConnectResponse = ProtocolMaintainer::createDeviceConnectResponseMessage(
-			InternalProtocol::DeviceConnectResponse_ResponseType_OK);
-	ProtocolMaintainer::parseDeviceConnectResponseMessage(deviceConnectResponse);
+			InternalProtocol::DeviceConnectResponse_ResponseType_OK); // Internal Server
+	ProtocolMaintainer::parseDeviceConnectResponseMessage(deviceConnectResponse); // Internal Client
+
+	// Statuses //
+
+	auto blinkerStatus = ModuleMaintainer::createBlinkerStatus(true); // Device
+
+	std::string bytes = blinkerStatus.SerializeAsString();	// Message must be serialized as string, so it can be put into bytes field
+	auto deviceStatus = ProtocolMaintainer::createDeviceStatus(device, bytes); // Internal Client
+
+	auto status = ProtocolMaintainer::createExternalClientStatus(deviceStatus); // External Client
+
+	auto deviceStatusParsed = ProtocolMaintainer::parseStatus(status); // internal server / external server
+	ModuleMaintainer::parseDeviceStatus(deviceStatusParsed); // device / cloud application
 
 
-	auto blinkerStatus = ModuleMaintainer::createBlinkerStatus(true);
+	// Commands //
 
-	std::string bytes = blinkerStatus.SerializeAsString();	/// Message must be serialized as string so it can be put into bytes field
-	auto deviceStatus = ProtocolMaintainer::createExampleModuleStatus(device, bytes);
+	auto blinkerCommand = ModuleMaintainer::createBlinkerCommand(ExampleModule::BlinkerCommand_Command_TURN_OFF); // Cloud application for controlling device
+	auto deviceCommand = ProtocolMaintainer::createDeviceCommand(blinkerCommand.SerializeAsString()); // External server / Internal Client
 
-	ModuleMaintainer::parseDeviceStatus(deviceStatus);
+	auto command = ProtocolMaintainer::createExternalServerCommand(deviceCommand, device); // External Server
+
+	auto commandData = ProtocolMaintainer::parseCommand(command); // parse all parts of the command, External Client
+	ModuleMaintainer::parseBlinkerCommand(commandData); // called based on deviceType in the Command, the Command sent to Device doesn't have device identification
+
+
 }

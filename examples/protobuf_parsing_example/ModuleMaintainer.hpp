@@ -4,6 +4,9 @@
 #include <InternalProtocol.pb.h>
 #include <ExternalProtocol.pb.h>
 
+/**
+ * @brief This is a class working on ExampleModule. Serves for helping a customer use protobuf
+ */
 class ModuleMaintainer {
 public:
 	enum {
@@ -11,15 +14,32 @@ public:
 		LIGHTS = 1
 	};
 
+	/**
+	 * @brief accept data and put them in protobuf message structure.
+	 * @param isFlashing
+	 * @return
+	 */
 	static ExampleModule::BlinkerStatus createBlinkerStatus(bool isFlashing);
 	static ExampleModule::LightsStatus createLightsStatus(bool isOn);
 
+	/**
+	 * @brief Parse, deserialize and print DeviceStatus
+	 * @param deviceStatus
+	 */
 	static void parseDeviceStatus(InternalProtocol::DeviceStatus deviceStatus);
 
-	static void createBlinkerCommand();
+	/**
+	 * @brief Create command for a concrete device
+	 * @param command enum value
+	 * @return BlinkerCommand
+	 */
+	static ExampleModule::BlinkerCommand createBlinkerCommand(ExampleModule::BlinkerCommand::Command command);
 
-	void parseBlinkerCommand();
-	void parseLightsCommand();
+	/**
+	 * @brief Parse and print command for a concrete device
+	 * @param commandData binary data that are deserialized
+	 */
+	static void parseBlinkerCommand(const std::string& commandData);
 
 private:
 	/// Module enum. It is constant for every device / module
