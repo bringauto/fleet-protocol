@@ -63,7 +63,7 @@ message Connect {
     /*
      * Unique names of all connected devices
      */
-    repeated string deviceNames = 4;
+    repeated InternalProtocol.Device devices = 4;
 }
 
 /**
