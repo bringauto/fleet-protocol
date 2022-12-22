@@ -17,6 +17,5 @@ TARGET_INCLUDE_DIRECTORIES(parsing_example_lib PUBLIC "include/")
 TARGET_LINK_LIBRARIES(parsing_example_lib PUBLIC protobuf_lib)
 
 
-
 ADD_EXECUTABLE(protobuf_parser main.cpp)
 TARGET_LINK_LIBRARIES(protobuf_parser parsing_example_lib)
