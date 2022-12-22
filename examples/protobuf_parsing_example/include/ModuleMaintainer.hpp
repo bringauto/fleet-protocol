@@ -9,6 +9,9 @@
  */
 class ModuleMaintainer {
 public:
+	/**
+	 * @brief Enumeration for all available devices in a module
+	 */
 	enum {
 		BLINKER = 0,
 		LIGHTS = 1
