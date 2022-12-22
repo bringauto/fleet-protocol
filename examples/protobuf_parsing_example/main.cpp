@@ -5,7 +5,7 @@
 #include <ModuleMaintainer.hpp>
 
 void serializeConnectMessages(const InternalProtocol::Device& device) {
-	auto connectMessage = ProtocolMaintainer::createDeviceConnectMessage(device, 1); // Internal Client
+	auto connectMessage = ProtocolMaintainer::createDeviceConnectMessage(device, 1); // created in Internal Client
 	ProtocolMaintainer::parseDeviceConnectMessage(connectMessage); // Internal Server
 
 	auto deviceConnectResponse = ProtocolMaintainer::createDeviceConnectResponseMessage(
@@ -20,7 +20,7 @@ void serializeConnectMessages(const InternalProtocol::Device& device) {
 }
 
 void serializeStatusMessages(const InternalProtocol::Device& device) {
-	auto blinkerStatus = ModuleMaintainer::createBlinkerStatus(true); // Device
+	auto blinkerStatus = ModuleMaintainer::createBlinkerStatus(true); // created in Device
 
 	std::string bytes = blinkerStatus.SerializeAsString();	// Message must be serialized as string, so it can be put into bytes field
 	auto deviceStatus = ProtocolMaintainer::createDeviceStatus(device, bytes); // Internal Client
@@ -32,7 +32,7 @@ void serializeStatusMessages(const InternalProtocol::Device& device) {
 }
 
 void serializeCommandMessages(const InternalProtocol::Device& device) {
-	auto blinkerCommand = ModuleMaintainer::createBlinkerCommand(ExampleModule::BlinkerCommand_Command_TURN_OFF); // Cloud application for controlling device
+	auto blinkerCommand = ModuleMaintainer::createBlinkerCommand(ExampleModule::BlinkerCommand_Command_TURN_OFF); // created in Cloud application for controlling device
 	auto deviceCommand = ProtocolMaintainer::createDeviceCommand(blinkerCommand.SerializeAsString()); // External server / Internal Client
 
 	auto command = ProtocolMaintainer::createExternalServerCommand(deviceCommand, device); // External Server
