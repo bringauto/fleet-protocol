@@ -729,34 +729,28 @@ class Connect final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDeviceNamesFieldNumber = 4,
+    kDevicesFieldNumber = 4,
     kSessionIdFieldNumber = 1,
     kCompanyFieldNumber = 2,
     kVehicleNameFieldNumber = 3,
   };
-  // repeated string deviceNames = 4;
-  int devicenames_size() const;
+  // repeated .InternalProtocol.Device devices = 4;
+  int devices_size() const;
   private:
-  int _internal_devicenames_size() const;
+  int _internal_devices_size() const;
   public:
-  void clear_devicenames();
-  const std::string& devicenames(int index) const;
-  std::string* mutable_devicenames(int index);
-  void set_devicenames(int index, const std::string& value);
-  void set_devicenames(int index, std::string&& value);
-  void set_devicenames(int index, const char* value);
-  void set_devicenames(int index, const char* value, size_t size);
-  std::string* add_devicenames();
-  void add_devicenames(const std::string& value);
-  void add_devicenames(std::string&& value);
-  void add_devicenames(const char* value);
-  void add_devicenames(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& devicenames() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_devicenames();
+  void clear_devices();
+  ::InternalProtocol::Device* mutable_devices(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::InternalProtocol::Device >*
+      mutable_devices();
   private:
-  const std::string& _internal_devicenames(int index) const;
-  std::string* _internal_add_devicenames();
+  const ::InternalProtocol::Device& _internal_devices(int index) const;
+  ::InternalProtocol::Device* _internal_add_devices();
   public:
+  const ::InternalProtocol::Device& devices(int index) const;
+  ::InternalProtocol::Device* add_devices();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::InternalProtocol::Device >&
+      devices() const;
 
   // string sessionId = 1;
   void clear_sessionid();
@@ -807,7 +801,7 @@ class Connect final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> devicenames_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::InternalProtocol::Device > devices_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sessionid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr company_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vehiclename_;
@@ -2444,79 +2438,41 @@ inline void Connect::set_allocated_vehiclename(std::string* vehiclename) {
   // @@protoc_insertion_point(field_set_allocated:ExternalProtocol.Connect.vehicleName)
 }
 
-// repeated string deviceNames = 4;
-inline int Connect::_internal_devicenames_size() const {
-  return devicenames_.size();
+// repeated .InternalProtocol.Device devices = 4;
+inline int Connect::_internal_devices_size() const {
+  return devices_.size();
 }
-inline int Connect::devicenames_size() const {
-  return _internal_devicenames_size();
+inline int Connect::devices_size() const {
+  return _internal_devices_size();
 }
-inline void Connect::clear_devicenames() {
-  devicenames_.Clear();
+inline ::InternalProtocol::Device* Connect::mutable_devices(int index) {
+  // @@protoc_insertion_point(field_mutable:ExternalProtocol.Connect.devices)
+  return devices_.Mutable(index);
 }
-inline std::string* Connect::add_devicenames() {
-  std::string* _s = _internal_add_devicenames();
-  // @@protoc_insertion_point(field_add_mutable:ExternalProtocol.Connect.deviceNames)
-  return _s;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::InternalProtocol::Device >*
+Connect::mutable_devices() {
+  // @@protoc_insertion_point(field_mutable_list:ExternalProtocol.Connect.devices)
+  return &devices_;
 }
-inline const std::string& Connect::_internal_devicenames(int index) const {
-  return devicenames_.Get(index);
+inline const ::InternalProtocol::Device& Connect::_internal_devices(int index) const {
+  return devices_.Get(index);
 }
-inline const std::string& Connect::devicenames(int index) const {
-  // @@protoc_insertion_point(field_get:ExternalProtocol.Connect.deviceNames)
-  return _internal_devicenames(index);
+inline const ::InternalProtocol::Device& Connect::devices(int index) const {
+  // @@protoc_insertion_point(field_get:ExternalProtocol.Connect.devices)
+  return _internal_devices(index);
 }
-inline std::string* Connect::mutable_devicenames(int index) {
-  // @@protoc_insertion_point(field_mutable:ExternalProtocol.Connect.deviceNames)
-  return devicenames_.Mutable(index);
+inline ::InternalProtocol::Device* Connect::_internal_add_devices() {
+  return devices_.Add();
 }
-inline void Connect::set_devicenames(int index, const std::string& value) {
-  devicenames_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:ExternalProtocol.Connect.deviceNames)
+inline ::InternalProtocol::Device* Connect::add_devices() {
+  ::InternalProtocol::Device* _add = _internal_add_devices();
+  // @@protoc_insertion_point(field_add:ExternalProtocol.Connect.devices)
+  return _add;
 }
-inline void Connect::set_devicenames(int index, std::string&& value) {
-  devicenames_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:ExternalProtocol.Connect.deviceNames)
-}
-inline void Connect::set_devicenames(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  devicenames_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:ExternalProtocol.Connect.deviceNames)
-}
-inline void Connect::set_devicenames(int index, const char* value, size_t size) {
-  devicenames_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:ExternalProtocol.Connect.deviceNames)
-}
-inline std::string* Connect::_internal_add_devicenames() {
-  return devicenames_.Add();
-}
-inline void Connect::add_devicenames(const std::string& value) {
-  devicenames_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:ExternalProtocol.Connect.deviceNames)
-}
-inline void Connect::add_devicenames(std::string&& value) {
-  devicenames_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:ExternalProtocol.Connect.deviceNames)
-}
-inline void Connect::add_devicenames(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  devicenames_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:ExternalProtocol.Connect.deviceNames)
-}
-inline void Connect::add_devicenames(const char* value, size_t size) {
-  devicenames_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:ExternalProtocol.Connect.deviceNames)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-Connect::devicenames() const {
-  // @@protoc_insertion_point(field_list:ExternalProtocol.Connect.deviceNames)
-  return devicenames_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-Connect::mutable_devicenames() {
-  // @@protoc_insertion_point(field_mutable_list:ExternalProtocol.Connect.deviceNames)
-  return &devicenames_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::InternalProtocol::Device >&
+Connect::devices() const {
+  // @@protoc_insertion_point(field_list:ExternalProtocol.Connect.devices)
+  return devices_;
 }
 
 // -------------------------------------------------------------------

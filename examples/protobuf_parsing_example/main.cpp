@@ -19,6 +19,12 @@ int main(int argc, char **argv) {
 			InternalProtocol::DeviceConnectResponse_ResponseType_OK); // Internal Server
 	ProtocolMaintainer::parseDeviceConnectResponseMessage(deviceConnectResponse); // Internal Client
 
+	auto device2 = ProtocolMaintainer::createDevice("rightBlinker", ModuleMaintainer::BLINKER, "blinkerA1"); // Internal Client
+	std::vector<InternalProtocol::Device> devices = {device, device2};
+	auto externalConnect = ProtocolMaintainer::createConnectMessage("BringAuto", "Vehicle1", devices);
+
+	ProtocolMaintainer::parseExternalClientMessage(externalConnect);
+
 	// Statuses //
 
 	auto blinkerStatus = ModuleMaintainer::createBlinkerStatus(true); // Device
@@ -28,7 +34,7 @@ int main(int argc, char **argv) {
 
 	auto status = ProtocolMaintainer::createExternalClientStatus(deviceStatus); // External Client
 
-	auto deviceStatusParsed = ProtocolMaintainer::parseStatus(status); // internal server / external server
+	auto deviceStatusParsed = ProtocolMaintainer::parseExternalClientMessage(status); // internal server / external server
 	ModuleMaintainer::parseDeviceStatus(deviceStatusParsed); // device / cloud application
 
 
@@ -39,7 +45,7 @@ int main(int argc, char **argv) {
 
 	auto command = ProtocolMaintainer::createExternalServerCommand(deviceCommand, device); // External Server
 
-	auto commandData = ProtocolMaintainer::parseCommand(command); // parse all parts of the command, External Client
+	auto commandData = ProtocolMaintainer::parseExternalServerMessage(command); // parse all parts of the command, External Client
 	ModuleMaintainer::parseBlinkerCommand(commandData); // called based on deviceType in the Command, the Command sent to Device doesn't have device identification
 
 

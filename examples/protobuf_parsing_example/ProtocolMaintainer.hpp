@@ -30,6 +30,15 @@ public:
 	createDeviceConnectMessage(const InternalProtocol::Device& device, uint32_t priority);
 
 	/**
+	 * @brief Creates ExternalClient message containing Connect message
+	 * @param company
+	 * @param vehicleName
+	 * @param devices
+	 * @return ExternalClient containing Connect message
+	 */
+	static ExternalProtocol::ExternalClient createConnectMessage(std::string company, std::string vehicleName, const std::vector<InternalProtocol::Device>& devices);
+
+	/**
 	 * @brief Parse and print DeviceConnect message
 	 * @param deviceConnectMessage
 	 */
@@ -65,7 +74,7 @@ public:
 	 * @param externalClientMessage
 	 * @return DeviceStatus containing device identification and data
 	 */
-	static InternalProtocol::DeviceStatus parseStatus(const ExternalProtocol::ExternalClient& externalClientMessage);
+	static InternalProtocol::DeviceStatus parseExternalClientMessage(const ExternalProtocol::ExternalClient& externalClientMessage);
 
 	// Command
 
@@ -80,16 +89,16 @@ public:
 	 * @brief Creates ExternalServer message, containing Command
 	 * @param deviceCommand
 	 * @param device
-	 * @return
+	 * @return ExternalServer message, containing Command
 	 */
 	static ExternalProtocol::ExternalServer createExternalServerCommand(const InternalProtocol::DeviceCommand& deviceCommand, const InternalProtocol::Device& device);
 
 	/**
-	 * @brief Parse ExternalServer, only command parsing is implemented TODO??
+	 * @brief Parse ExternalServer message
 	 * @param externalServerMessage
-	 * @return
+	 * @return commandData (bytes) if command was received
 	 */
-	static std::string parseCommand(const ExternalProtocol::ExternalServer& externalServerMessage);
+	static std::string parseExternalServerMessage(const ExternalProtocol::ExternalServer& externalServerMessage);
 
 private:
 	/// Module enum. It is constant for every device / module

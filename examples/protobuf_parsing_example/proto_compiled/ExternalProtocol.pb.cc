@@ -43,7 +43,7 @@ struct ExternalClientDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExternalClientDefaultTypeInternal _ExternalClient_default_instance_;
 constexpr Connect::Connect(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : devicenames_()
+  : devices_()
   , sessionid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , company_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , vehiclename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -164,7 +164,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_ExternalProtocol_2eproto::offs
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, sessionid_),
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, company_),
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, vehiclename_),
-  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, devicenames_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, devices_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ConnectResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -247,39 +247,40 @@ const char descriptor_table_protodef_ExternalProtocol_2eproto[] PROTOBUF_SECTION
   "ol.ConnectH\000\022*\n\006status\030\002 \001(\0132\030.ExternalP"
   "rotocol.StatusH\000\022<\n\017commandResponse\030\003 \001("
   "\0132!.ExternalProtocol.CommandResponseH\000B\r"
-  "\n\013MessageType\"W\n\007Connect\022\021\n\tsessionId\030\001 "
+  "\n\013MessageType\"m\n\007Connect\022\021\n\tsessionId\030\001 "
   "\001(\t\022\017\n\007company\030\002 \001(\t\022\023\n\013vehicleName\030\003 \001("
-  "\t\022\023\n\013deviceNames\030\004 \003(\t\"~\n\017ConnectRespons"
-  "e\022\021\n\tsessionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.Ext"
-  "ernalProtocol.ConnectResponse.Type\"\"\n\004Ty"
-  "pe\022\006\n\002OK\020\000\022\022\n\016ALREADY_LOGGED\020\001\"\227\002\n\006Statu"
-  "s\022\021\n\tsessionId\030\001 \001(\t\0229\n\013deviceState\030\002 \001("
-  "\0162$.ExternalProtocol.Status.DeviceState\022"
-  "\026\n\016messageCounter\030\003 \001(\r\0224\n\014deviceStatus\030"
-  "\004 \001(\0132\036.InternalProtocol.DeviceStatus\022\031\n"
-  "\014errorMessage\030\005 \001(\014H\000\210\001\001\"E\n\013DeviceState\022"
-  "\016\n\nCONNECTING\020\000\022\013\n\007RUNNING\020\001\022\t\n\005ERROR\020\002\022"
-  "\016\n\nDISCONNECT\020\003B\017\n\r_errorMessage\"\200\001\n\016Sta"
-  "tusResponse\022\021\n\tsessionId\030\001 \001(\t\0223\n\004type\030\002"
-  " \001(\0162%.ExternalProtocol.StatusResponse.T"
-  "ype\022\026\n\016messageCounter\030\003 \001(\r\"\016\n\004Type\022\006\n\002O"
-  "K\020\000\"\226\001\n\007Command\022\021\n\tsessionId\030\001 \001(\t\022\026\n\016me"
-  "ssageCounter\030\002 \001(\r\022(\n\006device\030\003 \001(\0132\030.Int"
-  "ernalProtocol.Device\0226\n\rdeviceCommand\030\004 "
-  "\001(\0132\037.InternalProtocol.DeviceCommand\"\234\001\n"
-  "\017CommandResponse\022\021\n\tsessionId\030\001 \001(\t\0224\n\004t"
-  "ype\030\002 \001(\0162&.ExternalProtocol.CommandResp"
-  "onse.Type\022\026\n\016messageCounter\030\003 \001(\r\"(\n\004Typ"
-  "e\022\006\n\002OK\020\000\022\030\n\024DEVICE_NOT_CONNECTED\020\001B>Z!."
-  "./internal/pkg/ba_proto;ba_proto\252\002\030Googl"
-  "e.Protobuf.ba_protob\006proto3"
+  "\t\022)\n\007devices\030\004 \003(\0132\030.InternalProtocol.De"
+  "vice\"~\n\017ConnectResponse\022\021\n\tsessionId\030\001 \001"
+  "(\t\0224\n\004type\030\002 \001(\0162&.ExternalProtocol.Conn"
+  "ectResponse.Type\"\"\n\004Type\022\006\n\002OK\020\000\022\022\n\016ALRE"
+  "ADY_LOGGED\020\001\"\227\002\n\006Status\022\021\n\tsessionId\030\001 \001"
+  "(\t\0229\n\013deviceState\030\002 \001(\0162$.ExternalProtoc"
+  "ol.Status.DeviceState\022\026\n\016messageCounter\030"
+  "\003 \001(\r\0224\n\014deviceStatus\030\004 \001(\0132\036.InternalPr"
+  "otocol.DeviceStatus\022\031\n\014errorMessage\030\005 \001("
+  "\014H\000\210\001\001\"E\n\013DeviceState\022\016\n\nCONNECTING\020\000\022\013\n"
+  "\007RUNNING\020\001\022\t\n\005ERROR\020\002\022\016\n\nDISCONNECT\020\003B\017\n"
+  "\r_errorMessage\"\200\001\n\016StatusResponse\022\021\n\tses"
+  "sionId\030\001 \001(\t\0223\n\004type\030\002 \001(\0162%.ExternalPro"
+  "tocol.StatusResponse.Type\022\026\n\016messageCoun"
+  "ter\030\003 \001(\r\"\016\n\004Type\022\006\n\002OK\020\000\"\226\001\n\007Command\022\021\n"
+  "\tsessionId\030\001 \001(\t\022\026\n\016messageCounter\030\002 \001(\r"
+  "\022(\n\006device\030\003 \001(\0132\030.InternalProtocol.Devi"
+  "ce\0226\n\rdeviceCommand\030\004 \001(\0132\037.InternalProt"
+  "ocol.DeviceCommand\"\234\001\n\017CommandResponse\022\021"
+  "\n\tsessionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.Extern"
+  "alProtocol.CommandResponse.Type\022\026\n\016messa"
+  "geCounter\030\003 \001(\r\"(\n\004Type\022\006\n\002OK\020\000\022\030\n\024DEVIC"
+  "E_NOT_CONNECTED\020\001B>Z!../internal/pkg/ba_"
+  "proto;ba_proto\252\002\030Google.Protobuf.ba_prot"
+  "ob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ExternalProtocol_2eproto_deps[1] = {
   &::descriptor_table_InternalProtocol_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ExternalProtocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ExternalProtocol_2eproto = {
-  false, false, 1467, descriptor_table_protodef_ExternalProtocol_2eproto, "ExternalProtocol.proto", 
+  false, false, 1489, descriptor_table_protodef_ExternalProtocol_2eproto, "ExternalProtocol.proto", 
   &descriptor_table_ExternalProtocol_2eproto_once, descriptor_table_ExternalProtocol_2eproto_deps, 1, 8,
   schemas, file_default_instances, TableStruct_ExternalProtocol_2eproto::offsets,
   file_level_metadata_ExternalProtocol_2eproto, file_level_enum_descriptors_ExternalProtocol_2eproto, file_level_service_descriptors_ExternalProtocol_2eproto,
@@ -1104,10 +1105,13 @@ class Connect::_Internal {
  public:
 };
 
+void Connect::clear_devices() {
+  devices_.Clear();
+}
 Connect::Connect(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  devicenames_(arena) {
+  devices_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -1116,7 +1120,7 @@ Connect::Connect(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 Connect::Connect(const Connect& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      devicenames_(from.devicenames_) {
+      devices_(from.devices_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   sessionid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_sessionid().empty()) {
@@ -1172,7 +1176,7 @@ void Connect::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  devicenames_.Clear();
+  devices_.Clear();
   sessionid_.ClearToEmpty();
   company_.ClearToEmpty();
   vehiclename_.ClearToEmpty();
@@ -1212,15 +1216,13 @@ const char* Connect::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated string deviceNames = 4;
+      // repeated .InternalProtocol.Device devices = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
-            auto str = _internal_add_devicenames();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ExternalProtocol.Connect.deviceNames"));
+            ptr = ctx->ParseMessage(_internal_add_devices(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
@@ -1285,14 +1287,12 @@ failure:
         3, this->_internal_vehiclename(), target);
   }
 
-  // repeated string deviceNames = 4;
-  for (int i = 0, n = this->_internal_devicenames_size(); i < n; i++) {
-    const auto& s = this->_internal_devicenames(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ExternalProtocol.Connect.deviceNames");
-    target = stream->WriteString(4, s, target);
+  // repeated .InternalProtocol.Device devices = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_devices_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, this->_internal_devices(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1311,12 +1311,11 @@ size_t Connect::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string deviceNames = 4;
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(devicenames_.size());
-  for (int i = 0, n = devicenames_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      devicenames_.Get(i));
+  // repeated .InternalProtocol.Device devices = 4;
+  total_size += 1UL * this->_internal_devices_size();
+  for (const auto& msg : this->devices_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // string sessionId = 1;
@@ -1368,7 +1367,7 @@ void Connect::MergeFrom(const Connect& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  devicenames_.MergeFrom(from.devicenames_);
+  devices_.MergeFrom(from.devices_);
   if (!from._internal_sessionid().empty()) {
     _internal_set_sessionid(from._internal_sessionid());
   }
@@ -1395,7 +1394,7 @@ bool Connect::IsInitialized() const {
 void Connect::InternalSwap(Connect* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  devicenames_.InternalSwap(&other->devicenames_);
+  devices_.InternalSwap(&other->devices_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &sessionid_, GetArenaForAllocation(),
