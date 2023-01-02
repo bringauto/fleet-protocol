@@ -13,7 +13,7 @@
  *
  * @return 0 if initialization was successful, -1 if an error occurred
  */
-int init();
+int init_error_aggregator();
 
 /**
  * @short Clean up.
@@ -22,7 +22,7 @@ int init();
  *
  * @return 0 if successful, -1 if an error occurred
  */
-int destroy();
+int destroy_error_aggregator();
 
 /**
  * @short Add protobuf status message to an error aggregator, aggregator will aggregate each unique devices messages of type device_type separately.

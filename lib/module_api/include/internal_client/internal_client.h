@@ -23,10 +23,12 @@ enum mc_error_codes {
  * @param port port of module server
  * @param device_name null terminated name of device
  * @param device_type integer specifying module specific device type, device type is defined in specific module header
+ * @param device_role null terminated role of device
+ * @param device_priority integer specifying priority of device, smaller number equals higher priority (0 is highest)
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
  */
-void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type);
+void *init_connection(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, char *device_role, unsigned device_priority);
 
 /**
  * @short Clean up.
@@ -39,7 +41,7 @@ void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned 
  *
  * @return 0 if successful, -1 if an error occurred
  */
-int destroy(void **context);
+int destroy_connection(void **context);
 
 /**
  * @short Function sends given status data to module server using given context and receives command.
@@ -68,7 +70,7 @@ int send_status(void *context, void *device_status, unsigned status_size, unsign
  * otherwise 0 is returned.
  *
  * @param context context of module client created by init() function
- * @param device_command_buffer pointer to an user allocated buffer, device command structure will be copied to it , structures are defined in device specific header file
+ * @param device_command_buffer pointer to an user allocated buffer, device command structure will be copied to it, structures are defined in device specific header file
  * @param buffer_size size of user allocated buffer
  *
  * @return size of device_command, 0 if no message was yet received (send_status was not called yet), -1 if context is incorrect, -2 if buffer is too small, -3 for other error

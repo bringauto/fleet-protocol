@@ -1,12 +1,12 @@
-#include <module_client/module_client.h>
+#include <internal_client/internal_client.h>
 
 #include <stdio.h>
 
-void *init(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type){
+void *init_connection(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, char *device_role, unsigned device_priority){
     return NULL;
 }
 
-int destroy(void **context){
+int destroy_connection(void **context){
     return -1;
 }
 
