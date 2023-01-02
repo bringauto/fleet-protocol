@@ -1,0 +1,54 @@
+/**
+ * Detailed description can be found at Message structure
+ * document located at our Google Disk
+ */
+
+/**
+ * This example module contains devices Blinker and Lights.
+ * For an example of the blinker behavior, there would be two distinct devices of type BLINKER, but one would be named
+ * RightBlinker and would get command TURN_ON when the blinker lever would be pushed up.
+ * The second one would be named LeftBlinker and would get the command TURN_ON when the lever would be pushed down.
+ * Both would get TURN_OFF in the lever's neutral position.
+ *
+ * The LIGHTS device has only a button, which switches them on and off.
+ */
+syntax = "proto3";
+
+package ExampleModule;
+option go_package = "../internal/pkg/ba_proto;ba_proto";
+option csharp_namespace = "Google.Protobuf.ba_proto";
+
+
+message BlinkerStatus{
+	bool isFlashing = 1;
+}
+
+message LightsStatus{
+	bool isOn = 1;
+}
+
+//////////////////////////////////////////////////
+
+message BlinkerCommand{
+	enum Command{
+		TURN_ON = 0;
+		TURN_OFF = 1;
+	}
+	Command command = 1;
+}
+
+message LightsCommand{
+	enum Command{
+		PRESS = 0;
+	}
+	Command command = 1;
+}
+//////////////////////////////////////////////////
+
+message BlinkerError{
+	string errorMessage = 1;
+}
+
+message LightsError{
+	string errorMessage = 1;
+}
