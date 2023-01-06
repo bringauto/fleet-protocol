@@ -21,7 +21,7 @@ option csharp_namespace = "Google.Protobuf.ba_proto";
  */
 message ExternalServer {
     oneof MessageType {
-        ConnectResponse connectReponse = 1;
+        ConnectResponse connectResponse = 1;
         StatusResponse statusResponse = 2;
         Command command = 3;
     }
