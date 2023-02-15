@@ -1,15 +1,16 @@
 #ifndef FLEET_EXTERNAL_SERVER_API_H
 #define FLEET_EXTERNAL_SERVER_API_H
-// TODO struktura na buffer a device
-//todo enum with error codes?
 enum mc_error_codes {
 	GENERIC_ERROR = -1,
 	CONTEXT_INCORRECT = -2,
 	TIMEOUT_OCCURRED = -3,
 	BUFFER_TOO_SMALL = -4
 };
-// TODO popsat
-typedef void* (*key_getter)(void* key);
+enum disconnect_types {
+	announced = 0,
+	timeout = 1,
+	error = 2
+};
 
 typedef struct device_identification {
 	int device_type;
@@ -21,6 +22,12 @@ typedef struct buffer {
 	void *buffer_data;
 	unsigned buffer_size;
 } buffer;
+
+// TODO popsat
+typedef void* (*key_getter)(void* key);
+
+// function prototype for the callback
+typedef int (*command_creator)(buffer* command, device_identification* device); // TODO rename forward_command?? creates and sends the command
 /**
  * @short Create context for specific application.
  *
@@ -30,8 +37,7 @@ typedef struct buffer {
  * Single context is NOT thread safe. User have to ensure, that a single context instance is not being
  * used by multiple functions simultaneously.
  * Using multiple contexts IS thread safe and you can use multiple contexts simultaneously.
- * TODO We need to be able to change parameters and arguments. The best is maybe to pass path to config
- * TODO in each application, we need something else, in Fleet we need Token and IP
+ *
  * @param get_key - callback function, that gets key-value from config
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
@@ -61,13 +67,8 @@ int destroy_connection(void **context);
  */
 int forward_status(buffer* device_status, device_identification* device, void *context);
 
+// TODO is this necessary? should ES take care of error message parsing??
 int forward_error_message(buffer* error_msg, device_identification* device, void *context);
-
-enum disconnect_types {
-	announced,
-	timeout,
-	error
-};
 
 /**
  * @brief Notify server that a device has disconnected
@@ -85,8 +86,6 @@ int device_disconnected(disconnect_types disconnect_type, device_identification*
  */
 int device_connected(device_identification* device, void *context);
 
-// function prototype for the callback
-typedef int (*command_creator)(buffer* command, device_identification* device); // TODO rename forward_command??
 // command_creator takes command and device and adds session ID and sends
 int register_command_callback(command_creator serialize_command, void *context);
 
@@ -103,9 +102,9 @@ int command_ack(buffer* command, void *context);
  *
  * Serves for controlling that each module has exactly one implementation.
  * The number must copy the module number from protobuf.
- * TODO rename to get_module_number ??
+ *
  * @return module number
  */
-int get_supported_module();
+int get_module_number();
 
 #endif // FLEET_EXTERNAL_SERVER_API_H
