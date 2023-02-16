@@ -7,24 +7,26 @@ enum disconnect_types {
 	error = 2
 };
 
-typedef struct device_identification {
+struct device_identification {
 	int device_type;
 	const char *device_role;
 	const char *device_name;
-} device_identification;
+};
 
-typedef struct buffer {
-	void *buffer_data;
-	unsigned buffer_size;
-} buffer;
+struct buffer {
+	void *data;
+	unsigned size;
+};
 
-// TODO popsat
-typedef void* (*key_getter)(char* key);
+/**
+ * @brief Get value from configuration file based on passed key TODO correct word usage
+ */
+typedef void* (*key_getter)(const char* const key);
 
 /**
  * @brief Callback function, which serializes command and sends it to a device.
  */
-typedef int (*command_forwarder)(buffer* command, device_identification* device); // TODO rename forward_command?? creates and sends the command
+typedef int (*command_forwarder)(const struct buffer command, const struct device_identification device);
 
 /**
  * @short Create context for specific application.
@@ -49,11 +51,11 @@ void* init(key_getter get_key);
  * Using destroyed context will lead to an error (-2).
  * Have to be called before program exit or there will be possibility for a memory leak.
  *
- * @param context context of module client created by init() function
+ * @param context context of module client created by init() function, which will be destroyed
  *
  * @return 0 if successful, -1 if an error occurred
  */
-int destroy_connection(void **context);
+int destroy(void **context);
 
 /**
  * @short Forwards status to given context.
@@ -64,7 +66,7 @@ int destroy_connection(void **context);
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int forward_status(buffer* device_status, device_identification* device, void *context);
+int forward_status(const struct buffer device_status, const struct device_identification device, const void* context);
 
 /**
  * @brief Forwards error message to given context.
@@ -75,7 +77,7 @@ int forward_status(buffer* device_status, device_identification* device, void *c
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int forward_error_message(buffer* error_msg, device_identification* device, void *context);
+int forward_error_message(const struct buffer error_msg, const struct device_identification device, const void *context);
 
 /**
  * @brief Notify that a device has disconnected
@@ -85,7 +87,7 @@ int forward_error_message(buffer* error_msg, device_identification* device, void
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int device_disconnected(disconnect_types disconnect_type, device_identification* device, void *context);
+int device_disconnected(const disconnect_types disconnect_type, const struct device_identification device, const void *context);
 
 /**
  * @brief Notify that a device has connected
@@ -95,7 +97,7 @@ int device_disconnected(disconnect_types disconnect_type, device_identification*
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int device_connected(device_identification* device, void *context);
+int device_connected(const struct device_identification device, const void *context);
 
 // command_creator takes command and device and adds session ID and sends
 /**
@@ -106,15 +108,15 @@ int device_connected(device_identification* device, void *context);
  *
  * @return 0 if successful, -1 if context is incorrect, -2 other error
  */
-int register_command_callback(command_forwarder forward_command, void *context);
+int register_command_callback(command_forwarder forward_command, const void *context);
 
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
  *
- * @param command delivered command
+ * @param command successfully delivered command
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int command_ack(buffer* command, void *context);
+int command_ack(const struct buffer command, const void *context);
 
 /**
  * @short Get number of the module application
