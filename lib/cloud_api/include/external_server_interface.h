@@ -1,11 +1,6 @@
 #ifndef FLEET_EXTERNAL_SERVER_API_H
 #define FLEET_EXTERNAL_SERVER_API_H
-enum mc_error_codes {
-	GENERIC_ERROR = -1,
-	CONTEXT_INCORRECT = -2,
-	TIMEOUT_OCCURRED = -3,
-	BUFFER_TOO_SMALL = -4
-};
+
 enum disconnect_types {
 	announced = 0,
 	timeout = 1,
@@ -24,14 +19,17 @@ typedef struct buffer {
 } buffer;
 
 // TODO popsat
-typedef void* (*key_getter)(void* key);
+typedef void* (*key_getter)(char* key);
 
-// function prototype for the callback
-typedef int (*command_creator)(buffer* command, device_identification* device); // TODO rename forward_command?? creates and sends the command
+/**
+ * @brief Callback function, which serializes command and sends it to a device.
+ */
+typedef int (*command_forwarder)(buffer* command, device_identification* device); // TODO rename forward_command?? creates and sends the command
+
 /**
  * @short Create context for specific application.
  *
- * Create context for specific application. All other functions have to be used with a initialized context.
+ * Create context for specific application. All other functions have to be used with an initialized context.
  * One context represents one connection to module server.
  * It is possible to create multiple contexts.
  * Single context is NOT thread safe. User have to ensure, that a single context instance is not being
@@ -42,7 +40,7 @@ typedef int (*command_creator)(buffer* command, device_identification* device); 
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
  */
-void *init_connection(key_getter get_key);
+void* init(key_getter get_key);
 
 /**
  * @short Clean up.
@@ -58,42 +56,63 @@ void *init_connection(key_getter get_key);
 int destroy_connection(void **context);
 
 /**
- * @short Function forwards status to app using given context and receives command.
+ * @short Forwards status to given context.
  *
- * @param context context of module client created by init_connection() function
  * @param device_status pointer to buffer structure, containing device status
+ * @param device pointer to device_identification structure, containing role, type and name of the device
+ * @param context context of module client created by init() function
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
 int forward_status(buffer* device_status, device_identification* device, void *context);
 
-// TODO is this necessary? should ES take care of error message parsing??
+/**
+ * @brief Forwards error message to given context.
+ *
+ * @param error_msg pointer to buffer structure, containing error message
+ * @param device pointer to device_identification structure, containing role, type and name of the device
+ * @param context context of module client created by init() function
+ *
+ * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ */
 int forward_error_message(buffer* error_msg, device_identification* device, void *context);
 
 /**
- * @brief Notify server that a device has disconnected
- * @param disconnect_type enumeration
- * @param context
- * @return
+ * @brief Notify that a device has disconnected
+ *
+ * @param disconnect_type enumeration of disconnection type
+ * @param context context of module client created by init() function
+ *
+ * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
 int device_disconnected(disconnect_types disconnect_type, device_identification* device, void *context);
 
 /**
- * @brief Notify server that a device has connected
- * @param device device identification
- * @param context
- * @return
+ * @brief Notify that a device has connected
+ *
+ * @param device device identification structure
+ * @param context context of module client created by init() function
+ *
+ * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
 int device_connected(device_identification* device, void *context);
 
 // command_creator takes command and device and adds session ID and sends
-int register_command_callback(command_creator serialize_command, void *context);
+/**
+ * @brief Define how the commands will passed to the External server.
+ * 
+ * @param forward_command callback function, that forwards command and device identification to the External server
+ * @param context
+ *
+ * @return 0 if successful, -1 if context is incorrect, -2 other error
+ */
+int register_command_callback(command_forwarder forward_command, void *context);
 
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
  *
  * @param command delivered command
- * @return 0 if successfull, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
 int command_ack(buffer* command, void *context);
 
