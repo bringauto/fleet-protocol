@@ -1,6 +1,10 @@
 #ifndef FLEET_EXTERNAL_SERVER_API_H
 #define FLEET_EXTERNAL_SERVER_API_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum disconnect_types {
 	announced = 0,
 	timeout = 1,
@@ -21,7 +25,7 @@ struct buffer {
 /**
  * @brief Get value from configuration file based on passed key TODO correct word usage
  */
-typedef void* (*key_getter)(const char* const key);
+typedef void *(*key_getter)(const char *const key);
 
 /**
  * @brief Callback function, which serializes command and sends it to a device.
@@ -42,7 +46,7 @@ typedef int (*command_forwarder)(const struct buffer command, const struct devic
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
  */
-void* init(key_getter get_key);
+void *init(key_getter get_key);
 
 /**
  * @short Clean up.
@@ -66,7 +70,7 @@ int destroy(void **context);
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int forward_status(const struct buffer device_status, const struct device_identification device, const void* context);
+int forward_status(const struct buffer device_status, const struct device_identification device, void *context);
 
 /**
  * @brief Forwards error message to given context.
@@ -77,7 +81,8 @@ int forward_status(const struct buffer device_status, const struct device_identi
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int forward_error_message(const struct buffer error_msg, const struct device_identification device, const void *context);
+int
+forward_error_message(const struct buffer error_msg, const struct device_identification device, void *context);
 
 /**
  * @brief Notify that a device has disconnected
@@ -87,7 +92,7 @@ int forward_error_message(const struct buffer error_msg, const struct device_ide
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int device_disconnected(const disconnect_types disconnect_type, const struct device_identification device, const void *context);
+int device_disconnected(const disconnect_types disconnect_type, const struct device_identification device, void *context);
 
 /**
  * @brief Notify that a device has connected
@@ -97,18 +102,18 @@ int device_disconnected(const disconnect_types disconnect_type, const struct dev
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int device_connected(const struct device_identification device, const void *context);
+int device_connected(const struct device_identification device, void *context);
 
 // command_creator takes command and device and adds session ID and sends
 /**
  * @brief Define how the commands will passed to the External server.
- * 
+ *
  * @param forward_command callback function, that forwards command and device identification to the External server
  * @param context
  *
  * @return 0 if successful, -1 if context is incorrect, -2 other error
  */
-int register_command_callback(command_forwarder forward_command, const void *context);
+int register_command_callback(command_forwarder forward_command, void *context);
 
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
@@ -116,7 +121,7 @@ int register_command_callback(command_forwarder forward_command, const void *con
  * @param command successfully delivered command
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int command_ack(const struct buffer command, const void *context);
+int command_ack(const struct buffer command, void *context);
 
 /**
  * @short Get number of the module application
@@ -127,5 +132,9 @@ int command_ack(const struct buffer command, const void *context);
  * @return module number
  */
 int get_module_number();
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // FLEET_EXTERNAL_SERVER_API_H
