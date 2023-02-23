@@ -23,12 +23,21 @@ struct buffer {
 };
 
 /**
- * @brief Get value from configuration file based on passed key TODO correct word usage
+ * @brief Get value from configuration file based on passed key
+ *
+ * @param key - key-value parameter's key
+ *
+ * @return key-value's value
  */
 typedef void *(*key_getter)(const char *const key);
 
 /**
- * @brief Callback function, which serializes command and sends it to a device.
+ * @brief Callback function, which pass a serialized command to the External server, which adds necessary information and sends it to the device
+ *
+ * @param command - serialized command data
+ * @param device - device identification structure
+ *
+ * @return TODO Should it control if device is connected? I think not, but discuss. Otherwise return void, since command is asynchronous and if it was successfully delivered, command_ack is called
  */
 typedef int (*command_forwarder)(const struct buffer command, const struct device_identification device);
 
@@ -36,7 +45,6 @@ typedef int (*command_forwarder)(const struct buffer command, const struct devic
  * @short Create context for specific application.
  *
  * Create context for specific application. All other functions have to be used with an initialized context.
- * One context represents one connection to module server.
  * It is possible to create multiple contexts.
  * Single context is NOT thread safe. User have to ensure, that a single context instance is not being
  * used by multiple functions simultaneously.
@@ -52,7 +60,7 @@ void *init(key_getter get_key);
  * @short Clean up.
  *
  * Function will destroy and deallocate given context.
- * Using destroyed context will lead to an error (-2).
+ * Using destroyed context will lead to an error (-1).
  * Have to be called before program exit or there will be possibility for a memory leak.
  *
  * @param context context of module client created by init() function, which will be destroyed
@@ -64,8 +72,8 @@ int destroy(void **context);
 /**
  * @short Forwards status to given context.
  *
- * @param device_status pointer to buffer structure, containing device status
- * @param device pointer to device_identification structure, containing role, type and name of the device
+ * @param device_status buffer structure, containing device status
+ * @param device device_identification structure, containing role, type and name of the device
  * @param context context of module client created by init() function
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
@@ -75,8 +83,8 @@ int forward_status(const struct buffer device_status, const struct device_identi
 /**
  * @brief Forwards error message to given context.
  *
- * @param error_msg pointer to buffer structure, containing error message
- * @param device pointer to device_identification structure, containing role, type and name of the device
+ * @param error_msg buffer structure, containing error message
+ * @param device device_identification structure, containing role, type and name of the device
  * @param context context of module client created by init() function
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
@@ -118,8 +126,8 @@ int register_command_callback(command_forwarder forward_command, void *context);
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
  *
- * @param command successfully delivered command
- * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ * @param command successfully delivered command TODO only acknowledge succesfull or also the reason of unsucefull? As a user, I would like to know
+ * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred while sending ack, -3 other error
  */
 int command_ack(const struct buffer command, void *context);
 
