@@ -1,5 +1,4 @@
-#ifndef FLEET_EXTERNAL_SERVER_API_H
-#define FLEET_EXTERNAL_SERVER_API_H
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -11,12 +10,21 @@ enum disconnect_types {
 	error = 2
 };
 
+/**
+ * @brief Unique device identification.
+ * The Device message contains also module number, which is not needed, as every API is implemented for concrete module
+ * and the module number is processed earlier in the External Server.
+ */
 struct device_identification {
 	int device_type;
 	const char *device_role;
 	const char *device_name;
 };
 
+/**
+ * @brief Generic message data buffer. Contains data pointer and the length of this data.
+ * @data array must be allocated and allocated size should be put into @size.
+ */
 struct buffer {
 	void *data;
 	unsigned size;
@@ -89,8 +97,7 @@ int forward_status(const struct buffer device_status, const struct device_identi
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
-int
-forward_error_message(const struct buffer error_msg, const struct device_identification device, void *context);
+int forward_error_message(const struct buffer error_msg, const struct device_identification device, void *context);
 
 /**
  * @brief Notify that a device has disconnected
@@ -144,5 +151,3 @@ int get_module_number();
 #ifdef __cplusplus
 }
 #endif
-
-#endif // FLEET_EXTERNAL_SERVER_API_H
