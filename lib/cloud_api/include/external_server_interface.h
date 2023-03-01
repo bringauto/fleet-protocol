@@ -32,22 +32,24 @@ struct buffer {
 
 /**
  * @brief Get value from configuration file based on passed key
- *
+ * TODO link for key_getter and how to pass keys for structures etc.
  * @param key - key-value parameter's key
+ * @param external_server_context - context maintained in the External server, needed by callback functions
  *
  * @return key-value's value
  */
-typedef void *(*key_getter)(const char *const key);
+typedef void *(*key_getter)(const char *const key, void *external_server_context);
 
 /**
  * @brief Callback function, which pass a serialized command to the External server, which adds necessary information and sends it to the device
  *
  * @param command - serialized command data
  * @param device - device identification structure
+ * @param external_server_context - context maintained in the External server, needed by callback functions
  *
  * @return TODO Should it control if device is connected? I think not, but discuss. Otherwise return void, since command is asynchronous and if it was successfully delivered, command_ack is called
  */
-typedef int (*command_forwarder)(const struct buffer command, const struct device_identification device);
+typedef int (*command_forwarder)(const struct buffer command, const struct device_identification device, void *external_server_context);
 
 /**
  * @short Create context for specific application.
@@ -57,21 +59,22 @@ typedef int (*command_forwarder)(const struct buffer command, const struct devic
  * Single context is NOT thread safe. User have to ensure, that a single context instance is not being
  * used by multiple functions simultaneously.
  * Using multiple contexts IS thread safe and you can use multiple contexts simultaneously.
- *
+ * TODO externalServerContext je pointer na strukturu v ES, kde si on uklada data k dane,mu modulu (jako jeho cilso) a potrebuje ho predavat callback funkcim
  * @param get_key - callback function, that gets key-value from config
+ * @param external_server_context - context maintained in the External server, needed by callback functions
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
  */
-void *init(key_getter get_key);
+void *init(key_getter get_key, void *external_server_context);
 
 /**
  * @short Clean up.
  *
- * Function will destroy and deallocate given context.
+ * Function will destroy and deallocate given context. Context pointer is set to NULL, so it cannot be used again
  * Using destroyed context will lead to an error (-1).
  * Have to be called before program exit or there will be possibility for a memory leak.
  *
- * @param context context of module client created by init() function, which will be destroyed
+ * @param context context of module client created by init() function, which will be destroyed and set to null
  *
  * @return 0 if successful, -1 if an error occurred
  */
@@ -125,10 +128,11 @@ int device_connected(const struct device_identification device, void *context);
  *
  * @param forward_command callback function, that forwards command and device identification to the External server
  * @param context
+ * @param external_server_context - context maintained in the External server, needed by callback functions
  *
  * @return 0 if successful, -1 if context is incorrect, -2 other error
  */
-int register_command_callback(command_forwarder forward_command, void *context);
+int register_command_callback(command_forwarder forward_command, void *context, void *external_server_context);
 
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
