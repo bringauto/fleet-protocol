@@ -33,7 +33,7 @@ struct buffer {
 };
 
 /**
- * @brief Parameter structure containing the parameters key and its value
+ * @brief Parameter structure containing the parameters key and its value in buffers
  */
 struct key_value {
 	buffer key;
@@ -45,7 +45,7 @@ struct key_value {
  */
 struct config {
 	key_value* parameters;
-	size_t count;
+	size_t size;
 };
 
 /**
@@ -133,7 +133,7 @@ int wait_for_command(int timeout_time_in_ms);
 /**
  * @brief Obtain a single command from API
  * Function is called for each command that is available in API
- * 
+ *
  * @param command - buffer pointer, where the command will be put
  * @param device - identification of the target device of the command
  * @return number of remaining commands, -1 if an error occurred
