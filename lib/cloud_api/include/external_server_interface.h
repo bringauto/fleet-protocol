@@ -4,6 +4,8 @@
 extern "C" {
 #endif
 
+#define NAME_LENGTH 64
+
 enum disconnect_types {
 	announced = 0,
 	timeout = 1,
@@ -17,8 +19,8 @@ enum disconnect_types {
  */
 struct device_identification {
 	int device_type;
-	const char *device_role;
-	const char *device_name;
+	char device_role[NAME_LENGTH];
+	char device_name[NAME_LENGTH];
 };
 
 /**
@@ -27,45 +29,41 @@ struct device_identification {
  */
 struct buffer {
 	void *data;
-	unsigned size;
+	size_t size;
 };
 
 /**
- * @brief Get value from configuration file based on passed key
- * TODO link for key_getter and how to pass keys for structures etc.
- * @param key - key-value parameter's key
- * @param external_server_context - context maintained in the External server, needed by callback functions
- *
- * @return key-value's value
+ * @brief Parameter structure containing the parameters key and its value
  */
-typedef void *(*key_getter)(const char *const key, void *external_server_context);
+struct key_value {
+	buffer key;
+	buffer value;
+};
 
 /**
- * @brief Callback function, which pass a serialized command to the External server, which adds necessary information and sends it to the device
- *
- * @param command - serialized command data
- * @param device - device identification structure
- * @param external_server_context - context maintained in the External server, needed by callback functions
- *
- * @return TODO Should it control if device is connected? I think not, but discuss. Otherwise return void, since command is asynchronous and if it was successfully delivered, command_ack is called
+ * @brief Configuration structure, containing key-value parameters and the number of them
  */
-typedef int (*command_forwarder)(const struct buffer command, const struct device_identification device, void *external_server_context);
+struct config {
+	key_value* parameters;
+	size_t count;
+};
 
 /**
  * @short Create context for specific application.
  *
  * Create context for specific application. All other functions have to be used with an initialized context.
+ * Arguments for context initialization are passed in config structure.
+ * Arguments are defined in External servers in an ini configuration file. Description: TODO link
  * It is possible to create multiple contexts.
  * Single context is NOT thread safe. User have to ensure, that a single context instance is not being
  * used by multiple functions simultaneously.
  * Using multiple contexts IS thread safe and you can use multiple contexts simultaneously.
- * TODO externalServerContext je pointer na strukturu v ES, kde si on uklada data k dane,mu modulu (jako jeho cilso) a potrebuje ho predavat callback funkcim
- * @param get_key - callback function, that gets key-value from config
- * @param external_server_context - context maintained in the External server, needed by callback functions
+ *
+ * @param config_data - parameters from a configuration file
  *
  * @return context of the device used for calling other library functions, NULL if an error occurs
  */
-void *init(key_getter get_key, void *external_server_context);
+void *init(const struct config config_data);
 
 /**
  * @short Clean up.
@@ -122,17 +120,25 @@ int device_disconnected(const disconnect_types disconnect_type, const struct dev
  */
 int device_connected(const struct device_identification device, void *context);
 
-// command_creator takes command and device and adds session ID and sends
 /**
- * @brief Define how the commands will passed to the External server.
+ * @brief Blocking function waiting for an event.
+ * This event signalize, that there is a command, that can be obtained with get_command() function.
+ * If the event didn't happened, the function MUST timeout in time given by parameter timeout_time_in_ms
  *
- * @param forward_command callback function, that forwards command and device identification to the External server
- * @param context
- * @param external_server_context - context maintained in the External server, needed by callback functions
- *
- * @return 0 if successful, -1 if context is incorrect, -2 other error
+ * @param timeout_time_in_ms - maximum blocking time until timeout
+ * @return 0 if a command is obtainable, -1 otherwise
  */
-int register_command_callback(command_forwarder forward_command, void *context, void *external_server_context);
+int wait_for_command(int timeout_time_in_ms);
+
+/**
+ * @brief Obtain a single command from API
+ * Function is called for each command that is available in API
+ * 
+ * @param command - buffer pointer, where the command will be put
+ * @param device - identification of the target device of the command
+ * @return number of remaining commands, -1 if an error occurred
+ */
+int get_command(buffer* command, device_identification* device);
 
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
@@ -155,3 +161,4 @@ int get_module_number();
 #ifdef __cplusplus
 }
 #endif
+
