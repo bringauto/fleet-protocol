@@ -72,7 +72,7 @@ void *init(const struct config config_data);
  * Using destroyed context will lead to an error (-1).
  * Have to be called before program exit or there will be possibility for a memory leak.
  *
- * @param context context of module client created by init() function, which will be destroyed and set to null
+ * @param context context created by init() function, which will be destroyed and set to null
  *
  * @return 0 if successful, -1 if an error occurred
  */
@@ -83,7 +83,7 @@ int destroy(void **context);
  *
  * @param device_status buffer structure, containing device status
  * @param device device_identification structure, containing role, type and name of the device
- * @param context context of module client created by init() function
+ * @param context context created by init() function
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
@@ -94,7 +94,7 @@ int forward_status(const struct buffer device_status, const struct device_identi
  *
  * @param error_msg buffer structure, containing error message
  * @param device device_identification structure, containing role, type and name of the device
- * @param context context of module client created by init() function
+ * @param context context created by init() function
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
@@ -104,7 +104,7 @@ int forward_error_message(const struct buffer error_msg, const struct device_ide
  * @brief Notify that a device has disconnected
  *
  * @param disconnect_type enumeration of disconnection type
- * @param context context of module client created by init() function
+ * @param context context created by init() function
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
@@ -114,7 +114,7 @@ int device_disconnected(const disconnect_types disconnect_type, const struct dev
  * @brief Notify that a device has connected
  *
  * @param device device identification structure
- * @param context context of module client created by init() function
+ * @param context context created by init() function
  *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
  */
@@ -126,6 +126,8 @@ int device_connected(const struct device_identification device, void *context);
  * If the event didn't happened, the function MUST timeout in time given by parameter timeout_time_in_ms
  *
  * @param timeout_time_in_ms - maximum blocking time until timeout
+ * @param context context created by init() function
+ *
  * @return 0 if a command is obtainable, -1 otherwise, -2 if context is incorrect
  */
 int wait_for_command(int timeout_time_in_ms, void *context);
@@ -136,6 +138,8 @@ int wait_for_command(int timeout_time_in_ms, void *context);
  *
  * @param command - buffer pointer, where the command will be put
  * @param device - identification of the target device of the command
+ * @param context context created by init() function
+ *
  * @return number of remaining commands, -1 if the context is incorrect, -2 an error occurred
  */
 int get_command(buffer* command, device_identification* device, void *context);
@@ -143,10 +147,13 @@ int get_command(buffer* command, device_identification* device, void *context);
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
  *
- * @param command successfully delivered command TODO only acknowledge succesfull or also the reason of unsucefull? As a user, I would like to know
+ * @param command successfully delivered command
+ * @param device which device got the command
+ * @param context context created by init() function
+ *
  * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred while sending ack, -3 other error
  */
-int command_ack(const struct buffer command, void *context);
+int command_ack(const struct buffer command, const struct device_identification device, void *context);
 
 /**
  * @short Get number of the module application
