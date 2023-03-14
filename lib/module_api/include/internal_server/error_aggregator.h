@@ -1,6 +1,11 @@
+#pragma once
 
-#ifndef MODULE_API_ERROR_AGGREGATOR_H
-#define MODULE_API_ERROR_AGGREGATOR_H
+#include "internal_server_structures.h"
+
+/**
+ * @section internal_server
+ * @subsection error_aggregator
+ */
 
 /**
  * @short Error aggregator init.
@@ -11,7 +16,8 @@
  * safe, you can call function on device1 in thread1 and function on device2 in thread2 without any problem this is thread safe, but working with one
  * device in multiple threads is NOT thread safe.
  *
- * @return 0 if initialization was successful, -1 if an error occurred
+ * @return 0 if initialization was successful
+ * @return -1 if an error occurred
  */
 int init_error_aggregator();
 
@@ -32,14 +38,15 @@ int destroy_error_aggregator();
  * If device is not registered, error code is returned.
  *
  * @param status protobuf status message in binary form
- * @param status_size size of the status message
- * @param device_name null terminated name of unique device
- * @param device_type integer specifying module specific device, device type is defined in specific module header
+ * @param device identification of the device
  *
- * @return 0 if successful, -1 if device is not registered, -2 for other error
+ * @return 0 if successful
+ * @return -1 if device is not registered
+ * @return -2 for other error
  */
-int add_status_to_error_aggregator(void* protobuf_status, int status_size, char *device_name, int device_type);
+int add_status_to_error_aggregator(const struct buffer status, const struct device_identification device);
 
+//todo this function might be not needed
 /**
  * @short Get status from error aggregator for a specific device.
  *
@@ -47,37 +54,40 @@ int add_status_to_error_aggregator(void* protobuf_status, int status_size, char 
  * If device is not registered an error is returned. If no messages for given device are present, no error status message is created and 0 is returned.
  * This function will not clear error status container.
  *
- * @param protobuf_error_status_buffer buffer for created protobuf error status (allocated by user)
- * @param buffer_size maximum buffer size
- * @param device_name name of specific device
- * @param device_type type of the device
+ * @param error_status user allocated message_buffer for the error status. Look at 'memory management' section
+ * @param device identification of the device
  *
- * @return size of message, 0 if no message was generated, -1 if device was no registered, -2 for other errors
+ * @return size of message in bytes
+ * @return 0 if no message was generated
+ * @return -1 if device was not registered
+ * @return -2 for other errors
  */
-int get_error_status(void *protobuf_error_status_buffer, int buffer_size , char *device_name, int device_type);
+int get_error_status(struct buffer *error_status, const struct device_identification device);
+
 /**
  * @short Get error message from error aggregator for a specific device.
  *
  * Messages in error status container will be used to generate error message for given device,
- * If device is not registered an error is returned. If no messages for given device are present, no error status message is created and 0 is returned;
+ * If device is not registered an error is returned. If no messages for given device are present,
+ * no error status message is created and 0 is returned;
  * This function will not clear error status container.
  *
- * @param protobuf_error buffer for created protobuf error status
- * @param buffer_size maximum buffer size
- * @param device_name name of specific device
- * @param device_type type of the device
+ * @param error user allocated message_buffer for created protobuf error status. Look at 'memory management' section.
+ * @param device identification of the device
  *
- * @return size of message, 0 if no message was generated, -1 if device was no registered, -2 for other errors
+ * @return size of message in bytes
+ * @return 0 if no message was generated
+ * @return -1 if device was no registered
+ * @return -2 for other errors
  */
-int get_error(void *protobuf_error, int buffer_size , char *device_name, int device_type);
+int get_error(struct buffer *error, const struct device_identification device);
 
 /**
  * @short Clear error aggregator
  *
  * All messages for all registered devices will be removed.
  *
- * @return 0 if successful, -1 if an error occurs
+ * @return 0 if successful
+ * @return -1 if an error occurs
  */
 int clear_error_aggregator();
-
-#endif //MODULE_API_ERROR_AGGREGATOR_H
