@@ -1,5 +1,4 @@
-#ifndef FLEET_MODULE_CLIENT_H
-#define FLEET_MODULE_CLIENT_H
+#pragma once
 
 //todo enum with error codes?
 enum mc_error_codes {
@@ -26,7 +25,8 @@ enum mc_error_codes {
  * @param device_role null terminated role of device
  * @param device_priority integer specifying priority of device, smaller number equals higher priority (0 is highest)
  *
- * @return context of the device used for calling other library functions, NULL if an error occurs
+ * @return context of the device used for calling other library functions
+ * @return NULL if an error occurs
  */
 void *init_connection(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, char *device_role, unsigned device_priority);
 
@@ -58,7 +58,10 @@ int destroy_connection(void **context);
  * @param status_size size of status data
  * @param timeout timeout in seconds, how long is acceptable to wait for server response (command) if timeout is reached, error will be returned
  *
- * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ * @return 0 if successful
+ * @return -1 if context is incorrect
+ * @return -2 if timeout occurred
+ * @return -3 other error
  */
 int send_status(void *context, void *device_status, unsigned status_size, unsigned timeout);
 
@@ -73,8 +76,10 @@ int send_status(void *context, void *device_status, unsigned status_size, unsign
  * @param device_command_buffer pointer to an user allocated buffer, device command structure will be copied to it, structures are defined in device specific header file
  * @param buffer_size size of user allocated buffer
  *
- * @return size of device_command, 0 if no message was yet received (send_status was not called yet), -1 if context is incorrect, -2 if buffer is too small, -3 for other error
+ * @return size of device_command in bytes
+ * @return 0 if no message was yet received (send_status was not called yet)
+ * @return -1 if context is incorrect
+ * @return -2 if buffer is too small
+ * @return -3 for other error
  */
 int get_command(void *context, void *device_command_buffer, unsigned buffer_size);
-
-#endif //FLEET_MODULE_CLIENT_H
