@@ -1,5 +1,13 @@
-#ifndef MODULE_API_AGGREGATION_H
-#define MODULE_API_AGGREGATION_H
+#pragma once
+
+#include "../common/general_error_codes.h"
+#include "../common/device_management.h"
+#include "../common/memory_management.h"
+
+/**
+ * @section internal_server
+ * @subsection status_aggregator
+ */
 
 //todo enum for error codes?
 
@@ -11,7 +19,8 @@
  * safe, you can call function on device1 in thread1 and function on device2 in thread2 without any problem this is thread safe, but working with one
  * device in multiple threads is NOT thread safe.
  *
- * @return 0 if initialization was successful, -1 if an error occurred
+ * @return OK if initialization was successful
+ *         NOT_OK if an error occurred
  */
 int init_status_aggregator();
 
@@ -21,7 +30,8 @@ int init_status_aggregator();
  * Destroy will deallocate all resources used by status aggregator, if not called before program exit, memory leaks can occur.
  * Not thread safe.
  *
- * @return 0 if successful, -1 if an error occurred
+ * @return OK if successful,
+ * @return NOT_OK if an error occurred
  */
 int destroy_status_aggregator(); ///module specific
 
@@ -35,7 +45,8 @@ int destroy_status_aggregator(); ///module specific
  * All devices will be reset to same state as they were just registered.
  * Not thread safe.
  *
- * @return 0 if clearing was successful, -1 if error occurs
+ * @return OK if clearing was successful
+ * @return NOT_OK if error occurs
  */
 int clear_all_devices();
 
@@ -47,11 +58,28 @@ int clear_all_devices();
  * - all aggregated messages ready to be obtained using get_aggregated_status() for given device,
  * Device will be reset to same state as it was just registered.
  *
- * @param device_name name of device to be cleared
+ * @param device identification of the device
  *
- * @return 0 if clearing was successful, -1 if device does not exists, -2 for other errors
+ * @return OK if clearing was successful,
+ * @return -1 if device does not exists
+ * @return -2 for other errors
  */
-int clear_device(const char *device_name);
+int clear_device(const struct device_identification device);
+
+/**
+ * @short Remove device from aggregator
+ * 
+ * What will be removed:
+ * - whole device entry in status aggregator along with command and all messages,
+ * After this operation, device will not be registered in aggregator and trying to get data for this device will result in error.
+ * 
+ * @param device identification of the device
+ * 
+ * @return OK if removing was successful
+ * @return -1 if device does not exist
+ * @return -2 for other errors
+*/
+int remove_device(const struct device_identification device);
 
 /**
  * @short Add protobuf status message to aggregator, aggregator will aggregate each unique devices messages of type device_type separately
@@ -59,19 +87,21 @@ int clear_device(const char *device_name);
  * Aggregation is a implementation defined function for removing duplicity in messages.
  * When this function is called, device specified by device_name and device_type will be registered if it is not already registered.
  * Registered device is keeping track of messages it has already received and not yet aggregated and already aggregated messages not yet taken out using get_aggregated_status() function
+ *
  * If device of device_type is not supported, error code is returned.
  * Message given in protobuf status will be added to aggregator, and aggregation condition will be checked. Aggregation condition is change of states of device.
  * Aggregation conditions are defined for each device type separately. Aggregation condition marks a change in state that the end user have to be informed about.
+ *
  * If aggregation condition is not met, status is declared as duplicate and will be aggregated.
  *
- * @param status protobuf status message in binary form
- * @param status_size size of the status message
- * @param device_name null terminated name of unique device
- * @param device_type integer specifying module specific device, device type is defined in specific module header
+ * @param status protobuf status message buffer
+ * @param device identification of the device
  *
- * @return number of aggregated messages waiting in container for given device to be obtained by get_aggregated_status() function, -1 if device is not supported, -2 for other error
+ * @return number of aggregated messages waiting in container for given device to be obtained by get_aggregated_status() function,
+ * @return -1 if device is not supported,
+ * @return -2 for other error
  */
-int add_status_to_aggregator(void* protobuf_status, int status_size, const char *device_name, int device_type);
+int add_status_to_aggregator(const struct buffer status, const struct device_identification device);
 
 /**
  * @short Get the oldest aggregated protobuf status message that is aggregated
@@ -79,14 +109,17 @@ int add_status_to_aggregator(void* protobuf_status, int status_size, const char 
  * Function will take an oldest message from given device from container with aggregated messages and put it in protobuf_status.
  * If device is not registered, or no aggregated message for given device is present and error is returned.
  *
- * @param status buffer for status message, have to be already allocated by user
- * @param buffer_size size of user allocated status buffer
- * @param device_name name of device
- * @param device_type type of device
+ * If return code is equal to -3 then the allocated buffer size is not huge enought to hold a message
  *
- * @return size of message returned or -1 if no message for given device is ready -2 if device is not registered, -3 for other error
+ * @param generated_status status message buffer, have to be already allocated by user. Look at 'memory_management' section
+ * @param device identification of the device
+ *
+ * @return size of message in bytes returned
+ * @return -1 if no message for given device is ready
+ * @return -2 if device is not registered
+ * @return -3 for other error
  */
-int get_aggregated_status(void *protobuf_status_buffer, int buffer_size, char *device_name, int device_type);
+int get_aggregated_status(struct buffer *generated_status, const struct device_identification device);
 
 /**
  * @short Get all devices registered to aggregator
@@ -94,9 +127,19 @@ int get_aggregated_status(void *protobuf_status_buffer, int buffer_size, char *d
  * Devices are registered by add_status_to_aggregator() message when called with first message for given device.
  * This function will return information about all unique devices that were registered during the lifetime of status aggregator.
  *
- * @return number size of data written to the unique_devices_buffer
+ * @param unique_devices_buffer pointer to buffer to retrieve unique devices. Number of bytes in buffer.size_in_bytes
+ *                              is equal to number_of_devices * sizeof(struct device_identifier). Look at 'memory_management' section
+ *
+ * @return NO_OK if error occurred
+ * @return Number of unique devices - number of 'device_identifier' structs stored at buffer.data.
+ *
+ * @code
+ *      struct buffer unique_devices;
+ *      int number_of_devices = get_unique_devices(&unique_devices);
+ *      assert(buffer.size_in_bytes == number_of_devices * sizeof(struct device_identifier));
+ * @endcode
  */
-int get_unique_devices(void* unique_devices_buffer, int buffer_size);
+int get_unique_devices(struct buffer* unique_devices_buffer);
 
 /**
  * @short Force status message aggregation on given device.
@@ -106,11 +149,8 @@ int get_unique_devices(void* unique_devices_buffer, int buffer_size);
  * Function will aggregate all messages in non-aggregated container, empty the container and add created message into
  * aggregated container.
  *
- * @param device_name name of device for aggregation
- * @param device_type type of device
+ * @param device identification of the device
  *
  * @return number of messages in aggregated container for given device, that can be obtained by calling get_aggregated_status() function
  */
-int force_aggregation_on_device(char *device_name, int device_type);
-
-#endif //MODULE_API_AGGREGATION_H
+int force_aggregation_on_device(const struct device_identification device);
