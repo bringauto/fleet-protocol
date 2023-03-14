@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * @section internal_server
+ * @section module_gateway
  * @subsection internal_server_structures
  */
 

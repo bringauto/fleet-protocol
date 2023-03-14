@@ -2,7 +2,7 @@
 
 /**
  * @brief Memory management related functions and structs
- * @section common
+ * @section common_headers
  * @subsection memory_management
  *
  * @details Data return

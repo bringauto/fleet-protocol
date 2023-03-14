@@ -3,7 +3,7 @@
 #include "internal_server_structures.h"
 
 /**
- * @section internal_server
+ * @section module_gateway
  * @subsection error_aggregator
  */
 

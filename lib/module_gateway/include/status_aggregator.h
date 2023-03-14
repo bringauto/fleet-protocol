@@ -5,7 +5,7 @@
 #include "../common/memory_management.h"
 
 /**
- * @section internal_server
+ * @section module_gateway
  * @subsection status_aggregator
  */
 

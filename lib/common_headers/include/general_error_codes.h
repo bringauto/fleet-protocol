@@ -2,7 +2,7 @@
 
 /**
  * @short General set of return codes.
- * @section common
+ * @section common_headers
  * @subsection general_error_codes
 */
 
