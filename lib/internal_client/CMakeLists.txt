@@ -1,6 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.25 FATAL_ERROR)
 PROJECT(fleet-protocol C)
 
-ADD_LIBRARY(${PROJECT_NAME}::internal_client STATIC)
-TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME}::internal_client PUBLIC include/)
-TARGET_LINK_LIBRARIES(${PROJECT_NAME}::internal_client PUBLIC ${PROJECT_NAME}::common_headers)
+ADD_LIBRARY(internal_client INTERFACE)
+ADD_LIBRARY(${PROJECT_NAME}::internal_client ALIAS internal_client )
+TARGET_INCLUDE_DIRECTORIES(internal_client INTERFACE include/)
+TARGET_LINK_LIBRARIES(internal_client INTERFACE ${PROJECT_NAME}::common_headers)

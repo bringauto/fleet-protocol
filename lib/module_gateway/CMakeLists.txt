@@ -1,0 +1,7 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.25 FATAL_ERROR)
+PROJECT(fleet-protocol C)
+
+ADD_LIBRARY(module_gateway INTERFACE)
+ADD_LIBRARY(${PROJECT_NAME}::module_gateway ALIAS module_gateway )
+TARGET_INCLUDE_DIRECTORIES(module_gateway INTERFACE include/)
+TARGET_LINK_LIBRARIES(module_gateway INTERFACE ${PROJECT_NAME}::common_headers)
