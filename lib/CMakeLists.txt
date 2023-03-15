@@ -1,4 +1,4 @@
-PROJECT(fleet-protocol C)
+PROJECT(fleet-protocol C CXX)
 
 ADD_SUBDIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/common_headers")
 ADD_SUBDIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/internal_client")

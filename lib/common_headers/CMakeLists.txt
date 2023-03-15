@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.25 FATAL_ERROR)
-PROJECT(fleet-protocol C)
+PROJECT(fleet-protocol C CXX)
 
 ADD_LIBRARY(common_headers INTERFACE)
 ADD_LIBRARY(${PROJECT_NAME}::common_headers ALIAS common_headers)

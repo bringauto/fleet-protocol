@@ -34,8 +34,10 @@ TODO
 
 **C++**
 ```
+-I="./definition" --cpp_out=./compiled/cpp ./definition/*/*.proto
 protoc -I=./ --cpp_out=./ *.proto
 ```
+TODO move compilation to subdirectory
 
 **C#**
 TODO

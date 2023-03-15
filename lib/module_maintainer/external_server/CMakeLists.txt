@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.25 FATAL_ERROR)
-PROJECT(fleet-protocol C)
+PROJECT(fleet-protocol C CXX)
 
 ADD_LIBRARY(external_server INTERFACE)
 ADD_LIBRARY(${PROJECT_NAME}::module_maintainer::external_server ALIAS external_server )
