@@ -1,5 +1,6 @@
 #pragma once
 
+#include <general_error_codes>
 //todo enum with error codes?
 enum mc_error_codes {
     GENERIC_ERROR = -1,

@@ -4,246 +4,197 @@
 #include "modules/ExampleModule.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
+
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = ::PROTOBUF_NAMESPACE_ID::internal;
+namespace _pbi = _pb::internal;
+
 namespace ExampleModule {
 PROTOBUF_CONSTEXPR BlinkerStatus::BlinkerStatus(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.isflashing_)*/ false
-
+    /*decltype(_impl_.isflashing_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BlinkerStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BlinkerStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BlinkerStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BlinkerStatusDefaultTypeInternal() {}
   union {
     BlinkerStatus _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BlinkerStatusDefaultTypeInternal _BlinkerStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BlinkerStatusDefaultTypeInternal _BlinkerStatus_default_instance_;
 PROTOBUF_CONSTEXPR LightsStatus::LightsStatus(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ison_)*/ false
-
+    /*decltype(_impl_.ison_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LightsStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LightsStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR LightsStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~LightsStatusDefaultTypeInternal() {}
   union {
     LightsStatus _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsStatusDefaultTypeInternal _LightsStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsStatusDefaultTypeInternal _LightsStatus_default_instance_;
 PROTOBUF_CONSTEXPR BlinkerCommand::BlinkerCommand(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.command_)*/ 0
-
+    /*decltype(_impl_.command_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BlinkerCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BlinkerCommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BlinkerCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BlinkerCommandDefaultTypeInternal() {}
   union {
     BlinkerCommand _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BlinkerCommandDefaultTypeInternal _BlinkerCommand_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BlinkerCommandDefaultTypeInternal _BlinkerCommand_default_instance_;
 PROTOBUF_CONSTEXPR LightsCommand::LightsCommand(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.command_)*/ 0
-
+    /*decltype(_impl_.command_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LightsCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LightsCommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR LightsCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~LightsCommandDefaultTypeInternal() {}
   union {
     LightsCommand _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsCommandDefaultTypeInternal _LightsCommand_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsCommandDefaultTypeInternal _LightsCommand_default_instance_;
 PROTOBUF_CONSTEXPR BlinkerError::BlinkerError(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.errormessage_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+    /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BlinkerErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BlinkerErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BlinkerErrorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BlinkerErrorDefaultTypeInternal() {}
   union {
     BlinkerError _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BlinkerErrorDefaultTypeInternal _BlinkerError_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BlinkerErrorDefaultTypeInternal _BlinkerError_default_instance_;
 PROTOBUF_CONSTEXPR LightsError::LightsError(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.errormessage_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+    /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LightsErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LightsErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR LightsErrorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~LightsErrorDefaultTypeInternal() {}
   union {
     LightsError _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsErrorDefaultTypeInternal _LightsError_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LightsErrorDefaultTypeInternal _LightsError_default_instance_;
 }  // namespace ExampleModule
 static ::_pb::Metadata file_level_metadata_modules_2fExampleModule_2eproto[6];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_modules_2fExampleModule_2eproto[2];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_modules_2fExampleModule_2eproto = nullptr;
-const ::uint32_t TableStruct_modules_2fExampleModule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerStatus, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerStatus, _impl_.isflashing_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsStatus, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsStatus, _impl_.ison_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerCommand, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerCommand, _impl_.command_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsCommand, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsCommand, _impl_.command_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerError, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerError, _impl_.errormessage_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsError, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsError, _impl_.errormessage_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_modules_2fExampleModule_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        { 0, -1, -1, sizeof(::ExampleModule::BlinkerStatus)},
-        { 9, -1, -1, sizeof(::ExampleModule::LightsStatus)},
-        { 18, -1, -1, sizeof(::ExampleModule::BlinkerCommand)},
-        { 27, -1, -1, sizeof(::ExampleModule::LightsCommand)},
-        { 36, -1, -1, sizeof(::ExampleModule::BlinkerError)},
-        { 45, -1, -1, sizeof(::ExampleModule::LightsError)},
+const uint32_t TableStruct_modules_2fExampleModule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerStatus, _impl_.isflashing_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsStatus, _impl_.ison_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerCommand, _impl_.command_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsCommand, _impl_.command_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerError, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::BlinkerError, _impl_.errormessage_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsError, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExampleModule::LightsError, _impl_.errormessage_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::ExampleModule::BlinkerStatus)},
+  { 7, -1, -1, sizeof(::ExampleModule::LightsStatus)},
+  { 14, -1, -1, sizeof(::ExampleModule::BlinkerCommand)},
+  { 21, -1, -1, sizeof(::ExampleModule::LightsCommand)},
+  { 28, -1, -1, sizeof(::ExampleModule::BlinkerError)},
+  { 35, -1, -1, sizeof(::ExampleModule::LightsError)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::ExampleModule::_BlinkerStatus_default_instance_._instance,
-    &::ExampleModule::_LightsStatus_default_instance_._instance,
-    &::ExampleModule::_BlinkerCommand_default_instance_._instance,
-    &::ExampleModule::_LightsCommand_default_instance_._instance,
-    &::ExampleModule::_BlinkerError_default_instance_._instance,
-    &::ExampleModule::_LightsError_default_instance_._instance,
-};
-const char descriptor_table_protodef_modules_2fExampleModule_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\033modules/ExampleModule.proto\022\rExampleMo"
-    "dule\"#\n\rBlinkerStatus\022\022\n\nisFlashing\030\001 \001("
-    "\010\"\034\n\014LightsStatus\022\014\n\004isOn\030\001 \001(\010\"n\n\016Blink"
-    "erCommand\0226\n\007command\030\001 \001(\0162%.ExampleModu"
-    "le.BlinkerCommand.Command\"$\n\007Command\022\013\n\007"
-    "TURN_ON\020\000\022\014\n\010TURN_OFF\020\001\"\\\n\rLightsCommand"
-    "\0225\n\007command\030\001 \001(\0162$.ExampleModule.Lights"
-    "Command.Command\"\024\n\007Command\022\t\n\005PRESS\020\000\"$\n"
-    "\014BlinkerError\022\024\n\014errorMessage\030\001 \001(\t\"#\n\013L"
-    "ightsError\022\024\n\014errorMessage\030\001 \001(\tB>Z!../i"
-    "nternal/pkg/ba_proto;ba_proto\252\002\030Google.P"
-    "rotobuf.ba_protob\006proto3"
-};
-static ::absl::once_flag descriptor_table_modules_2fExampleModule_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_modules_2fExampleModule_2eproto = {
-    false,
-    false,
-    464,
-    descriptor_table_protodef_modules_2fExampleModule_2eproto,
-    "modules/ExampleModule.proto",
-    &descriptor_table_modules_2fExampleModule_2eproto_once,
-    nullptr,
-    0,
-    6,
-    schemas,
-    file_default_instances,
-    TableStruct_modules_2fExampleModule_2eproto::offsets,
-    file_level_metadata_modules_2fExampleModule_2eproto,
-    file_level_enum_descriptors_modules_2fExampleModule_2eproto,
-    file_level_service_descriptors_modules_2fExampleModule_2eproto,
+  &::ExampleModule::_BlinkerStatus_default_instance_._instance,
+  &::ExampleModule::_LightsStatus_default_instance_._instance,
+  &::ExampleModule::_BlinkerCommand_default_instance_._instance,
+  &::ExampleModule::_LightsCommand_default_instance_._instance,
+  &::ExampleModule::_BlinkerError_default_instance_._instance,
+  &::ExampleModule::_LightsError_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_modules_2fExampleModule_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\033modules/ExampleModule.proto\022\rExampleMo"
+  "dule\"#\n\rBlinkerStatus\022\022\n\nisFlashing\030\001 \001("
+  "\010\"\034\n\014LightsStatus\022\014\n\004isOn\030\001 \001(\010\"n\n\016Blink"
+  "erCommand\0226\n\007command\030\001 \001(\0162%.ExampleModu"
+  "le.BlinkerCommand.Command\"$\n\007Command\022\013\n\007"
+  "TURN_ON\020\000\022\014\n\010TURN_OFF\020\001\"\\\n\rLightsCommand"
+  "\0225\n\007command\030\001 \001(\0162$.ExampleModule.Lights"
+  "Command.Command\"\024\n\007Command\022\t\n\005PRESS\020\000\"$\n"
+  "\014BlinkerError\022\024\n\014errorMessage\030\001 \001(\t\"#\n\013L"
+  "ightsError\022\024\n\014errorMessage\030\001 \001(\tB>Z!../i"
+  "nternal/pkg/ba_proto;ba_proto\252\002\030Google.P"
+  "rotobuf.ba_protob\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_modules_2fExampleModule_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_modules_2fExampleModule_2eproto = {
+    false, false, 464, descriptor_table_protodef_modules_2fExampleModule_2eproto,
+    "modules/ExampleModule.proto",
+    &descriptor_table_modules_2fExampleModule_2eproto_once, nullptr, 0, 6,
+    schemas, file_default_instances, TableStruct_modules_2fExampleModule_2eproto::offsets,
+    file_level_metadata_modules_2fExampleModule_2eproto, file_level_enum_descriptors_modules_2fExampleModule_2eproto,
+    file_level_service_descriptors_modules_2fExampleModule_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_modules_2fExampleModule_2eproto_getter() {
   return &descriptor_table_modules_2fExampleModule_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_modules_2fExampleModule_2eproto(&descriptor_table_modules_2fExampleModule_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_modules_2fExampleModule_2eproto(&descriptor_table_modules_2fExampleModule_2eproto);
 namespace ExampleModule {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BlinkerCommand_Command_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fExampleModule_2eproto);
@@ -258,17 +209,14 @@ bool BlinkerCommand_Command_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr BlinkerCommand_Command BlinkerCommand::TURN_ON;
 constexpr BlinkerCommand_Command BlinkerCommand::TURN_OFF;
 constexpr BlinkerCommand_Command BlinkerCommand::Command_MIN;
 constexpr BlinkerCommand_Command BlinkerCommand::Command_MAX;
 constexpr int BlinkerCommand::Command_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LightsCommand_Command_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fExampleModule_2eproto);
   return file_level_enum_descriptors_modules_2fExampleModule_2eproto[1];
@@ -281,39 +229,44 @@ bool LightsCommand_Command_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr LightsCommand_Command LightsCommand::PRESS;
 constexpr LightsCommand_Command LightsCommand::Command_MIN;
 constexpr LightsCommand_Command LightsCommand::Command_MAX;
 constexpr int LightsCommand::Command_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
 class BlinkerStatus::_Internal {
  public:
 };
 
-BlinkerStatus::BlinkerStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+BlinkerStatus::BlinkerStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExampleModule.BlinkerStatus)
 }
 BlinkerStatus::BlinkerStatus(const BlinkerStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BlinkerStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.isflashing_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.isflashing_ = from._impl_.isflashing_;
   // @@protoc_insertion_point(copy_constructor:ExampleModule.BlinkerStatus)
 }
 
-inline void BlinkerStatus::SharedCtor(::_pb::Arena* arena) {
+inline void BlinkerStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.isflashing_) { false }
-
+      decltype(_impl_.isflashing_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -328,7 +281,7 @@ BlinkerStatus::~BlinkerStatus() {
 }
 
 inline void BlinkerStatus::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void BlinkerStatus::SetCachedSize(int size) const {
@@ -337,7 +290,7 @@ void BlinkerStatus::SetCachedSize(int size) const {
 
 void BlinkerStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExampleModule.BlinkerStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -348,17 +301,16 @@ void BlinkerStatus::Clear() {
 const char* BlinkerStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bool isFlashing = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.isflashing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -383,17 +335,16 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* BlinkerStatus::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* BlinkerStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExampleModule.BlinkerStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool isFlashing = 1;
   if (this->_internal_isflashing() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        1, this->_internal_isflashing(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_isflashing(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -404,17 +355,17 @@ failure:
   return target;
 }
 
-::size_t BlinkerStatus::ByteSizeLong() const {
+size_t BlinkerStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExampleModule.BlinkerStatus)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bool isFlashing = 1;
   if (this->_internal_isflashing() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -431,8 +382,8 @@ void BlinkerStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
   auto* const _this = static_cast<BlinkerStatus*>(&to_msg);
   auto& from = static_cast<const BlinkerStatus&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExampleModule.BlinkerStatus)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_isflashing() != 0) {
@@ -455,7 +406,6 @@ bool BlinkerStatus::IsInitialized() const {
 void BlinkerStatus::InternalSwap(BlinkerStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-
   swap(_impl_.isflashing_, other->_impl_.isflashing_);
 }
 
@@ -464,29 +414,37 @@ void BlinkerStatus::InternalSwap(BlinkerStatus* other) {
       &descriptor_table_modules_2fExampleModule_2eproto_getter, &descriptor_table_modules_2fExampleModule_2eproto_once,
       file_level_metadata_modules_2fExampleModule_2eproto[0]);
 }
+
 // ===================================================================
 
 class LightsStatus::_Internal {
  public:
 };
 
-LightsStatus::LightsStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+LightsStatus::LightsStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExampleModule.LightsStatus)
 }
 LightsStatus::LightsStatus(const LightsStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LightsStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ison_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.ison_ = from._impl_.ison_;
   // @@protoc_insertion_point(copy_constructor:ExampleModule.LightsStatus)
 }
 
-inline void LightsStatus::SharedCtor(::_pb::Arena* arena) {
+inline void LightsStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.ison_) { false }
-
+      decltype(_impl_.ison_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -501,7 +459,7 @@ LightsStatus::~LightsStatus() {
 }
 
 inline void LightsStatus::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void LightsStatus::SetCachedSize(int size) const {
@@ -510,7 +468,7 @@ void LightsStatus::SetCachedSize(int size) const {
 
 void LightsStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExampleModule.LightsStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -521,17 +479,16 @@ void LightsStatus::Clear() {
 const char* LightsStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bool isOn = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.ison_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -556,17 +513,16 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* LightsStatus::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LightsStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExampleModule.LightsStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool isOn = 1;
   if (this->_internal_ison() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        1, this->_internal_ison(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_ison(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -577,17 +533,17 @@ failure:
   return target;
 }
 
-::size_t LightsStatus::ByteSizeLong() const {
+size_t LightsStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExampleModule.LightsStatus)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bool isOn = 1;
   if (this->_internal_ison() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -604,8 +560,8 @@ void LightsStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   auto* const _this = static_cast<LightsStatus*>(&to_msg);
   auto& from = static_cast<const LightsStatus&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExampleModule.LightsStatus)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_ison() != 0) {
@@ -628,7 +584,6 @@ bool LightsStatus::IsInitialized() const {
 void LightsStatus::InternalSwap(LightsStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-
   swap(_impl_.ison_, other->_impl_.ison_);
 }
 
@@ -637,29 +592,37 @@ void LightsStatus::InternalSwap(LightsStatus* other) {
       &descriptor_table_modules_2fExampleModule_2eproto_getter, &descriptor_table_modules_2fExampleModule_2eproto_once,
       file_level_metadata_modules_2fExampleModule_2eproto[1]);
 }
+
 // ===================================================================
 
 class BlinkerCommand::_Internal {
  public:
 };
 
-BlinkerCommand::BlinkerCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+BlinkerCommand::BlinkerCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExampleModule.BlinkerCommand)
 }
 BlinkerCommand::BlinkerCommand(const BlinkerCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BlinkerCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.command_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.command_ = from._impl_.command_;
   // @@protoc_insertion_point(copy_constructor:ExampleModule.BlinkerCommand)
 }
 
-inline void BlinkerCommand::SharedCtor(::_pb::Arena* arena) {
+inline void BlinkerCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.command_) { 0 }
-
+      decltype(_impl_.command_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -674,7 +637,7 @@ BlinkerCommand::~BlinkerCommand() {
 }
 
 inline void BlinkerCommand::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void BlinkerCommand::SetCachedSize(int size) const {
@@ -683,7 +646,7 @@ void BlinkerCommand::SetCachedSize(int size) const {
 
 void BlinkerCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExampleModule.BlinkerCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -694,18 +657,17 @@ void BlinkerCommand::Clear() {
 const char* BlinkerCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ExampleModule.BlinkerCommand.Command command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command(static_cast<::ExampleModule::BlinkerCommand_Command>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -730,17 +692,17 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* BlinkerCommand::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* BlinkerCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExampleModule.BlinkerCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ExampleModule.BlinkerCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_command(), target);
+      1, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -751,18 +713,18 @@ failure:
   return target;
 }
 
-::size_t BlinkerCommand::ByteSizeLong() const {
+size_t BlinkerCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExampleModule.BlinkerCommand)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .ExampleModule.BlinkerCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -779,8 +741,8 @@ void BlinkerCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   auto* const _this = static_cast<BlinkerCommand*>(&to_msg);
   auto& from = static_cast<const BlinkerCommand&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExampleModule.BlinkerCommand)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_command() != 0) {
@@ -811,29 +773,37 @@ void BlinkerCommand::InternalSwap(BlinkerCommand* other) {
       &descriptor_table_modules_2fExampleModule_2eproto_getter, &descriptor_table_modules_2fExampleModule_2eproto_once,
       file_level_metadata_modules_2fExampleModule_2eproto[2]);
 }
+
 // ===================================================================
 
 class LightsCommand::_Internal {
  public:
 };
 
-LightsCommand::LightsCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+LightsCommand::LightsCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExampleModule.LightsCommand)
 }
 LightsCommand::LightsCommand(const LightsCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LightsCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.command_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.command_ = from._impl_.command_;
   // @@protoc_insertion_point(copy_constructor:ExampleModule.LightsCommand)
 }
 
-inline void LightsCommand::SharedCtor(::_pb::Arena* arena) {
+inline void LightsCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.command_) { 0 }
-
+      decltype(_impl_.command_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -848,7 +818,7 @@ LightsCommand::~LightsCommand() {
 }
 
 inline void LightsCommand::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void LightsCommand::SetCachedSize(int size) const {
@@ -857,7 +827,7 @@ void LightsCommand::SetCachedSize(int size) const {
 
 void LightsCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExampleModule.LightsCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -868,18 +838,17 @@ void LightsCommand::Clear() {
 const char* LightsCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ExampleModule.LightsCommand.Command command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command(static_cast<::ExampleModule::LightsCommand_Command>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -904,17 +873,17 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* LightsCommand::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LightsCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExampleModule.LightsCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ExampleModule.LightsCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_command(), target);
+      1, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -925,18 +894,18 @@ failure:
   return target;
 }
 
-::size_t LightsCommand::ByteSizeLong() const {
+size_t LightsCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExampleModule.LightsCommand)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .ExampleModule.LightsCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -953,8 +922,8 @@ void LightsCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
   auto* const _this = static_cast<LightsCommand*>(&to_msg);
   auto& from = static_cast<const LightsCommand&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExampleModule.LightsCommand)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_command() != 0) {
@@ -985,47 +954,50 @@ void LightsCommand::InternalSwap(LightsCommand* other) {
       &descriptor_table_modules_2fExampleModule_2eproto_getter, &descriptor_table_modules_2fExampleModule_2eproto_once,
       file_level_metadata_modules_2fExampleModule_2eproto[3]);
 }
+
 // ===================================================================
 
 class BlinkerError::_Internal {
  public:
 };
 
-BlinkerError::BlinkerError(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+BlinkerError::BlinkerError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExampleModule.BlinkerError)
 }
 BlinkerError::BlinkerError(const BlinkerError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   BlinkerError* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_errormessage().empty()) {
-    _this->_impl_.errormessage_.Set(from._internal_errormessage(), _this->GetArenaForAllocation());
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:ExampleModule.BlinkerError)
 }
 
-inline void BlinkerError::SharedCtor(::_pb::Arena* arena) {
+inline void BlinkerError::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BlinkerError::~BlinkerError() {
@@ -1038,7 +1010,7 @@ BlinkerError::~BlinkerError() {
 }
 
 inline void BlinkerError::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.errormessage_.Destroy();
 }
 
@@ -1048,7 +1020,7 @@ void BlinkerError::SetCachedSize(int size) const {
 
 void BlinkerError::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExampleModule.BlinkerError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1059,19 +1031,18 @@ void BlinkerError::Clear() {
 const char* BlinkerError::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string errorMessage = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_errormessage();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExampleModule.BlinkerError.errorMessage"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1096,18 +1067,20 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* BlinkerError::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* BlinkerError::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExampleModule.BlinkerError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    const std::string& _s = this->_internal_errormessage();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExampleModule.BlinkerError.errorMessage");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_errormessage().data(), static_cast<int>(this->_internal_errormessage().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExampleModule.BlinkerError.errorMessage");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_errormessage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1118,18 +1091,19 @@ failure:
   return target;
 }
 
-::size_t BlinkerError::ByteSizeLong() const {
+size_t BlinkerError::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExampleModule.BlinkerError)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_errormessage());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_errormessage());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1146,8 +1120,8 @@ void BlinkerError::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   auto* const _this = static_cast<BlinkerError*>(&to_msg);
   auto& from = static_cast<const BlinkerError&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExampleModule.BlinkerError)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_errormessage().empty()) {
@@ -1172,8 +1146,10 @@ void BlinkerError::InternalSwap(BlinkerError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.errormessage_, lhs_arena,
-                                       &other->_impl_.errormessage_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BlinkerError::GetMetadata() const {
@@ -1181,47 +1157,50 @@ void BlinkerError::InternalSwap(BlinkerError* other) {
       &descriptor_table_modules_2fExampleModule_2eproto_getter, &descriptor_table_modules_2fExampleModule_2eproto_once,
       file_level_metadata_modules_2fExampleModule_2eproto[4]);
 }
+
 // ===================================================================
 
 class LightsError::_Internal {
  public:
 };
 
-LightsError::LightsError(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+LightsError::LightsError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExampleModule.LightsError)
 }
 LightsError::LightsError(const LightsError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   LightsError* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_errormessage().empty()) {
-    _this->_impl_.errormessage_.Set(from._internal_errormessage(), _this->GetArenaForAllocation());
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:ExampleModule.LightsError)
 }
 
-inline void LightsError::SharedCtor(::_pb::Arena* arena) {
+inline void LightsError::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 LightsError::~LightsError() {
@@ -1234,7 +1213,7 @@ LightsError::~LightsError() {
 }
 
 inline void LightsError::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.errormessage_.Destroy();
 }
 
@@ -1244,7 +1223,7 @@ void LightsError::SetCachedSize(int size) const {
 
 void LightsError::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExampleModule.LightsError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1255,19 +1234,18 @@ void LightsError::Clear() {
 const char* LightsError::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string errorMessage = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_errormessage();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExampleModule.LightsError.errorMessage"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1292,18 +1270,20 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* LightsError::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LightsError::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExampleModule.LightsError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    const std::string& _s = this->_internal_errormessage();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExampleModule.LightsError.errorMessage");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_errormessage().data(), static_cast<int>(this->_internal_errormessage().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExampleModule.LightsError.errorMessage");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_errormessage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1314,18 +1294,19 @@ failure:
   return target;
 }
 
-::size_t LightsError::ByteSizeLong() const {
+size_t LightsError::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExampleModule.LightsError)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_errormessage());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_errormessage());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1342,8 +1323,8 @@ void LightsError::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   auto* const _this = static_cast<LightsError*>(&to_msg);
   auto& from = static_cast<const LightsError&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExampleModule.LightsError)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_errormessage().empty()) {
@@ -1368,8 +1349,10 @@ void LightsError::InternalSwap(LightsError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.errormessage_, lhs_arena,
-                                       &other->_impl_.errormessage_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LightsError::GetMetadata() const {
@@ -1377,6 +1360,7 @@ void LightsError::InternalSwap(LightsError* other) {
       &descriptor_table_modules_2fExampleModule_2eproto_getter, &descriptor_table_modules_2fExampleModule_2eproto_once,
       file_level_metadata_modules_2fExampleModule_2eproto[5]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace ExampleModule
 PROTOBUF_NAMESPACE_OPEN
@@ -1405,5 +1389,6 @@ Arena::CreateMaybeMessage< ::ExampleModule::LightsError >(Arena* arena) {
   return Arena::CreateMessageInternal< ::ExampleModule::LightsError >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

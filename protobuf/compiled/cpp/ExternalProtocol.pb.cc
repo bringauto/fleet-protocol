@@ -4,20 +4,22 @@
 #include "ExternalProtocol.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
+
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = ::PROTOBUF_NAMESPACE_ID::internal;
+namespace _pbi = _pb::internal;
+
 namespace ExternalProtocol {
 PROTOBUF_CONSTEXPR ExternalServer::ExternalServer(
     ::_pbi::ConstantInitialized): _impl_{
@@ -25,374 +27,291 @@ PROTOBUF_CONSTEXPR ExternalServer::ExternalServer(
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct ExternalServerDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ExternalServerDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ExternalServerDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ExternalServerDefaultTypeInternal() {}
   union {
     ExternalServer _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ExternalServerDefaultTypeInternal _ExternalServer_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ExternalServerDefaultTypeInternal _ExternalServer_default_instance_;
 PROTOBUF_CONSTEXPR ExternalClient::ExternalClient(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.MessageType_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_._oneof_case_)*/{}} {}
 struct ExternalClientDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ExternalClientDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ExternalClientDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ExternalClientDefaultTypeInternal() {}
   union {
     ExternalClient _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ExternalClientDefaultTypeInternal _ExternalClient_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ExternalClientDefaultTypeInternal _ExternalClient_default_instance_;
 PROTOBUF_CONSTEXPR Connect::Connect(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.devices_)*/{}
-  , /*decltype(_impl_.sessionid_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.company_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.vehiclename_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+  , /*decltype(_impl_.sessionid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.company_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.vehiclename_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ConnectDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ConnectDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ConnectDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ConnectDefaultTypeInternal() {}
   union {
     Connect _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConnectDefaultTypeInternal _Connect_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConnectDefaultTypeInternal _Connect_default_instance_;
 PROTOBUF_CONSTEXPR ConnectResponse::ConnectResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sessionid_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.type_)*/ 0
-
+    /*decltype(_impl_.sessionid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.type_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ConnectResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ConnectResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ConnectResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ConnectResponseDefaultTypeInternal() {}
   union {
     ConnectResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConnectResponseDefaultTypeInternal _ConnectResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConnectResponseDefaultTypeInternal _ConnectResponse_default_instance_;
 PROTOBUF_CONSTEXPR Status::Status(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.sessionid_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.errormessage_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+  , /*decltype(_impl_.sessionid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.devicestatus_)*/nullptr
-  , /*decltype(_impl_.devicestate_)*/ 0
-
-  , /*decltype(_impl_.messagecounter_)*/ 0u
-} {}
+  , /*decltype(_impl_.devicestate_)*/0
+  , /*decltype(_impl_.messagecounter_)*/0u} {}
 struct StatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StatusDefaultTypeInternal() {}
   union {
     Status _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatusDefaultTypeInternal _Status_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatusDefaultTypeInternal _Status_default_instance_;
 PROTOBUF_CONSTEXPR StatusResponse::StatusResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sessionid_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.type_)*/ 0
-
-  , /*decltype(_impl_.messagecounter_)*/ 0u
-
+    /*decltype(_impl_.sessionid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.messagecounter_)*/0u
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StatusResponseDefaultTypeInternal() {}
   union {
     StatusResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatusResponseDefaultTypeInternal _StatusResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatusResponseDefaultTypeInternal _StatusResponse_default_instance_;
 PROTOBUF_CONSTEXPR Command::Command(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sessionid_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+    /*decltype(_impl_.sessionid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.device_)*/nullptr
   , /*decltype(_impl_.devicecommand_)*/nullptr
-  , /*decltype(_impl_.messagecounter_)*/ 0u
-
+  , /*decltype(_impl_.messagecounter_)*/0u
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CommandDefaultTypeInternal() {}
   union {
     Command _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CommandDefaultTypeInternal _Command_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CommandDefaultTypeInternal _Command_default_instance_;
 PROTOBUF_CONSTEXPR CommandResponse::CommandResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.sessionid_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.type_)*/ 0
-
-  , /*decltype(_impl_.messagecounter_)*/ 0u
-
+    /*decltype(_impl_.sessionid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.messagecounter_)*/0u
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CommandResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CommandResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CommandResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CommandResponseDefaultTypeInternal() {}
   union {
     CommandResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CommandResponseDefaultTypeInternal _CommandResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CommandResponseDefaultTypeInternal _CommandResponse_default_instance_;
 }  // namespace ExternalProtocol
 static ::_pb::Metadata file_level_metadata_ExternalProtocol_2eproto[8];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_ExternalProtocol_2eproto[4];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_ExternalProtocol_2eproto = nullptr;
-const ::uint32_t TableStruct_ExternalProtocol_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalServer, _internal_metadata_),
-    ~0u,  // no _extensions_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalServer, _impl_._oneof_case_[0]),
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ::_pbi::kInvalidFieldOffsetTag,
-    ::_pbi::kInvalidFieldOffsetTag,
-    ::_pbi::kInvalidFieldOffsetTag,
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalServer, _impl_.MessageType_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalClient, _internal_metadata_),
-    ~0u,  // no _extensions_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalClient, _impl_._oneof_case_[0]),
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ::_pbi::kInvalidFieldOffsetTag,
-    ::_pbi::kInvalidFieldOffsetTag,
-    ::_pbi::kInvalidFieldOffsetTag,
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalClient, _impl_.MessageType_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.sessionid_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.company_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.vehiclename_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.devices_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ConnectResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ConnectResponse, _impl_.sessionid_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ConnectResponse, _impl_.type_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.sessionid_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.devicestate_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.messagecounter_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.devicestatus_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.errormessage_),
-    ~0u,
-    ~0u,
-    ~0u,
-    ~0u,
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _impl_.sessionid_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _impl_.type_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _impl_.messagecounter_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.sessionid_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.messagecounter_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.device_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.devicecommand_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _impl_.sessionid_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _impl_.type_),
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _impl_.messagecounter_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_ExternalProtocol_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        { 0, -1, -1, sizeof(::ExternalProtocol::ExternalServer)},
-        { 12, -1, -1, sizeof(::ExternalProtocol::ExternalClient)},
-        { 24, -1, -1, sizeof(::ExternalProtocol::Connect)},
-        { 36, -1, -1, sizeof(::ExternalProtocol::ConnectResponse)},
-        { 46, 59, -1, sizeof(::ExternalProtocol::Status)},
-        { 64, -1, -1, sizeof(::ExternalProtocol::StatusResponse)},
-        { 75, -1, -1, sizeof(::ExternalProtocol::Command)},
-        { 87, -1, -1, sizeof(::ExternalProtocol::CommandResponse)},
+const uint32_t TableStruct_ExternalProtocol_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalServer, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalServer, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalServer, _impl_.MessageType_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalClient, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalClient, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalClient, _impl_.MessageType_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.sessionid_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.company_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.vehiclename_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Connect, _impl_.devices_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ConnectResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ConnectResponse, _impl_.sessionid_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ConnectResponse, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.sessionid_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.devicestate_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.messagecounter_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.devicestatus_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Status, _impl_.errormessage_),
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _impl_.sessionid_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::StatusResponse, _impl_.messagecounter_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.sessionid_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.messagecounter_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.device_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::Command, _impl_.devicecommand_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _impl_.sessionid_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::ExternalProtocol::CommandResponse, _impl_.messagecounter_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::ExternalProtocol::ExternalServer)},
+  { 10, -1, -1, sizeof(::ExternalProtocol::ExternalClient)},
+  { 20, -1, -1, sizeof(::ExternalProtocol::Connect)},
+  { 30, -1, -1, sizeof(::ExternalProtocol::ConnectResponse)},
+  { 38, 49, -1, sizeof(::ExternalProtocol::Status)},
+  { 54, -1, -1, sizeof(::ExternalProtocol::StatusResponse)},
+  { 63, -1, -1, sizeof(::ExternalProtocol::Command)},
+  { 73, -1, -1, sizeof(::ExternalProtocol::CommandResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::ExternalProtocol::_ExternalServer_default_instance_._instance,
-    &::ExternalProtocol::_ExternalClient_default_instance_._instance,
-    &::ExternalProtocol::_Connect_default_instance_._instance,
-    &::ExternalProtocol::_ConnectResponse_default_instance_._instance,
-    &::ExternalProtocol::_Status_default_instance_._instance,
-    &::ExternalProtocol::_StatusResponse_default_instance_._instance,
-    &::ExternalProtocol::_Command_default_instance_._instance,
-    &::ExternalProtocol::_CommandResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_ExternalProtocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\026ExternalProtocol.proto\022\020ExternalProtoc"
-    "ol\032\026InternalProtocol.proto\"\307\001\n\016ExternalS"
-    "erver\022<\n\017connectResponse\030\001 \001(\0132!.Externa"
-    "lProtocol.ConnectResponseH\000\022:\n\016statusRes"
-    "ponse\030\002 \001(\0132 .ExternalProtocol.StatusRes"
-    "ponseH\000\022,\n\007command\030\003 \001(\0132\031.ExternalProto"
-    "col.CommandH\000B\r\n\013MessageType\"\267\001\n\016Externa"
-    "lClient\022,\n\007connect\030\001 \001(\0132\031.ExternalProto"
-    "col.ConnectH\000\022*\n\006status\030\002 \001(\0132\030.External"
-    "Protocol.StatusH\000\022<\n\017commandResponse\030\003 \001"
-    "(\0132!.ExternalProtocol.CommandResponseH\000B"
-    "\r\n\013MessageType\"m\n\007Connect\022\021\n\tsessionId\030\001"
-    " \001(\t\022\017\n\007company\030\002 \001(\t\022\023\n\013vehicleName\030\003 \001"
-    "(\t\022)\n\007devices\030\004 \003(\0132\030.InternalProtocol.D"
-    "evice\"~\n\017ConnectResponse\022\021\n\tsessionId\030\001 "
-    "\001(\t\0224\n\004type\030\002 \001(\0162&.ExternalProtocol.Con"
-    "nectResponse.Type\"\"\n\004Type\022\006\n\002OK\020\000\022\022\n\016ALR"
-    "EADY_LOGGED\020\001\"\227\002\n\006Status\022\021\n\tsessionId\030\001 "
-    "\001(\t\0229\n\013deviceState\030\002 \001(\0162$.ExternalProto"
-    "col.Status.DeviceState\022\026\n\016messageCounter"
-    "\030\003 \001(\r\0224\n\014deviceStatus\030\004 \001(\0132\036.InternalP"
-    "rotocol.DeviceStatus\022\031\n\014errorMessage\030\005 \001"
-    "(\014H\000\210\001\001\"E\n\013DeviceState\022\016\n\nCONNECTING\020\000\022\013"
-    "\n\007RUNNING\020\001\022\t\n\005ERROR\020\002\022\016\n\nDISCONNECT\020\003B\017"
-    "\n\r_errorMessage\"\200\001\n\016StatusResponse\022\021\n\tse"
-    "ssionId\030\001 \001(\t\0223\n\004type\030\002 \001(\0162%.ExternalPr"
-    "otocol.StatusResponse.Type\022\026\n\016messageCou"
-    "nter\030\003 \001(\r\"\016\n\004Type\022\006\n\002OK\020\000\"\226\001\n\007Command\022\021"
-    "\n\tsessionId\030\001 \001(\t\022\026\n\016messageCounter\030\002 \001("
-    "\r\022(\n\006device\030\003 \001(\0132\030.InternalProtocol.Dev"
-    "ice\0226\n\rdeviceCommand\030\004 \001(\0132\037.InternalPro"
-    "tocol.DeviceCommand\"\234\001\n\017CommandResponse\022"
-    "\021\n\tsessionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.Exter"
-    "nalProtocol.CommandResponse.Type\022\026\n\016mess"
-    "ageCounter\030\003 \001(\r\"(\n\004Type\022\006\n\002OK\020\000\022\030\n\024DEVI"
-    "CE_NOT_CONNECTED\020\001B>Z!../internal/pkg/ba"
-    "_proto;ba_proto\252\002\030Google.Protobuf.ba_pro"
-    "tob\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_ExternalProtocol_2eproto_deps[1] =
-    {
-        &::descriptor_table_InternalProtocol_2eproto,
-};
-static ::absl::once_flag descriptor_table_ExternalProtocol_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_ExternalProtocol_2eproto = {
-    false,
-    false,
-    1490,
-    descriptor_table_protodef_ExternalProtocol_2eproto,
-    "ExternalProtocol.proto",
-    &descriptor_table_ExternalProtocol_2eproto_once,
-    descriptor_table_ExternalProtocol_2eproto_deps,
-    1,
-    8,
-    schemas,
-    file_default_instances,
-    TableStruct_ExternalProtocol_2eproto::offsets,
-    file_level_metadata_ExternalProtocol_2eproto,
-    file_level_enum_descriptors_ExternalProtocol_2eproto,
-    file_level_service_descriptors_ExternalProtocol_2eproto,
+  &::ExternalProtocol::_ExternalServer_default_instance_._instance,
+  &::ExternalProtocol::_ExternalClient_default_instance_._instance,
+  &::ExternalProtocol::_Connect_default_instance_._instance,
+  &::ExternalProtocol::_ConnectResponse_default_instance_._instance,
+  &::ExternalProtocol::_Status_default_instance_._instance,
+  &::ExternalProtocol::_StatusResponse_default_instance_._instance,
+  &::ExternalProtocol::_Command_default_instance_._instance,
+  &::ExternalProtocol::_CommandResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_ExternalProtocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\026ExternalProtocol.proto\022\020ExternalProtoc"
+  "ol\032\026InternalProtocol.proto\"\307\001\n\016ExternalS"
+  "erver\022<\n\017connectResponse\030\001 \001(\0132!.Externa"
+  "lProtocol.ConnectResponseH\000\022:\n\016statusRes"
+  "ponse\030\002 \001(\0132 .ExternalProtocol.StatusRes"
+  "ponseH\000\022,\n\007command\030\003 \001(\0132\031.ExternalProto"
+  "col.CommandH\000B\r\n\013MessageType\"\267\001\n\016Externa"
+  "lClient\022,\n\007connect\030\001 \001(\0132\031.ExternalProto"
+  "col.ConnectH\000\022*\n\006status\030\002 \001(\0132\030.External"
+  "Protocol.StatusH\000\022<\n\017commandResponse\030\003 \001"
+  "(\0132!.ExternalProtocol.CommandResponseH\000B"
+  "\r\n\013MessageType\"m\n\007Connect\022\021\n\tsessionId\030\001"
+  " \001(\t\022\017\n\007company\030\002 \001(\t\022\023\n\013vehicleName\030\003 \001"
+  "(\t\022)\n\007devices\030\004 \003(\0132\030.InternalProtocol.D"
+  "evice\"~\n\017ConnectResponse\022\021\n\tsessionId\030\001 "
+  "\001(\t\0224\n\004type\030\002 \001(\0162&.ExternalProtocol.Con"
+  "nectResponse.Type\"\"\n\004Type\022\006\n\002OK\020\000\022\022\n\016ALR"
+  "EADY_LOGGED\020\001\"\227\002\n\006Status\022\021\n\tsessionId\030\001 "
+  "\001(\t\0229\n\013deviceState\030\002 \001(\0162$.ExternalProto"
+  "col.Status.DeviceState\022\026\n\016messageCounter"
+  "\030\003 \001(\r\0224\n\014deviceStatus\030\004 \001(\0132\036.InternalP"
+  "rotocol.DeviceStatus\022\031\n\014errorMessage\030\005 \001"
+  "(\014H\000\210\001\001\"E\n\013DeviceState\022\016\n\nCONNECTING\020\000\022\013"
+  "\n\007RUNNING\020\001\022\t\n\005ERROR\020\002\022\016\n\nDISCONNECT\020\003B\017"
+  "\n\r_errorMessage\"\200\001\n\016StatusResponse\022\021\n\tse"
+  "ssionId\030\001 \001(\t\0223\n\004type\030\002 \001(\0162%.ExternalPr"
+  "otocol.StatusResponse.Type\022\026\n\016messageCou"
+  "nter\030\003 \001(\r\"\016\n\004Type\022\006\n\002OK\020\000\"\226\001\n\007Command\022\021"
+  "\n\tsessionId\030\001 \001(\t\022\026\n\016messageCounter\030\002 \001("
+  "\r\022(\n\006device\030\003 \001(\0132\030.InternalProtocol.Dev"
+  "ice\0226\n\rdeviceCommand\030\004 \001(\0132\037.InternalPro"
+  "tocol.DeviceCommand\"\234\001\n\017CommandResponse\022"
+  "\021\n\tsessionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.Exter"
+  "nalProtocol.CommandResponse.Type\022\026\n\016mess"
+  "ageCounter\030\003 \001(\r\"(\n\004Type\022\006\n\002OK\020\000\022\030\n\024DEVI"
+  "CE_NOT_CONNECTED\020\001B>Z!../internal/pkg/ba"
+  "_proto;ba_proto\252\002\030Google.Protobuf.ba_pro"
+  "tob\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_ExternalProtocol_2eproto_deps[1] = {
+  &::descriptor_table_InternalProtocol_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_ExternalProtocol_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_ExternalProtocol_2eproto = {
+    false, false, 1490, descriptor_table_protodef_ExternalProtocol_2eproto,
+    "ExternalProtocol.proto",
+    &descriptor_table_ExternalProtocol_2eproto_once, descriptor_table_ExternalProtocol_2eproto_deps, 1, 8,
+    schemas, file_default_instances, TableStruct_ExternalProtocol_2eproto::offsets,
+    file_level_metadata_ExternalProtocol_2eproto, file_level_enum_descriptors_ExternalProtocol_2eproto,
+    file_level_service_descriptors_ExternalProtocol_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_ExternalProtocol_2eproto_getter() {
   return &descriptor_table_ExternalProtocol_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_ExternalProtocol_2eproto(&descriptor_table_ExternalProtocol_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_ExternalProtocol_2eproto(&descriptor_table_ExternalProtocol_2eproto);
 namespace ExternalProtocol {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ConnectResponse_Type_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_ExternalProtocol_2eproto);
@@ -407,17 +326,14 @@ bool ConnectResponse_Type_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr ConnectResponse_Type ConnectResponse::OK;
 constexpr ConnectResponse_Type ConnectResponse::ALREADY_LOGGED;
 constexpr ConnectResponse_Type ConnectResponse::Type_MIN;
 constexpr ConnectResponse_Type ConnectResponse::Type_MAX;
 constexpr int ConnectResponse::Type_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Status_DeviceState_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_ExternalProtocol_2eproto);
   return file_level_enum_descriptors_ExternalProtocol_2eproto[1];
@@ -433,9 +349,8 @@ bool Status_DeviceState_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Status_DeviceState Status::CONNECTING;
 constexpr Status_DeviceState Status::RUNNING;
 constexpr Status_DeviceState Status::ERROR;
@@ -443,9 +358,7 @@ constexpr Status_DeviceState Status::DISCONNECT;
 constexpr Status_DeviceState Status::DeviceState_MIN;
 constexpr Status_DeviceState Status::DeviceState_MAX;
 constexpr int Status::DeviceState_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StatusResponse_Type_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_ExternalProtocol_2eproto);
   return file_level_enum_descriptors_ExternalProtocol_2eproto[2];
@@ -458,16 +371,13 @@ bool StatusResponse_Type_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr StatusResponse_Type StatusResponse::OK;
 constexpr StatusResponse_Type StatusResponse::Type_MIN;
 constexpr StatusResponse_Type StatusResponse::Type_MAX;
 constexpr int StatusResponse::Type_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CommandResponse_Type_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_ExternalProtocol_2eproto);
   return file_level_enum_descriptors_ExternalProtocol_2eproto[3];
@@ -481,23 +391,19 @@ bool CommandResponse_Type_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr CommandResponse_Type CommandResponse::OK;
 constexpr CommandResponse_Type CommandResponse::DEVICE_NOT_CONNECTED;
 constexpr CommandResponse_Type CommandResponse::Type_MIN;
 constexpr CommandResponse_Type CommandResponse::Type_MAX;
 constexpr int CommandResponse::Type_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
 class ExternalServer::_Internal {
  public:
-  static constexpr ::int32_t kOneofCaseOffset =
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalServer, _impl_._oneof_case_);
   static const ::ExternalProtocol::ConnectResponse& connectresponse(const ExternalServer* msg);
   static const ::ExternalProtocol::StatusResponse& statusresponse(const ExternalServer* msg);
   static const ::ExternalProtocol::Command& command(const ExternalServer* msg);
@@ -560,9 +466,10 @@ void ExternalServer::set_allocated_command(::ExternalProtocol::Command* command)
   }
   // @@protoc_insertion_point(field_set_allocated:ExternalProtocol.ExternalServer.command)
 }
-ExternalServer::ExternalServer(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+ExternalServer::ExternalServer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.ExternalServer)
 }
 ExternalServer::ExternalServer(const ExternalServer& from)
@@ -598,8 +505,10 @@ ExternalServer::ExternalServer(const ExternalServer& from)
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.ExternalServer)
 }
 
-inline void ExternalServer::SharedCtor(::_pb::Arena* arena) {
+inline void ExternalServer::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.MessageType_){}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -618,7 +527,7 @@ ExternalServer::~ExternalServer() {
 }
 
 inline void ExternalServer::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_MessageType()) {
     clear_MessageType();
   }
@@ -659,7 +568,7 @@ void ExternalServer::clear_MessageType() {
 
 void ExternalServer::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.ExternalServer)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -670,35 +579,32 @@ void ExternalServer::Clear() {
 const char* ExternalServer::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ExternalProtocol.ConnectResponse connectResponse = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_connectresponse(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.StatusResponse statusResponse = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_statusresponse(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.Command command = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_command(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -723,28 +629,28 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* ExternalServer::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ExternalServer::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.ExternalServer)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ExternalProtocol.ConnectResponse connectResponse = 1;
-  if (MessageType_case() == kConnectResponse) {
+  if (_internal_has_connectresponse()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::connectresponse(this),
         _Internal::connectresponse(this).GetCachedSize(), target, stream);
   }
 
   // .ExternalProtocol.StatusResponse statusResponse = 2;
-  if (MessageType_case() == kStatusResponse) {
+  if (_internal_has_statusresponse()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::statusresponse(this),
         _Internal::statusresponse(this).GetCachedSize(), target, stream);
   }
 
   // .ExternalProtocol.Command command = 3;
-  if (MessageType_case() == kCommand) {
+  if (_internal_has_command()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::command(this),
         _Internal::command(this).GetCachedSize(), target, stream);
@@ -758,11 +664,11 @@ failure:
   return target;
 }
 
-::size_t ExternalServer::ByteSizeLong() const {
+size_t ExternalServer::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.ExternalServer)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -806,8 +712,8 @@ void ExternalServer::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   auto* const _this = static_cast<ExternalServer*>(&to_msg);
   auto& from = static_cast<const ExternalServer&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.ExternalServer)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.MessageType_case()) {
@@ -856,12 +762,11 @@ void ExternalServer::InternalSwap(ExternalServer* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[0]);
 }
+
 // ===================================================================
 
 class ExternalClient::_Internal {
  public:
-  static constexpr ::int32_t kOneofCaseOffset =
-    PROTOBUF_FIELD_OFFSET(::ExternalProtocol::ExternalClient, _impl_._oneof_case_);
   static const ::ExternalProtocol::Connect& connect(const ExternalClient* msg);
   static const ::ExternalProtocol::Status& status(const ExternalClient* msg);
   static const ::ExternalProtocol::CommandResponse& commandresponse(const ExternalClient* msg);
@@ -924,9 +829,10 @@ void ExternalClient::set_allocated_commandresponse(::ExternalProtocol::CommandRe
   }
   // @@protoc_insertion_point(field_set_allocated:ExternalProtocol.ExternalClient.commandResponse)
 }
-ExternalClient::ExternalClient(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+ExternalClient::ExternalClient(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.ExternalClient)
 }
 ExternalClient::ExternalClient(const ExternalClient& from)
@@ -962,8 +868,10 @@ ExternalClient::ExternalClient(const ExternalClient& from)
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.ExternalClient)
 }
 
-inline void ExternalClient::SharedCtor(::_pb::Arena* arena) {
+inline void ExternalClient::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.MessageType_){}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -982,7 +890,7 @@ ExternalClient::~ExternalClient() {
 }
 
 inline void ExternalClient::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_MessageType()) {
     clear_MessageType();
   }
@@ -1023,7 +931,7 @@ void ExternalClient::clear_MessageType() {
 
 void ExternalClient::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.ExternalClient)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1034,35 +942,32 @@ void ExternalClient::Clear() {
 const char* ExternalClient::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ExternalProtocol.Connect connect = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_connect(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.Status status = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.CommandResponse commandResponse = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_commandresponse(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1087,28 +992,28 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* ExternalClient::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ExternalClient::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.ExternalClient)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ExternalProtocol.Connect connect = 1;
-  if (MessageType_case() == kConnect) {
+  if (_internal_has_connect()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::connect(this),
         _Internal::connect(this).GetCachedSize(), target, stream);
   }
 
   // .ExternalProtocol.Status status = 2;
-  if (MessageType_case() == kStatus) {
+  if (_internal_has_status()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::status(this),
         _Internal::status(this).GetCachedSize(), target, stream);
   }
 
   // .ExternalProtocol.CommandResponse commandResponse = 3;
-  if (MessageType_case() == kCommandResponse) {
+  if (_internal_has_commandresponse()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::commandresponse(this),
         _Internal::commandresponse(this).GetCachedSize(), target, stream);
@@ -1122,11 +1027,11 @@ failure:
   return target;
 }
 
-::size_t ExternalClient::ByteSizeLong() const {
+size_t ExternalClient::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.ExternalClient)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1170,8 +1075,8 @@ void ExternalClient::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   auto* const _this = static_cast<ExternalClient*>(&to_msg);
   auto& from = static_cast<const ExternalClient&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.ExternalClient)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.MessageType_case()) {
@@ -1220,6 +1125,7 @@ void ExternalClient::InternalSwap(ExternalClient* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[1]);
 }
+
 // ===================================================================
 
 class Connect::_Internal {
@@ -1229,9 +1135,10 @@ class Connect::_Internal {
 void Connect::clear_devices() {
   _impl_.devices_.Clear();
 }
-Connect::Connect(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+Connect::Connect(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.Connect)
 }
 Connect::Connect(const Connect& from)
@@ -1239,63 +1146,62 @@ Connect::Connect(const Connect& from)
   Connect* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.devices_){from._impl_.devices_}
-    , decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.company_) {}
-
-    , decltype(_impl_.vehiclename_) {}
-
+    , decltype(_impl_.sessionid_){}
+    , decltype(_impl_.company_){}
+    , decltype(_impl_.vehiclename_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sessionid().empty()) {
-    _this->_impl_.sessionid_.Set(from._internal_sessionid(), _this->GetArenaForAllocation());
+    _this->_impl_.sessionid_.Set(from._internal_sessionid(), 
+      _this->GetArenaForAllocation());
   }
   _impl_.company_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.company_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.company_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_company().empty()) {
-    _this->_impl_.company_.Set(from._internal_company(), _this->GetArenaForAllocation());
+    _this->_impl_.company_.Set(from._internal_company(), 
+      _this->GetArenaForAllocation());
   }
   _impl_.vehiclename_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.vehiclename_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.vehiclename_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_vehiclename().empty()) {
-    _this->_impl_.vehiclename_.Set(from._internal_vehiclename(), _this->GetArenaForAllocation());
+    _this->_impl_.vehiclename_.Set(from._internal_vehiclename(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.Connect)
 }
 
-inline void Connect::SharedCtor(::_pb::Arena* arena) {
+inline void Connect::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.devices_){arena}
-    , decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.company_) {}
-
-    , decltype(_impl_.vehiclename_) {}
-
+    , decltype(_impl_.sessionid_){}
+    , decltype(_impl_.company_){}
+    , decltype(_impl_.vehiclename_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.company_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.company_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.company_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.vehiclename_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.vehiclename_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.vehiclename_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Connect::~Connect() {
@@ -1308,7 +1214,7 @@ Connect::~Connect() {
 }
 
 inline void Connect::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.devices_.~RepeatedPtrField();
   _impl_.sessionid_.Destroy();
   _impl_.company_.Destroy();
@@ -1321,7 +1227,7 @@ void Connect::SetCachedSize(int size) const {
 
 void Connect::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.Connect)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1335,45 +1241,42 @@ void Connect::Clear() {
 const char* Connect::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string sessionId = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sessionid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.Connect.sessionId"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // string company = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_company();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.Connect.company"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // string vehicleName = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_vehiclename();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.Connect.vehicleName"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // repeated .InternalProtocol.Device devices = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1381,9 +1284,8 @@ const char* Connect::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1408,34 +1310,40 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* Connect::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Connect::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.Connect)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    const std::string& _s = this->_internal_sessionid();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.Connect.sessionId");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_sessionid().data(), static_cast<int>(this->_internal_sessionid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.Connect.sessionId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_sessionid(), target);
   }
 
   // string company = 2;
   if (!this->_internal_company().empty()) {
-    const std::string& _s = this->_internal_company();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.Connect.company");
-    target = stream->WriteStringMaybeAliased(2, _s, target);
+      this->_internal_company().data(), static_cast<int>(this->_internal_company().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.Connect.company");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_company(), target);
   }
 
   // string vehicleName = 3;
   if (!this->_internal_vehiclename().empty()) {
-    const std::string& _s = this->_internal_vehiclename();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.Connect.vehicleName");
-    target = stream->WriteStringMaybeAliased(3, _s, target);
+      this->_internal_vehiclename().data(), static_cast<int>(this->_internal_vehiclename().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.Connect.vehicleName");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_vehiclename(), target);
   }
 
   // repeated .InternalProtocol.Device devices = 4;
@@ -1454,11 +1362,11 @@ failure:
   return target;
 }
 
-::size_t Connect::ByteSizeLong() const {
+size_t Connect::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.Connect)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1471,20 +1379,23 @@ failure:
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_sessionid());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sessionid());
   }
 
   // string company = 2;
   if (!this->_internal_company().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_company());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_company());
   }
 
   // string vehicleName = 3;
   if (!this->_internal_vehiclename().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_vehiclename());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vehiclename());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1501,8 +1412,8 @@ void Connect::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOB
   auto* const _this = static_cast<Connect*>(&to_msg);
   auto& from = static_cast<const Connect&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.Connect)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   _this->_impl_.devices_.MergeFrom(from._impl_.devices_);
@@ -1535,12 +1446,18 @@ void Connect::InternalSwap(Connect* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.devices_.InternalSwap(&other->_impl_.devices_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sessionid_, lhs_arena,
-                                       &other->_impl_.sessionid_, rhs_arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.company_, lhs_arena,
-                                       &other->_impl_.company_, rhs_arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.vehiclename_, lhs_arena,
-                                       &other->_impl_.vehiclename_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sessionid_, lhs_arena,
+      &other->_impl_.sessionid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.company_, lhs_arena,
+      &other->_impl_.company_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.vehiclename_, lhs_arena,
+      &other->_impl_.vehiclename_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Connect::GetMetadata() const {
@@ -1548,52 +1465,53 @@ void Connect::InternalSwap(Connect* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[2]);
 }
+
 // ===================================================================
 
 class ConnectResponse::_Internal {
  public:
 };
 
-ConnectResponse::ConnectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+ConnectResponse::ConnectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.ConnectResponse)
 }
 ConnectResponse::ConnectResponse(const ConnectResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   ConnectResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.type_) {}
-
+      decltype(_impl_.sessionid_){}
+    , decltype(_impl_.type_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sessionid().empty()) {
-    _this->_impl_.sessionid_.Set(from._internal_sessionid(), _this->GetArenaForAllocation());
+    _this->_impl_.sessionid_.Set(from._internal_sessionid(), 
+      _this->GetArenaForAllocation());
   }
   _this->_impl_.type_ = from._impl_.type_;
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.ConnectResponse)
 }
 
-inline void ConnectResponse::SharedCtor(::_pb::Arena* arena) {
+inline void ConnectResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.type_) { 0 }
-
+      decltype(_impl_.sessionid_){}
+    , decltype(_impl_.type_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ConnectResponse::~ConnectResponse() {
@@ -1606,7 +1524,7 @@ ConnectResponse::~ConnectResponse() {
 }
 
 inline void ConnectResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.sessionid_.Destroy();
 }
 
@@ -1616,7 +1534,7 @@ void ConnectResponse::SetCachedSize(int size) const {
 
 void ConnectResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.ConnectResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1628,29 +1546,27 @@ void ConnectResponse::Clear() {
 const char* ConnectResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string sessionId = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sessionid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.ConnectResponse.sessionId"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.ConnectResponse.Type type = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::ExternalProtocol::ConnectResponse_Type>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1675,25 +1591,27 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* ConnectResponse::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ConnectResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.ConnectResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    const std::string& _s = this->_internal_sessionid();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.ConnectResponse.sessionId");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_sessionid().data(), static_cast<int>(this->_internal_sessionid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.ConnectResponse.sessionId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_sessionid(), target);
   }
 
   // .ExternalProtocol.ConnectResponse.Type type = 2;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_type(), target);
+      2, this->_internal_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1704,24 +1622,25 @@ failure:
   return target;
 }
 
-::size_t ConnectResponse::ByteSizeLong() const {
+size_t ConnectResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.ConnectResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_sessionid());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sessionid());
   }
 
   // .ExternalProtocol.ConnectResponse.Type type = 2;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1738,8 +1657,8 @@ void ConnectResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   auto* const _this = static_cast<ConnectResponse*>(&to_msg);
   auto& from = static_cast<const ConnectResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.ConnectResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_sessionid().empty()) {
@@ -1767,8 +1686,10 @@ void ConnectResponse::InternalSwap(ConnectResponse* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sessionid_, lhs_arena,
-                                       &other->_impl_.sessionid_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sessionid_, lhs_arena,
+      &other->_impl_.sessionid_, rhs_arena
+  );
   swap(_impl_.type_, other->_impl_.type_);
 }
 
@@ -1777,13 +1698,12 @@ void ConnectResponse::InternalSwap(ConnectResponse* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[3]);
 }
+
 // ===================================================================
 
 class Status::_Internal {
  public:
   using HasBits = decltype(std::declval<Status>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Status, _impl_._has_bits_);
   static const ::InternalProtocol::DeviceStatus& devicestatus(const Status* msg);
   static void set_has_errormessage(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
@@ -1800,9 +1720,10 @@ void Status::clear_devicestatus() {
   }
   _impl_.devicestatus_ = nullptr;
 }
-Status::Status(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+Status::Status(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.Status)
 }
 Status::Status(const Status& from)
@@ -1811,63 +1732,59 @@ Status::Status(const Status& from)
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.errormessage_) {}
-
+    , decltype(_impl_.sessionid_){}
+    , decltype(_impl_.errormessage_){}
     , decltype(_impl_.devicestatus_){nullptr}
-    , decltype(_impl_.devicestate_) {}
-
-    , decltype(_impl_.messagecounter_) {}
-  };
+    , decltype(_impl_.devicestate_){}
+    , decltype(_impl_.messagecounter_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sessionid().empty()) {
-    _this->_impl_.sessionid_.Set(from._internal_sessionid(), _this->GetArenaForAllocation());
+    _this->_impl_.sessionid_.Set(from._internal_sessionid(), 
+      _this->GetArenaForAllocation());
   }
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.errormessage_.Set(from._internal_errormessage(), _this->GetArenaForAllocation());
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_errormessage()) {
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_devicestatus()) {
     _this->_impl_.devicestatus_ = new ::InternalProtocol::DeviceStatus(*from._impl_.devicestatus_);
   }
   ::memcpy(&_impl_.devicestate_, &from._impl_.devicestate_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.messagecounter_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.messagecounter_) -
     reinterpret_cast<char*>(&_impl_.devicestate_)) + sizeof(_impl_.messagecounter_));
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.Status)
 }
 
-inline void Status::SharedCtor(::_pb::Arena* arena) {
+inline void Status::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.errormessage_) {}
-
+    , decltype(_impl_.sessionid_){}
+    , decltype(_impl_.errormessage_){}
     , decltype(_impl_.devicestatus_){nullptr}
-    , decltype(_impl_.devicestate_) { 0 }
-
-    , decltype(_impl_.messagecounter_) { 0u }
-
+    , decltype(_impl_.devicestate_){0}
+    , decltype(_impl_.messagecounter_){0u}
   };
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Status::~Status() {
@@ -1880,7 +1797,7 @@ Status::~Status() {
 }
 
 inline void Status::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.sessionid_.Destroy();
   _impl_.errormessage_.Destroy();
   if (this != internal_default_instance()) delete _impl_.devicestatus_;
@@ -1892,7 +1809,7 @@ void Status::SetCachedSize(int size) const {
 
 void Status::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.Status)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1905,7 +1822,7 @@ void Status::Clear() {
     delete _impl_.devicestatus_;
   }
   _impl_.devicestatus_ = nullptr;
-  ::memset(&_impl_.devicestate_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.devicestate_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.messagecounter_) -
       reinterpret_cast<char*>(&_impl_.devicestate_)) + sizeof(_impl_.messagecounter_));
   _impl_._has_bits_.Clear();
@@ -1916,57 +1833,52 @@ const char* Status::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string sessionId = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sessionid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.Status.sessionId"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.Status.DeviceState deviceState = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_devicestate(static_cast<::ExternalProtocol::Status_DeviceState>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // uint32 messageCounter = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.messagecounter_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .InternalProtocol.DeviceStatus deviceStatus = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_devicestatus(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // optional bytes errorMessage = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_errormessage();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1992,32 +1904,33 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* Status::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Status::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.Status)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    const std::string& _s = this->_internal_sessionid();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.Status.sessionId");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_sessionid().data(), static_cast<int>(this->_internal_sessionid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.Status.sessionId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_sessionid(), target);
   }
 
   // .ExternalProtocol.Status.DeviceState deviceState = 2;
   if (this->_internal_devicestate() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_devicestate(), target);
+      2, this->_internal_devicestate(), target);
   }
 
   // uint32 messageCounter = 3;
   if (this->_internal_messagecounter() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-        3, this->_internal_messagecounter(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_messagecounter(), target);
   }
 
   // .InternalProtocol.DeviceStatus deviceStatus = 4;
@@ -2028,9 +1941,9 @@ failure:
   }
 
   // optional bytes errorMessage = 5;
-  if ((_impl_._has_bits_[0] & 0x00000001u) != 0) {
-    const std::string& _s = this->_internal_errormessage();
-    target = stream->WriteBytesMaybeAliased(5, _s, target);
+  if (_internal_has_errormessage()) {
+    target = stream->WriteBytesMaybeAliased(
+        5, this->_internal_errormessage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2041,25 +1954,27 @@ failure:
   return target;
 }
 
-::size_t Status::ByteSizeLong() const {
+size_t Status::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.Status)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_sessionid());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sessionid());
   }
 
   // optional bytes errorMessage = 5;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-                                    this->_internal_errormessage());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_errormessage());
   }
 
   // .InternalProtocol.DeviceStatus deviceStatus = 4;
@@ -2072,13 +1987,12 @@ failure:
   // .ExternalProtocol.Status.DeviceState deviceState = 2;
   if (this->_internal_devicestate() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_devicestate());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_devicestate());
   }
 
   // uint32 messageCounter = 3;
   if (this->_internal_messagecounter() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-        this->_internal_messagecounter());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_messagecounter());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2095,14 +2009,14 @@ void Status::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
   auto* const _this = static_cast<Status*>(&to_msg);
   auto& from = static_cast<const Status&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.Status)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_sessionid().empty()) {
     _this->_internal_set_sessionid(from._internal_sessionid());
   }
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_errormessage()) {
     _this->_internal_set_errormessage(from._internal_errormessage());
   }
   if (from._internal_has_devicestatus()) {
@@ -2135,10 +2049,14 @@ void Status::InternalSwap(Status* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sessionid_, lhs_arena,
-                                       &other->_impl_.sessionid_, rhs_arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.errormessage_, lhs_arena,
-                                       &other->_impl_.errormessage_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sessionid_, lhs_arena,
+      &other->_impl_.sessionid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Status, _impl_.messagecounter_)
       + sizeof(Status::_impl_.messagecounter_)
@@ -2152,58 +2070,57 @@ void Status::InternalSwap(Status* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[4]);
 }
+
 // ===================================================================
 
 class StatusResponse::_Internal {
  public:
 };
 
-StatusResponse::StatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+StatusResponse::StatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.StatusResponse)
 }
 StatusResponse::StatusResponse(const StatusResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   StatusResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.type_) {}
-
-    , decltype(_impl_.messagecounter_) {}
-
+      decltype(_impl_.sessionid_){}
+    , decltype(_impl_.type_){}
+    , decltype(_impl_.messagecounter_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sessionid().empty()) {
-    _this->_impl_.sessionid_.Set(from._internal_sessionid(), _this->GetArenaForAllocation());
+    _this->_impl_.sessionid_.Set(from._internal_sessionid(), 
+      _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.type_, &from._impl_.type_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.messagecounter_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.messagecounter_) -
     reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.messagecounter_));
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.StatusResponse)
 }
 
-inline void StatusResponse::SharedCtor(::_pb::Arena* arena) {
+inline void StatusResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.type_) { 0 }
-
-    , decltype(_impl_.messagecounter_) { 0u }
-
+      decltype(_impl_.sessionid_){}
+    , decltype(_impl_.type_){0}
+    , decltype(_impl_.messagecounter_){0u}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 StatusResponse::~StatusResponse() {
@@ -2216,7 +2133,7 @@ StatusResponse::~StatusResponse() {
 }
 
 inline void StatusResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.sessionid_.Destroy();
 }
 
@@ -2226,12 +2143,12 @@ void StatusResponse::SetCachedSize(int size) const {
 
 void StatusResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.StatusResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.sessionid_.ClearToEmpty();
-  ::memset(&_impl_.type_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.messagecounter_) -
       reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.messagecounter_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -2240,38 +2157,35 @@ void StatusResponse::Clear() {
 const char* StatusResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string sessionId = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sessionid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.StatusResponse.sessionId"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.StatusResponse.Type type = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::ExternalProtocol::StatusResponse_Type>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // uint32 messageCounter = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.messagecounter_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2296,32 +2210,33 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* StatusResponse::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* StatusResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.StatusResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    const std::string& _s = this->_internal_sessionid();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.StatusResponse.sessionId");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_sessionid().data(), static_cast<int>(this->_internal_sessionid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.StatusResponse.sessionId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_sessionid(), target);
   }
 
   // .ExternalProtocol.StatusResponse.Type type = 2;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_type(), target);
+      2, this->_internal_type(), target);
   }
 
   // uint32 messageCounter = 3;
   if (this->_internal_messagecounter() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-        3, this->_internal_messagecounter(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_messagecounter(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2332,30 +2247,30 @@ failure:
   return target;
 }
 
-::size_t StatusResponse::ByteSizeLong() const {
+size_t StatusResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.StatusResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_sessionid());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sessionid());
   }
 
   // .ExternalProtocol.StatusResponse.Type type = 2;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // uint32 messageCounter = 3;
   if (this->_internal_messagecounter() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-        this->_internal_messagecounter());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_messagecounter());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2372,8 +2287,8 @@ void StatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   auto* const _this = static_cast<StatusResponse*>(&to_msg);
   auto& from = static_cast<const StatusResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.StatusResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_sessionid().empty()) {
@@ -2404,8 +2319,10 @@ void StatusResponse::InternalSwap(StatusResponse* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sessionid_, lhs_arena,
-                                       &other->_impl_.sessionid_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sessionid_, lhs_arena,
+      &other->_impl_.sessionid_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(StatusResponse, _impl_.messagecounter_)
       + sizeof(StatusResponse::_impl_.messagecounter_)
@@ -2419,6 +2336,7 @@ void StatusResponse::InternalSwap(StatusResponse* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[5]);
 }
+
 // ===================================================================
 
 class Command::_Internal {
@@ -2447,30 +2365,30 @@ void Command::clear_devicecommand() {
   }
   _impl_.devicecommand_ = nullptr;
 }
-Command::Command(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+Command::Command(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.Command)
 }
 Command::Command(const Command& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Command* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
+      decltype(_impl_.sessionid_){}
     , decltype(_impl_.device_){nullptr}
     , decltype(_impl_.devicecommand_){nullptr}
-    , decltype(_impl_.messagecounter_) {}
-
+    , decltype(_impl_.messagecounter_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sessionid().empty()) {
-    _this->_impl_.sessionid_.Set(from._internal_sessionid(), _this->GetArenaForAllocation());
+    _this->_impl_.sessionid_.Set(from._internal_sessionid(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_device()) {
     _this->_impl_.device_ = new ::InternalProtocol::Device(*from._impl_.device_);
@@ -2482,21 +2400,21 @@ Command::Command(const Command& from)
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.Command)
 }
 
-inline void Command::SharedCtor(::_pb::Arena* arena) {
+inline void Command::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
+      decltype(_impl_.sessionid_){}
     , decltype(_impl_.device_){nullptr}
     , decltype(_impl_.devicecommand_){nullptr}
-    , decltype(_impl_.messagecounter_) { 0u }
-
+    , decltype(_impl_.messagecounter_){0u}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Command::~Command() {
@@ -2509,7 +2427,7 @@ Command::~Command() {
 }
 
 inline void Command::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.sessionid_.Destroy();
   if (this != internal_default_instance()) delete _impl_.device_;
   if (this != internal_default_instance()) delete _impl_.devicecommand_;
@@ -2521,7 +2439,7 @@ void Command::SetCachedSize(int size) const {
 
 void Command::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.Command)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2541,46 +2459,42 @@ void Command::Clear() {
 const char* Command::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string sessionId = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sessionid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.Command.sessionId"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // uint32 messageCounter = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.messagecounter_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .InternalProtocol.Device device = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_device(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .InternalProtocol.DeviceCommand deviceCommand = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_devicecommand(), ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2605,25 +2519,26 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* Command::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Command::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.Command)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    const std::string& _s = this->_internal_sessionid();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.Command.sessionId");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_sessionid().data(), static_cast<int>(this->_internal_sessionid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.Command.sessionId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_sessionid(), target);
   }
 
   // uint32 messageCounter = 2;
   if (this->_internal_messagecounter() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-        2, this->_internal_messagecounter(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_messagecounter(), target);
   }
 
   // .InternalProtocol.Device device = 3;
@@ -2648,18 +2563,19 @@ failure:
   return target;
 }
 
-::size_t Command::ByteSizeLong() const {
+size_t Command::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.Command)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_sessionid());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sessionid());
   }
 
   // .InternalProtocol.Device device = 3;
@@ -2678,8 +2594,7 @@ failure:
 
   // uint32 messageCounter = 2;
   if (this->_internal_messagecounter() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-        this->_internal_messagecounter());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_messagecounter());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2696,8 +2611,8 @@ void Command::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOB
   auto* const _this = static_cast<Command*>(&to_msg);
   auto& from = static_cast<const Command&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.Command)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_sessionid().empty()) {
@@ -2733,8 +2648,10 @@ void Command::InternalSwap(Command* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sessionid_, lhs_arena,
-                                       &other->_impl_.sessionid_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sessionid_, lhs_arena,
+      &other->_impl_.sessionid_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Command, _impl_.messagecounter_)
       + sizeof(Command::_impl_.messagecounter_)
@@ -2748,58 +2665,57 @@ void Command::InternalSwap(Command* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[6]);
 }
+
 // ===================================================================
 
 class CommandResponse::_Internal {
  public:
 };
 
-CommandResponse::CommandResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+CommandResponse::CommandResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ExternalProtocol.CommandResponse)
 }
 CommandResponse::CommandResponse(const CommandResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   CommandResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.type_) {}
-
-    , decltype(_impl_.messagecounter_) {}
-
+      decltype(_impl_.sessionid_){}
+    , decltype(_impl_.type_){}
+    , decltype(_impl_.messagecounter_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sessionid().empty()) {
-    _this->_impl_.sessionid_.Set(from._internal_sessionid(), _this->GetArenaForAllocation());
+    _this->_impl_.sessionid_.Set(from._internal_sessionid(), 
+      _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.type_, &from._impl_.type_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.messagecounter_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.messagecounter_) -
     reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.messagecounter_));
   // @@protoc_insertion_point(copy_constructor:ExternalProtocol.CommandResponse)
 }
 
-inline void CommandResponse::SharedCtor(::_pb::Arena* arena) {
+inline void CommandResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.sessionid_) {}
-
-    , decltype(_impl_.type_) { 0 }
-
-    , decltype(_impl_.messagecounter_) { 0u }
-
+      decltype(_impl_.sessionid_){}
+    , decltype(_impl_.type_){0}
+    , decltype(_impl_.messagecounter_){0u}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.sessionid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sessionid_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sessionid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 CommandResponse::~CommandResponse() {
@@ -2812,7 +2728,7 @@ CommandResponse::~CommandResponse() {
 }
 
 inline void CommandResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.sessionid_.Destroy();
 }
 
@@ -2822,12 +2738,12 @@ void CommandResponse::SetCachedSize(int size) const {
 
 void CommandResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:ExternalProtocol.CommandResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.sessionid_.ClearToEmpty();
-  ::memset(&_impl_.type_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.messagecounter_) -
       reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.messagecounter_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -2836,38 +2752,35 @@ void CommandResponse::Clear() {
 const char* CommandResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string sessionId = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sessionid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ExternalProtocol.CommandResponse.sessionId"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ExternalProtocol.CommandResponse.Type type = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::ExternalProtocol::CommandResponse_Type>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // uint32 messageCounter = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.messagecounter_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2892,32 +2805,33 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* CommandResponse::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* CommandResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ExternalProtocol.CommandResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    const std::string& _s = this->_internal_sessionid();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ExternalProtocol.CommandResponse.sessionId");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_sessionid().data(), static_cast<int>(this->_internal_sessionid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ExternalProtocol.CommandResponse.sessionId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_sessionid(), target);
   }
 
   // .ExternalProtocol.CommandResponse.Type type = 2;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_type(), target);
+      2, this->_internal_type(), target);
   }
 
   // uint32 messageCounter = 3;
   if (this->_internal_messagecounter() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-        3, this->_internal_messagecounter(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_messagecounter(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2928,30 +2842,30 @@ failure:
   return target;
 }
 
-::size_t CommandResponse::ByteSizeLong() const {
+size_t CommandResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ExternalProtocol.CommandResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string sessionId = 1;
   if (!this->_internal_sessionid().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_sessionid());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sessionid());
   }
 
   // .ExternalProtocol.CommandResponse.Type type = 2;
   if (this->_internal_type() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // uint32 messageCounter = 3;
   if (this->_internal_messagecounter() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-        this->_internal_messagecounter());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_messagecounter());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2968,8 +2882,8 @@ void CommandResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   auto* const _this = static_cast<CommandResponse*>(&to_msg);
   auto& from = static_cast<const CommandResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ExternalProtocol.CommandResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_sessionid().empty()) {
@@ -3000,8 +2914,10 @@ void CommandResponse::InternalSwap(CommandResponse* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sessionid_, lhs_arena,
-                                       &other->_impl_.sessionid_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sessionid_, lhs_arena,
+      &other->_impl_.sessionid_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CommandResponse, _impl_.messagecounter_)
       + sizeof(CommandResponse::_impl_.messagecounter_)
@@ -3015,6 +2931,7 @@ void CommandResponse::InternalSwap(CommandResponse* other) {
       &descriptor_table_ExternalProtocol_2eproto_getter, &descriptor_table_ExternalProtocol_2eproto_once,
       file_level_metadata_ExternalProtocol_2eproto[7]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace ExternalProtocol
 PROTOBUF_NAMESPACE_OPEN
@@ -3051,5 +2968,6 @@ Arena::CreateMaybeMessage< ::ExternalProtocol::CommandResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::ExternalProtocol::CommandResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

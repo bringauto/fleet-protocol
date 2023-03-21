@@ -16,130 +16,142 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace InternalProtocol {
-constexpr DeviceConnect::DeviceConnect(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : device_(nullptr)
-  , priority_(0u){}
+PROTOBUF_CONSTEXPR DeviceConnect::DeviceConnect(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.device_)*/nullptr
+  , /*decltype(_impl_.priority_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DeviceConnectDefaultTypeInternal {
-  constexpr DeviceConnectDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DeviceConnectDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DeviceConnectDefaultTypeInternal() {}
   union {
     DeviceConnect _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceConnectDefaultTypeInternal _DeviceConnect_default_instance_;
-constexpr DeviceConnectResponse::DeviceConnectResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : responsetype_(0)
-{}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeviceConnectDefaultTypeInternal _DeviceConnect_default_instance_;
+PROTOBUF_CONSTEXPR DeviceConnectResponse::DeviceConnectResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.responsetype_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DeviceConnectResponseDefaultTypeInternal {
-  constexpr DeviceConnectResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DeviceConnectResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DeviceConnectResponseDefaultTypeInternal() {}
   union {
     DeviceConnectResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceConnectResponseDefaultTypeInternal _DeviceConnectResponse_default_instance_;
-constexpr DeviceStatus::DeviceStatus(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : statusdata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , device_(nullptr){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeviceConnectResponseDefaultTypeInternal _DeviceConnectResponse_default_instance_;
+PROTOBUF_CONSTEXPR DeviceStatus::DeviceStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.statusdata_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.device_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DeviceStatusDefaultTypeInternal {
-  constexpr DeviceStatusDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DeviceStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DeviceStatusDefaultTypeInternal() {}
   union {
     DeviceStatus _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceStatusDefaultTypeInternal _DeviceStatus_default_instance_;
-constexpr DeviceCommand::DeviceCommand(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : commanddata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeviceStatusDefaultTypeInternal _DeviceStatus_default_instance_;
+PROTOBUF_CONSTEXPR DeviceCommand::DeviceCommand(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.commanddata_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DeviceCommandDefaultTypeInternal {
-  constexpr DeviceCommandDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DeviceCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DeviceCommandDefaultTypeInternal() {}
   union {
     DeviceCommand _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceCommandDefaultTypeInternal _DeviceCommand_default_instance_;
-constexpr Device::Device(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : devicerole_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , devicename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , module_(0)
-
-  , devicetype_(0u){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeviceCommandDefaultTypeInternal _DeviceCommand_default_instance_;
+PROTOBUF_CONSTEXPR Device::Device(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.devicerole_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.devicename_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.module_)*/0
+  , /*decltype(_impl_.devicetype_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DeviceDefaultTypeInternal {
-  constexpr DeviceDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR DeviceDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~DeviceDefaultTypeInternal() {}
   union {
     Device _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceDefaultTypeInternal _Device_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeviceDefaultTypeInternal _Device_default_instance_;
 }  // namespace InternalProtocol
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_InternalProtocol_2eproto[5];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_InternalProtocol_2eproto[2];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_InternalProtocol_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_InternalProtocol_2eproto[5];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_InternalProtocol_2eproto[2];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_InternalProtocol_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_InternalProtocol_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_InternalProtocol_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnect, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnect, device_),
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnect, priority_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnect, _impl_.device_),
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnect, _impl_.priority_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnectResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnectResponse, responsetype_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceConnectResponse, _impl_.responsetype_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceStatus, device_),
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceStatus, statusdata_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceStatus, _impl_.device_),
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceStatus, _impl_.statusdata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceCommand, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceCommand, commanddata_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::DeviceCommand, _impl_.commanddata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, module_),
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, devicetype_),
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, devicerole_),
-  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, devicename_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, _impl_.module_),
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, _impl_.devicetype_),
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, _impl_.devicerole_),
+  PROTOBUF_FIELD_OFFSET(::InternalProtocol::Device, _impl_.devicename_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::InternalProtocol::DeviceConnect)},
-  { 7, -1, sizeof(::InternalProtocol::DeviceConnectResponse)},
-  { 13, -1, sizeof(::InternalProtocol::DeviceStatus)},
-  { 20, -1, sizeof(::InternalProtocol::DeviceCommand)},
-  { 26, -1, sizeof(::InternalProtocol::Device)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::InternalProtocol::DeviceConnect)},
+  { 8, -1, -1, sizeof(::InternalProtocol::DeviceConnectResponse)},
+  { 15, -1, -1, sizeof(::InternalProtocol::DeviceStatus)},
+  { 23, -1, -1, sizeof(::InternalProtocol::DeviceCommand)},
+  { 30, -1, -1, sizeof(::InternalProtocol::Device)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::InternalProtocol::_DeviceConnect_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::InternalProtocol::_DeviceConnectResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::InternalProtocol::_DeviceStatus_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::InternalProtocol::_DeviceCommand_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::InternalProtocol::_Device_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::InternalProtocol::_DeviceConnect_default_instance_._instance,
+  &::InternalProtocol::_DeviceConnectResponse_default_instance_._instance,
+  &::InternalProtocol::_DeviceStatus_default_instance_._instance,
+  &::InternalProtocol::_DeviceCommand_default_instance_._instance,
+  &::InternalProtocol::_Device_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_InternalProtocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -164,19 +176,21 @@ const char descriptor_table_protodef_InternalProtocol_2eproto[] PROTOBUF_SECTION
   "/ba_proto;ba_proto\252\002\030Google.Protobuf.ba_"
   "protob\006proto3"
   ;
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_InternalProtocol_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_InternalProtocol_2eproto = {
-  false, false, 773, descriptor_table_protodef_InternalProtocol_2eproto, "InternalProtocol.proto", 
-  &descriptor_table_InternalProtocol_2eproto_once, nullptr, 0, 5,
-  schemas, file_default_instances, TableStruct_InternalProtocol_2eproto::offsets,
-  file_level_metadata_InternalProtocol_2eproto, file_level_enum_descriptors_InternalProtocol_2eproto, file_level_service_descriptors_InternalProtocol_2eproto,
+static ::_pbi::once_flag descriptor_table_InternalProtocol_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_InternalProtocol_2eproto = {
+    false, false, 773, descriptor_table_protodef_InternalProtocol_2eproto,
+    "InternalProtocol.proto",
+    &descriptor_table_InternalProtocol_2eproto_once, nullptr, 0, 5,
+    schemas, file_default_instances, TableStruct_InternalProtocol_2eproto::offsets,
+    file_level_metadata_InternalProtocol_2eproto, file_level_enum_descriptors_InternalProtocol_2eproto,
+    file_level_service_descriptors_InternalProtocol_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_InternalProtocol_2eproto_getter() {
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_InternalProtocol_2eproto_getter() {
   return &descriptor_table_InternalProtocol_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_InternalProtocol_2eproto(&descriptor_table_InternalProtocol_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_InternalProtocol_2eproto(&descriptor_table_InternalProtocol_2eproto);
 namespace InternalProtocol {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DeviceConnectResponse_ResponseType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_InternalProtocol_2eproto);
@@ -195,7 +209,7 @@ bool DeviceConnectResponse_ResponseType_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse::OK;
 constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse::ALREADY_CONNECTED;
 constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse::MODULE_NOT_SUPPORTED;
@@ -204,7 +218,7 @@ constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse::HIGHER_PRIOR
 constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse::ResponseType_MIN;
 constexpr DeviceConnectResponse_ResponseType DeviceConnectResponse::ResponseType_MAX;
 constexpr int DeviceConnectResponse::ResponseType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Device_Module_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_InternalProtocol_2eproto);
   return file_level_enum_descriptors_InternalProtocol_2eproto[1];
@@ -221,7 +235,7 @@ bool Device_Module_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Device_Module Device::RESERVED_MODULE;
 constexpr Device_Module Device::MISSION_MODULE;
 constexpr Device_Module Device::CAR_ACCESSORY_MODULE;
@@ -229,7 +243,7 @@ constexpr Device_Module Device::EXAMPLE_MODULE;
 constexpr Device_Module Device::Module_MIN;
 constexpr Device_Module Device::Module_MAX;
 constexpr int Device::Module_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
@@ -240,137 +254,139 @@ class DeviceConnect::_Internal {
 
 const ::InternalProtocol::Device&
 DeviceConnect::_Internal::device(const DeviceConnect* msg) {
-  return *msg->device_;
+  return *msg->_impl_.device_;
 }
 DeviceConnect::DeviceConnect(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:InternalProtocol.DeviceConnect)
 }
 DeviceConnect::DeviceConnect(const DeviceConnect& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeviceConnect* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.device_){nullptr}
+    , decltype(_impl_.priority_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_device()) {
-    device_ = new ::InternalProtocol::Device(*from.device_);
-  } else {
-    device_ = nullptr;
+    _this->_impl_.device_ = new ::InternalProtocol::Device(*from._impl_.device_);
   }
-  priority_ = from.priority_;
+  _this->_impl_.priority_ = from._impl_.priority_;
   // @@protoc_insertion_point(copy_constructor:InternalProtocol.DeviceConnect)
 }
 
-inline void DeviceConnect::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&device_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&priority_) -
-    reinterpret_cast<char*>(&device_)) + sizeof(priority_));
+inline void DeviceConnect::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.device_){nullptr}
+    , decltype(_impl_.priority_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 DeviceConnect::~DeviceConnect() {
   // @@protoc_insertion_point(destructor:InternalProtocol.DeviceConnect)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void DeviceConnect::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete device_;
+  if (this != internal_default_instance()) delete _impl_.device_;
 }
 
-void DeviceConnect::ArenaDtor(void* object) {
-  DeviceConnect* _this = reinterpret_cast< DeviceConnect* >(object);
-  (void)_this;
-}
-void DeviceConnect::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DeviceConnect::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void DeviceConnect::Clear() {
 // @@protoc_insertion_point(message_clear_start:InternalProtocol.DeviceConnect)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && device_ != nullptr) {
-    delete device_;
+  if (GetArenaForAllocation() == nullptr && _impl_.device_ != nullptr) {
+    delete _impl_.device_;
   }
-  device_ = nullptr;
-  priority_ = 0u;
+  _impl_.device_ = nullptr;
+  _impl_.priority_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeviceConnect::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeviceConnect::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .InternalProtocol.Device device = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_device(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 priority = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          priority_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.priority_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DeviceConnect::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DeviceConnect::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:InternalProtocol.DeviceConnect)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .InternalProtocol.Device device = 1;
   if (this->_internal_has_device()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::device(this), target, stream);
+      InternalWriteMessage(1, _Internal::device(this),
+        _Internal::device(this).GetCachedSize(), target, stream);
   }
 
   // uint32 priority = 2;
   if (this->_internal_priority() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_priority(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_priority(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:InternalProtocol.DeviceConnect)
@@ -381,7 +397,7 @@ size_t DeviceConnect::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:InternalProtocol.DeviceConnect)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -389,51 +405,40 @@ size_t DeviceConnect::ByteSizeLong() const {
   if (this->_internal_has_device()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *device_);
+        *_impl_.device_);
   }
 
   // uint32 priority = 2;
   if (this->_internal_priority() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_priority());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_priority());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeviceConnect::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     DeviceConnect::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeviceConnect::GetClassData() const { return &_class_data_; }
 
-void DeviceConnect::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<DeviceConnect *>(to)->MergeFrom(
-      static_cast<const DeviceConnect &>(from));
-}
 
-
-void DeviceConnect::MergeFrom(const DeviceConnect& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceConnect)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void DeviceConnect::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeviceConnect*>(&to_msg);
+  auto& from = static_cast<const DeviceConnect&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceConnect)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_device()) {
-    _internal_mutable_device()->::InternalProtocol::Device::MergeFrom(from._internal_device());
+    _this->_internal_mutable_device()->::InternalProtocol::Device::MergeFrom(
+        from._internal_device());
   }
   if (from._internal_priority() != 0) {
-    _internal_set_priority(from._internal_priority());
+    _this->_internal_set_priority(from._internal_priority());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DeviceConnect::CopyFrom(const DeviceConnect& from) {
@@ -451,15 +456,15 @@ void DeviceConnect::InternalSwap(DeviceConnect* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeviceConnect, priority_)
-      + sizeof(DeviceConnect::priority_)
-      - PROTOBUF_FIELD_OFFSET(DeviceConnect, device_)>(
-          reinterpret_cast<char*>(&device_),
-          reinterpret_cast<char*>(&other->device_));
+      PROTOBUF_FIELD_OFFSET(DeviceConnect, _impl_.priority_)
+      + sizeof(DeviceConnect::_impl_.priority_)
+      - PROTOBUF_FIELD_OFFSET(DeviceConnect, _impl_.device_)>(
+          reinterpret_cast<char*>(&_impl_.device_),
+          reinterpret_cast<char*>(&other->_impl_.device_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeviceConnect::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_InternalProtocol_2eproto_getter, &descriptor_table_InternalProtocol_2eproto_once,
       file_level_metadata_InternalProtocol_2eproto[0]);
 }
@@ -473,106 +478,111 @@ class DeviceConnectResponse::_Internal {
 DeviceConnectResponse::DeviceConnectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:InternalProtocol.DeviceConnectResponse)
 }
 DeviceConnectResponse::DeviceConnectResponse(const DeviceConnectResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeviceConnectResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.responsetype_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  responsetype_ = from.responsetype_;
+  _this->_impl_.responsetype_ = from._impl_.responsetype_;
   // @@protoc_insertion_point(copy_constructor:InternalProtocol.DeviceConnectResponse)
 }
 
-inline void DeviceConnectResponse::SharedCtor() {
-responsetype_ = 0;
+inline void DeviceConnectResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.responsetype_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 DeviceConnectResponse::~DeviceConnectResponse() {
   // @@protoc_insertion_point(destructor:InternalProtocol.DeviceConnectResponse)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void DeviceConnectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void DeviceConnectResponse::ArenaDtor(void* object) {
-  DeviceConnectResponse* _this = reinterpret_cast< DeviceConnectResponse* >(object);
-  (void)_this;
-}
-void DeviceConnectResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DeviceConnectResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void DeviceConnectResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:InternalProtocol.DeviceConnectResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  responsetype_ = 0;
+  _impl_.responsetype_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeviceConnectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeviceConnectResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .InternalProtocol.DeviceConnectResponse.ResponseType responseType = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_responsetype(static_cast<::InternalProtocol::DeviceConnectResponse_ResponseType>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DeviceConnectResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DeviceConnectResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:InternalProtocol.DeviceConnectResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .InternalProtocol.DeviceConnectResponse.ResponseType responseType = 1;
   if (this->_internal_responsetype() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_responsetype(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:InternalProtocol.DeviceConnectResponse)
@@ -583,48 +593,38 @@ size_t DeviceConnectResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:InternalProtocol.DeviceConnectResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .InternalProtocol.DeviceConnectResponse.ResponseType responseType = 1;
   if (this->_internal_responsetype() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_responsetype());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_responsetype());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeviceConnectResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     DeviceConnectResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeviceConnectResponse::GetClassData() const { return &_class_data_; }
 
-void DeviceConnectResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<DeviceConnectResponse *>(to)->MergeFrom(
-      static_cast<const DeviceConnectResponse &>(from));
-}
 
-
-void DeviceConnectResponse::MergeFrom(const DeviceConnectResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceConnectResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void DeviceConnectResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeviceConnectResponse*>(&to_msg);
+  auto& from = static_cast<const DeviceConnectResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceConnectResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_responsetype() != 0) {
-    _internal_set_responsetype(from._internal_responsetype());
+    _this->_internal_set_responsetype(from._internal_responsetype());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DeviceConnectResponse::CopyFrom(const DeviceConnectResponse& from) {
@@ -641,11 +641,11 @@ bool DeviceConnectResponse::IsInitialized() const {
 void DeviceConnectResponse::InternalSwap(DeviceConnectResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(responsetype_, other->responsetype_);
+  swap(_impl_.responsetype_, other->_impl_.responsetype_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeviceConnectResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_InternalProtocol_2eproto_getter, &descriptor_table_InternalProtocol_2eproto_once,
       file_level_metadata_InternalProtocol_2eproto[1]);
 }
@@ -659,131 +659,142 @@ class DeviceStatus::_Internal {
 
 const ::InternalProtocol::Device&
 DeviceStatus::_Internal::device(const DeviceStatus* msg) {
-  return *msg->device_;
+  return *msg->_impl_.device_;
 }
 DeviceStatus::DeviceStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:InternalProtocol.DeviceStatus)
 }
 DeviceStatus::DeviceStatus(const DeviceStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeviceStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.statusdata_){}
+    , decltype(_impl_.device_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  statusdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.statusdata_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.statusdata_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_statusdata().empty()) {
-    statusdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_statusdata(), 
-      GetArenaForAllocation());
+    _this->_impl_.statusdata_.Set(from._internal_statusdata(), 
+      _this->GetArenaForAllocation());
   }
   if (from._internal_has_device()) {
-    device_ = new ::InternalProtocol::Device(*from.device_);
-  } else {
-    device_ = nullptr;
+    _this->_impl_.device_ = new ::InternalProtocol::Device(*from._impl_.device_);
   }
   // @@protoc_insertion_point(copy_constructor:InternalProtocol.DeviceStatus)
 }
 
-inline void DeviceStatus::SharedCtor() {
-statusdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-device_ = nullptr;
+inline void DeviceStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.statusdata_){}
+    , decltype(_impl_.device_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.statusdata_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.statusdata_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 DeviceStatus::~DeviceStatus() {
   // @@protoc_insertion_point(destructor:InternalProtocol.DeviceStatus)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void DeviceStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  statusdata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete device_;
+  _impl_.statusdata_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.device_;
 }
 
-void DeviceStatus::ArenaDtor(void* object) {
-  DeviceStatus* _this = reinterpret_cast< DeviceStatus* >(object);
-  (void)_this;
-}
-void DeviceStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DeviceStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void DeviceStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:InternalProtocol.DeviceStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  statusdata_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && device_ != nullptr) {
-    delete device_;
+  _impl_.statusdata_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && _impl_.device_ != nullptr) {
+    delete _impl_.device_;
   }
-  device_ = nullptr;
+  _impl_.device_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeviceStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeviceStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .InternalProtocol.Device device = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_device(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes statusData = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_statusdata();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DeviceStatus::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DeviceStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:InternalProtocol.DeviceStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .InternalProtocol.Device device = 1;
   if (this->_internal_has_device()) {
-    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::device(this), target, stream);
+      InternalWriteMessage(1, _Internal::device(this),
+        _Internal::device(this).GetCachedSize(), target, stream);
   }
 
   // bytes statusData = 2;
@@ -793,7 +804,7 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:InternalProtocol.DeviceStatus)
@@ -804,7 +815,7 @@ size_t DeviceStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:InternalProtocol.DeviceStatus)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -819,44 +830,35 @@ size_t DeviceStatus::ByteSizeLong() const {
   if (this->_internal_has_device()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *device_);
+        *_impl_.device_);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeviceStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     DeviceStatus::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeviceStatus::GetClassData() const { return &_class_data_; }
 
-void DeviceStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<DeviceStatus *>(to)->MergeFrom(
-      static_cast<const DeviceStatus &>(from));
-}
 
-
-void DeviceStatus::MergeFrom(const DeviceStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceStatus)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void DeviceStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeviceStatus*>(&to_msg);
+  auto& from = static_cast<const DeviceStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_statusdata().empty()) {
-    _internal_set_statusdata(from._internal_statusdata());
+    _this->_internal_set_statusdata(from._internal_statusdata());
   }
   if (from._internal_has_device()) {
-    _internal_mutable_device()->::InternalProtocol::Device::MergeFrom(from._internal_device());
+    _this->_internal_mutable_device()->::InternalProtocol::Device::MergeFrom(
+        from._internal_device());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DeviceStatus::CopyFrom(const DeviceStatus& from) {
@@ -872,17 +874,18 @@ bool DeviceStatus::IsInitialized() const {
 
 void DeviceStatus::InternalSwap(DeviceStatus* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &statusdata_, GetArenaForAllocation(),
-      &other->statusdata_, other->GetArenaForAllocation()
+      &_impl_.statusdata_, lhs_arena,
+      &other->_impl_.statusdata_, rhs_arena
   );
-  swap(device_, other->device_);
+  swap(_impl_.device_, other->_impl_.device_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeviceStatus::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_InternalProtocol_2eproto_getter, &descriptor_table_InternalProtocol_2eproto_once,
       file_level_metadata_InternalProtocol_2eproto[2]);
 }
@@ -896,100 +899,112 @@ class DeviceCommand::_Internal {
 DeviceCommand::DeviceCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:InternalProtocol.DeviceCommand)
 }
 DeviceCommand::DeviceCommand(const DeviceCommand& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeviceCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.commanddata_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  commanddata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.commanddata_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.commanddata_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_commanddata().empty()) {
-    commanddata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_commanddata(), 
-      GetArenaForAllocation());
+    _this->_impl_.commanddata_.Set(from._internal_commanddata(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:InternalProtocol.DeviceCommand)
 }
 
-inline void DeviceCommand::SharedCtor() {
-commanddata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void DeviceCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.commanddata_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.commanddata_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.commanddata_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 DeviceCommand::~DeviceCommand() {
   // @@protoc_insertion_point(destructor:InternalProtocol.DeviceCommand)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void DeviceCommand::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  commanddata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.commanddata_.Destroy();
 }
 
-void DeviceCommand::ArenaDtor(void* object) {
-  DeviceCommand* _this = reinterpret_cast< DeviceCommand* >(object);
-  (void)_this;
-}
-void DeviceCommand::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DeviceCommand::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void DeviceCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:InternalProtocol.DeviceCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  commanddata_.ClearToEmpty();
+  _impl_.commanddata_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeviceCommand::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeviceCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bytes commandData = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_commanddata();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DeviceCommand::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DeviceCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:InternalProtocol.DeviceCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes commandData = 1;
@@ -999,7 +1014,7 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:InternalProtocol.DeviceCommand)
@@ -1010,7 +1025,7 @@ size_t DeviceCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:InternalProtocol.DeviceCommand)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1021,38 +1036,28 @@ size_t DeviceCommand::ByteSizeLong() const {
         this->_internal_commanddata());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeviceCommand::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     DeviceCommand::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeviceCommand::GetClassData() const { return &_class_data_; }
 
-void DeviceCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<DeviceCommand *>(to)->MergeFrom(
-      static_cast<const DeviceCommand &>(from));
-}
 
-
-void DeviceCommand::MergeFrom(const DeviceCommand& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceCommand)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void DeviceCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeviceCommand*>(&to_msg);
+  auto& from = static_cast<const DeviceCommand&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.DeviceCommand)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_commanddata().empty()) {
-    _internal_set_commanddata(from._internal_commanddata());
+    _this->_internal_set_commanddata(from._internal_commanddata());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DeviceCommand::CopyFrom(const DeviceCommand& from) {
@@ -1068,16 +1073,17 @@ bool DeviceCommand::IsInitialized() const {
 
 void DeviceCommand::InternalSwap(DeviceCommand* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &commanddata_, GetArenaForAllocation(),
-      &other->commanddata_, other->GetArenaForAllocation()
+      &_impl_.commanddata_, lhs_arena,
+      &other->_impl_.commanddata_, rhs_arena
   );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeviceCommand::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_InternalProtocol_2eproto_getter, &descriptor_table_InternalProtocol_2eproto_once,
       file_level_metadata_InternalProtocol_2eproto[3]);
 }
@@ -1091,156 +1097,179 @@ class Device::_Internal {
 Device::Device(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:InternalProtocol.Device)
 }
 Device::Device(const Device& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Device* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.devicerole_){}
+    , decltype(_impl_.devicename_){}
+    , decltype(_impl_.module_){}
+    , decltype(_impl_.devicetype_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  devicerole_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.devicerole_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.devicerole_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_devicerole().empty()) {
-    devicerole_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_devicerole(), 
-      GetArenaForAllocation());
+    _this->_impl_.devicerole_.Set(from._internal_devicerole(), 
+      _this->GetArenaForAllocation());
   }
-  devicename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.devicename_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.devicename_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_devicename().empty()) {
-    devicename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_devicename(), 
-      GetArenaForAllocation());
+    _this->_impl_.devicename_.Set(from._internal_devicename(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&module_, &from.module_,
-    static_cast<size_t>(reinterpret_cast<char*>(&devicetype_) -
-    reinterpret_cast<char*>(&module_)) + sizeof(devicetype_));
+  ::memcpy(&_impl_.module_, &from._impl_.module_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.devicetype_) -
+    reinterpret_cast<char*>(&_impl_.module_)) + sizeof(_impl_.devicetype_));
   // @@protoc_insertion_point(copy_constructor:InternalProtocol.Device)
 }
 
-inline void Device::SharedCtor() {
-devicerole_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-devicename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&module_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&devicetype_) -
-    reinterpret_cast<char*>(&module_)) + sizeof(devicetype_));
+inline void Device::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.devicerole_){}
+    , decltype(_impl_.devicename_){}
+    , decltype(_impl_.module_){0}
+    , decltype(_impl_.devicetype_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.devicerole_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.devicerole_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.devicename_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.devicename_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 Device::~Device() {
   // @@protoc_insertion_point(destructor:InternalProtocol.Device)
-  if (GetArenaForAllocation() != nullptr) return;
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 inline void Device::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  devicerole_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  devicename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.devicerole_.Destroy();
+  _impl_.devicename_.Destroy();
 }
 
-void Device::ArenaDtor(void* object) {
-  Device* _this = reinterpret_cast< Device* >(object);
-  (void)_this;
-}
-void Device::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Device::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void Device::Clear() {
 // @@protoc_insertion_point(message_clear_start:InternalProtocol.Device)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  devicerole_.ClearToEmpty();
-  devicename_.ClearToEmpty();
-  ::memset(&module_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&devicetype_) -
-      reinterpret_cast<char*>(&module_)) + sizeof(devicetype_));
+  _impl_.devicerole_.ClearToEmpty();
+  _impl_.devicename_.ClearToEmpty();
+  ::memset(&_impl_.module_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.devicetype_) -
+      reinterpret_cast<char*>(&_impl_.module_)) + sizeof(_impl_.devicetype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Device::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Device::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .InternalProtocol.Device.Module module = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_module(static_cast<::InternalProtocol::Device_Module>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 deviceType = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          devicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.devicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string deviceRole = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_devicerole();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "InternalProtocol.Device.deviceRole"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "InternalProtocol.Device.deviceRole"));
+        } else
+          goto handle_unusual;
         continue;
       // string deviceName = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_devicename();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "InternalProtocol.Device.deviceName"));
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+          CHK_(::_pbi::VerifyUTF8(str, "InternalProtocol.Device.deviceName"));
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Device::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Device::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:InternalProtocol.Device)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .InternalProtocol.Device.Module module = 1;
   if (this->_internal_module() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_module(), target);
   }
 
   // uint32 deviceType = 2;
   if (this->_internal_devicetype() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_devicetype(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_devicetype(), target);
   }
 
   // string deviceRole = 3;
@@ -1264,7 +1293,7 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:InternalProtocol.Device)
@@ -1275,7 +1304,7 @@ size_t Device::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:InternalProtocol.Device)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1296,57 +1325,45 @@ size_t Device::ByteSizeLong() const {
   // .InternalProtocol.Device.Module module = 1;
   if (this->_internal_module() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_module());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_module());
   }
 
   // uint32 deviceType = 2;
   if (this->_internal_devicetype() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_devicetype());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_devicetype());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Device::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Device::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Device::GetClassData() const { return &_class_data_; }
 
-void Device::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<Device *>(to)->MergeFrom(
-      static_cast<const Device &>(from));
-}
 
-
-void Device::MergeFrom(const Device& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.Device)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void Device::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Device*>(&to_msg);
+  auto& from = static_cast<const Device&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:InternalProtocol.Device)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_devicerole().empty()) {
-    _internal_set_devicerole(from._internal_devicerole());
+    _this->_internal_set_devicerole(from._internal_devicerole());
   }
   if (!from._internal_devicename().empty()) {
-    _internal_set_devicename(from._internal_devicename());
+    _this->_internal_set_devicename(from._internal_devicename());
   }
   if (from._internal_module() != 0) {
-    _internal_set_module(from._internal_module());
+    _this->_internal_set_module(from._internal_module());
   }
   if (from._internal_devicetype() != 0) {
-    _internal_set_devicetype(from._internal_devicetype());
+    _this->_internal_set_devicetype(from._internal_devicetype());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Device::CopyFrom(const Device& from) {
@@ -1362,27 +1379,27 @@ bool Device::IsInitialized() const {
 
 void Device::InternalSwap(Device* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &devicerole_, GetArenaForAllocation(),
-      &other->devicerole_, other->GetArenaForAllocation()
+      &_impl_.devicerole_, lhs_arena,
+      &other->_impl_.devicerole_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &devicename_, GetArenaForAllocation(),
-      &other->devicename_, other->GetArenaForAllocation()
+      &_impl_.devicename_, lhs_arena,
+      &other->_impl_.devicename_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Device, devicetype_)
-      + sizeof(Device::devicetype_)
-      - PROTOBUF_FIELD_OFFSET(Device, module_)>(
-          reinterpret_cast<char*>(&module_),
-          reinterpret_cast<char*>(&other->module_));
+      PROTOBUF_FIELD_OFFSET(Device, _impl_.devicetype_)
+      + sizeof(Device::_impl_.devicetype_)
+      - PROTOBUF_FIELD_OFFSET(Device, _impl_.module_)>(
+          reinterpret_cast<char*>(&_impl_.module_),
+          reinterpret_cast<char*>(&other->_impl_.module_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Device::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+  return ::_pbi::AssignDescriptors(
       &descriptor_table_InternalProtocol_2eproto_getter, &descriptor_table_InternalProtocol_2eproto_once,
       file_level_metadata_InternalProtocol_2eproto[4]);
 }
@@ -1390,19 +1407,24 @@ void Device::InternalSwap(Device* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace InternalProtocol
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceConnect* Arena::CreateMaybeMessage< ::InternalProtocol::DeviceConnect >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceConnect*
+Arena::CreateMaybeMessage< ::InternalProtocol::DeviceConnect >(Arena* arena) {
   return Arena::CreateMessageInternal< ::InternalProtocol::DeviceConnect >(arena);
 }
-template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceConnectResponse* Arena::CreateMaybeMessage< ::InternalProtocol::DeviceConnectResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceConnectResponse*
+Arena::CreateMaybeMessage< ::InternalProtocol::DeviceConnectResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::InternalProtocol::DeviceConnectResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceStatus* Arena::CreateMaybeMessage< ::InternalProtocol::DeviceStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceStatus*
+Arena::CreateMaybeMessage< ::InternalProtocol::DeviceStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::InternalProtocol::DeviceStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceCommand* Arena::CreateMaybeMessage< ::InternalProtocol::DeviceCommand >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::InternalProtocol::DeviceCommand*
+Arena::CreateMaybeMessage< ::InternalProtocol::DeviceCommand >(Arena* arena) {
   return Arena::CreateMessageInternal< ::InternalProtocol::DeviceCommand >(arena);
 }
-template<> PROTOBUF_NOINLINE ::InternalProtocol::Device* Arena::CreateMaybeMessage< ::InternalProtocol::Device >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::InternalProtocol::Device*
+Arena::CreateMaybeMessage< ::InternalProtocol::Device >(Arena* arena) {
   return Arena::CreateMessageInternal< ::InternalProtocol::Device >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

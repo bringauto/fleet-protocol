@@ -4,160 +4,127 @@
 #include "modules/CarAccessoryModule.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
+
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = ::PROTOBUF_NAMESPACE_ID::internal;
+namespace _pbi = _pb::internal;
+
 namespace CarAccessoryModule {
 PROTOBUF_CONSTEXPR ButtonStatus::ButtonStatus(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ispressed_)*/ false
-
+    /*decltype(_impl_.ispressed_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ButtonStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ButtonStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ButtonStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ButtonStatusDefaultTypeInternal() {}
   union {
     ButtonStatus _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ButtonStatusDefaultTypeInternal _ButtonStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ButtonStatusDefaultTypeInternal _ButtonStatus_default_instance_;
 PROTOBUF_CONSTEXPR ButtonCommand::ButtonCommand(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.command_)*/ 0
-
+    /*decltype(_impl_.command_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ButtonCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ButtonCommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ButtonCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ButtonCommandDefaultTypeInternal() {}
   union {
     ButtonCommand _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ButtonCommandDefaultTypeInternal _ButtonCommand_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ButtonCommandDefaultTypeInternal _ButtonCommand_default_instance_;
 PROTOBUF_CONSTEXPR ButtonError::ButtonError(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.presscount_)*/ 0u
-
+    /*decltype(_impl_.presscount_)*/0u
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ButtonErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ButtonErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ButtonErrorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ButtonErrorDefaultTypeInternal() {}
   union {
     ButtonError _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ButtonErrorDefaultTypeInternal _ButtonError_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ButtonErrorDefaultTypeInternal _ButtonError_default_instance_;
 }  // namespace CarAccessoryModule
 static ::_pb::Metadata file_level_metadata_modules_2fCarAccessoryModule_2eproto[3];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_modules_2fCarAccessoryModule_2eproto[1];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_modules_2fCarAccessoryModule_2eproto = nullptr;
-const ::uint32_t TableStruct_modules_2fCarAccessoryModule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonStatus, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonStatus, _impl_.ispressed_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonCommand, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonCommand, _impl_.command_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonError, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonError, _impl_.presscount_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_modules_2fCarAccessoryModule_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        { 0, -1, -1, sizeof(::CarAccessoryModule::ButtonStatus)},
-        { 9, -1, -1, sizeof(::CarAccessoryModule::ButtonCommand)},
-        { 18, -1, -1, sizeof(::CarAccessoryModule::ButtonError)},
+const uint32_t TableStruct_modules_2fCarAccessoryModule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonStatus, _impl_.ispressed_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonCommand, _impl_.command_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonError, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CarAccessoryModule::ButtonError, _impl_.presscount_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::CarAccessoryModule::ButtonStatus)},
+  { 7, -1, -1, sizeof(::CarAccessoryModule::ButtonCommand)},
+  { 14, -1, -1, sizeof(::CarAccessoryModule::ButtonError)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::CarAccessoryModule::_ButtonStatus_default_instance_._instance,
-    &::CarAccessoryModule::_ButtonCommand_default_instance_._instance,
-    &::CarAccessoryModule::_ButtonError_default_instance_._instance,
-};
-const char descriptor_table_protodef_modules_2fCarAccessoryModule_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n modules/CarAccessoryModule.proto\022\022CarA"
-    "ccessoryModule\"!\n\014ButtonStatus\022\021\n\tisPres"
-    "sed\030\001 \001(\010\"a\n\rButtonCommand\022:\n\007command\030\001 "
-    "\001(\0162).CarAccessoryModule.ButtonCommand.C"
-    "ommand\"\024\n\007Command\022\t\n\005PRESS\020\000\"!\n\013ButtonEr"
-    "ror\022\022\n\npressCount\030\001 \001(\rB>Z!../internal/p"
-    "kg/ba_proto;ba_proto\252\002\030Google.Protobuf.b"
-    "a_protob\006proto3"
-};
-static ::absl::once_flag descriptor_table_modules_2fCarAccessoryModule_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_modules_2fCarAccessoryModule_2eproto = {
-    false,
-    false,
-    295,
-    descriptor_table_protodef_modules_2fCarAccessoryModule_2eproto,
-    "modules/CarAccessoryModule.proto",
-    &descriptor_table_modules_2fCarAccessoryModule_2eproto_once,
-    nullptr,
-    0,
-    3,
-    schemas,
-    file_default_instances,
-    TableStruct_modules_2fCarAccessoryModule_2eproto::offsets,
-    file_level_metadata_modules_2fCarAccessoryModule_2eproto,
-    file_level_enum_descriptors_modules_2fCarAccessoryModule_2eproto,
-    file_level_service_descriptors_modules_2fCarAccessoryModule_2eproto,
+  &::CarAccessoryModule::_ButtonStatus_default_instance_._instance,
+  &::CarAccessoryModule::_ButtonCommand_default_instance_._instance,
+  &::CarAccessoryModule::_ButtonError_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_modules_2fCarAccessoryModule_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n modules/CarAccessoryModule.proto\022\022CarA"
+  "ccessoryModule\"!\n\014ButtonStatus\022\021\n\tisPres"
+  "sed\030\001 \001(\010\"a\n\rButtonCommand\022:\n\007command\030\001 "
+  "\001(\0162).CarAccessoryModule.ButtonCommand.C"
+  "ommand\"\024\n\007Command\022\t\n\005PRESS\020\000\"!\n\013ButtonEr"
+  "ror\022\022\n\npressCount\030\001 \001(\rB>Z!../internal/p"
+  "kg/ba_proto;ba_proto\252\002\030Google.Protobuf.b"
+  "a_protob\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_modules_2fCarAccessoryModule_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_modules_2fCarAccessoryModule_2eproto = {
+    false, false, 295, descriptor_table_protodef_modules_2fCarAccessoryModule_2eproto,
+    "modules/CarAccessoryModule.proto",
+    &descriptor_table_modules_2fCarAccessoryModule_2eproto_once, nullptr, 0, 3,
+    schemas, file_default_instances, TableStruct_modules_2fCarAccessoryModule_2eproto::offsets,
+    file_level_metadata_modules_2fCarAccessoryModule_2eproto, file_level_enum_descriptors_modules_2fCarAccessoryModule_2eproto,
+    file_level_service_descriptors_modules_2fCarAccessoryModule_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_modules_2fCarAccessoryModule_2eproto_getter() {
   return &descriptor_table_modules_2fCarAccessoryModule_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_modules_2fCarAccessoryModule_2eproto(&descriptor_table_modules_2fCarAccessoryModule_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_modules_2fCarAccessoryModule_2eproto(&descriptor_table_modules_2fCarAccessoryModule_2eproto);
 namespace CarAccessoryModule {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ButtonCommand_Command_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fCarAccessoryModule_2eproto);
@@ -171,39 +138,44 @@ bool ButtonCommand_Command_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr ButtonCommand_Command ButtonCommand::PRESS;
 constexpr ButtonCommand_Command ButtonCommand::Command_MIN;
 constexpr ButtonCommand_Command ButtonCommand::Command_MAX;
 constexpr int ButtonCommand::Command_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
 class ButtonStatus::_Internal {
  public:
 };
 
-ButtonStatus::ButtonStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+ButtonStatus::ButtonStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:CarAccessoryModule.ButtonStatus)
 }
 ButtonStatus::ButtonStatus(const ButtonStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ButtonStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ispressed_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.ispressed_ = from._impl_.ispressed_;
   // @@protoc_insertion_point(copy_constructor:CarAccessoryModule.ButtonStatus)
 }
 
-inline void ButtonStatus::SharedCtor(::_pb::Arena* arena) {
+inline void ButtonStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.ispressed_) { false }
-
+      decltype(_impl_.ispressed_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -218,7 +190,7 @@ ButtonStatus::~ButtonStatus() {
 }
 
 inline void ButtonStatus::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void ButtonStatus::SetCachedSize(int size) const {
@@ -227,7 +199,7 @@ void ButtonStatus::SetCachedSize(int size) const {
 
 void ButtonStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:CarAccessoryModule.ButtonStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -238,17 +210,16 @@ void ButtonStatus::Clear() {
 const char* ButtonStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bool isPressed = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.ispressed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -273,17 +244,16 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* ButtonStatus::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ButtonStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:CarAccessoryModule.ButtonStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool isPressed = 1;
   if (this->_internal_ispressed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        1, this->_internal_ispressed(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_ispressed(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -294,17 +264,17 @@ failure:
   return target;
 }
 
-::size_t ButtonStatus::ByteSizeLong() const {
+size_t ButtonStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CarAccessoryModule.ButtonStatus)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bool isPressed = 1;
   if (this->_internal_ispressed() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -321,8 +291,8 @@ void ButtonStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   auto* const _this = static_cast<ButtonStatus*>(&to_msg);
   auto& from = static_cast<const ButtonStatus&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:CarAccessoryModule.ButtonStatus)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_ispressed() != 0) {
@@ -345,7 +315,6 @@ bool ButtonStatus::IsInitialized() const {
 void ButtonStatus::InternalSwap(ButtonStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-
   swap(_impl_.ispressed_, other->_impl_.ispressed_);
 }
 
@@ -354,29 +323,37 @@ void ButtonStatus::InternalSwap(ButtonStatus* other) {
       &descriptor_table_modules_2fCarAccessoryModule_2eproto_getter, &descriptor_table_modules_2fCarAccessoryModule_2eproto_once,
       file_level_metadata_modules_2fCarAccessoryModule_2eproto[0]);
 }
+
 // ===================================================================
 
 class ButtonCommand::_Internal {
  public:
 };
 
-ButtonCommand::ButtonCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+ButtonCommand::ButtonCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:CarAccessoryModule.ButtonCommand)
 }
 ButtonCommand::ButtonCommand(const ButtonCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ButtonCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.command_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.command_ = from._impl_.command_;
   // @@protoc_insertion_point(copy_constructor:CarAccessoryModule.ButtonCommand)
 }
 
-inline void ButtonCommand::SharedCtor(::_pb::Arena* arena) {
+inline void ButtonCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.command_) { 0 }
-
+      decltype(_impl_.command_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -391,7 +368,7 @@ ButtonCommand::~ButtonCommand() {
 }
 
 inline void ButtonCommand::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void ButtonCommand::SetCachedSize(int size) const {
@@ -400,7 +377,7 @@ void ButtonCommand::SetCachedSize(int size) const {
 
 void ButtonCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:CarAccessoryModule.ButtonCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -411,18 +388,17 @@ void ButtonCommand::Clear() {
 const char* ButtonCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .CarAccessoryModule.ButtonCommand.Command command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command(static_cast<::CarAccessoryModule::ButtonCommand_Command>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -447,17 +423,17 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* ButtonCommand::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ButtonCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:CarAccessoryModule.ButtonCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .CarAccessoryModule.ButtonCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_command(), target);
+      1, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -468,18 +444,18 @@ failure:
   return target;
 }
 
-::size_t ButtonCommand::ByteSizeLong() const {
+size_t ButtonCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CarAccessoryModule.ButtonCommand)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .CarAccessoryModule.ButtonCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -496,8 +472,8 @@ void ButtonCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
   auto* const _this = static_cast<ButtonCommand*>(&to_msg);
   auto& from = static_cast<const ButtonCommand&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:CarAccessoryModule.ButtonCommand)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_command() != 0) {
@@ -528,29 +504,37 @@ void ButtonCommand::InternalSwap(ButtonCommand* other) {
       &descriptor_table_modules_2fCarAccessoryModule_2eproto_getter, &descriptor_table_modules_2fCarAccessoryModule_2eproto_once,
       file_level_metadata_modules_2fCarAccessoryModule_2eproto[1]);
 }
+
 // ===================================================================
 
 class ButtonError::_Internal {
  public:
 };
 
-ButtonError::ButtonError(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+ButtonError::ButtonError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:CarAccessoryModule.ButtonError)
 }
 ButtonError::ButtonError(const ButtonError& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ButtonError* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.presscount_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.presscount_ = from._impl_.presscount_;
   // @@protoc_insertion_point(copy_constructor:CarAccessoryModule.ButtonError)
 }
 
-inline void ButtonError::SharedCtor(::_pb::Arena* arena) {
+inline void ButtonError::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.presscount_) { 0u }
-
+      decltype(_impl_.presscount_){0u}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -565,7 +549,7 @@ ButtonError::~ButtonError() {
 }
 
 inline void ButtonError::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void ButtonError::SetCachedSize(int size) const {
@@ -574,7 +558,7 @@ void ButtonError::SetCachedSize(int size) const {
 
 void ButtonError::Clear() {
 // @@protoc_insertion_point(message_clear_start:CarAccessoryModule.ButtonError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -585,17 +569,16 @@ void ButtonError::Clear() {
 const char* ButtonError::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint32 pressCount = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.presscount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -620,17 +603,16 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* ButtonError::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ButtonError::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:CarAccessoryModule.ButtonError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 pressCount = 1;
   if (this->_internal_presscount() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-        1, this->_internal_presscount(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_presscount(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -641,18 +623,17 @@ failure:
   return target;
 }
 
-::size_t ButtonError::ByteSizeLong() const {
+size_t ButtonError::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CarAccessoryModule.ButtonError)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 pressCount = 1;
   if (this->_internal_presscount() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-        this->_internal_presscount());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_presscount());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -669,8 +650,8 @@ void ButtonError::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   auto* const _this = static_cast<ButtonError*>(&to_msg);
   auto& from = static_cast<const ButtonError&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:CarAccessoryModule.ButtonError)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_presscount() != 0) {
@@ -693,7 +674,6 @@ bool ButtonError::IsInitialized() const {
 void ButtonError::InternalSwap(ButtonError* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-
   swap(_impl_.presscount_, other->_impl_.presscount_);
 }
 
@@ -702,6 +682,7 @@ void ButtonError::InternalSwap(ButtonError* other) {
       &descriptor_table_modules_2fCarAccessoryModule_2eproto_getter, &descriptor_table_modules_2fCarAccessoryModule_2eproto_once,
       file_level_metadata_modules_2fCarAccessoryModule_2eproto[2]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace CarAccessoryModule
 PROTOBUF_NAMESPACE_OPEN
@@ -718,5 +699,6 @@ Arena::CreateMaybeMessage< ::CarAccessoryModule::ButtonError >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CarAccessoryModule::ButtonError >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

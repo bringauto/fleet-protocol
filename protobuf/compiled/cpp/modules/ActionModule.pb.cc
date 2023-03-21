@@ -4,435 +4,351 @@
 #include "modules/ActionModule.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
+
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = ::PROTOBUF_NAMESPACE_ID::internal;
+namespace _pbi = _pb::internal;
+
 namespace ActionModule {
 PROTOBUF_CONSTEXPR SystemLoggerStatus::SystemLoggerStatus(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.logs_)*/{}
-  , /*decltype(_impl_.sourcedevice_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.verbosity_)*/ 0
-
+  , /*decltype(_impl_.sourcedevice_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.verbosity_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SystemLoggerStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SystemLoggerStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SystemLoggerStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SystemLoggerStatusDefaultTypeInternal() {}
   union {
     SystemLoggerStatus _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SystemLoggerStatusDefaultTypeInternal _SystemLoggerStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SystemLoggerStatusDefaultTypeInternal _SystemLoggerStatus_default_instance_;
 PROTOBUF_CONSTEXPR GreenButtonStatus::GreenButtonStatus(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ispressed_)*/ false
-
-  , /*decltype(_impl_.isalive_)*/ false
-
+    /*decltype(_impl_.ispressed_)*/false
+  , /*decltype(_impl_.isalive_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GreenButtonStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GreenButtonStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GreenButtonStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GreenButtonStatusDefaultTypeInternal() {}
   union {
     GreenButtonStatus _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GreenButtonStatusDefaultTypeInternal _GreenButtonStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GreenButtonStatusDefaultTypeInternal _GreenButtonStatus_default_instance_;
 PROTOBUF_CONSTEXPR RedButtonStatus::RedButtonStatus(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ispressed_)*/ false
-
+    /*decltype(_impl_.ispressed_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RedButtonStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RedButtonStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RedButtonStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RedButtonStatusDefaultTypeInternal() {}
   union {
     RedButtonStatus _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RedButtonStatusDefaultTypeInternal _RedButtonStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RedButtonStatusDefaultTypeInternal _RedButtonStatus_default_instance_;
 PROTOBUF_CONSTEXPR WatchdogStatus::WatchdogStatus(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.state_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
-  , /*decltype(_impl_.isalive_)*/ false
-
+    /*decltype(_impl_.state_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.isalive_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct WatchdogStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR WatchdogStatusDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR WatchdogStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~WatchdogStatusDefaultTypeInternal() {}
   union {
     WatchdogStatus _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WatchdogStatusDefaultTypeInternal _WatchdogStatus_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WatchdogStatusDefaultTypeInternal _WatchdogStatus_default_instance_;
 PROTOBUF_CONSTEXPR SystemLoggerCommand::SystemLoggerCommand(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.command_)*/ 0
-
+    /*decltype(_impl_.command_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SystemLoggerCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SystemLoggerCommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SystemLoggerCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SystemLoggerCommandDefaultTypeInternal() {}
   union {
     SystemLoggerCommand _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SystemLoggerCommandDefaultTypeInternal _SystemLoggerCommand_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SystemLoggerCommandDefaultTypeInternal _SystemLoggerCommand_default_instance_;
 PROTOBUF_CONSTEXPR GreenButtonCommand::GreenButtonCommand(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.command_)*/ 0
-
+    /*decltype(_impl_.command_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GreenButtonCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GreenButtonCommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GreenButtonCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GreenButtonCommandDefaultTypeInternal() {}
   union {
     GreenButtonCommand _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GreenButtonCommandDefaultTypeInternal _GreenButtonCommand_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GreenButtonCommandDefaultTypeInternal _GreenButtonCommand_default_instance_;
 PROTOBUF_CONSTEXPR RedButtonCommand::RedButtonCommand(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.command_)*/ 0
-
+    /*decltype(_impl_.command_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RedButtonCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RedButtonCommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RedButtonCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RedButtonCommandDefaultTypeInternal() {}
   union {
     RedButtonCommand _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RedButtonCommandDefaultTypeInternal _RedButtonCommand_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RedButtonCommandDefaultTypeInternal _RedButtonCommand_default_instance_;
 PROTOBUF_CONSTEXPR WatchdogCommand::WatchdogCommand(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.command_)*/ 0
-
+    /*decltype(_impl_.command_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct WatchdogCommandDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR WatchdogCommandDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR WatchdogCommandDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~WatchdogCommandDefaultTypeInternal() {}
   union {
     WatchdogCommand _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WatchdogCommandDefaultTypeInternal _WatchdogCommand_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WatchdogCommandDefaultTypeInternal _WatchdogCommand_default_instance_;
 PROTOBUF_CONSTEXPR SystemLoggerError::SystemLoggerError(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.errormessage_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+    /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SystemLoggerErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SystemLoggerErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SystemLoggerErrorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SystemLoggerErrorDefaultTypeInternal() {}
   union {
     SystemLoggerError _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SystemLoggerErrorDefaultTypeInternal _SystemLoggerError_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SystemLoggerErrorDefaultTypeInternal _SystemLoggerError_default_instance_;
 PROTOBUF_CONSTEXPR GreenButtonError::GreenButtonError(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.errormessage_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+    /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GreenButtonErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GreenButtonErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GreenButtonErrorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GreenButtonErrorDefaultTypeInternal() {}
   union {
     GreenButtonError _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GreenButtonErrorDefaultTypeInternal _GreenButtonError_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GreenButtonErrorDefaultTypeInternal _GreenButtonError_default_instance_;
 PROTOBUF_CONSTEXPR RedButtonError::RedButtonError(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.errormessage_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+    /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RedButtonErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RedButtonErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RedButtonErrorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RedButtonErrorDefaultTypeInternal() {}
   union {
     RedButtonError _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RedButtonErrorDefaultTypeInternal _RedButtonError_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RedButtonErrorDefaultTypeInternal _RedButtonError_default_instance_;
 PROTOBUF_CONSTEXPR WatchdogError::WatchdogError(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.errormessage_)*/ {
-    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
-  }
-
+    /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct WatchdogErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR WatchdogErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR WatchdogErrorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~WatchdogErrorDefaultTypeInternal() {}
   union {
     WatchdogError _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WatchdogErrorDefaultTypeInternal _WatchdogError_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WatchdogErrorDefaultTypeInternal _WatchdogError_default_instance_;
 }  // namespace ActionModule
 static ::_pb::Metadata file_level_metadata_modules_2fActionModule_2eproto[12];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_modules_2fActionModule_2eproto[5];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_modules_2fActionModule_2eproto = nullptr;
-const ::uint32_t TableStruct_modules_2fActionModule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _impl_.sourcedevice_),
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _impl_.logs_),
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _impl_.verbosity_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonStatus, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonStatus, _impl_.ispressed_),
-    PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonStatus, _impl_.isalive_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonStatus, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonStatus, _impl_.ispressed_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogStatus, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogStatus, _impl_.isalive_),
-    PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogStatus, _impl_.state_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerCommand, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerCommand, _impl_.command_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonCommand, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonCommand, _impl_.command_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonCommand, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonCommand, _impl_.command_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogCommand, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogCommand, _impl_.command_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerError, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerError, _impl_.errormessage_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonError, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonError, _impl_.errormessage_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonError, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonError, _impl_.errormessage_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogError, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogError, _impl_.errormessage_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_modules_2fActionModule_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        { 0, -1, -1, sizeof(::ActionModule::SystemLoggerStatus)},
-        { 11, -1, -1, sizeof(::ActionModule::GreenButtonStatus)},
-        { 21, -1, -1, sizeof(::ActionModule::RedButtonStatus)},
-        { 30, -1, -1, sizeof(::ActionModule::WatchdogStatus)},
-        { 40, -1, -1, sizeof(::ActionModule::SystemLoggerCommand)},
-        { 49, -1, -1, sizeof(::ActionModule::GreenButtonCommand)},
-        { 58, -1, -1, sizeof(::ActionModule::RedButtonCommand)},
-        { 67, -1, -1, sizeof(::ActionModule::WatchdogCommand)},
-        { 76, -1, -1, sizeof(::ActionModule::SystemLoggerError)},
-        { 85, -1, -1, sizeof(::ActionModule::GreenButtonError)},
-        { 94, -1, -1, sizeof(::ActionModule::RedButtonError)},
-        { 103, -1, -1, sizeof(::ActionModule::WatchdogError)},
+const uint32_t TableStruct_modules_2fActionModule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _impl_.sourcedevice_),
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _impl_.logs_),
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerStatus, _impl_.verbosity_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonStatus, _impl_.ispressed_),
+  PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonStatus, _impl_.isalive_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonStatus, _impl_.ispressed_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogStatus, _impl_.isalive_),
+  PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogStatus, _impl_.state_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerCommand, _impl_.command_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonCommand, _impl_.command_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonCommand, _impl_.command_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogCommand, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogCommand, _impl_.command_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerError, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::SystemLoggerError, _impl_.errormessage_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonError, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::GreenButtonError, _impl_.errormessage_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonError, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::RedButtonError, _impl_.errormessage_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogError, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::ActionModule::WatchdogError, _impl_.errormessage_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::ActionModule::SystemLoggerStatus)},
+  { 9, -1, -1, sizeof(::ActionModule::GreenButtonStatus)},
+  { 17, -1, -1, sizeof(::ActionModule::RedButtonStatus)},
+  { 24, -1, -1, sizeof(::ActionModule::WatchdogStatus)},
+  { 32, -1, -1, sizeof(::ActionModule::SystemLoggerCommand)},
+  { 39, -1, -1, sizeof(::ActionModule::GreenButtonCommand)},
+  { 46, -1, -1, sizeof(::ActionModule::RedButtonCommand)},
+  { 53, -1, -1, sizeof(::ActionModule::WatchdogCommand)},
+  { 60, -1, -1, sizeof(::ActionModule::SystemLoggerError)},
+  { 67, -1, -1, sizeof(::ActionModule::GreenButtonError)},
+  { 74, -1, -1, sizeof(::ActionModule::RedButtonError)},
+  { 81, -1, -1, sizeof(::ActionModule::WatchdogError)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::ActionModule::_SystemLoggerStatus_default_instance_._instance,
-    &::ActionModule::_GreenButtonStatus_default_instance_._instance,
-    &::ActionModule::_RedButtonStatus_default_instance_._instance,
-    &::ActionModule::_WatchdogStatus_default_instance_._instance,
-    &::ActionModule::_SystemLoggerCommand_default_instance_._instance,
-    &::ActionModule::_GreenButtonCommand_default_instance_._instance,
-    &::ActionModule::_RedButtonCommand_default_instance_._instance,
-    &::ActionModule::_WatchdogCommand_default_instance_._instance,
-    &::ActionModule::_SystemLoggerError_default_instance_._instance,
-    &::ActionModule::_GreenButtonError_default_instance_._instance,
-    &::ActionModule::_RedButtonError_default_instance_._instance,
-    &::ActionModule::_WatchdogError_default_instance_._instance,
-};
-const char descriptor_table_protodef_modules_2fActionModule_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\032modules/ActionModule.proto\022\014ActionModu"
-    "le\"\261\001\n\022SystemLoggerStatus\022\024\n\014sourceDevic"
-    "e\030\001 \001(\t\022\014\n\004logs\030\002 \003(\t\022=\n\tverbosity\030\003 \001(\016"
-    "2*.ActionModule.SystemLoggerStatus.Verbo"
-    "sity\"8\n\tVerbosity\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020\005\022\013"
-    "\n\007WARNING\020\n\022\t\n\005ERROR\020\017\"7\n\021GreenButtonSta"
-    "tus\022\021\n\tisPressed\030\001 \001(\010\022\017\n\007isAlive\030\002 \001(\010\""
-    "$\n\017RedButtonStatus\022\021\n\tisPressed\030\001 \001(\010\"0\n"
-    "\016WatchdogStatus\022\017\n\007isAlive\030\001 \001(\010\022\r\n\005stat"
-    "e\030\002 \001(\t\"e\n\023SystemLoggerCommand\022:\n\007comman"
-    "d\030\001 \001(\0162).ActionModule.SystemLoggerComma"
-    "nd.Command\"\022\n\007Command\022\007\n\003LOG\020\000\"e\n\022GreenB"
-    "uttonCommand\0229\n\007command\030\001 \001(\0162(.ActionMo"
-    "dule.GreenButtonCommand.Command\"\024\n\007Comma"
-    "nd\022\t\n\005PRESS\020\000\"a\n\020RedButtonCommand\0227\n\007com"
-    "mand\030\001 \001(\0162&.ActionModule.RedButtonComma"
-    "nd.Command\"\024\n\007Command\022\t\n\005PRESS\020\000\"_\n\017Watc"
-    "hdogCommand\0226\n\007command\030\001 \001(\0162%.ActionMod"
-    "ule.WatchdogCommand.Command\"\024\n\007Command\022\t"
-    "\n\005RESET\020\000\")\n\021SystemLoggerError\022\024\n\014errorM"
-    "essage\030\001 \001(\t\"(\n\020GreenButtonError\022\024\n\014erro"
-    "rMessage\030\001 \001(\t\"&\n\016RedButtonError\022\024\n\014erro"
-    "rMessage\030\001 \001(\t\"%\n\rWatchdogError\022\024\n\014error"
-    "Message\030\001 \001(\tB>Z!../internal/pkg/ba_prot"
-    "o;ba_proto\252\002\030Google.Protobuf.ba_protob\006p"
-    "roto3"
-};
-static ::absl::once_flag descriptor_table_modules_2fActionModule_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_modules_2fActionModule_2eproto = {
-    false,
-    false,
-    1005,
-    descriptor_table_protodef_modules_2fActionModule_2eproto,
-    "modules/ActionModule.proto",
-    &descriptor_table_modules_2fActionModule_2eproto_once,
-    nullptr,
-    0,
-    12,
-    schemas,
-    file_default_instances,
-    TableStruct_modules_2fActionModule_2eproto::offsets,
-    file_level_metadata_modules_2fActionModule_2eproto,
-    file_level_enum_descriptors_modules_2fActionModule_2eproto,
-    file_level_service_descriptors_modules_2fActionModule_2eproto,
+  &::ActionModule::_SystemLoggerStatus_default_instance_._instance,
+  &::ActionModule::_GreenButtonStatus_default_instance_._instance,
+  &::ActionModule::_RedButtonStatus_default_instance_._instance,
+  &::ActionModule::_WatchdogStatus_default_instance_._instance,
+  &::ActionModule::_SystemLoggerCommand_default_instance_._instance,
+  &::ActionModule::_GreenButtonCommand_default_instance_._instance,
+  &::ActionModule::_RedButtonCommand_default_instance_._instance,
+  &::ActionModule::_WatchdogCommand_default_instance_._instance,
+  &::ActionModule::_SystemLoggerError_default_instance_._instance,
+  &::ActionModule::_GreenButtonError_default_instance_._instance,
+  &::ActionModule::_RedButtonError_default_instance_._instance,
+  &::ActionModule::_WatchdogError_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_modules_2fActionModule_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\032modules/ActionModule.proto\022\014ActionModu"
+  "le\"\261\001\n\022SystemLoggerStatus\022\024\n\014sourceDevic"
+  "e\030\001 \001(\t\022\014\n\004logs\030\002 \003(\t\022=\n\tverbosity\030\003 \001(\016"
+  "2*.ActionModule.SystemLoggerStatus.Verbo"
+  "sity\"8\n\tVerbosity\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020\005\022\013"
+  "\n\007WARNING\020\n\022\t\n\005ERROR\020\017\"7\n\021GreenButtonSta"
+  "tus\022\021\n\tisPressed\030\001 \001(\010\022\017\n\007isAlive\030\002 \001(\010\""
+  "$\n\017RedButtonStatus\022\021\n\tisPressed\030\001 \001(\010\"0\n"
+  "\016WatchdogStatus\022\017\n\007isAlive\030\001 \001(\010\022\r\n\005stat"
+  "e\030\002 \001(\t\"e\n\023SystemLoggerCommand\022:\n\007comman"
+  "d\030\001 \001(\0162).ActionModule.SystemLoggerComma"
+  "nd.Command\"\022\n\007Command\022\007\n\003LOG\020\000\"e\n\022GreenB"
+  "uttonCommand\0229\n\007command\030\001 \001(\0162(.ActionMo"
+  "dule.GreenButtonCommand.Command\"\024\n\007Comma"
+  "nd\022\t\n\005PRESS\020\000\"a\n\020RedButtonCommand\0227\n\007com"
+  "mand\030\001 \001(\0162&.ActionModule.RedButtonComma"
+  "nd.Command\"\024\n\007Command\022\t\n\005PRESS\020\000\"_\n\017Watc"
+  "hdogCommand\0226\n\007command\030\001 \001(\0162%.ActionMod"
+  "ule.WatchdogCommand.Command\"\024\n\007Command\022\t"
+  "\n\005RESET\020\000\")\n\021SystemLoggerError\022\024\n\014errorM"
+  "essage\030\001 \001(\t\"(\n\020GreenButtonError\022\024\n\014erro"
+  "rMessage\030\001 \001(\t\"&\n\016RedButtonError\022\024\n\014erro"
+  "rMessage\030\001 \001(\t\"%\n\rWatchdogError\022\024\n\014error"
+  "Message\030\001 \001(\tB>Z!../internal/pkg/ba_prot"
+  "o;ba_proto\252\002\030Google.Protobuf.ba_protob\006p"
+  "roto3"
+  ;
+static ::_pbi::once_flag descriptor_table_modules_2fActionModule_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_modules_2fActionModule_2eproto = {
+    false, false, 1005, descriptor_table_protodef_modules_2fActionModule_2eproto,
+    "modules/ActionModule.proto",
+    &descriptor_table_modules_2fActionModule_2eproto_once, nullptr, 0, 12,
+    schemas, file_default_instances, TableStruct_modules_2fActionModule_2eproto::offsets,
+    file_level_metadata_modules_2fActionModule_2eproto, file_level_enum_descriptors_modules_2fActionModule_2eproto,
+    file_level_service_descriptors_modules_2fActionModule_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_modules_2fActionModule_2eproto_getter() {
   return &descriptor_table_modules_2fActionModule_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_modules_2fActionModule_2eproto(&descriptor_table_modules_2fActionModule_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_modules_2fActionModule_2eproto(&descriptor_table_modules_2fActionModule_2eproto);
 namespace ActionModule {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SystemLoggerStatus_Verbosity_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fActionModule_2eproto);
@@ -449,9 +365,8 @@ bool SystemLoggerStatus_Verbosity_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemLoggerStatus_Verbosity SystemLoggerStatus::DEBUG;
 constexpr SystemLoggerStatus_Verbosity SystemLoggerStatus::INFO;
 constexpr SystemLoggerStatus_Verbosity SystemLoggerStatus::WARNING;
@@ -459,9 +374,7 @@ constexpr SystemLoggerStatus_Verbosity SystemLoggerStatus::ERROR;
 constexpr SystemLoggerStatus_Verbosity SystemLoggerStatus::Verbosity_MIN;
 constexpr SystemLoggerStatus_Verbosity SystemLoggerStatus::Verbosity_MAX;
 constexpr int SystemLoggerStatus::Verbosity_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SystemLoggerCommand_Command_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fActionModule_2eproto);
   return file_level_enum_descriptors_modules_2fActionModule_2eproto[1];
@@ -474,16 +387,13 @@ bool SystemLoggerCommand_Command_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemLoggerCommand_Command SystemLoggerCommand::LOG;
 constexpr SystemLoggerCommand_Command SystemLoggerCommand::Command_MIN;
 constexpr SystemLoggerCommand_Command SystemLoggerCommand::Command_MAX;
 constexpr int SystemLoggerCommand::Command_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GreenButtonCommand_Command_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fActionModule_2eproto);
   return file_level_enum_descriptors_modules_2fActionModule_2eproto[2];
@@ -496,16 +406,13 @@ bool GreenButtonCommand_Command_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr GreenButtonCommand_Command GreenButtonCommand::PRESS;
 constexpr GreenButtonCommand_Command GreenButtonCommand::Command_MIN;
 constexpr GreenButtonCommand_Command GreenButtonCommand::Command_MAX;
 constexpr int GreenButtonCommand::Command_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RedButtonCommand_Command_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fActionModule_2eproto);
   return file_level_enum_descriptors_modules_2fActionModule_2eproto[3];
@@ -518,16 +425,13 @@ bool RedButtonCommand_Command_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr RedButtonCommand_Command RedButtonCommand::PRESS;
 constexpr RedButtonCommand_Command RedButtonCommand::Command_MIN;
 constexpr RedButtonCommand_Command RedButtonCommand::Command_MAX;
 constexpr int RedButtonCommand::Command_ARRAYSIZE;
-
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* WatchdogCommand_Command_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_modules_2fActionModule_2eproto);
   return file_level_enum_descriptors_modules_2fActionModule_2eproto[4];
@@ -540,25 +444,24 @@ bool WatchdogCommand_Command_IsValid(int value) {
       return false;
   }
 }
-#if (__cplusplus < 201703) && \
-  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr WatchdogCommand_Command WatchdogCommand::RESET;
 constexpr WatchdogCommand_Command WatchdogCommand::Command_MIN;
 constexpr WatchdogCommand_Command WatchdogCommand::Command_MAX;
 constexpr int WatchdogCommand::Command_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#endif  // (__cplusplus < 201703) &&
-        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
 class SystemLoggerStatus::_Internal {
  public:
 };
 
-SystemLoggerStatus::SystemLoggerStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+SystemLoggerStatus::SystemLoggerStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.SystemLoggerStatus)
 }
 SystemLoggerStatus::SystemLoggerStatus(const SystemLoggerStatus& from)
@@ -566,38 +469,37 @@ SystemLoggerStatus::SystemLoggerStatus(const SystemLoggerStatus& from)
   SystemLoggerStatus* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.logs_){from._impl_.logs_}
-    , decltype(_impl_.sourcedevice_) {}
-
-    , decltype(_impl_.verbosity_) {}
-
+    , decltype(_impl_.sourcedevice_){}
+    , decltype(_impl_.verbosity_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.sourcedevice_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sourcedevice_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sourcedevice_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sourcedevice().empty()) {
-    _this->_impl_.sourcedevice_.Set(from._internal_sourcedevice(), _this->GetArenaForAllocation());
+    _this->_impl_.sourcedevice_.Set(from._internal_sourcedevice(), 
+      _this->GetArenaForAllocation());
   }
   _this->_impl_.verbosity_ = from._impl_.verbosity_;
   // @@protoc_insertion_point(copy_constructor:ActionModule.SystemLoggerStatus)
 }
 
-inline void SystemLoggerStatus::SharedCtor(::_pb::Arena* arena) {
+inline void SystemLoggerStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.logs_){arena}
-    , decltype(_impl_.sourcedevice_) {}
-
-    , decltype(_impl_.verbosity_) { 0 }
-
+    , decltype(_impl_.sourcedevice_){}
+    , decltype(_impl_.verbosity_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.sourcedevice_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.sourcedevice_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sourcedevice_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 SystemLoggerStatus::~SystemLoggerStatus() {
@@ -610,7 +512,7 @@ SystemLoggerStatus::~SystemLoggerStatus() {
 }
 
 inline void SystemLoggerStatus::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.logs_.~RepeatedPtrField();
   _impl_.sourcedevice_.Destroy();
 }
@@ -621,7 +523,7 @@ void SystemLoggerStatus::SetCachedSize(int size) const {
 
 void SystemLoggerStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.SystemLoggerStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -634,23 +536,22 @@ void SystemLoggerStatus::Clear() {
 const char* SystemLoggerStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string sourceDevice = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sourcedevice();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ActionModule.SystemLoggerStatus.sourceDevice"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // repeated string logs = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -660,19 +561,17 @@ const char* SystemLoggerStatus::_InternalParse(const char* ptr, ::_pbi::ParseCon
             CHK_(::_pbi::VerifyUTF8(str, "ActionModule.SystemLoggerStatus.logs"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // .ActionModule.SystemLoggerStatus.Verbosity verbosity = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_verbosity(static_cast<::ActionModule::SystemLoggerStatus_Verbosity>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -697,25 +596,29 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* SystemLoggerStatus::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemLoggerStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.SystemLoggerStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sourceDevice = 1;
   if (!this->_internal_sourcedevice().empty()) {
-    const std::string& _s = this->_internal_sourcedevice();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ActionModule.SystemLoggerStatus.sourceDevice");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_sourcedevice().data(), static_cast<int>(this->_internal_sourcedevice().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ActionModule.SystemLoggerStatus.sourceDevice");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_sourcedevice(), target);
   }
 
   // repeated string logs = 2;
-  for (int i = 0, n = this->_internal_logs_size(); i < n; ++i) {
+  for (int i = 0, n = this->_internal_logs_size(); i < n; i++) {
     const auto& s = this->_internal_logs(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        s.data(), static_cast<int>(s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ActionModule.SystemLoggerStatus.logs");
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ActionModule.SystemLoggerStatus.logs");
     target = stream->WriteString(2, s, target);
   }
 
@@ -723,7 +626,7 @@ failure:
   if (this->_internal_verbosity() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        3, this->_internal_verbosity(), target);
+      3, this->_internal_verbosity(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -734,30 +637,33 @@ failure:
   return target;
 }
 
-::size_t SystemLoggerStatus::ByteSizeLong() const {
+size_t SystemLoggerStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.SystemLoggerStatus)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string logs = 2;
-  total_size += 1 * ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.logs_.size());
-  for (int i = 0, n = _impl_.logs_.size(); i < n; ++i) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(_impl_.logs_.Get(i));
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.logs_.size());
+  for (int i = 0, n = _impl_.logs_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.logs_.Get(i));
   }
 
   // string sourceDevice = 1;
   if (!this->_internal_sourcedevice().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_sourcedevice());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sourcedevice());
   }
 
   // .ActionModule.SystemLoggerStatus.Verbosity verbosity = 3;
   if (this->_internal_verbosity() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_verbosity());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_verbosity());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -774,8 +680,8 @@ void SystemLoggerStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   auto* const _this = static_cast<SystemLoggerStatus*>(&to_msg);
   auto& from = static_cast<const SystemLoggerStatus&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.SystemLoggerStatus)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   _this->_impl_.logs_.MergeFrom(from._impl_.logs_);
@@ -805,8 +711,10 @@ void SystemLoggerStatus::InternalSwap(SystemLoggerStatus* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.logs_.InternalSwap(&other->_impl_.logs_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sourcedevice_, lhs_arena,
-                                       &other->_impl_.sourcedevice_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.sourcedevice_, lhs_arena,
+      &other->_impl_.sourcedevice_, rhs_arena
+  );
   swap(_impl_.verbosity_, other->_impl_.verbosity_);
 }
 
@@ -815,31 +723,41 @@ void SystemLoggerStatus::InternalSwap(SystemLoggerStatus* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[0]);
 }
+
 // ===================================================================
 
 class GreenButtonStatus::_Internal {
  public:
 };
 
-GreenButtonStatus::GreenButtonStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+GreenButtonStatus::GreenButtonStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.GreenButtonStatus)
 }
 GreenButtonStatus::GreenButtonStatus(const GreenButtonStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GreenButtonStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ispressed_){}
+    , decltype(_impl_.isalive_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.ispressed_, &from._impl_.ispressed_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.isalive_) -
+    reinterpret_cast<char*>(&_impl_.ispressed_)) + sizeof(_impl_.isalive_));
   // @@protoc_insertion_point(copy_constructor:ActionModule.GreenButtonStatus)
 }
 
-inline void GreenButtonStatus::SharedCtor(::_pb::Arena* arena) {
+inline void GreenButtonStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.ispressed_) { false }
-
-    , decltype(_impl_.isalive_) { false }
-
+      decltype(_impl_.ispressed_){false}
+    , decltype(_impl_.isalive_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -854,7 +772,7 @@ GreenButtonStatus::~GreenButtonStatus() {
 }
 
 inline void GreenButtonStatus::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void GreenButtonStatus::SetCachedSize(int size) const {
@@ -863,11 +781,11 @@ void GreenButtonStatus::SetCachedSize(int size) const {
 
 void GreenButtonStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.GreenButtonStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.ispressed_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.ispressed_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.isalive_) -
       reinterpret_cast<char*>(&_impl_.ispressed_)) + sizeof(_impl_.isalive_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -876,26 +794,24 @@ void GreenButtonStatus::Clear() {
 const char* GreenButtonStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bool isPressed = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.ispressed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // bool isAlive = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.isalive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -920,24 +836,22 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* GreenButtonStatus::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GreenButtonStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.GreenButtonStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool isPressed = 1;
   if (this->_internal_ispressed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        1, this->_internal_ispressed(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_ispressed(), target);
   }
 
   // bool isAlive = 2;
   if (this->_internal_isalive() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        2, this->_internal_isalive(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_isalive(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -948,22 +862,22 @@ failure:
   return target;
 }
 
-::size_t GreenButtonStatus::ByteSizeLong() const {
+size_t GreenButtonStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.GreenButtonStatus)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bool isPressed = 1;
   if (this->_internal_ispressed() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // bool isAlive = 2;
   if (this->_internal_isalive() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -980,8 +894,8 @@ void GreenButtonStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   auto* const _this = static_cast<GreenButtonStatus*>(&to_msg);
   auto& from = static_cast<const GreenButtonStatus&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.GreenButtonStatus)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_ispressed() != 0) {
@@ -1020,29 +934,37 @@ void GreenButtonStatus::InternalSwap(GreenButtonStatus* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[1]);
 }
+
 // ===================================================================
 
 class RedButtonStatus::_Internal {
  public:
 };
 
-RedButtonStatus::RedButtonStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+RedButtonStatus::RedButtonStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.RedButtonStatus)
 }
 RedButtonStatus::RedButtonStatus(const RedButtonStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RedButtonStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ispressed_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.ispressed_ = from._impl_.ispressed_;
   // @@protoc_insertion_point(copy_constructor:ActionModule.RedButtonStatus)
 }
 
-inline void RedButtonStatus::SharedCtor(::_pb::Arena* arena) {
+inline void RedButtonStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.ispressed_) { false }
-
+      decltype(_impl_.ispressed_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1057,7 +979,7 @@ RedButtonStatus::~RedButtonStatus() {
 }
 
 inline void RedButtonStatus::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void RedButtonStatus::SetCachedSize(int size) const {
@@ -1066,7 +988,7 @@ void RedButtonStatus::SetCachedSize(int size) const {
 
 void RedButtonStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.RedButtonStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1077,17 +999,16 @@ void RedButtonStatus::Clear() {
 const char* RedButtonStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bool isPressed = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.ispressed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1112,17 +1033,16 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* RedButtonStatus::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RedButtonStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.RedButtonStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool isPressed = 1;
   if (this->_internal_ispressed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        1, this->_internal_ispressed(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_ispressed(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1133,17 +1053,17 @@ failure:
   return target;
 }
 
-::size_t RedButtonStatus::ByteSizeLong() const {
+size_t RedButtonStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.RedButtonStatus)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bool isPressed = 1;
   if (this->_internal_ispressed() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1160,8 +1080,8 @@ void RedButtonStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   auto* const _this = static_cast<RedButtonStatus*>(&to_msg);
   auto& from = static_cast<const RedButtonStatus&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.RedButtonStatus)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_ispressed() != 0) {
@@ -1184,7 +1104,6 @@ bool RedButtonStatus::IsInitialized() const {
 void RedButtonStatus::InternalSwap(RedButtonStatus* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-
   swap(_impl_.ispressed_, other->_impl_.ispressed_);
 }
 
@@ -1193,52 +1112,53 @@ void RedButtonStatus::InternalSwap(RedButtonStatus* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[2]);
 }
+
 // ===================================================================
 
 class WatchdogStatus::_Internal {
  public:
 };
 
-WatchdogStatus::WatchdogStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+WatchdogStatus::WatchdogStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.WatchdogStatus)
 }
 WatchdogStatus::WatchdogStatus(const WatchdogStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   WatchdogStatus* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.state_) {}
-
-    , decltype(_impl_.isalive_) {}
-
+      decltype(_impl_.state_){}
+    , decltype(_impl_.isalive_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.state_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.state_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.state_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_state().empty()) {
-    _this->_impl_.state_.Set(from._internal_state(), _this->GetArenaForAllocation());
+    _this->_impl_.state_.Set(from._internal_state(), 
+      _this->GetArenaForAllocation());
   }
   _this->_impl_.isalive_ = from._impl_.isalive_;
   // @@protoc_insertion_point(copy_constructor:ActionModule.WatchdogStatus)
 }
 
-inline void WatchdogStatus::SharedCtor(::_pb::Arena* arena) {
+inline void WatchdogStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.state_) {}
-
-    , decltype(_impl_.isalive_) { false }
-
+      decltype(_impl_.state_){}
+    , decltype(_impl_.isalive_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.state_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.state_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.state_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 WatchdogStatus::~WatchdogStatus() {
@@ -1251,7 +1171,7 @@ WatchdogStatus::~WatchdogStatus() {
 }
 
 inline void WatchdogStatus::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.state_.Destroy();
 }
 
@@ -1261,7 +1181,7 @@ void WatchdogStatus::SetCachedSize(int size) const {
 
 void WatchdogStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.WatchdogStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1273,28 +1193,26 @@ void WatchdogStatus::Clear() {
 const char* WatchdogStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bool isAlive = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _impl_.isalive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       // string state = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_state();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ActionModule.WatchdogStatus.state"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1319,25 +1237,26 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* WatchdogStatus::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* WatchdogStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.WatchdogStatus)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool isAlive = 1;
   if (this->_internal_isalive() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        1, this->_internal_isalive(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_isalive(), target);
   }
 
   // string state = 2;
   if (!this->_internal_state().empty()) {
-    const std::string& _s = this->_internal_state();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ActionModule.WatchdogStatus.state");
-    target = stream->WriteStringMaybeAliased(2, _s, target);
+      this->_internal_state().data(), static_cast<int>(this->_internal_state().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ActionModule.WatchdogStatus.state");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_state(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1348,23 +1267,24 @@ failure:
   return target;
 }
 
-::size_t WatchdogStatus::ByteSizeLong() const {
+size_t WatchdogStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.WatchdogStatus)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string state = 2;
   if (!this->_internal_state().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_state());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_state());
   }
 
   // bool isAlive = 1;
   if (this->_internal_isalive() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1381,8 +1301,8 @@ void WatchdogStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   auto* const _this = static_cast<WatchdogStatus*>(&to_msg);
   auto& from = static_cast<const WatchdogStatus&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.WatchdogStatus)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_state().empty()) {
@@ -1410,9 +1330,10 @@ void WatchdogStatus::InternalSwap(WatchdogStatus* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.state_, lhs_arena,
-                                       &other->_impl_.state_, rhs_arena);
-
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.state_, lhs_arena,
+      &other->_impl_.state_, rhs_arena
+  );
   swap(_impl_.isalive_, other->_impl_.isalive_);
 }
 
@@ -1421,29 +1342,37 @@ void WatchdogStatus::InternalSwap(WatchdogStatus* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[3]);
 }
+
 // ===================================================================
 
 class SystemLoggerCommand::_Internal {
  public:
 };
 
-SystemLoggerCommand::SystemLoggerCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+SystemLoggerCommand::SystemLoggerCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.SystemLoggerCommand)
 }
 SystemLoggerCommand::SystemLoggerCommand(const SystemLoggerCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SystemLoggerCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.command_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.command_ = from._impl_.command_;
   // @@protoc_insertion_point(copy_constructor:ActionModule.SystemLoggerCommand)
 }
 
-inline void SystemLoggerCommand::SharedCtor(::_pb::Arena* arena) {
+inline void SystemLoggerCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.command_) { 0 }
-
+      decltype(_impl_.command_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1458,7 +1387,7 @@ SystemLoggerCommand::~SystemLoggerCommand() {
 }
 
 inline void SystemLoggerCommand::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void SystemLoggerCommand::SetCachedSize(int size) const {
@@ -1467,7 +1396,7 @@ void SystemLoggerCommand::SetCachedSize(int size) const {
 
 void SystemLoggerCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.SystemLoggerCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1478,18 +1407,17 @@ void SystemLoggerCommand::Clear() {
 const char* SystemLoggerCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ActionModule.SystemLoggerCommand.Command command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command(static_cast<::ActionModule::SystemLoggerCommand_Command>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1514,17 +1442,17 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* SystemLoggerCommand::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemLoggerCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.SystemLoggerCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ActionModule.SystemLoggerCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_command(), target);
+      1, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1535,18 +1463,18 @@ failure:
   return target;
 }
 
-::size_t SystemLoggerCommand::ByteSizeLong() const {
+size_t SystemLoggerCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.SystemLoggerCommand)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .ActionModule.SystemLoggerCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1563,8 +1491,8 @@ void SystemLoggerCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, co
   auto* const _this = static_cast<SystemLoggerCommand*>(&to_msg);
   auto& from = static_cast<const SystemLoggerCommand&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.SystemLoggerCommand)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_command() != 0) {
@@ -1595,29 +1523,37 @@ void SystemLoggerCommand::InternalSwap(SystemLoggerCommand* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[4]);
 }
+
 // ===================================================================
 
 class GreenButtonCommand::_Internal {
  public:
 };
 
-GreenButtonCommand::GreenButtonCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+GreenButtonCommand::GreenButtonCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.GreenButtonCommand)
 }
 GreenButtonCommand::GreenButtonCommand(const GreenButtonCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GreenButtonCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.command_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.command_ = from._impl_.command_;
   // @@protoc_insertion_point(copy_constructor:ActionModule.GreenButtonCommand)
 }
 
-inline void GreenButtonCommand::SharedCtor(::_pb::Arena* arena) {
+inline void GreenButtonCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.command_) { 0 }
-
+      decltype(_impl_.command_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1632,7 +1568,7 @@ GreenButtonCommand::~GreenButtonCommand() {
 }
 
 inline void GreenButtonCommand::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void GreenButtonCommand::SetCachedSize(int size) const {
@@ -1641,7 +1577,7 @@ void GreenButtonCommand::SetCachedSize(int size) const {
 
 void GreenButtonCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.GreenButtonCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1652,18 +1588,17 @@ void GreenButtonCommand::Clear() {
 const char* GreenButtonCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ActionModule.GreenButtonCommand.Command command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command(static_cast<::ActionModule::GreenButtonCommand_Command>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1688,17 +1623,17 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* GreenButtonCommand::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GreenButtonCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.GreenButtonCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ActionModule.GreenButtonCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_command(), target);
+      1, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1709,18 +1644,18 @@ failure:
   return target;
 }
 
-::size_t GreenButtonCommand::ByteSizeLong() const {
+size_t GreenButtonCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.GreenButtonCommand)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .ActionModule.GreenButtonCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1737,8 +1672,8 @@ void GreenButtonCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   auto* const _this = static_cast<GreenButtonCommand*>(&to_msg);
   auto& from = static_cast<const GreenButtonCommand&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.GreenButtonCommand)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_command() != 0) {
@@ -1769,29 +1704,37 @@ void GreenButtonCommand::InternalSwap(GreenButtonCommand* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[5]);
 }
+
 // ===================================================================
 
 class RedButtonCommand::_Internal {
  public:
 };
 
-RedButtonCommand::RedButtonCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+RedButtonCommand::RedButtonCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.RedButtonCommand)
 }
 RedButtonCommand::RedButtonCommand(const RedButtonCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RedButtonCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.command_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.command_ = from._impl_.command_;
   // @@protoc_insertion_point(copy_constructor:ActionModule.RedButtonCommand)
 }
 
-inline void RedButtonCommand::SharedCtor(::_pb::Arena* arena) {
+inline void RedButtonCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.command_) { 0 }
-
+      decltype(_impl_.command_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1806,7 +1749,7 @@ RedButtonCommand::~RedButtonCommand() {
 }
 
 inline void RedButtonCommand::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void RedButtonCommand::SetCachedSize(int size) const {
@@ -1815,7 +1758,7 @@ void RedButtonCommand::SetCachedSize(int size) const {
 
 void RedButtonCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.RedButtonCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1826,18 +1769,17 @@ void RedButtonCommand::Clear() {
 const char* RedButtonCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ActionModule.RedButtonCommand.Command command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command(static_cast<::ActionModule::RedButtonCommand_Command>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -1862,17 +1804,17 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* RedButtonCommand::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RedButtonCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.RedButtonCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ActionModule.RedButtonCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_command(), target);
+      1, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1883,18 +1825,18 @@ failure:
   return target;
 }
 
-::size_t RedButtonCommand::ByteSizeLong() const {
+size_t RedButtonCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.RedButtonCommand)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .ActionModule.RedButtonCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1911,8 +1853,8 @@ void RedButtonCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   auto* const _this = static_cast<RedButtonCommand*>(&to_msg);
   auto& from = static_cast<const RedButtonCommand&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.RedButtonCommand)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_command() != 0) {
@@ -1943,29 +1885,37 @@ void RedButtonCommand::InternalSwap(RedButtonCommand* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[6]);
 }
+
 // ===================================================================
 
 class WatchdogCommand::_Internal {
  public:
 };
 
-WatchdogCommand::WatchdogCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+WatchdogCommand::WatchdogCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.WatchdogCommand)
 }
 WatchdogCommand::WatchdogCommand(const WatchdogCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  WatchdogCommand* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.command_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.command_ = from._impl_.command_;
   // @@protoc_insertion_point(copy_constructor:ActionModule.WatchdogCommand)
 }
 
-inline void WatchdogCommand::SharedCtor(::_pb::Arena* arena) {
+inline void WatchdogCommand::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.command_) { 0 }
-
+      decltype(_impl_.command_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1980,7 +1930,7 @@ WatchdogCommand::~WatchdogCommand() {
 }
 
 inline void WatchdogCommand::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void WatchdogCommand::SetCachedSize(int size) const {
@@ -1989,7 +1939,7 @@ void WatchdogCommand::SetCachedSize(int size) const {
 
 void WatchdogCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.WatchdogCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2000,18 +1950,17 @@ void WatchdogCommand::Clear() {
 const char* WatchdogCommand::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .ActionModule.WatchdogCommand.Command command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
-          ::uint32_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command(static_cast<::ActionModule::WatchdogCommand_Command>(val));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2036,17 +1985,17 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* WatchdogCommand::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* WatchdogCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.WatchdogCommand)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ActionModule.WatchdogCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_command(), target);
+      1, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2057,18 +2006,18 @@ failure:
   return target;
 }
 
-::size_t WatchdogCommand::ByteSizeLong() const {
+size_t WatchdogCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.WatchdogCommand)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .ActionModule.WatchdogCommand.Command command = 1;
   if (this->_internal_command() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_command());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2085,8 +2034,8 @@ void WatchdogCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   auto* const _this = static_cast<WatchdogCommand*>(&to_msg);
   auto& from = static_cast<const WatchdogCommand&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.WatchdogCommand)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_command() != 0) {
@@ -2117,47 +2066,50 @@ void WatchdogCommand::InternalSwap(WatchdogCommand* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[7]);
 }
+
 // ===================================================================
 
 class SystemLoggerError::_Internal {
  public:
 };
 
-SystemLoggerError::SystemLoggerError(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+SystemLoggerError::SystemLoggerError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.SystemLoggerError)
 }
 SystemLoggerError::SystemLoggerError(const SystemLoggerError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   SystemLoggerError* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_errormessage().empty()) {
-    _this->_impl_.errormessage_.Set(from._internal_errormessage(), _this->GetArenaForAllocation());
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:ActionModule.SystemLoggerError)
 }
 
-inline void SystemLoggerError::SharedCtor(::_pb::Arena* arena) {
+inline void SystemLoggerError::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 SystemLoggerError::~SystemLoggerError() {
@@ -2170,7 +2122,7 @@ SystemLoggerError::~SystemLoggerError() {
 }
 
 inline void SystemLoggerError::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.errormessage_.Destroy();
 }
 
@@ -2180,7 +2132,7 @@ void SystemLoggerError::SetCachedSize(int size) const {
 
 void SystemLoggerError::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.SystemLoggerError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2191,19 +2143,18 @@ void SystemLoggerError::Clear() {
 const char* SystemLoggerError::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string errorMessage = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_errormessage();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ActionModule.SystemLoggerError.errorMessage"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2228,18 +2179,20 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* SystemLoggerError::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemLoggerError::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.SystemLoggerError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    const std::string& _s = this->_internal_errormessage();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ActionModule.SystemLoggerError.errorMessage");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_errormessage().data(), static_cast<int>(this->_internal_errormessage().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ActionModule.SystemLoggerError.errorMessage");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_errormessage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2250,18 +2203,19 @@ failure:
   return target;
 }
 
-::size_t SystemLoggerError::ByteSizeLong() const {
+size_t SystemLoggerError::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.SystemLoggerError)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_errormessage());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_errormessage());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2278,8 +2232,8 @@ void SystemLoggerError::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   auto* const _this = static_cast<SystemLoggerError*>(&to_msg);
   auto& from = static_cast<const SystemLoggerError&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.SystemLoggerError)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_errormessage().empty()) {
@@ -2304,8 +2258,10 @@ void SystemLoggerError::InternalSwap(SystemLoggerError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.errormessage_, lhs_arena,
-                                       &other->_impl_.errormessage_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SystemLoggerError::GetMetadata() const {
@@ -2313,47 +2269,50 @@ void SystemLoggerError::InternalSwap(SystemLoggerError* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[8]);
 }
+
 // ===================================================================
 
 class GreenButtonError::_Internal {
  public:
 };
 
-GreenButtonError::GreenButtonError(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+GreenButtonError::GreenButtonError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.GreenButtonError)
 }
 GreenButtonError::GreenButtonError(const GreenButtonError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GreenButtonError* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_errormessage().empty()) {
-    _this->_impl_.errormessage_.Set(from._internal_errormessage(), _this->GetArenaForAllocation());
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:ActionModule.GreenButtonError)
 }
 
-inline void GreenButtonError::SharedCtor(::_pb::Arena* arena) {
+inline void GreenButtonError::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GreenButtonError::~GreenButtonError() {
@@ -2366,7 +2325,7 @@ GreenButtonError::~GreenButtonError() {
 }
 
 inline void GreenButtonError::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.errormessage_.Destroy();
 }
 
@@ -2376,7 +2335,7 @@ void GreenButtonError::SetCachedSize(int size) const {
 
 void GreenButtonError::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.GreenButtonError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2387,19 +2346,18 @@ void GreenButtonError::Clear() {
 const char* GreenButtonError::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string errorMessage = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_errormessage();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ActionModule.GreenButtonError.errorMessage"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2424,18 +2382,20 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* GreenButtonError::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GreenButtonError::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.GreenButtonError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    const std::string& _s = this->_internal_errormessage();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ActionModule.GreenButtonError.errorMessage");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_errormessage().data(), static_cast<int>(this->_internal_errormessage().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ActionModule.GreenButtonError.errorMessage");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_errormessage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2446,18 +2406,19 @@ failure:
   return target;
 }
 
-::size_t GreenButtonError::ByteSizeLong() const {
+size_t GreenButtonError::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.GreenButtonError)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_errormessage());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_errormessage());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2474,8 +2435,8 @@ void GreenButtonError::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   auto* const _this = static_cast<GreenButtonError*>(&to_msg);
   auto& from = static_cast<const GreenButtonError&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.GreenButtonError)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_errormessage().empty()) {
@@ -2500,8 +2461,10 @@ void GreenButtonError::InternalSwap(GreenButtonError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.errormessage_, lhs_arena,
-                                       &other->_impl_.errormessage_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GreenButtonError::GetMetadata() const {
@@ -2509,47 +2472,50 @@ void GreenButtonError::InternalSwap(GreenButtonError* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[9]);
 }
+
 // ===================================================================
 
 class RedButtonError::_Internal {
  public:
 };
 
-RedButtonError::RedButtonError(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+RedButtonError::RedButtonError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.RedButtonError)
 }
 RedButtonError::RedButtonError(const RedButtonError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   RedButtonError* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_errormessage().empty()) {
-    _this->_impl_.errormessage_.Set(from._internal_errormessage(), _this->GetArenaForAllocation());
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:ActionModule.RedButtonError)
 }
 
-inline void RedButtonError::SharedCtor(::_pb::Arena* arena) {
+inline void RedButtonError::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 RedButtonError::~RedButtonError() {
@@ -2562,7 +2528,7 @@ RedButtonError::~RedButtonError() {
 }
 
 inline void RedButtonError::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.errormessage_.Destroy();
 }
 
@@ -2572,7 +2538,7 @@ void RedButtonError::SetCachedSize(int size) const {
 
 void RedButtonError::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.RedButtonError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2583,19 +2549,18 @@ void RedButtonError::Clear() {
 const char* RedButtonError::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string errorMessage = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_errormessage();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ActionModule.RedButtonError.errorMessage"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2620,18 +2585,20 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* RedButtonError::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RedButtonError::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.RedButtonError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    const std::string& _s = this->_internal_errormessage();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ActionModule.RedButtonError.errorMessage");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_errormessage().data(), static_cast<int>(this->_internal_errormessage().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ActionModule.RedButtonError.errorMessage");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_errormessage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2642,18 +2609,19 @@ failure:
   return target;
 }
 
-::size_t RedButtonError::ByteSizeLong() const {
+size_t RedButtonError::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.RedButtonError)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_errormessage());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_errormessage());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2670,8 +2638,8 @@ void RedButtonError::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   auto* const _this = static_cast<RedButtonError*>(&to_msg);
   auto& from = static_cast<const RedButtonError&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.RedButtonError)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_errormessage().empty()) {
@@ -2696,8 +2664,10 @@ void RedButtonError::InternalSwap(RedButtonError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.errormessage_, lhs_arena,
-                                       &other->_impl_.errormessage_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RedButtonError::GetMetadata() const {
@@ -2705,47 +2675,50 @@ void RedButtonError::InternalSwap(RedButtonError* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[10]);
 }
+
 // ===================================================================
 
 class WatchdogError::_Internal {
  public:
 };
 
-WatchdogError::WatchdogError(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor(arena);
+WatchdogError::WatchdogError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:ActionModule.WatchdogError)
 }
 WatchdogError::WatchdogError(const WatchdogError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   WatchdogError* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_errormessage().empty()) {
-    _this->_impl_.errormessage_.Set(from._internal_errormessage(), _this->GetArenaForAllocation());
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:ActionModule.WatchdogError)
 }
 
-inline void WatchdogError::SharedCtor(::_pb::Arena* arena) {
+inline void WatchdogError::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.errormessage_) {}
-
+      decltype(_impl_.errormessage_){}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.errormessage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.errormessage_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 WatchdogError::~WatchdogError() {
@@ -2758,7 +2731,7 @@ WatchdogError::~WatchdogError() {
 }
 
 inline void WatchdogError::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.errormessage_.Destroy();
 }
 
@@ -2768,7 +2741,7 @@ void WatchdogError::SetCachedSize(int size) const {
 
 void WatchdogError::Clear() {
 // @@protoc_insertion_point(message_clear_start:ActionModule.WatchdogError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2779,19 +2752,18 @@ void WatchdogError::Clear() {
 const char* WatchdogError::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
+    uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // string errorMessage = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_errormessage();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "ActionModule.WatchdogError.errorMessage"));
-        } else {
+        } else
           goto handle_unusual;
-        }
         continue;
       default:
         goto handle_unusual;
@@ -2816,18 +2788,20 @@ failure:
 #undef CHK_
 }
 
-::uint8_t* WatchdogError::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* WatchdogError::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ActionModule.WatchdogError)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    const std::string& _s = this->_internal_errormessage();
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "ActionModule.WatchdogError.errorMessage");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+      this->_internal_errormessage().data(), static_cast<int>(this->_internal_errormessage().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ActionModule.WatchdogError.errorMessage");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_errormessage(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2838,18 +2812,19 @@ failure:
   return target;
 }
 
-::size_t WatchdogError::ByteSizeLong() const {
+size_t WatchdogError::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ActionModule.WatchdogError)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string errorMessage = 1;
   if (!this->_internal_errormessage().empty()) {
-    total_size += 1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-                                    this->_internal_errormessage());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_errormessage());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2866,8 +2841,8 @@ void WatchdogError::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
   auto* const _this = static_cast<WatchdogError*>(&to_msg);
   auto& from = static_cast<const WatchdogError&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:ActionModule.WatchdogError)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_errormessage().empty()) {
@@ -2892,8 +2867,10 @@ void WatchdogError::InternalSwap(WatchdogError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.errormessage_, lhs_arena,
-                                       &other->_impl_.errormessage_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchdogError::GetMetadata() const {
@@ -2901,6 +2878,7 @@ void WatchdogError::InternalSwap(WatchdogError* other) {
       &descriptor_table_modules_2fActionModule_2eproto_getter, &descriptor_table_modules_2fActionModule_2eproto_once,
       file_level_metadata_modules_2fActionModule_2eproto[11]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace ActionModule
 PROTOBUF_NAMESPACE_OPEN
@@ -2953,5 +2931,6 @@ Arena::CreateMaybeMessage< ::ActionModule::WatchdogError >(Arena* arena) {
   return Arena::CreateMessageInternal< ::ActionModule::WatchdogError >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

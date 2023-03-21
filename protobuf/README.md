@@ -1,5 +1,5 @@
 # Protobuf
-Using Protobuf version 3.22.1
+Using Protobuf version 21.12
 ## Compilation
 Compile to all languages: TODO add rest of them
 ```

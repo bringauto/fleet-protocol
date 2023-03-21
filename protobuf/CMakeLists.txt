@@ -7,11 +7,17 @@ IF (NOT BRINGAUTO_SYSTEM_DEP)
 ENDIF ()
 
 SET(Protobuf_USE_STATIC_LIBS ON)
-FIND_PACKAGE(Protobuf 3.22.1 REQUIRED)
+FIND_PACKAGE(Protobuf 4.21.12)
 
-
-IF (PROJECT_LANGUAGE STREQUAL "C")
-    # C compiled protofiles
-ELSEIF (PROJECT_LANGUAGE STREQUAL "CXX")
-    # C++
+IF ("C" IN_LIST languages) ## TODO add protobuf_c and protobuf_cpp lib, because this is not working
+    FILE(GLOB_RECURSE protobuf_files "compiled/c/*")
+    ADD_LIBRARY(protobuf STATIC ${protobuf_files})
+    TARGET_LINK_LIBRARIES(protobuf PUBLIC protobuf::libprotobuf)
+ELSEIF ("CXX" IN_LIST languages)
+    FILE(GLOB_RECURSE protobuf_files "compiled/cpp/*")
+    ADD_LIBRARY(protobuf STATIC ${protobuf_files})
+    TARGET_LINK_LIBRARIES(protobuf PUBLIC protobuf::libprotobuf)
 ENDIF()
+
+
+
