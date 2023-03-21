@@ -1,29 +1,14 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.20)
-PROJECT(ProtobufParser CXX)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.25 FATAL_ERROR)
+PROJECT(fleet-protocol CXX)
 
 SET(CMAKE_CXX_STANDARD 20)
 
 SET(CMAKE_BUILD_RPATH_USE_ORIGIN ON)
 
-FIND_PACKAGE(CMLIB REQUIRED COMPONENTS CMDEF STORAGE)
-IF (NOT BRINGAUTO_SYSTEM_DEP)
-    INCLUDE(cmake/Dependencies.cmake)
-ENDIF ()
-
-#------------protobuf----------------#
-FIND_PACKAGE(Protobuf 4.21.12)
-SET(PROTO_DIR "${CMAKE_CURRENT_SOURCE_DIR}/proto_compiled/")
-SET(Protobuf_USE_STATIC_LIBS ON)
-
-
-ADD_LIBRARY(protobuf_lib STATIC ${PROTO_DIR}/ExternalProtocol.pb.cc ${PROTO_DIR}/InternalProtocol.pb.cc ${PROTO_DIR}/modules/ExampleModule.pb.cc)
-TARGET_LINK_LIBRARIES(protobuf_lib PUBLIC protobuf::libprotobuf)
-TARGET_INCLUDE_DIRECTORIES(protobuf_lib PUBLIC "${PROTO_DIR}")
-
 FILE(GLOB_RECURSE source_files "source/*")
 ADD_LIBRARY(parsing_example_lib STATIC ${source_files})
 TARGET_INCLUDE_DIRECTORIES(parsing_example_lib PUBLIC "include/")
-TARGET_LINK_LIBRARIES(parsing_example_lib PUBLIC protobuf_lib)
+TARGET_LINK_LIBRARIES(parsing_example_lib PUBLIC ${PROJECT_NAME}::protobuf_cpp)
 
 
 ADD_EXECUTABLE(protobuf_parser main.cpp)

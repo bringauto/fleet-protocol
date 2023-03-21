@@ -7,17 +7,21 @@ IF (NOT BRINGAUTO_SYSTEM_DEP)
 ENDIF ()
 
 SET(Protobuf_USE_STATIC_LIBS ON)
-FIND_PACKAGE(Protobuf 4.21.12)
+FIND_PACKAGE(Protobuf 3.21.12)
 
-IF ("C" IN_LIST languages) ## TODO add protobuf_c and protobuf_cpp lib, because this is not working
-    FILE(GLOB_RECURSE protobuf_files "compiled/c/*")
-    ADD_LIBRARY(protobuf STATIC ${protobuf_files})
-    TARGET_LINK_LIBRARIES(protobuf PUBLIC protobuf::libprotobuf)
-ELSEIF ("CXX" IN_LIST languages)
-    FILE(GLOB_RECURSE protobuf_files "compiled/cpp/*")
-    ADD_LIBRARY(protobuf STATIC ${protobuf_files})
-    TARGET_LINK_LIBRARIES(protobuf PUBLIC protobuf::libprotobuf)
-ENDIF()
+FILE(GLOB_RECURSE protobuf_c_files "compiled/c/*")
+ADD_LIBRARY(protobuf_c STATIC ${protobuf_c_files})
+TARGET_INCLUDE_DIRECTORIES(protobuf_c PUBLIC "compiled/c/")
+TARGET_LINK_LIBRARIES(protobuf_c PUBLIC protobuf::libprotobuf)
+ADD_LIBRARY(${PROJECT_NAME}::protobuf_c ALIAS protobuf_c )
+
+
+FILE(GLOB_RECURSE protobuf_cpp_files "compiled/cpp/*")
+ADD_LIBRARY(protobuf_cpp STATIC ${protobuf_cpp_files})
+TARGET_INCLUDE_DIRECTORIES(protobuf_cpp PUBLIC "compiled/cpp/")
+TARGET_LINK_LIBRARIES(protobuf_cpp PUBLIC protobuf::libprotobuf)
+ADD_LIBRARY(${PROJECT_NAME}::protobuf_cpp ALIAS protobuf_cpp )
+
 
 
 
