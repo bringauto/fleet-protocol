@@ -1,7 +1,8 @@
 #pragma once
 
-#include "../common/memory_management.h"
-#include "../common/memory_management.h"
+#include <device_management.h>
+#include <mg_error_codes.h>
+#include <memory_management.h>
 
 /**
  * @section module_gateway
@@ -15,8 +16,13 @@
  *
  * @param command new command data in binary form
  * @param device identification of device
+ *
+ * @return OK if command was successfully updated
+ * @return DEVICE_NOT_SUPPORTED if device_type is not supported by concrete module
+ * @return DEVICE_NOT_REGISTERED if device is not registered
+ * @return COMMAND_INVALID if command data are invalid
  */
-void update_command(const struct buffer command, const struct device_identification device);
+int update_command(const struct buffer command, const struct device_identification device);
 
 /**
  * @short Get command message.
@@ -29,8 +35,9 @@ void update_command(const struct buffer command, const struct device_identificat
  *        structures are defined in device specific header file. Look at memory_management section
  *
  * @return size of command in bytes
- * @return -1 if status_message is incorrect
- * @return -2 if buffer is too small
- * @return -3 for other error
+ * @return STATUS_INVALID if status_message is incorrect
+ * @return BUFFER_TOO_SMALL if buffer is too small
+ * @return DEVICE_NOT_SUPPORTED if device_type is not supported by concrete module
+ * @return NOT_OK for other error
  */
 int get_command(const struct buffer status, const struct device_identification device, struct buffer* command);

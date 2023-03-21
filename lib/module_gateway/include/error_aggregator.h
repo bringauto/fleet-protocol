@@ -1,6 +1,8 @@
 #pragma once
 
-#include "internal_server_structures.h"
+#include <device_management.h>
+#include <mg_error_codes.h>
+#include <memory_management.h>
 
 /**
  * @section module_gateway
@@ -16,8 +18,8 @@
  * safe, you can call function on device1 in thread1 and function on device2 in thread2 without any problem this is thread safe, but working with one
  * device in multiple threads is NOT thread safe.
  *
- * @return 0 if initialization was successful
- * @return -1 if an error occurred
+ * @return OK if initialization was successful
+ * @return NOT_OK if an error occurred
  */
 int init_error_aggregator();
 
@@ -26,7 +28,8 @@ int init_error_aggregator();
  *
  * Destroy will deallocate all resources used by error aggregator, if not called before program exit, memory leaks can occur.
  *
- * @return 0 if successful, -1 if an error occurred
+ * @return OK if successful
+ * @return NOT_OK if an error occurred
  */
 int destroy_error_aggregator();
 
@@ -40,9 +43,9 @@ int destroy_error_aggregator();
  * @param status protobuf status message in binary form
  * @param device identification of the device
  *
- * @return 0 if successful
- * @return -1 if device is not registered
- * @return -2 for other error
+ * @return OK if successful
+ * @return DEVICE_NOT_REGISTERED if device is not registered
+ * @return NOT_OK for other error
  */
 int add_status_to_error_aggregator(const struct buffer status, const struct device_identification device);
 
@@ -59,8 +62,8 @@ int add_status_to_error_aggregator(const struct buffer status, const struct devi
  *
  * @return size of message in bytes
  * @return 0 if no message was generated
- * @return -1 if device was not registered
- * @return -2 for other errors
+ * @return DEVICE_NOT_REGISTERED if device was not registered
+ * @return NOT_OK for other errors
  */
 int get_error_status(struct buffer *error_status, const struct device_identification device);
 
@@ -77,8 +80,8 @@ int get_error_status(struct buffer *error_status, const struct device_identifica
  *
  * @return size of message in bytes
  * @return 0 if no message was generated
- * @return -1 if device was no registered
- * @return -2 for other errors
+ * @return DEVICE_NOT_REGISTERED if device was no registered
+ * @return NOT_OK for other errors
  */
 int get_error(struct buffer *error, const struct device_identification device);
 
@@ -87,7 +90,7 @@ int get_error(struct buffer *error, const struct device_identification device);
  *
  * All messages for all registered devices will be removed.
  *
- * @return 0 if successful
- * @return -1 if an error occurs
+ * @return OK if successful
+ * @return NOT_OK if an error occurs
  */
 int clear_error_aggregator();

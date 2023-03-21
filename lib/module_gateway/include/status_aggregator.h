@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../common/general_error_codes.h"
-#include "../common/device_management.h"
-#include "../common/memory_management.h"
+#include <device_management.h>
+#include <mg_error_codes.h>
+#include <memory_management.h>
 
 /**
  * @section module_gateway
@@ -61,8 +61,8 @@ int clear_all_devices();
  * @param device identification of the device
  *
  * @return OK if clearing was successful,
- * @return -1 if device does not exists
- * @return -2 for other errors
+ * @return DEVICE_NOT_REGISTERED if device does not exists
+ * @return NOT_OK for other errors
  */
 int clear_device(const struct device_identification device);
 
@@ -76,8 +76,8 @@ int clear_device(const struct device_identification device);
  * @param device identification of the device
  * 
  * @return OK if removing was successful
- * @return -1 if device does not exist
- * @return -2 for other errors
+ * @return DEVICE_NOT_REGISTERED if device does not exist
+ * @return NOT_OK for other errors
 */
 int remove_device(const struct device_identification device);
 
@@ -98,8 +98,8 @@ int remove_device(const struct device_identification device);
  * @param device identification of the device
  *
  * @return number of aggregated messages waiting in container for given device to be obtained by get_aggregated_status() function,
- * @return -1 if device is not supported,
- * @return -2 for other error
+ * @return DEVICE_NOT_REGISTERED if device is not supported,
+ * @return NOT_OK for other error
  */
 int add_status_to_aggregator(const struct buffer status, const struct device_identification device);
 
@@ -115,9 +115,9 @@ int add_status_to_aggregator(const struct buffer status, const struct device_ide
  * @param device identification of the device
  *
  * @return size of message in bytes returned
- * @return -1 if no message for given device is ready
- * @return -2 if device is not registered
- * @return -3 for other error
+ * @return -1 if no message for given device is ready TODO 0 as in error_aggregator?? Or should this have some code??
+ * @return DEVICE_NOT_REGISTERED if device is not registered
+ * @return NOT_OK for other error
  */
 int get_aggregated_status(struct buffer *generated_status, const struct device_identification device);
 
@@ -130,7 +130,7 @@ int get_aggregated_status(struct buffer *generated_status, const struct device_i
  * @param unique_devices_buffer pointer to buffer to retrieve unique devices. Number of bytes in buffer.size_in_bytes
  *                              is equal to number_of_devices * sizeof(struct device_identifier). Look at 'memory_management' section
  *
- * @return NO_OK if error occurred
+ * @return NOT_OK if error occurred
  * @return Number of unique devices - number of 'device_identifier' structs stored at buffer.data.
  *
  * @code
@@ -152,5 +152,7 @@ int get_unique_devices(struct buffer* unique_devices_buffer);
  * @param device identification of the device
  *
  * @return number of messages in aggregated container for given device, that can be obtained by calling get_aggregated_status() function
+ * @return DEVICE_NOT_REGISTERED if device is not registered
+ * @return NOT_OK if an error occurred
  */
 int force_aggregation_on_device(const struct device_identification device);

@@ -152,6 +152,8 @@ message CommandResponse {
     enum Type {
         OK = 0;
         DEVICE_NOT_CONNECTED = 1;
+        DEVICE_NOT_SUPPORTED = 2;
+        INVALID_COMMAND = 3;
     }
     string sessionId = 1;
     Type type = 2;

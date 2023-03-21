@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stddef.h>
+
 /**
  * @brief Memory management related functions and structs
  * @section common_headers
@@ -41,7 +43,7 @@
  */
 struct buffer {
     void *data;             /// data buffer
-    unsigned size_in_bytes; /// number of bytes of the data stored under memory pointed by .data
+    size_t size_in_bytes;	/// number of bytes of the data stored under memory pointed by .data
 };
 
 /**

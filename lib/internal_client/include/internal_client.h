@@ -1,12 +1,14 @@
 #pragma once
 
-#include <general_error_codes>
-//todo enum with error codes?
-enum mc_error_codes {
-    GENERIC_ERROR = -1,
-    CONTEXT_INCORRECT = -2,
-    TIMEOUT_OCCURRED = -3,
-    BUFFER_TOO_SMALL = -4
+#include <device_management.h>
+#include <general_error_codes.h>
+#include <memory_management.h>
+
+
+enum ic_error_codes {
+    CONTEXT_INCORRECT = RESERVED-1,
+    TIMEOUT_OCCURRED = RESERVED-2,
+    BUFFER_TOO_SMALL = RESERVED-3
 };
 
 /**
@@ -29,7 +31,7 @@ enum mc_error_codes {
  * @return context of the device used for calling other library functions
  * @return NULL if an error occurs
  */
-void *init_connection(const char *ipv4_address, unsigned port, char *device_name, unsigned device_type, char *device_role, unsigned device_priority);
+void *init_connection(const char* const ipv4_address, unsigned port, const struct device_identification device, unsigned device_priority);
 
 /**
  * @short Clean up.
@@ -40,7 +42,8 @@ void *init_connection(const char *ipv4_address, unsigned port, char *device_name
  *
  * @param context context of module client created by init() function
  *
- * @return 0 if successful, -1 if an error occurred
+ * @return OK if successful,
+ * @return NOT_OK if an error occurred
  */
 int destroy_connection(void **context);
 
@@ -59,12 +62,12 @@ int destroy_connection(void **context);
  * @param status_size size of status data
  * @param timeout timeout in seconds, how long is acceptable to wait for server response (command) if timeout is reached, error will be returned
  *
- * @return 0 if successful
- * @return -1 if context is incorrect
- * @return -2 if timeout occurred
- * @return -3 other error
+ * @return OK if successful
+ * @return CONTEXT_INCORRECT if context is incorrect
+ * @return TIMEOUT_OCCURRED if timeout occurred
+ * @return NOT_OK other error
  */
-int send_status(void *context, void *device_status, unsigned status_size, unsigned timeout);
+int send_status(void *context, const struct buffer status, unsigned timeout);
 
 /**
  * @short Get command.
@@ -78,9 +81,9 @@ int send_status(void *context, void *device_status, unsigned status_size, unsign
  * @param buffer_size size of user allocated buffer
  *
  * @return size of device_command in bytes
- * @return 0 if no message was yet received (send_status was not called yet)
- * @return -1 if context is incorrect
- * @return -2 if buffer is too small
- * @return -3 for other error
+ * @return OK if no message was yet received (send_status was not called yet)
+ * @return CONTEXT_INCORRECT if context is incorrect
+ * @return BUFFER_TOO_SMALL if buffer is too small
+ * @return NOT_OK for other error
  */
-int get_command(void *context, void *device_command_buffer, unsigned buffer_size);
+int get_command(void *context, struct buffer* command);

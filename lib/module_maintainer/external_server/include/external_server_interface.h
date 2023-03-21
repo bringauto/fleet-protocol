@@ -1,5 +1,9 @@
 #pragma once
 
+#include <device_management.h>
+#include <general_error_codes.h>
+#include <memory_management.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
