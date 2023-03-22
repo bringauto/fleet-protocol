@@ -17,7 +17,9 @@ TODO
 **Python**
 TODO
 
-**GO** TODO not working
+**GO** 
+
+protoc-gen-go needed!
 ```
 protoc -I=./definition --go_out=./compiled/go ./definition/**.proto
 ```
