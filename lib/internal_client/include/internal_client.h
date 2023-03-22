@@ -1,10 +1,20 @@
 #pragma once
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <device_management.h>
 #include <general_error_codes.h>
 #include <memory_management.h>
 
+/**
+ * @section internal_client
+ */
 
+/**
+ * @brief Specific error codes for internal_client
+ */
 enum ic_error_codes {
     CONTEXT_INCORRECT = RESERVED-1,
     TIMEOUT_OCCURRED = RESERVED-2,
@@ -23,15 +33,14 @@ enum ic_error_codes {
  *
  * @param ipv4_address null terminated IPv4 address of module server
  * @param port port of module server
- * @param device_name null terminated name of device
- * @param device_type integer specifying module specific device type, device type is defined in specific module header
- * @param device_role null terminated role of device
+ * @param device identification of the device
+ * @param module module number
  * @param device_priority integer specifying priority of device, smaller number equals higher priority (0 is highest)
  *
  * @return context of the device used for calling other library functions
  * @return NULL if an error occurs
  */
-void *init_connection(const char* const ipv4_address, unsigned port, const struct device_identification device, unsigned device_priority);
+void *init_connection(const char* const ipv4_address, unsigned port, const struct device_identification device, unsigned module, unsigned device_priority);
 
 /**
  * @short Clean up.
@@ -87,3 +96,7 @@ int send_status(void *context, const struct buffer status, unsigned timeout);
  * @return NOT_OK for other error
  */
 int get_command(void *context, struct buffer* command);
+
+#ifdef __cplusplus
+}
+#endif

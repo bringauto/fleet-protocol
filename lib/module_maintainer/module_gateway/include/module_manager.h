@@ -1,11 +1,11 @@
 #pragma once
 
-/*
-#TODO error handling
-*/
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#include "../common_types/buffer.h"
-#include "../common_types/general_error_codes.h"
+#include <memory_management.h>
+#include <general_error_codes.h>
 
 /**
  * @file
@@ -24,6 +24,11 @@
  * @subsection API
 */
 
+enum mm_error_codes {
+	CONDITION_NOT_MET = RESERVED -1,
+	WRONG_FORMAT = RESERVED -2
+};
+
 /**
  * @brief Determine whether condition for sending new status was met.
  * 
@@ -32,9 +37,9 @@
  * @param device_type type of device which sent status data
  * 
  * @return OK if condition met.
- * @return NOT_OK if condition was not met
- * @return -1 if wrong status format
- * @return -2 if other error occurred
+ * @return CONDITION_NOT_MET if condition was not met
+ * @return WRONG_FORMAT if wrong status format
+ * @return NOT_OK if other error occurred
 */
 int send_status_condition(const struct buffer current_status, const struct buffer new_status, int device_type);
 
@@ -48,8 +53,8 @@ int send_status_condition(const struct buffer current_status, const struct buffe
  * @param device_type type of device
  *
  * @return OK if command generated successfully
- * @return -1 if a message has a bad format
- * @return -2 if other error occurred
+ * @return WRONG_FORMAT if a message has a bad format
+ * @return NOT_OK if other error occurred
 */
 int generate_command(struct buffer *generated_command, const struct buffer new_status, const struct buffer current_status, const struct buffer current_command, int device_type);
 
@@ -62,8 +67,8 @@ int generate_command(struct buffer *generated_command, const struct buffer new_s
  * @param device_type type of device
  *
  * @return OK if status aggregated successfully
- * @return -1 if a status has a bad format
- * @return -2 if other error occurred
+ * @return WRONG_FORMAT if a status has a bad format
+ * @return NOT_OK if other error occurred
 */
 int aggregate_status(struct buffer *aggregated_status, const struct buffer current_status, const struct buffer new_status, int device_type);
 
@@ -74,8 +79,8 @@ int aggregate_status(struct buffer *aggregated_status, const struct buffer curre
  * @param device_type type of device
  *
  * @return OK if default command generated successfully
- * @return -1 if default command has a bad format
- * @return -2 if other error occurred
+ * @return WRONG_FORMAT if default command has a bad format
+ * @return NOT_OK if other error occurred
 */
 int generate_default_command(struct buffer *default_command, int device_type);
 
@@ -108,3 +113,7 @@ int status_data_valid(const struct buffer status, int device_type);
  *         NOT_OK if command data are invalid
  */
 int command_data_valid(const struct buffer command, int device_type);
+
+#ifdef __cplusplus
+}
+#endif

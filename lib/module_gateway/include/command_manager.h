@@ -1,5 +1,9 @@
 #pragma once
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <device_management.h>
 #include <mg_error_codes.h>
 #include <memory_management.h>
@@ -41,3 +45,7 @@ int update_command(const struct buffer command, const struct device_identificati
  * @return NOT_OK for other error
  */
 int get_command(const struct buffer status, const struct device_identification device, struct buffer* command);
+
+#ifdef __cplusplus
+}
+#endif

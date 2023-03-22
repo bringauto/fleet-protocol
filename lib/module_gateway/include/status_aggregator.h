@@ -1,5 +1,9 @@
 #pragma once
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <device_management.h>
 #include <mg_error_codes.h>
 #include <memory_management.h>
@@ -114,8 +118,8 @@ int add_status_to_aggregator(const struct buffer status, const struct device_ide
  * @param generated_status status message buffer, have to be already allocated by user. Look at 'memory_management' section
  * @param device identification of the device
  *
- * @return size of message in bytes returned
- * @return -1 if no message for given device is ready TODO 0 as in error_aggregator?? Or should this have some code??
+ * @return OK if successful
+ * @return NO_MESSAGE_AVAILABLE if no status message for device is ready
  * @return DEVICE_NOT_REGISTERED if device is not registered
  * @return NOT_OK for other error
  */
@@ -156,3 +160,7 @@ int get_unique_devices(struct buffer* unique_devices_buffer);
  * @return NOT_OK if an error occurred
  */
 int force_aggregation_on_device(const struct device_identification device);
+
+#ifdef __cplusplus
+}
+#endif

@@ -1,56 +1,25 @@
 #pragma once
 
-#include <device_management.h>
-#include <general_error_codes.h>
-#include <memory_management.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define NAME_LENGTH 64
+#include <device_management.h>
+#include <general_error_codes.h>
+#include <memory_management.h>
 
-enum disconnect_types {
-	announced = 0,
-	timeout = 1,
-	error = 2
-};
+#include <structures.h>
 
 /**
- * @brief Unique device identification.
- * The Device message contains also module number, which is not needed, as every API is implemented for concrete module
- * and the module number is processed earlier in the External Server.
+ * @file external_server_interface.h
+ * @brief Interface implemented by module maintainers
+ *
+ * @section Module maintainer
  */
-struct device_identification {
-	int device_type;
-	char device_role[NAME_LENGTH];
-	char device_name[NAME_LENGTH];
-};
 
 /**
- * @brief Generic message data buffer. Contains data pointer and the length of this data.
- * @data array must be allocated and allocated size should be put into @size.
+ * @subsection External server interface
  */
-struct buffer {
-	void *data;
-	size_t size;
-};
-
-/**
- * @brief Parameter structure containing the parameters key and its value in buffers
- */
-struct key_value {
-	buffer key;
-	buffer value;
-};
-
-/**
- * @brief Configuration structure, containing key-value parameters and the number of them
- */
-struct config {
-	key_value* parameters;
-	size_t size;
-};
 
 /**
  * @short Create context for specific application.
@@ -65,7 +34,8 @@ struct config {
  *
  * @param config_data - parameters from a configuration file
  *
- * @return context of the device used for calling other library functions, NULL if an error occurs
+ * @return context of the device used for calling other library functions
+ * @return NOT_OK if an error occurs
  */
 void *init(const struct config config_data);
 
@@ -78,7 +48,8 @@ void *init(const struct config config_data);
  *
  * @param context context created by init() function, which will be destroyed and set to null
  *
- * @return 0 if successful, -1 if an error occurred
+ * @return OK if successful
+ * @return NOT_OK if an error occurred
  */
 int destroy(void **context);
 
@@ -89,7 +60,10 @@ int destroy(void **context);
  * @param device device_identification structure, containing role, type and name of the device
  * @param context context created by init() function
  *
- * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ * @return OK if successful
+ * @return CONTEXT_INCORRECT if context is incorrect
+ * @return TIMEOUT_OCCURRED if timeout occurred
+ * @return NOT_OK other error
  */
 int forward_status(const struct buffer device_status, const struct device_identification device, void *context);
 
@@ -100,7 +74,10 @@ int forward_status(const struct buffer device_status, const struct device_identi
  * @param device device_identification structure, containing role, type and name of the device
  * @param context context created by init() function
  *
- * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ * @return OK if successful
+ * @return CONTEXT_INCORRECT if context is incorrect
+ * @return TIMEOUT_OCCURRED if timeout occurred
+ * @return NOT_OK other error
  */
 int forward_error_message(const struct buffer error_msg, const struct device_identification device, void *context);
 
@@ -110,7 +87,10 @@ int forward_error_message(const struct buffer error_msg, const struct device_ide
  * @param disconnect_type enumeration of disconnection type
  * @param context context created by init() function
  *
- * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ * @return OK if successful
+ * @return CONTEXT_INCORRECT if context is incorrect
+ * @return TIMEOUT_OCCURRED if timeout occurred
+ * @return NOT_OK other error
  */
 int device_disconnected(const disconnect_types disconnect_type, const struct device_identification device, void *context);
 
@@ -120,7 +100,10 @@ int device_disconnected(const disconnect_types disconnect_type, const struct dev
  * @param device device identification structure
  * @param context context created by init() function
  *
- * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred, -3 other error
+ * @return OK if successful
+ * @return CONTEXT_INCORRECT if context is incorrect
+ * @return TIMEOUT_OCCURRED if timeout occurred
+ * @return NOT_OK other error
  */
 int device_connected(const struct device_identification device, void *context);
 
@@ -132,7 +115,9 @@ int device_connected(const struct device_identification device, void *context);
  * @param timeout_time_in_ms - maximum blocking time until timeout
  * @param context context created by init() function
  *
- * @return 0 if a command is obtainable, -1 otherwise, -2 if context is incorrect
+ * @return OK if a command is obtainable
+ * @return TIMEOUT_OCCURRED if command is not available, therefore timeout occurred
+ * @return CONTEXT_INCORRECT if context is incorrect
  */
 int wait_for_command(int timeout_time_in_ms, void *context);
 
@@ -144,7 +129,9 @@ int wait_for_command(int timeout_time_in_ms, void *context);
  * @param device - identification of the target device of the command
  * @param context context created by init() function
  *
- * @return number of remaining commands, -1 if the context is incorrect, -2 an error occurred
+ * @return number of remaining commands
+ * @return CONTEXT_INCORRECT if the context is incorrect
+ * @return NOT_OK an error occurred
  */
 int get_command(buffer* command, device_identification* device, void *context);
 
@@ -155,7 +142,10 @@ int get_command(buffer* command, device_identification* device, void *context);
  * @param device which device got the command
  * @param context context created by init() function
  *
- * @return 0 if successful, -1 if context is incorrect, -2 if timeout occurred while sending ack, -3 other error
+ * @return OK if successful
+ * @return CONTEXT_INCORRECT if context is incorrect
+ * @return TIMEOUT_OCCURRED if timeout occurred while sending ack
+ * @return NOT_OK other error
  */
 int command_ack(const struct buffer command, const struct device_identification device, void *context);
 

@@ -1,5 +1,9 @@
 #pragma once
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <device_management.h>
 #include <mg_error_codes.h>
 #include <memory_management.h>
@@ -60,8 +64,8 @@ int add_status_to_error_aggregator(const struct buffer status, const struct devi
  * @param error_status user allocated message_buffer for the error status. Look at 'memory management' section
  * @param device identification of the device
  *
- * @return size of message in bytes
- * @return 0 if no message was generated
+ * @return OK if successful
+ * @return NO_MESSAGE_AVAILABLE if no message was generated
  * @return DEVICE_NOT_REGISTERED if device was not registered
  * @return NOT_OK for other errors
  */
@@ -78,8 +82,8 @@ int get_error_status(struct buffer *error_status, const struct device_identifica
  * @param error user allocated message_buffer for created protobuf error status. Look at 'memory management' section.
  * @param device identification of the device
  *
- * @return size of message in bytes
- * @return 0 if no message was generated
+ * @return OK if successful
+ * @return NO_MESSAGE_AVAILABLE if no message was generated
  * @return DEVICE_NOT_REGISTERED if device was no registered
  * @return NOT_OK for other errors
  */
@@ -94,3 +98,7 @@ int get_error(struct buffer *error, const struct device_identification device);
  * @return NOT_OK if an error occurs
  */
 int clear_error_aggregator();
+
+#ifdef __cplusplus
+}
+#endif
