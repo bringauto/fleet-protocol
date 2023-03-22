@@ -24,29 +24,17 @@ as the last comment in documentation for the given field.
 Optional fields has defaults as described in [ProtoBuf] v3 doc.
 
 # Repo structure
+## Examples
+Samples of fleet-protocol features usage.
 
-## protobuf
+Use CMake option `BRINGAUTO_SAMPLES=ON` to configure them.
 
-TODO
+## Lib
+Header files of interfaces
 
-### Compilation
-TODO
+## Protobuf
+Protobuf compiled and non-compiled files
 
-**C++**
-```
-protoc -I=./ --cpp_out=./ *.proto
-```
-
-**C#**
-TODO
-
-**Python**
-TODO
-
-**GO**
-```
-protoc -I=./ --go_out=./ *.proto
-```
 
 [BringAutoDaemon.proto]: ./BringAutoDaemon.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
