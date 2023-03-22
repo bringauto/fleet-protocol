@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory_management.h>
+#include <general_error_codes.h>
 
 /**
  * @brief Specific error codes for external server interface

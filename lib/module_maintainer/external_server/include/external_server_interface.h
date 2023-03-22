@@ -8,7 +8,7 @@ extern "C" {
 #include <general_error_codes.h>
 #include <memory_management.h>
 
-#include <structures.h>
+#include <external_server_structures.h>
 
 /**
  * @file external_server_interface.h
