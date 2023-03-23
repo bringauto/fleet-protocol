@@ -162,7 +162,7 @@ std::string ProtocolMaintainer::parseExternalServerMessage(const ExternalProtoco
 				  << command.device().devicetype() << std::endl;
 
 		return command.devicecommand().commanddata();
-	} else if(externalServerMessage.has_connectreponse()) {
+	} else if(externalServerMessage.has_connectresponse()) {
 		std::cout << "Received connect response" << std::endl;
 	} else if(externalServerMessage.has_statusresponse()) {
 		std::cout << "Received status response" << std::endl;
