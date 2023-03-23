@@ -2,15 +2,10 @@
 Using Protobuf version 21.12
 
 ## Link
-CMakeLists in this directory adds two static libraries: `protobuf_c` and `protobuf_cpp`
+CMakeLists in this directory adds two static library `protobuf_cpp`
 
-To link them, use one of the following statements in CMakeLists.txt:
+To link it, use the following statements in CMakeLists.txt:
 
-**C**
-```angular2html
-TARGET_LINK_LIBRARIES(<target> PUBLIC ${PROJECT_NAME}::protobuf_c)
-```
-**C++**
 ```angular2html
 TARGET_LINK_LIBRARIES(<target> PUBLIC ${PROJECT_NAME}::protobuf_cpp)
 ```

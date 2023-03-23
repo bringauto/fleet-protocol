@@ -2,9 +2,12 @@
 
 Fleet protocol is a communication protocol developed by BringAuto to allow simple and reliable communication between multiple devices and cloud infrastructure. 
 For complete protocol documentation see [TODO](). Protocol consists of three parts:
-* module - specific part of device that wants to communicate with server infrastructure
-* daemon gateway - modules are locally connected to a single gateway that provides connection to fleet
-* fleet - server infrastructure that gives user the ability to control modules on devices
+* internal client - specific part of device that communicates with module gateway
+* module gateway:
+  - internal server - communicates with internal client
+  - aggregator - aggregates status messages
+  - external client - communicates with external server
+* external server - communicates with server infrastructure that gives user the ability to control devices
 
 
 # Communication protocol
