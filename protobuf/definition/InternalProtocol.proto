@@ -15,6 +15,19 @@ package InternalProtocol;
 option go_package = "../internal/pkg/ba_proto;ba_proto";
 option csharp_namespace = "Google.Protobuf.ba_proto";
 
+message InternalClient {
+  oneof MessageType {
+    DeviceConnect deviceConnect = 1;
+    DeviceStatus deviceStatus = 2;
+  }
+}
+
+message InternalServer {
+  oneof MessageType {
+    DeviceConnectResponse deviceConnectResponse = 1;
+    DeviceCommand deviceCommand = 2;
+  }
+}
 /**
  * Device connect information.
  * Device connect message is used for establishing connection from module client to module server
