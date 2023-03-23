@@ -82,7 +82,7 @@ int aggregate_status(struct buffer *aggregated_status, const struct buffer curre
  * @return WRONG_FORMAT if default command has a bad format
  * @return NOT_OK if other error occurred
 */
-int generate_default_command(struct buffer *default_command, int device_type);
+int generate_first_command(struct buffer *default_command, int device_type);
 
 /**
  * @short Get number of the module
@@ -113,6 +113,16 @@ int status_data_valid(const struct buffer status, int device_type);
  *         NOT_OK if command data are invalid
  */
 int command_data_valid(const struct buffer command, int device_type);
+
+/**
+ * @short Check if device is supported and registered
+ *
+ * @param device
+ *
+ * @return OK if the device type is valid
+ * @return NOT_OK if the device type is not supported
+ */
+int is_device_type_supported(int device_type);
 
 #ifdef __cplusplus
 }
