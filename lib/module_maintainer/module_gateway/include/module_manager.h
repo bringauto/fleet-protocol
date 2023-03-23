@@ -88,7 +88,7 @@ int generate_default_command(struct buffer *default_command, int device_type);
  * @short Get number of the module
  *
  * Serves for controlling that each module has exactly one implementation.
- * The number must copy the module number from protobuf.
+ * The number must copy the module number from InternalProtocol.proto protobuf file.
  *
  * @return module number
  */

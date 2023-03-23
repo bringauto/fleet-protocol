@@ -161,6 +161,16 @@ int get_unique_devices(struct buffer* unique_devices_buffer);
  */
 int force_aggregation_on_device(const struct device_identification device);
 
+/**
+ * @short Get number of the module
+ *
+ * Serves for controlling that each module has exactly one implementation.
+ * The number must copy the module number from InternalProtocol.proto protobuf file.
+ *
+ * @return module number
+ */
+int get_module_number();
+
 #ifdef __cplusplus
 }
 #endif
