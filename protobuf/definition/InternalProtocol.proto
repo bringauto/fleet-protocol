@@ -22,11 +22,6 @@ option csharp_namespace = "Google.Protobuf.ba_proto";
  */
 message DeviceConnect{
   Device device = 1;
-
-  /*
-   * Priority of the device. Max priority = 0
-   */
-  uint32 priority = 2;
 }
 
 /**
@@ -119,4 +114,9 @@ message Device{
    * device name
    */
   string deviceName = 4;
+
+  /*
+   * Priority of the device. Max priority = 0
+   */
+  uint32 priority = 5;
 }
