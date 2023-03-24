@@ -73,6 +73,20 @@ int generate_command(struct buffer *generated_command, const struct buffer new_s
 int aggregate_status(struct buffer *aggregated_status, const struct buffer current_status, const struct buffer new_status, int device_type);
 
 /**
+ * @brief aggregate error message
+ *
+ * @param error_message buffer for storing newly generated error message. Look at memory_management section
+ * @param current_error_message current error message present in the aggregator
+ * @param status newly received status
+ * @param device_type type of device
+ *
+ * @return OK if error message aggregated successfully
+ * @return WRONG_FORMAT if a status or error message has a bad format
+ * @return NOT_OK if other error occurred
+ */
+int aggregate_error(struct buffer *error_message, const struct buffer current_error_message, const struct buffer status, int device_type);
+
+/**
  * @brief generate default command
  *
  * @param default_command buffer for storing default command. Look at memory_management section
