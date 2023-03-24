@@ -34,13 +34,11 @@ enum ic_error_codes {
  * @param ipv4_address null terminated IPv4 address of module server
  * @param port port of module server
  * @param device identification of the device
- * @param module module number
- * @param device_priority integer specifying priority of device, smaller number equals higher priority (0 is highest)
  *
  * @return context of the device used for calling other library functions
  * @return NULL if an error occurs
  */
-void *init_connection(const char* const ipv4_address, unsigned port, const struct device_identification device, unsigned module, unsigned device_priority);
+void *init_connection(const char* const ipv4_address, unsigned port, const struct device_identification device);
 
 /**
  * @short Clean up.

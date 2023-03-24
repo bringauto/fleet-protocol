@@ -73,6 +73,20 @@ int generate_command(struct buffer *generated_command, const struct buffer new_s
 int aggregate_status(struct buffer *aggregated_status, const struct buffer current_status, const struct buffer new_status, int device_type);
 
 /**
+ * @brief aggregate error message
+ *
+ * @param error_message buffer for storing newly generated error message. Look at memory_management section
+ * @param current_error_message current error message present in the aggregator
+ * @param status newly received status
+ * @param device_type type of device
+ *
+ * @return OK if error message aggregated successfully
+ * @return WRONG_FORMAT if a status or error message has a bad format
+ * @return NOT_OK if other error occurred
+ */
+int aggregate_error(struct buffer *error_message, const struct buffer current_error_message, const struct buffer status, int device_type);
+
+/**
  * @brief generate default command
  *
  * @param default_command buffer for storing default command. Look at memory_management section
@@ -82,13 +96,13 @@ int aggregate_status(struct buffer *aggregated_status, const struct buffer curre
  * @return WRONG_FORMAT if default command has a bad format
  * @return NOT_OK if other error occurred
 */
-int generate_default_command(struct buffer *default_command, int device_type);
+int generate_first_command(struct buffer *default_command, int device_type);
 
 /**
  * @short Get number of the module
  *
- * Serves for controlling that each module has exactly one implementation.
- * The number must copy the module number from protobuf.
+ * Serves for identification of module implementation.
+ * The number corresponds with the module number from InternalProtocol.proto protobuf file.
  *
  * @return module number
  */
@@ -113,6 +127,16 @@ int status_data_valid(const struct buffer status, int device_type);
  *         NOT_OK if command data are invalid
  */
 int command_data_valid(const struct buffer command, int device_type);
+
+/**
+ * @short Check if device is supported and registered
+ *
+ * @param device
+ *
+ * @return OK if the device type is valid
+ * @return NOT_OK if the device type is not supported
+ */
+int is_device_type_supported(int device_type);
 
 #ifdef __cplusplus
 }

@@ -13,8 +13,6 @@ extern "C" {
  * @subsection status_aggregator
  */
 
-//todo enum for error codes?
-
 /**
  * @short Status aggregator init.
  *
@@ -102,7 +100,7 @@ int remove_device(const struct device_identification device);
  * @param device identification of the device
  *
  * @return number of aggregated messages waiting in container for given device to be obtained by get_aggregated_status() function,
- * @return DEVICE_NOT_REGISTERED if device is not supported,
+ * @return DEVICE_NOT_SUPPORTED if device type is not supported,
  * @return NOT_OK for other error
  */
 int add_status_to_aggregator(const struct buffer status, const struct device_identification device);
@@ -160,6 +158,26 @@ int get_unique_devices(struct buffer* unique_devices_buffer);
  * @return NOT_OK if an error occurred
  */
 int force_aggregation_on_device(const struct device_identification device);
+
+/**
+ * @short Get number of the module
+ *
+ * Serves for identification of module implementation.
+ * The number corresponds with the module number from InternalProtocol.proto protobuf file.
+ *
+ * @return module number
+ */
+int get_module_number();
+
+/**
+ * @short Check if device is supported and registered
+ *
+ * @param device
+ *
+ * @return OK if the device is valid
+ * @return NOT_OK if the device is not valid
+ */
+int is_device_valid(const struct device_identification device);
 
 #ifdef __cplusplus
 }

@@ -46,6 +46,16 @@ int update_command(const struct buffer command, const struct device_identificati
  */
 int get_command(const struct buffer status, const struct device_identification device, struct buffer* command);
 
+/**
+ * @short Get number of the module
+ *
+ * Serves for identification of module implementation.
+ * The number corresponds with the module number from InternalProtocol.proto protobuf file.
+ *
+ * @return module number
+ */
+int get_module_number();
+
 #ifdef __cplusplus
 }
 #endif
