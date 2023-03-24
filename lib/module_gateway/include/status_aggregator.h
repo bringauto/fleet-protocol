@@ -13,8 +13,6 @@ extern "C" {
  * @subsection status_aggregator
  */
 
-//todo enum for error codes?
-
 /**
  * @short Status aggregator init.
  *
