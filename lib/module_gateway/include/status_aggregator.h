@@ -165,7 +165,7 @@ int force_aggregation_on_device(const struct device_identification device);
  * @short Get number of the module
  *
  * Serves for identification of module implementation.
- * The number must copy the module number from InternalProtocol.proto protobuf file.
+ * The number corresponds with the module number from InternalProtocol.proto protobuf file.
  *
  * @return module number
  */
@@ -176,9 +176,8 @@ int get_module_number();
  *
  * @param device
  *
- * @return OK if the device is valid registered
- * @return DEVICE_NOT_REGISTERED if the device is not registered
- * @return DEVICE_NOT_SUPPORTED if the device type is not supported
+ * @return OK if the device is valid
+ * @return NOT_OK if the device is not valid
  */
 int is_device_valid(const struct device_identification device);
 

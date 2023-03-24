@@ -102,7 +102,7 @@ int generate_first_command(struct buffer *default_command, int device_type);
  * @short Get number of the module
  *
  * Serves for identification of module implementation.
- * The number must copy the module number from InternalProtocol.proto protobuf file.
+ * The number corresponds with the module number from InternalProtocol.proto protobuf file.
  *
  * @return module number
  */
