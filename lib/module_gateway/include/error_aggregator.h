@@ -102,7 +102,7 @@ int clear_error_aggregator();
 /**
  * @short Get number of the module
  *
- * Serves for controlling that each module has exactly one implementation.
+ * Serves for identification of module implementation.
  * The number must copy the module number from InternalProtocol.proto protobuf file.
  *
  * @return module number

@@ -152,7 +152,7 @@ int command_ack(const struct buffer command, const struct device_identification 
 /**
  * @short Get number of the module application
  *
- * Serves for controlling that each module has exactly one implementation.
+ * Serves for identification of module implementation.
  * The number must copy the module number from protobuf.
  *
  * @return module number
