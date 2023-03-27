@@ -24,38 +24,617 @@ namespace Google.Protobuf.ba_proto {
     static InternalProtocolReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZJbnRlcm5hbFByb3RvY29sLnByb3RvEhBJbnRlcm5hbFByb3RvY29sIksK",
-            "DURldmljZUNvbm5lY3QSKAoGZGV2aWNlGAEgASgLMhguSW50ZXJuYWxQcm90",
-            "b2NvbC5EZXZpY2USEAoIcHJpb3JpdHkYAiABKA0i7gEKFURldmljZUNvbm5l",
-            "Y3RSZXNwb25zZRJKCgxyZXNwb25zZVR5cGUYASABKA4yNC5JbnRlcm5hbFBy",
-            "b3RvY29sLkRldmljZUNvbm5lY3RSZXNwb25zZS5SZXNwb25zZVR5cGUiiAEK",
-            "DFJlc3BvbnNlVHlwZRIGCgJPSxAAEhUKEUFMUkVBRFlfQ09OTkVDVEVEEAES",
-            "GAoUTU9EVUxFX05PVF9TVVBQT1JURUQQAhIYChRERVZJQ0VfTk9UX1NVUFBP",
-            "UlRFRBADEiUKIUhJR0hFUl9QUklPUklUWV9BTFJFQURZX0NPTk5FQ1RFRBAE",
-            "IkwKDERldmljZVN0YXR1cxIoCgZkZXZpY2UYASABKAsyGC5JbnRlcm5hbFBy",
-            "b3RvY29sLkRldmljZRISCgpzdGF0dXNEYXRhGAIgASgMIiQKDURldmljZUNv",
-            "bW1hbmQSEwoLY29tbWFuZERhdGEYASABKAwi3gEKBkRldmljZRIvCgZtb2R1",
-            "bGUYASABKA4yHy5JbnRlcm5hbFByb3RvY29sLkRldmljZS5Nb2R1bGUSEgoK",
-            "ZGV2aWNlVHlwZRgCIAEoDRISCgpkZXZpY2VSb2xlGAMgASgJEhIKCmRldmlj",
-            "ZU5hbWUYBCABKAkiZwoGTW9kdWxlEhMKD1JFU0VSVkVEX01PRFVMRRAAEhIK",
-            "Dk1JU1NJT05fTU9EVUxFEAESGAoUQ0FSX0FDQ0VTU09SWV9NT0RVTEUQAhIT",
-            "Cg5FWEFNUExFX01PRFVMRRDnByIFCAMQ5gdCPlohLi4vaW50ZXJuYWwvcGtn",
-            "L2JhX3Byb3RvO2JhX3Byb3RvqgIYR29vZ2xlLlByb3RvYnVmLmJhX3Byb3Rv",
-            "YgZwcm90bzM="));
+            "ChZJbnRlcm5hbFByb3RvY29sLnByb3RvEhBJbnRlcm5hbFByb3RvY29sIpEB",
+            "Cg5JbnRlcm5hbENsaWVudBI4Cg1kZXZpY2VDb25uZWN0GAEgASgLMh8uSW50",
+            "ZXJuYWxQcm90b2NvbC5EZXZpY2VDb25uZWN0SAASNgoMZGV2aWNlU3RhdHVz",
+            "GAIgASgLMh4uSW50ZXJuYWxQcm90b2NvbC5EZXZpY2VTdGF0dXNIAEINCgtN",
+            "ZXNzYWdlVHlwZSKjAQoOSW50ZXJuYWxTZXJ2ZXISSAoVZGV2aWNlQ29ubmVj",
+            "dFJlc3BvbnNlGAEgASgLMicuSW50ZXJuYWxQcm90b2NvbC5EZXZpY2VDb25u",
+            "ZWN0UmVzcG9uc2VIABI4Cg1kZXZpY2VDb21tYW5kGAIgASgLMh8uSW50ZXJu",
+            "YWxQcm90b2NvbC5EZXZpY2VDb21tYW5kSABCDQoLTWVzc2FnZVR5cGUiOQoN",
+            "RGV2aWNlQ29ubmVjdBIoCgZkZXZpY2UYASABKAsyGC5JbnRlcm5hbFByb3Rv",
+            "Y29sLkRldmljZSLuAQoVRGV2aWNlQ29ubmVjdFJlc3BvbnNlEkoKDHJlc3Bv",
+            "bnNlVHlwZRgBIAEoDjI0LkludGVybmFsUHJvdG9jb2wuRGV2aWNlQ29ubmVj",
+            "dFJlc3BvbnNlLlJlc3BvbnNlVHlwZSKIAQoMUmVzcG9uc2VUeXBlEgYKAk9L",
+            "EAASFQoRQUxSRUFEWV9DT05ORUNURUQQARIYChRNT0RVTEVfTk9UX1NVUFBP",
+            "UlRFRBACEhgKFERFVklDRV9OT1RfU1VQUE9SVEVEEAMSJQohSElHSEVSX1BS",
+            "SU9SSVRZX0FMUkVBRFlfQ09OTkVDVEVEEAQiTAoMRGV2aWNlU3RhdHVzEigK",
+            "BmRldmljZRgBIAEoCzIYLkludGVybmFsUHJvdG9jb2wuRGV2aWNlEhIKCnN0",
+            "YXR1c0RhdGEYAiABKAwiJAoNRGV2aWNlQ29tbWFuZBITCgtjb21tYW5kRGF0",
+            "YRgBIAEoDCLwAQoGRGV2aWNlEi8KBm1vZHVsZRgBIAEoDjIfLkludGVybmFs",
+            "UHJvdG9jb2wuRGV2aWNlLk1vZHVsZRISCgpkZXZpY2VUeXBlGAIgASgNEhIK",
+            "CmRldmljZVJvbGUYAyABKAkSEgoKZGV2aWNlTmFtZRgEIAEoCRIQCghwcmlv",
+            "cml0eRgFIAEoDSJnCgZNb2R1bGUSEwoPUkVTRVJWRURfTU9EVUxFEAASEgoO",
+            "TUlTU0lPTl9NT0RVTEUQARIYChRDQVJfQUNDRVNTT1JZX01PRFVMRRACEhMK",
+            "DkVYQU1QTEVfTU9EVUxFEOcHIgUIAxDmB0I+WiEuLi9pbnRlcm5hbC9wa2cv",
+            "YmFfcHJvdG87YmFfcHJvdG+qAhhHb29nbGUuUHJvdG9idWYuYmFfcHJvdG9i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.DeviceConnect), global::Google.Protobuf.ba_proto.DeviceConnect.Parser, new[]{ "Device", "Priority" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.InternalClient), global::Google.Protobuf.ba_proto.InternalClient.Parser, new[]{ "DeviceConnect", "DeviceStatus" }, new[]{ "MessageType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.InternalServer), global::Google.Protobuf.ba_proto.InternalServer.Parser, new[]{ "DeviceConnectResponse", "DeviceCommand" }, new[]{ "MessageType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.DeviceConnect), global::Google.Protobuf.ba_proto.DeviceConnect.Parser, new[]{ "Device" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.DeviceConnectResponse), global::Google.Protobuf.ba_proto.DeviceConnectResponse.Parser, new[]{ "ResponseType" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.DeviceConnectResponse.Types.ResponseType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.DeviceStatus), global::Google.Protobuf.ba_proto.DeviceStatus.Parser, new[]{ "Device", "StatusData" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.DeviceCommand), global::Google.Protobuf.ba_proto.DeviceCommand.Parser, new[]{ "CommandData" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.Device), global::Google.Protobuf.ba_proto.Device.Parser, new[]{ "Module", "DeviceType", "DeviceRole", "DeviceName" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.Device.Types.Module) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.Device), global::Google.Protobuf.ba_proto.Device.Parser, new[]{ "Module", "DeviceType", "DeviceRole", "DeviceName", "Priority" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.Device.Types.Module) }, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
+  public sealed partial class InternalClient : pb::IMessage<InternalClient>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InternalClient> _parser = new pb::MessageParser<InternalClient>(() => new InternalClient());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InternalClient> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InternalClient() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InternalClient(InternalClient other) : this() {
+      switch (other.MessageTypeCase) {
+        case MessageTypeOneofCase.DeviceConnect:
+          DeviceConnect = other.DeviceConnect.Clone();
+          break;
+        case MessageTypeOneofCase.DeviceStatus:
+          DeviceStatus = other.DeviceStatus.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InternalClient Clone() {
+      return new InternalClient(this);
+    }
+
+    /// <summary>Field number for the "deviceConnect" field.</summary>
+    public const int DeviceConnectFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.ba_proto.DeviceConnect DeviceConnect {
+      get { return messageTypeCase_ == MessageTypeOneofCase.DeviceConnect ? (global::Google.Protobuf.ba_proto.DeviceConnect) messageType_ : null; }
+      set {
+        messageType_ = value;
+        messageTypeCase_ = value == null ? MessageTypeOneofCase.None : MessageTypeOneofCase.DeviceConnect;
+      }
+    }
+
+    /// <summary>Field number for the "deviceStatus" field.</summary>
+    public const int DeviceStatusFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.ba_proto.DeviceStatus DeviceStatus {
+      get { return messageTypeCase_ == MessageTypeOneofCase.DeviceStatus ? (global::Google.Protobuf.ba_proto.DeviceStatus) messageType_ : null; }
+      set {
+        messageType_ = value;
+        messageTypeCase_ = value == null ? MessageTypeOneofCase.None : MessageTypeOneofCase.DeviceStatus;
+      }
+    }
+
+    private object messageType_;
+    /// <summary>Enum of possible cases for the "MessageType" oneof.</summary>
+    public enum MessageTypeOneofCase {
+      None = 0,
+      DeviceConnect = 1,
+      DeviceStatus = 2,
+    }
+    private MessageTypeOneofCase messageTypeCase_ = MessageTypeOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MessageTypeOneofCase MessageTypeCase {
+      get { return messageTypeCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMessageType() {
+      messageTypeCase_ = MessageTypeOneofCase.None;
+      messageType_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InternalClient);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InternalClient other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(DeviceConnect, other.DeviceConnect)) return false;
+      if (!object.Equals(DeviceStatus, other.DeviceStatus)) return false;
+      if (MessageTypeCase != other.MessageTypeCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnect) hash ^= DeviceConnect.GetHashCode();
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceStatus) hash ^= DeviceStatus.GetHashCode();
+      hash ^= (int) messageTypeCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnect) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceConnect);
+      }
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceStatus) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DeviceStatus);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnect) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceConnect);
+      }
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceStatus) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DeviceStatus);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnect) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceConnect);
+      }
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceStatus) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceStatus);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InternalClient other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.MessageTypeCase) {
+        case MessageTypeOneofCase.DeviceConnect:
+          if (DeviceConnect == null) {
+            DeviceConnect = new global::Google.Protobuf.ba_proto.DeviceConnect();
+          }
+          DeviceConnect.MergeFrom(other.DeviceConnect);
+          break;
+        case MessageTypeOneofCase.DeviceStatus:
+          if (DeviceStatus == null) {
+            DeviceStatus = new global::Google.Protobuf.ba_proto.DeviceStatus();
+          }
+          DeviceStatus.MergeFrom(other.DeviceStatus);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::Google.Protobuf.ba_proto.DeviceConnect subBuilder = new global::Google.Protobuf.ba_proto.DeviceConnect();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnect) {
+              subBuilder.MergeFrom(DeviceConnect);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceConnect = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Google.Protobuf.ba_proto.DeviceStatus subBuilder = new global::Google.Protobuf.ba_proto.DeviceStatus();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceStatus) {
+              subBuilder.MergeFrom(DeviceStatus);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceStatus = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Google.Protobuf.ba_proto.DeviceConnect subBuilder = new global::Google.Protobuf.ba_proto.DeviceConnect();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnect) {
+              subBuilder.MergeFrom(DeviceConnect);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceConnect = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Google.Protobuf.ba_proto.DeviceStatus subBuilder = new global::Google.Protobuf.ba_proto.DeviceStatus();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceStatus) {
+              subBuilder.MergeFrom(DeviceStatus);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceStatus = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class InternalServer : pb::IMessage<InternalServer>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InternalServer> _parser = new pb::MessageParser<InternalServer>(() => new InternalServer());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InternalServer> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InternalServer() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InternalServer(InternalServer other) : this() {
+      switch (other.MessageTypeCase) {
+        case MessageTypeOneofCase.DeviceConnectResponse:
+          DeviceConnectResponse = other.DeviceConnectResponse.Clone();
+          break;
+        case MessageTypeOneofCase.DeviceCommand:
+          DeviceCommand = other.DeviceCommand.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InternalServer Clone() {
+      return new InternalServer(this);
+    }
+
+    /// <summary>Field number for the "deviceConnectResponse" field.</summary>
+    public const int DeviceConnectResponseFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.ba_proto.DeviceConnectResponse DeviceConnectResponse {
+      get { return messageTypeCase_ == MessageTypeOneofCase.DeviceConnectResponse ? (global::Google.Protobuf.ba_proto.DeviceConnectResponse) messageType_ : null; }
+      set {
+        messageType_ = value;
+        messageTypeCase_ = value == null ? MessageTypeOneofCase.None : MessageTypeOneofCase.DeviceConnectResponse;
+      }
+    }
+
+    /// <summary>Field number for the "deviceCommand" field.</summary>
+    public const int DeviceCommandFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.ba_proto.DeviceCommand DeviceCommand {
+      get { return messageTypeCase_ == MessageTypeOneofCase.DeviceCommand ? (global::Google.Protobuf.ba_proto.DeviceCommand) messageType_ : null; }
+      set {
+        messageType_ = value;
+        messageTypeCase_ = value == null ? MessageTypeOneofCase.None : MessageTypeOneofCase.DeviceCommand;
+      }
+    }
+
+    private object messageType_;
+    /// <summary>Enum of possible cases for the "MessageType" oneof.</summary>
+    public enum MessageTypeOneofCase {
+      None = 0,
+      DeviceConnectResponse = 1,
+      DeviceCommand = 2,
+    }
+    private MessageTypeOneofCase messageTypeCase_ = MessageTypeOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MessageTypeOneofCase MessageTypeCase {
+      get { return messageTypeCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMessageType() {
+      messageTypeCase_ = MessageTypeOneofCase.None;
+      messageType_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InternalServer);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InternalServer other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(DeviceConnectResponse, other.DeviceConnectResponse)) return false;
+      if (!object.Equals(DeviceCommand, other.DeviceCommand)) return false;
+      if (MessageTypeCase != other.MessageTypeCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnectResponse) hash ^= DeviceConnectResponse.GetHashCode();
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceCommand) hash ^= DeviceCommand.GetHashCode();
+      hash ^= (int) messageTypeCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnectResponse) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceConnectResponse);
+      }
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceCommand) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DeviceCommand);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnectResponse) {
+        output.WriteRawTag(10);
+        output.WriteMessage(DeviceConnectResponse);
+      }
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceCommand) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DeviceCommand);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnectResponse) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceConnectResponse);
+      }
+      if (messageTypeCase_ == MessageTypeOneofCase.DeviceCommand) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceCommand);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InternalServer other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.MessageTypeCase) {
+        case MessageTypeOneofCase.DeviceConnectResponse:
+          if (DeviceConnectResponse == null) {
+            DeviceConnectResponse = new global::Google.Protobuf.ba_proto.DeviceConnectResponse();
+          }
+          DeviceConnectResponse.MergeFrom(other.DeviceConnectResponse);
+          break;
+        case MessageTypeOneofCase.DeviceCommand:
+          if (DeviceCommand == null) {
+            DeviceCommand = new global::Google.Protobuf.ba_proto.DeviceCommand();
+          }
+          DeviceCommand.MergeFrom(other.DeviceCommand);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::Google.Protobuf.ba_proto.DeviceConnectResponse subBuilder = new global::Google.Protobuf.ba_proto.DeviceConnectResponse();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnectResponse) {
+              subBuilder.MergeFrom(DeviceConnectResponse);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceConnectResponse = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Google.Protobuf.ba_proto.DeviceCommand subBuilder = new global::Google.Protobuf.ba_proto.DeviceCommand();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceCommand) {
+              subBuilder.MergeFrom(DeviceCommand);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceCommand = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Google.Protobuf.ba_proto.DeviceConnectResponse subBuilder = new global::Google.Protobuf.ba_proto.DeviceConnectResponse();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceConnectResponse) {
+              subBuilder.MergeFrom(DeviceConnectResponse);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceConnectResponse = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Google.Protobuf.ba_proto.DeviceCommand subBuilder = new global::Google.Protobuf.ba_proto.DeviceCommand();
+            if (messageTypeCase_ == MessageTypeOneofCase.DeviceCommand) {
+              subBuilder.MergeFrom(DeviceCommand);
+            }
+            input.ReadMessage(subBuilder);
+            DeviceCommand = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   ///*
   /// Device connect information.
@@ -76,7 +655,7 @@ namespace Google.Protobuf.ba_proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +676,6 @@ namespace Google.Protobuf.ba_proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceConnect(DeviceConnect other) : this() {
       device_ = other.device_ != null ? other.device_.Clone() : null;
-      priority_ = other.priority_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -119,22 +697,6 @@ namespace Google.Protobuf.ba_proto {
       }
     }
 
-    /// <summary>Field number for the "priority" field.</summary>
-    public const int PriorityFieldNumber = 2;
-    private uint priority_;
-    /// <summary>
-    ///
-    /// Priority of the device. Max priority = 0
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Priority {
-      get { return priority_; }
-      set {
-        priority_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -151,7 +713,6 @@ namespace Google.Protobuf.ba_proto {
         return true;
       }
       if (!object.Equals(Device, other.Device)) return false;
-      if (Priority != other.Priority) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,7 +721,6 @@ namespace Google.Protobuf.ba_proto {
     public override int GetHashCode() {
       int hash = 1;
       if (device_ != null) hash ^= Device.GetHashCode();
-      if (Priority != 0) hash ^= Priority.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,10 +743,6 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(10);
         output.WriteMessage(Device);
       }
-      if (Priority != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Priority);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -201,10 +757,6 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(10);
         output.WriteMessage(Device);
       }
-      if (Priority != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Priority);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -217,9 +769,6 @@ namespace Google.Protobuf.ba_proto {
       int size = 0;
       if (device_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Device);
-      }
-      if (Priority != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Priority);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -238,9 +787,6 @@ namespace Google.Protobuf.ba_proto {
           Device = new global::Google.Protobuf.ba_proto.Device();
         }
         Device.MergeFrom(other.Device);
-      }
-      if (other.Priority != 0) {
-        Priority = other.Priority;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,10 +810,6 @@ namespace Google.Protobuf.ba_proto {
             input.ReadMessage(Device);
             break;
           }
-          case 16: {
-            Priority = input.ReadUInt32();
-            break;
-          }
         }
       }
     #endif
@@ -288,10 +830,6 @@ namespace Google.Protobuf.ba_proto {
               Device = new global::Google.Protobuf.ba_proto.Device();
             }
             input.ReadMessage(Device);
-            break;
-          }
-          case 16: {
-            Priority = input.ReadUInt32();
             break;
           }
         }
@@ -321,7 +859,7 @@ namespace Google.Protobuf.ba_proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -550,7 +1088,7 @@ namespace Google.Protobuf.ba_proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -789,7 +1327,7 @@ namespace Google.Protobuf.ba_proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -982,7 +1520,7 @@ namespace Google.Protobuf.ba_proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1006,6 +1544,7 @@ namespace Google.Protobuf.ba_proto {
       deviceType_ = other.deviceType_;
       deviceRole_ = other.deviceRole_;
       deviceName_ = other.deviceName_;
+      priority_ = other.priority_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1080,6 +1619,22 @@ namespace Google.Protobuf.ba_proto {
       }
     }
 
+    /// <summary>Field number for the "priority" field.</summary>
+    public const int PriorityFieldNumber = 5;
+    private uint priority_;
+    /// <summary>
+    ///
+    /// Priority of the device. Max priority = 0
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Priority {
+      get { return priority_; }
+      set {
+        priority_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1099,6 +1654,7 @@ namespace Google.Protobuf.ba_proto {
       if (DeviceType != other.DeviceType) return false;
       if (DeviceRole != other.DeviceRole) return false;
       if (DeviceName != other.DeviceName) return false;
+      if (Priority != other.Priority) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1110,6 +1666,7 @@ namespace Google.Protobuf.ba_proto {
       if (DeviceType != 0) hash ^= DeviceType.GetHashCode();
       if (DeviceRole.Length != 0) hash ^= DeviceRole.GetHashCode();
       if (DeviceName.Length != 0) hash ^= DeviceName.GetHashCode();
+      if (Priority != 0) hash ^= Priority.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1144,6 +1701,10 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(34);
         output.WriteString(DeviceName);
       }
+      if (Priority != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Priority);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1170,6 +1731,10 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(34);
         output.WriteString(DeviceName);
       }
+      if (Priority != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Priority);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1191,6 +1756,9 @@ namespace Google.Protobuf.ba_proto {
       }
       if (DeviceName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceName);
+      }
+      if (Priority != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Priority);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1215,6 +1783,9 @@ namespace Google.Protobuf.ba_proto {
       }
       if (other.DeviceName.Length != 0) {
         DeviceName = other.DeviceName;
+      }
+      if (other.Priority != 0) {
+        Priority = other.Priority;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1247,6 +1818,10 @@ namespace Google.Protobuf.ba_proto {
             DeviceName = input.ReadString();
             break;
           }
+          case 40: {
+            Priority = input.ReadUInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1276,6 +1851,10 @@ namespace Google.Protobuf.ba_proto {
           }
           case 34: {
             DeviceName = input.ReadString();
+            break;
+          }
+          case 40: {
+            Priority = input.ReadUInt32();
             break;
           }
         }

@@ -163,12 +163,14 @@ inline bool StatusResponse_Type_Parse(
 enum CommandResponse_Type : int {
   CommandResponse_Type_OK = 0,
   CommandResponse_Type_DEVICE_NOT_CONNECTED = 1,
+  CommandResponse_Type_DEVICE_NOT_SUPPORTED = 2,
+  CommandResponse_Type_INVALID_COMMAND = 3,
   CommandResponse_Type_CommandResponse_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   CommandResponse_Type_CommandResponse_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool CommandResponse_Type_IsValid(int value);
 constexpr CommandResponse_Type CommandResponse_Type_Type_MIN = CommandResponse_Type_OK;
-constexpr CommandResponse_Type CommandResponse_Type_Type_MAX = CommandResponse_Type_DEVICE_NOT_CONNECTED;
+constexpr CommandResponse_Type CommandResponse_Type_Type_MAX = CommandResponse_Type_INVALID_COMMAND;
 constexpr int CommandResponse_Type_Type_ARRAYSIZE = CommandResponse_Type_Type_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CommandResponse_Type_descriptor();
@@ -1802,6 +1804,10 @@ class CommandResponse final :
     CommandResponse_Type_OK;
   static constexpr Type DEVICE_NOT_CONNECTED =
     CommandResponse_Type_DEVICE_NOT_CONNECTED;
+  static constexpr Type DEVICE_NOT_SUPPORTED =
+    CommandResponse_Type_DEVICE_NOT_SUPPORTED;
+  static constexpr Type INVALID_COMMAND =
+    CommandResponse_Type_INVALID_COMMAND;
   static inline bool Type_IsValid(int value) {
     return CommandResponse_Type_IsValid(value);
   }

@@ -286,20 +286,21 @@ const char descriptor_table_protodef_ExternalProtocol_2eproto[] PROTOBUF_SECTION
   "\n\tsessionId\030\001 \001(\t\022\026\n\016messageCounter\030\002 \001("
   "\r\022(\n\006device\030\003 \001(\0132\030.InternalProtocol.Dev"
   "ice\0226\n\rdeviceCommand\030\004 \001(\0132\037.InternalPro"
-  "tocol.DeviceCommand\"\234\001\n\017CommandResponse\022"
+  "tocol.DeviceCommand\"\313\001\n\017CommandResponse\022"
   "\021\n\tsessionId\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.Exter"
   "nalProtocol.CommandResponse.Type\022\026\n\016mess"
-  "ageCounter\030\003 \001(\r\"(\n\004Type\022\006\n\002OK\020\000\022\030\n\024DEVI"
-  "CE_NOT_CONNECTED\020\001B>Z!../internal/pkg/ba"
-  "_proto;ba_proto\252\002\030Google.Protobuf.ba_pro"
-  "tob\006proto3"
+  "ageCounter\030\003 \001(\r\"W\n\004Type\022\006\n\002OK\020\000\022\030\n\024DEVI"
+  "CE_NOT_CONNECTED\020\001\022\030\n\024DEVICE_NOT_SUPPORT"
+  "ED\020\002\022\023\n\017INVALID_COMMAND\020\003B>Z!../internal"
+  "/pkg/ba_proto;ba_proto\252\002\030Google.Protobuf"
+  ".ba_protob\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_ExternalProtocol_2eproto_deps[1] = {
   &::descriptor_table_InternalProtocol_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_ExternalProtocol_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_ExternalProtocol_2eproto = {
-    false, false, 1490, descriptor_table_protodef_ExternalProtocol_2eproto,
+    false, false, 1537, descriptor_table_protodef_ExternalProtocol_2eproto,
     "ExternalProtocol.proto",
     &descriptor_table_ExternalProtocol_2eproto_once, descriptor_table_ExternalProtocol_2eproto_deps, 1, 8,
     schemas, file_default_instances, TableStruct_ExternalProtocol_2eproto::offsets,
@@ -386,6 +387,8 @@ bool CommandResponse_Type_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
+    case 3:
       return true;
     default:
       return false;
@@ -395,6 +398,8 @@ bool CommandResponse_Type_IsValid(int value) {
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr CommandResponse_Type CommandResponse::OK;
 constexpr CommandResponse_Type CommandResponse::DEVICE_NOT_CONNECTED;
+constexpr CommandResponse_Type CommandResponse::DEVICE_NOT_SUPPORTED;
+constexpr CommandResponse_Type CommandResponse::INVALID_COMMAND;
 constexpr CommandResponse_Type CommandResponse::Type_MIN;
 constexpr CommandResponse_Type CommandResponse::Type_MAX;
 constexpr int CommandResponse::Type_ARRAYSIZE;
