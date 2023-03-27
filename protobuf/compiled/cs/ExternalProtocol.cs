@@ -52,12 +52,13 @@ namespace Google.Protobuf.ba_proto {
             "c2lvbklkGAEgASgJEhYKDm1lc3NhZ2VDb3VudGVyGAIgASgNEigKBmRldmlj",
             "ZRgDIAEoCzIYLkludGVybmFsUHJvdG9jb2wuRGV2aWNlEjYKDWRldmljZUNv",
             "bW1hbmQYBCABKAsyHy5JbnRlcm5hbFByb3RvY29sLkRldmljZUNvbW1hbmQi",
-            "nAEKD0NvbW1hbmRSZXNwb25zZRIRCglzZXNzaW9uSWQYASABKAkSNAoEdHlw",
+            "ywEKD0NvbW1hbmRSZXNwb25zZRIRCglzZXNzaW9uSWQYASABKAkSNAoEdHlw",
             "ZRgCIAEoDjImLkV4dGVybmFsUHJvdG9jb2wuQ29tbWFuZFJlc3BvbnNlLlR5",
-            "cGUSFgoObWVzc2FnZUNvdW50ZXIYAyABKA0iKAoEVHlwZRIGCgJPSxAAEhgK",
-            "FERFVklDRV9OT1RfQ09OTkVDVEVEEAFCPlohLi4vaW50ZXJuYWwvcGtnL2Jh",
-            "X3Byb3RvO2JhX3Byb3RvqgIYR29vZ2xlLlByb3RvYnVmLmJhX3Byb3RvYgZw",
-            "cm90bzM="));
+            "cGUSFgoObWVzc2FnZUNvdW50ZXIYAyABKA0iVwoEVHlwZRIGCgJPSxAAEhgK",
+            "FERFVklDRV9OT1RfQ09OTkVDVEVEEAESGAoUREVWSUNFX05PVF9TVVBQT1JU",
+            "RUQQAhITCg9JTlZBTElEX0NPTU1BTkQQA0I+WiEuLi9pbnRlcm5hbC9wa2cv",
+            "YmFfcHJvdG87YmFfcHJvdG+qAhhHb29nbGUuUHJvdG9idWYuYmFfcHJvdG9i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -2602,6 +2603,8 @@ namespace Google.Protobuf.ba_proto {
       public enum Type {
         [pbr::OriginalName("OK")] Ok = 0,
         [pbr::OriginalName("DEVICE_NOT_CONNECTED")] DeviceNotConnected = 1,
+        [pbr::OriginalName("DEVICE_NOT_SUPPORTED")] DeviceNotSupported = 2,
+        [pbr::OriginalName("INVALID_COMMAND")] InvalidCommand = 3,
       }
 
     }

@@ -13,7 +13,7 @@ TARGET_LINK_LIBRARIES(<target> PUBLIC ${PROJECT_NAME}::protobuf_cpp)
 ## Compilation
 Compile to all languages:
 ```
-$ protoc -I=./definition --cpp_out=./compiled/cpp --csharp_out=./compiled/cs --objc_out=./compiled/c --python_out=./compiled/python --go_out=./compiled/go/ --go_opt=paths=source_relative ./definition/**/*.proto
+$ protoc -I=./definition --cpp_out=./compiled/cpp --csharp_out=./compiled/cs --python_out=./compiled/python --go_out=./compiled/go/ --go_opt=paths=source_relative ./definition/**/*.proto
 ```
 To compile files to a specific language only, use the specific `*_out` options in command
 
