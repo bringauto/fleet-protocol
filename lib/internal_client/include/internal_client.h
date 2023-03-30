@@ -18,7 +18,13 @@ extern "C" {
 enum ic_error_codes {
     CONTEXT_INCORRECT = RESERVED-1,
     TIMEOUT_OCCURRED = RESERVED-2,
-    BUFFER_TOO_SMALL = RESERVED-3
+    BUFFER_TOO_SMALL = RESERVED-3,
+	UNABLE_TO_CONNECT = RESERVED-4,
+	DEVICE_ALREADY_CONNECTED = RESERVED-5,
+	MODULE_NOT_SUPPORTED = RESERVED-6,
+	DEVICE_TYPE_NOT_SUPPORTED = RESERVED-7,
+	HIGHER_PRIORITY_ALREADY_CONNECTED = RESERVED-8
+
 };
 
 /**
@@ -31,14 +37,20 @@ enum ic_error_codes {
  * used by multiple functions simultaneously.
  * Using multiple contexts IS thread safe and you can use multiple contexts simultaneously.
  *
+ * @param context pointer for returning context of the device used for calling other library functions
  * @param ipv4_address null terminated IPv4 address of module server
  * @param port port of module server
  * @param device identification of the device
  *
- * @return context of the device used for calling other library functions
- * @return NULL if an error occurs
+ * @return OK if context was created and the device connected
+ * @return UNABLE_TO_CONNECT if ip connection couldn't be established
+ * @return DEVICE_ALREADY_CONNECTED if device with same identification is already connected
+ * @return HIGHER_PRIORITY_ALREADY_CONNECTED if device with same identification but higher priority is already connected
+ * @return MODULE_NOT_SUPPORTED if module is not supported
+ * @return DEVICE_TYPE_NOT_SUPPORTED if the device type is not supported by the module
+ * @return NOT_OK if different error occurred
  */
-void *init_connection(const char* const ipv4_address, unsigned port, const struct device_identification device);
+int init_connection(void **context, const char* const ipv4_address, unsigned port, const struct device_identification device);
 
 /**
  * @short Clean up.
