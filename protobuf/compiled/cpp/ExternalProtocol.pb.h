@@ -1599,8 +1599,7 @@ class Command final :
 
   enum : int {
     kSessionIdFieldNumber = 1,
-    kDeviceFieldNumber = 3,
-    kDeviceCommandFieldNumber = 4,
+    kDeviceCommandFieldNumber = 3,
     kMessageCounterFieldNumber = 2,
   };
   // string sessionId = 1;
@@ -1617,25 +1616,7 @@ class Command final :
   std::string* _internal_mutable_sessionid();
   public:
 
-  // .InternalProtocol.Device device = 3;
-  bool has_device() const;
-  private:
-  bool _internal_has_device() const;
-  public:
-  void clear_device();
-  const ::InternalProtocol::Device& device() const;
-  PROTOBUF_NODISCARD ::InternalProtocol::Device* release_device();
-  ::InternalProtocol::Device* mutable_device();
-  void set_allocated_device(::InternalProtocol::Device* device);
-  private:
-  const ::InternalProtocol::Device& _internal_device() const;
-  ::InternalProtocol::Device* _internal_mutable_device();
-  public:
-  void unsafe_arena_set_allocated_device(
-      ::InternalProtocol::Device* device);
-  ::InternalProtocol::Device* unsafe_arena_release_device();
-
-  // .InternalProtocol.DeviceCommand deviceCommand = 4;
+  // .InternalProtocol.DeviceCommand deviceCommand = 3;
   bool has_devicecommand() const;
   private:
   bool _internal_has_devicecommand() const;
@@ -1671,7 +1652,6 @@ class Command final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sessionid_;
-    ::InternalProtocol::Device* device_;
     ::InternalProtocol::DeviceCommand* devicecommand_;
     uint32_t messagecounter_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3045,92 +3025,7 @@ inline void Command::set_messagecounter(uint32_t value) {
   // @@protoc_insertion_point(field_set:ExternalProtocol.Command.messageCounter)
 }
 
-// .InternalProtocol.Device device = 3;
-inline bool Command::_internal_has_device() const {
-  return this != internal_default_instance() && _impl_.device_ != nullptr;
-}
-inline bool Command::has_device() const {
-  return _internal_has_device();
-}
-inline const ::InternalProtocol::Device& Command::_internal_device() const {
-  const ::InternalProtocol::Device* p = _impl_.device_;
-  return p != nullptr ? *p : reinterpret_cast<const ::InternalProtocol::Device&>(
-      ::InternalProtocol::_Device_default_instance_);
-}
-inline const ::InternalProtocol::Device& Command::device() const {
-  // @@protoc_insertion_point(field_get:ExternalProtocol.Command.device)
-  return _internal_device();
-}
-inline void Command::unsafe_arena_set_allocated_device(
-    ::InternalProtocol::Device* device) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.device_);
-  }
-  _impl_.device_ = device;
-  if (device) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ExternalProtocol.Command.device)
-}
-inline ::InternalProtocol::Device* Command::release_device() {
-  
-  ::InternalProtocol::Device* temp = _impl_.device_;
-  _impl_.device_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::InternalProtocol::Device* Command::unsafe_arena_release_device() {
-  // @@protoc_insertion_point(field_release:ExternalProtocol.Command.device)
-  
-  ::InternalProtocol::Device* temp = _impl_.device_;
-  _impl_.device_ = nullptr;
-  return temp;
-}
-inline ::InternalProtocol::Device* Command::_internal_mutable_device() {
-  
-  if (_impl_.device_ == nullptr) {
-    auto* p = CreateMaybeMessage<::InternalProtocol::Device>(GetArenaForAllocation());
-    _impl_.device_ = p;
-  }
-  return _impl_.device_;
-}
-inline ::InternalProtocol::Device* Command::mutable_device() {
-  ::InternalProtocol::Device* _msg = _internal_mutable_device();
-  // @@protoc_insertion_point(field_mutable:ExternalProtocol.Command.device)
-  return _msg;
-}
-inline void Command::set_allocated_device(::InternalProtocol::Device* device) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.device_);
-  }
-  if (device) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(device));
-    if (message_arena != submessage_arena) {
-      device = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, device, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.device_ = device;
-  // @@protoc_insertion_point(field_set_allocated:ExternalProtocol.Command.device)
-}
-
-// .InternalProtocol.DeviceCommand deviceCommand = 4;
+// .InternalProtocol.DeviceCommand deviceCommand = 3;
 inline bool Command::_internal_has_devicecommand() const {
   return this != internal_default_instance() && _impl_.devicecommand_ != nullptr;
 }
