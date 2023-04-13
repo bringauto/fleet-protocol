@@ -48,17 +48,16 @@ namespace Google.Protobuf.ba_proto {
             "CkRJU0NPTk5FQ1QQA0IPCg1fZXJyb3JNZXNzYWdlIoABCg5TdGF0dXNSZXNw",
             "b25zZRIRCglzZXNzaW9uSWQYASABKAkSMwoEdHlwZRgCIAEoDjIlLkV4dGVy",
             "bmFsUHJvdG9jb2wuU3RhdHVzUmVzcG9uc2UuVHlwZRIWCg5tZXNzYWdlQ291",
-            "bnRlchgDIAEoDSIOCgRUeXBlEgYKAk9LEAAilgEKB0NvbW1hbmQSEQoJc2Vz",
-            "c2lvbklkGAEgASgJEhYKDm1lc3NhZ2VDb3VudGVyGAIgASgNEigKBmRldmlj",
-            "ZRgDIAEoCzIYLkludGVybmFsUHJvdG9jb2wuRGV2aWNlEjYKDWRldmljZUNv",
-            "bW1hbmQYBCABKAsyHy5JbnRlcm5hbFByb3RvY29sLkRldmljZUNvbW1hbmQi",
-            "ywEKD0NvbW1hbmRSZXNwb25zZRIRCglzZXNzaW9uSWQYASABKAkSNAoEdHlw",
-            "ZRgCIAEoDjImLkV4dGVybmFsUHJvdG9jb2wuQ29tbWFuZFJlc3BvbnNlLlR5",
-            "cGUSFgoObWVzc2FnZUNvdW50ZXIYAyABKA0iVwoEVHlwZRIGCgJPSxAAEhgK",
-            "FERFVklDRV9OT1RfQ09OTkVDVEVEEAESGAoUREVWSUNFX05PVF9TVVBQT1JU",
-            "RUQQAhITCg9JTlZBTElEX0NPTU1BTkQQA0I+WiEuLi9pbnRlcm5hbC9wa2cv",
-            "YmFfcHJvdG87YmFfcHJvdG+qAhhHb29nbGUuUHJvdG9idWYuYmFfcHJvdG9i",
-            "BnByb3RvMw=="));
+            "bnRlchgDIAEoDSIOCgRUeXBlEgYKAk9LEAAibAoHQ29tbWFuZBIRCglzZXNz",
+            "aW9uSWQYASABKAkSFgoObWVzc2FnZUNvdW50ZXIYAiABKA0SNgoNZGV2aWNl",
+            "Q29tbWFuZBgDIAEoCzIfLkludGVybmFsUHJvdG9jb2wuRGV2aWNlQ29tbWFu",
+            "ZCLLAQoPQ29tbWFuZFJlc3BvbnNlEhEKCXNlc3Npb25JZBgBIAEoCRI0CgR0",
+            "eXBlGAIgASgOMiYuRXh0ZXJuYWxQcm90b2NvbC5Db21tYW5kUmVzcG9uc2Uu",
+            "VHlwZRIWCg5tZXNzYWdlQ291bnRlchgDIAEoDSJXCgRUeXBlEgYKAk9LEAAS",
+            "GAoUREVWSUNFX05PVF9DT05ORUNURUQQARIYChRERVZJQ0VfTk9UX1NVUFBP",
+            "UlRFRBACEhMKD0lOVkFMSURfQ09NTUFORBADQj5aIS4uL2ludGVybmFsL3Br",
+            "Zy9iYV9wcm90bztiYV9wcm90b6oCGEdvb2dsZS5Qcm90b2J1Zi5iYV9wcm90",
+            "b2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.ba_proto.InternalProtocolReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -68,7 +67,7 @@ namespace Google.Protobuf.ba_proto {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.ConnectResponse), global::Google.Protobuf.ba_proto.ConnectResponse.Parser, new[]{ "SessionId", "Type" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.ConnectResponse.Types.Type) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.Status), global::Google.Protobuf.ba_proto.Status.Parser, new[]{ "SessionId", "DeviceState", "MessageCounter", "DeviceStatus", "ErrorMessage" }, new[]{ "ErrorMessage" }, new[]{ typeof(global::Google.Protobuf.ba_proto.Status.Types.DeviceState) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.StatusResponse), global::Google.Protobuf.ba_proto.StatusResponse.Parser, new[]{ "SessionId", "Type", "MessageCounter" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.StatusResponse.Types.Type) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.Command), global::Google.Protobuf.ba_proto.Command.Parser, new[]{ "SessionId", "MessageCounter", "Device", "DeviceCommand" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.Command), global::Google.Protobuf.ba_proto.Command.Parser, new[]{ "SessionId", "MessageCounter", "DeviceCommand" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.CommandResponse), global::Google.Protobuf.ba_proto.CommandResponse.Parser, new[]{ "SessionId", "Type", "MessageCounter" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.CommandResponse.Types.Type) }, null, null)
           }));
     }
@@ -2039,7 +2038,6 @@ namespace Google.Protobuf.ba_proto {
     public Command(Command other) : this() {
       sessionId_ = other.sessionId_;
       messageCounter_ = other.messageCounter_;
-      device_ = other.device_ != null ? other.device_.Clone() : null;
       deviceCommand_ = other.deviceCommand_ != null ? other.deviceCommand_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2074,28 +2072,12 @@ namespace Google.Protobuf.ba_proto {
       }
     }
 
-    /// <summary>Field number for the "device" field.</summary>
-    public const int DeviceFieldNumber = 3;
-    private global::Google.Protobuf.ba_proto.Device device_;
-    /// <summary>
-    ///*
-    /// command destination device
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.ba_proto.Device Device {
-      get { return device_; }
-      set {
-        device_ = value;
-      }
-    }
-
     /// <summary>Field number for the "deviceCommand" field.</summary>
-    public const int DeviceCommandFieldNumber = 4;
+    public const int DeviceCommandFieldNumber = 3;
     private global::Google.Protobuf.ba_proto.DeviceCommand deviceCommand_;
     /// <summary>
     ///*
-    /// command binary data
+    /// command binary data and target device
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2123,7 +2105,6 @@ namespace Google.Protobuf.ba_proto {
       }
       if (SessionId != other.SessionId) return false;
       if (MessageCounter != other.MessageCounter) return false;
-      if (!object.Equals(Device, other.Device)) return false;
       if (!object.Equals(DeviceCommand, other.DeviceCommand)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2134,7 +2115,6 @@ namespace Google.Protobuf.ba_proto {
       int hash = 1;
       if (SessionId.Length != 0) hash ^= SessionId.GetHashCode();
       if (MessageCounter != 0) hash ^= MessageCounter.GetHashCode();
-      if (device_ != null) hash ^= Device.GetHashCode();
       if (deviceCommand_ != null) hash ^= DeviceCommand.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2162,12 +2142,8 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(16);
         output.WriteUInt32(MessageCounter);
       }
-      if (device_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Device);
-      }
       if (deviceCommand_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteMessage(DeviceCommand);
       }
       if (_unknownFields != null) {
@@ -2188,12 +2164,8 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(16);
         output.WriteUInt32(MessageCounter);
       }
-      if (device_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Device);
-      }
       if (deviceCommand_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteMessage(DeviceCommand);
       }
       if (_unknownFields != null) {
@@ -2211,9 +2183,6 @@ namespace Google.Protobuf.ba_proto {
       }
       if (MessageCounter != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MessageCounter);
-      }
-      if (device_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Device);
       }
       if (deviceCommand_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceCommand);
@@ -2235,12 +2204,6 @@ namespace Google.Protobuf.ba_proto {
       }
       if (other.MessageCounter != 0) {
         MessageCounter = other.MessageCounter;
-      }
-      if (other.device_ != null) {
-        if (device_ == null) {
-          Device = new global::Google.Protobuf.ba_proto.Device();
-        }
-        Device.MergeFrom(other.Device);
       }
       if (other.deviceCommand_ != null) {
         if (deviceCommand_ == null) {
@@ -2272,13 +2235,6 @@ namespace Google.Protobuf.ba_proto {
             break;
           }
           case 26: {
-            if (device_ == null) {
-              Device = new global::Google.Protobuf.ba_proto.Device();
-            }
-            input.ReadMessage(Device);
-            break;
-          }
-          case 34: {
             if (deviceCommand_ == null) {
               DeviceCommand = new global::Google.Protobuf.ba_proto.DeviceCommand();
             }
@@ -2309,13 +2265,6 @@ namespace Google.Protobuf.ba_proto {
             break;
           }
           case 26: {
-            if (device_ == null) {
-              Device = new global::Google.Protobuf.ba_proto.Device();
-            }
-            input.ReadMessage(Device);
-            break;
-          }
-          case 34: {
             if (deviceCommand_ == null) {
               DeviceCommand = new global::Google.Protobuf.ba_proto.DeviceCommand();
             }

@@ -134,14 +134,9 @@ message Command {
     uint32 messageCounter = 2;
 
     /**
-     * command destination device
+     * command binary data and target device
      */
-    InternalProtocol.Device device = 3;
-
-    /**
-     * command binary data
-     */
-    InternalProtocol.DeviceCommand deviceCommand = 4;
+    InternalProtocol.DeviceCommand deviceCommand = 3;
 }
 
 /**

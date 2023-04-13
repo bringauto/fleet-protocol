@@ -69,6 +69,8 @@ message DeviceConnectResponse{
     HIGHER_PRIORITY_ALREADY_CONNECTED = 4;
   }
   ResponseType responseType = 1;
+
+  Device device = 2;
 }
 
 message DeviceStatus{
@@ -81,7 +83,9 @@ message DeviceStatus{
  * binary command data
  */
 message DeviceCommand{
-  bytes commandData = 1;
+  Device device = 1;
+
+  bytes commandData = 2;
 }
 
 /*
