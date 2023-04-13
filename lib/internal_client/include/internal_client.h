@@ -18,7 +18,7 @@ extern "C" {
 enum ic_error_codes {
     CONTEXT_INCORRECT = RESERVED-1,
     TIMEOUT_OCCURRED = RESERVED-2,
-    BUFFER_TOO_SMALL = RESERVED-3,
+    NO_COMMAND_AVAILABLE = RESERVED-3,
 	UNABLE_TO_CONNECT = RESERVED-4,
 	DEVICE_ALREADY_CONNECTED = RESERVED-5,
 	MODULE_NOT_SUPPORTED = RESERVED-6,
@@ -74,12 +74,13 @@ int destroy_connection(void **context);
  * sending request cannot be successful without receiving the response, so send_status does not only send the request (in form of status)
  * but also waits for the response (in form of command).
  * Function is blocking, it will wait until command is received or timeout specified by an argument is reached before returning.
- * After successful send_status call, command can be retrieved by receive_command function.
+ * The timeout is set for sending status and receiving command, therefore maximum duration of this function is 2x timeout
+ * After successful send_status call, command can be retrieved by get_command function.
  *
  * @param context context of module client created by init() function
  * @param device_status pointer to device specific structure, specific device is set in init() function using device_type, structures are defined in device specific header file
  * @param status_size size of status data
- * @param timeout timeout in seconds, how long is acceptable to wait for server response (command) if timeout is reached, error will be returned
+ * @param timeout timeout in seconds, how long is acceptable to wait for status send or server response (command), if timeout is reached, error will be returned
  *
  * @return OK if successful
  * @return CONTEXT_INCORRECT if context is incorrect
@@ -99,10 +100,9 @@ int send_status(void *context, const struct buffer status, unsigned timeout);
  * @param device_command_buffer pointer to an user allocated buffer, device command structure will be copied to it, structures are defined in device specific header file
  * @param buffer_size size of user allocated buffer
  *
- * @return size of device_command in bytes
- * @return OK if no message was yet received (send_status was not called yet)
+ * @return OK If command was successfully saved into buffer
  * @return CONTEXT_INCORRECT if context is incorrect
- * @return BUFFER_TOO_SMALL if buffer is too small
+ * @return NO_COMMAND_AVAILABLE if command is not available (successful send_status was not called yet)
  * @return NOT_OK for other error
  */
 int get_command(void *context, struct buffer* command);
