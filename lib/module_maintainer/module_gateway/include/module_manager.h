@@ -99,16 +99,6 @@ int aggregate_error(struct buffer *error_message, const struct buffer current_er
 int generate_first_command(struct buffer *default_command, int device_type);
 
 /**
- * @short Get number of the module
- *
- * Serves for identification of module implementation.
- * The number corresponds with the module number from InternalProtocol.proto protobuf file.
- *
- * @return module number
- */
-int get_module_number();
-
-/**
  * @brief Control whether buffer contains valid data
  *
  * @param status status data sent by client in binary form

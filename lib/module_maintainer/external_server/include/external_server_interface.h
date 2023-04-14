@@ -149,15 +149,6 @@ int get_command(buffer* command, device_identification* device, void *context);
  */
 int command_ack(const struct buffer command, const struct device_identification device, void *context);
 
-/**
- * @short Get number of the module application
- *
- * Serves for identification of module implementation.
- * The number corresponds with the module number from InternalProtocol.proto protobuf file.
- *
- * @return module number
- */
-int get_module_number();
 
 #ifdef __cplusplus
 }
