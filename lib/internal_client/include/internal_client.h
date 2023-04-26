@@ -23,8 +23,9 @@ enum ic_error_codes {
 	DEVICE_ALREADY_CONNECTED = RESERVED-5,
 	MODULE_NOT_SUPPORTED = RESERVED-6,
 	DEVICE_TYPE_NOT_SUPPORTED = RESERVED-7,
-	HIGHER_PRIORITY_ALREADY_CONNECTED = RESERVED-8
-
+	HIGHER_PRIORITY_ALREADY_CONNECTED = RESERVED-8,
+	COMMAND_INCORRECT = RESERVED-9,
+	DEVICE_INCORRECT = RESERVED-10
 };
 
 /**
@@ -48,6 +49,7 @@ enum ic_error_codes {
  * @return HIGHER_PRIORITY_ALREADY_CONNECTED if device with same identification but higher priority is already connected
  * @return MODULE_NOT_SUPPORTED if module is not supported
  * @return DEVICE_TYPE_NOT_SUPPORTED if the device type is not supported by the module
+ * @return DEVICE_INCORRECT if obtained connect response with different device than was connected
  * @return NOT_OK if different error occurred
  */
 int init_connection(void **context, const char* const ipv4_address, unsigned port, const struct device_identification device);
@@ -67,9 +69,9 @@ int init_connection(void **context, const char* const ipv4_address, unsigned por
 int destroy_connection(void **context);
 
 /**
- * @short Function sends given status data to module server using given context and receives command.
+ * @short Function sends given status data to internal server using given context and receives command.
  *
- * Communication between module client and module server is request-response based, in this case the request is a status message
+ * Communication between internal client and internal server is request-response based, in this case the request is a status message
  * and the response is in form of command which have to be received to successfully complete send_status. Since the communication is request-response based
  * sending request cannot be successful without receiving the response, so send_status does not only send the request (in form of status)
  * but also waits for the response (in form of command).
@@ -77,14 +79,15 @@ int destroy_connection(void **context);
  * The timeout is set for sending status and receiving command, therefore maximum duration of this function is 2x timeout
  * After successful send_status call, command can be retrieved by get_command function.
  *
- * @param context context of module client created by init() function
- * @param device_status pointer to device specific structure, specific device is set in init() function using device_type, structures are defined in device specific header file
- * @param status_size size of status data
+ * @param context context of module client created by init_connection() function
+ * @param device_status device specific status data, specific device is set in init_connection() function using device_type, status data structure is defined in a device specific file
  * @param timeout timeout in seconds, how long is acceptable to wait for status send or server response (command), if timeout is reached, error will be returned
  *
  * @return OK if successful
  * @return CONTEXT_INCORRECT if context is incorrect
  * @return TIMEOUT_OCCURRED if timeout occurred
+ * @return COMMAND_INCORRECT obtained incorrect command
+ * @return DEVICE_INCORRECT obtained command for different device
  * @return NOT_OK other error
  */
 int send_status(void *context, const struct buffer status, unsigned timeout);
