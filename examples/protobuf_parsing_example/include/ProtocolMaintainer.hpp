@@ -91,7 +91,7 @@ public:
 	 * @param device
 	 * @return ExternalServer message, containing Command
 	 */
-	static ExternalProtocol::ExternalServer createExternalServerCommand(const InternalProtocol::DeviceCommand& deviceCommand, const InternalProtocol::Device& device);
+	static ExternalProtocol::ExternalServer createExternalServerCommand(InternalProtocol::DeviceCommand deviceCommand, const InternalProtocol::Device& device);
 
 	/**
 	 * @brief Parse ExternalServer message

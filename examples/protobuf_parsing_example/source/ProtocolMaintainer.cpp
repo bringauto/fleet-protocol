@@ -9,6 +9,7 @@ ProtocolMaintainer::createDevice(std::string device_role, uint32_t device_type, 
 	deviceMessage.set_devicerole(device_role);
 	deviceMessage.set_devicename(device_name);
 	deviceMessage.set_devicetype(device_type);
+	deviceMessage.set_priority(0);
 
 	return deviceMessage;
 }
@@ -19,7 +20,6 @@ ProtocolMaintainer::createDeviceConnectMessage(const InternalProtocol::Device &d
 
 	InternalProtocol::Device *devicePtr = deviceConnectMessage.mutable_device(); // Returns pointer to device field in deviceConnectMessage
 	devicePtr->CopyFrom(device);
-	deviceConnectMessage.set_priority(priority);
 
 	return deviceConnectMessage;
 }
@@ -49,7 +49,7 @@ void ProtocolMaintainer::parseDeviceConnectMessage(const InternalProtocol::Devic
 
 		std::cout << "Got connect message containing: module " << deviceMessage.module() <<
 				  ", deviceRole " << deviceMessage.devicerole() << ", deviceName " << deviceMessage.devicename() <<
-				  ", deviceType " << deviceMessage.devicetype() << ", priority " << deviceConnectMessage.priority()
+				  ", deviceType " << deviceMessage.devicetype() << ", priority " << deviceMessage.priority()
 				  << std::endl;
 	}
 
@@ -135,7 +135,7 @@ InternalProtocol::DeviceCommand ProtocolMaintainer::createDeviceCommand(std::str
 }
 
 ExternalProtocol::ExternalServer
-ProtocolMaintainer::createExternalServerCommand(const InternalProtocol::DeviceCommand &deviceCommand,
+ProtocolMaintainer::createExternalServerCommand(InternalProtocol::DeviceCommand deviceCommand,
 												const InternalProtocol::Device &device) {
 	ExternalProtocol::ExternalServer externalServerMessage;
 
@@ -144,7 +144,7 @@ ProtocolMaintainer::createExternalServerCommand(const InternalProtocol::DeviceCo
 	InternalProtocol::DeviceCommand *tmpDeviceCommand = command->mutable_devicecommand();
 	tmpDeviceCommand->CopyFrom(deviceCommand);
 
-	InternalProtocol::Device *tmpDevice = command->mutable_device();
+	InternalProtocol::Device *tmpDevice = deviceCommand.mutable_device();
 	tmpDevice->CopyFrom(device);
 
 	command->set_sessionid(sessionId_);
@@ -158,8 +158,8 @@ std::string ProtocolMaintainer::parseExternalServerMessage(const ExternalProtoco
 		const auto &command = externalServerMessage.command();
 		std::cout << "Command with sessionId " << command.sessionid() << " and message counter "
 				  << command.messagecounter()
-				  << ", for device module " << command.device().module() << ", devicetype "
-				  << command.device().devicetype() << std::endl;
+				  << ", for device module " << command.devicecommand().device().module() << ", devicetype "
+				  << command.devicecommand().device().devicetype() << std::endl;
 
 		return command.devicecommand().commanddata();
 	} else if(externalServerMessage.has_connectresponse()) {
