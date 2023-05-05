@@ -16,9 +16,9 @@ extern "C" {
  * @brief Specific error codes for internal_client
  */
 enum ic_error_codes {
-    CONTEXT_INCORRECT = RESERVED-1,
-    TIMEOUT_OCCURRED = RESERVED-2,
-    NO_COMMAND_AVAILABLE = RESERVED-3,
+	CONTEXT_INCORRECT = RESERVED-1,
+	TIMEOUT_OCCURRED = RESERVED-2,
+	NO_COMMAND_AVAILABLE = RESERVED-3,
 	UNABLE_TO_CONNECT = RESERVED-4,
 	DEVICE_ALREADY_CONNECTED = RESERVED-5,
 	MODULE_NOT_SUPPORTED = RESERVED-6,
@@ -97,10 +97,15 @@ int send_status(void *context, const struct buffer status, unsigned timeout);
  *
  * Get most recent command from given context, command is received during every send_status() call, commands are being overwritten - the most current command is returned.
  * Function uses context created by init() function otherwise error is returned. Command is returned only if at least one send_status() was called with given context,
- * otherwise 0 is returned.
+ * otherwise NO_COMMAND_AVAILABLE is returned.
+ *
+ * The "command" buffer structure must be initialized.
+ * If command->size_in_bytes == 0, the data pointer will be allocated for the required size.
+ * If the size of new command > command->size_in_bytes, the data pointer will be REALLOCATED.
+ * User has to free the data pointer, after it is no longer needed.
  *
  * @param context context of module client created by init() function
- * @param device_command_buffer pointer to an user allocated buffer, device command structure will be copied to it, structures are defined in device specific header file
+ * @param command pointer to an initialized buffer. Device command data will be copied to the buffer. Structure of the command data is defined in device specific header file
  * @param buffer_size size of user allocated buffer
  *
  * @return OK If command was successfully saved into buffer
