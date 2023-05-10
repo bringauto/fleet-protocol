@@ -60,9 +60,12 @@ int destroy_connection(void **context);
  * and the response is in form of command which have to be received to successfully complete send_status. Since the communication is request-response based
  * sending request cannot be successful without receiving the response, so send_status does not only send the request (in form of status)
  * but also waits for the response (in form of command).
+ *
  * Function is blocking, it will wait until command is received or timeout specified by an argument is reached before returning.
  * The timeout is set for sending status and receiving command, therefore maximum duration of this function is 2x timeout
  * After successful send_status call, command can be retrieved by get_command function.
+ *
+ * If the server has disconnected the client, this function will attempt once to reconnect
  *
  * @param context context of module client created by init_connection() function
  * @param device_status device specific status data, specific device is set in init_connection() function using device_type, status data structure is defined in a device specific file
@@ -73,6 +76,7 @@ int destroy_connection(void **context);
  * @return TIMEOUT_OCCURRED if timeout occurred
  * @return COMMAND_INCORRECT obtained incorrect command
  * @return DEVICE_INCORRECT obtained command for different device
+ * @return UNABLE_TO_CONNECT if reconnect was not successful
  * @return NOT_OK other error
  */
 int send_status(void *context, const struct buffer status, unsigned timeout);
