@@ -7,26 +7,11 @@ extern "C" {
 #include <device_management.h>
 #include <general_error_codes.h>
 #include <memory_management.h>
+#include <ic_error_codes.h>
 
 /**
  * @section internal_client
  */
-
-/**
- * @brief Specific error codes for internal_client
- */
-enum ic_error_codes {
-    CONTEXT_INCORRECT = RESERVED-1,
-    TIMEOUT_OCCURRED = RESERVED-2,
-    NO_COMMAND_AVAILABLE = RESERVED-3,
-	UNABLE_TO_CONNECT = RESERVED-4,
-	DEVICE_ALREADY_CONNECTED = RESERVED-5,
-	MODULE_NOT_SUPPORTED = RESERVED-6,
-	DEVICE_TYPE_NOT_SUPPORTED = RESERVED-7,
-	HIGHER_PRIORITY_ALREADY_CONNECTED = RESERVED-8,
-	COMMAND_INCORRECT = RESERVED-9,
-	DEVICE_INCORRECT = RESERVED-10
-};
 
 /**
  * @short Create context for specific device.
@@ -75,9 +60,12 @@ int destroy_connection(void **context);
  * and the response is in form of command which have to be received to successfully complete send_status. Since the communication is request-response based
  * sending request cannot be successful without receiving the response, so send_status does not only send the request (in form of status)
  * but also waits for the response (in form of command).
+ *
  * Function is blocking, it will wait until command is received or timeout specified by an argument is reached before returning.
  * The timeout is set for sending status and receiving command, therefore maximum duration of this function is 2x timeout
  * After successful send_status call, command can be retrieved by get_command function.
+ *
+ * If the server has disconnected the client, this function will attempt once to reconnect
  *
  * @param context context of module client created by init_connection() function
  * @param device_status device specific status data, specific device is set in init_connection() function using device_type, status data structure is defined in a device specific file
@@ -88,6 +76,7 @@ int destroy_connection(void **context);
  * @return TIMEOUT_OCCURRED if timeout occurred
  * @return COMMAND_INCORRECT obtained incorrect command
  * @return DEVICE_INCORRECT obtained command for different device
+ * @return UNABLE_TO_CONNECT if reconnect was not successful
  * @return NOT_OK other error
  */
 int send_status(void *context, const struct buffer status, unsigned timeout);
@@ -97,10 +86,15 @@ int send_status(void *context, const struct buffer status, unsigned timeout);
  *
  * Get most recent command from given context, command is received during every send_status() call, commands are being overwritten - the most current command is returned.
  * Function uses context created by init() function otherwise error is returned. Command is returned only if at least one send_status() was called with given context,
- * otherwise 0 is returned.
+ * otherwise NO_COMMAND_AVAILABLE is returned.
+ *
+ * The "command" buffer structure must be initialized.
+ * If command->size_in_bytes == 0, the data pointer will be allocated for the required size.
+ * If the size of new command > command->size_in_bytes, the data pointer will be REALLOCATED.
+ * User has to free the data pointer, after it is no longer needed.
  *
  * @param context context of module client created by init() function
- * @param device_command_buffer pointer to an user allocated buffer, device command structure will be copied to it, structures are defined in device specific header file
+ * @param command pointer to an initialized buffer. Device command data will be copied to the buffer. Structure of the command data is defined in device specific header file
  * @param buffer_size size of user allocated buffer
  *
  * @return OK If command was successfully saved into buffer
