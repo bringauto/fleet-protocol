@@ -51,20 +51,23 @@ struct buffer {
 };
 
 /**
- * @brief Deallocate allocated memory by the API function referenced in module API.
+ * @brief Allocate buffer to size given by argument and set its size
  *
- * @param buffer_data_pointer is a pointer that needs to be deallocated and was previously allocated
- * by an API function from module API.
-*/
-void deallocate(void *buffer_data_pointer);
+ * @param buffer_pointer pointer to buffer, that will be allocated
+ * @param size_in_bytes number of bytes that will be allocated to data pointer
+ *
+ * @return OK if buffer was successfully allocated
+ * @return NOT_OK if an error occurred
+ */
+int allocate(struct buffer *buffer_pointer, size_t size_in_bytes);
 
 /**
- * @brief Deallocate allocated memory by the API function referenced in module API and sets size to 0
- *
- * @param buffer_pointer is a pointer to buffer, which data needs to be deallocated and was previously allocated
- * by an API function from module API.
+* @brief Deallocate allocated memory by the API function referenced in module API and sets size to 0
+*
+* @param buffer_pointer is a pointer to buffer, which data needs to be deallocated and was previously allocated
+* by an API function from module API.
 */
-void clear_buffer(struct buffer *buffer_pointer);
+void deallocate(struct buffer *buffer_pointer);
 
 #ifdef __cplusplus
 }
