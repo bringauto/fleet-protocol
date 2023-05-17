@@ -21,10 +21,13 @@ extern "C" {
  * safe, you can call function on device1 in thread1 and function on device2 in thread2 without any problem this is thread safe, but working with one
  * device in multiple threads is NOT thread safe.
  *
+ * Opens dynamic library, that will be used
+ *
+ * @param path path to dynamic library
  * @return OK if initialization was successful
  *         NOT_OK if an error occurred
  */
-int init_status_aggregator();
+int init_status_aggregator(const char *path);
 
 /**
  * @short Clean up.
@@ -160,12 +163,12 @@ int get_unique_devices(struct buffer* unique_devices_buffer);
 int force_aggregation_on_device(const struct device_identification device);
 
 /**
- * @short Check if device is supported and registered
+ * @short Check if device is valid and registered
  *
  * @param device
  *
- * @return OK if the device is valid
- * @return NOT_OK if the device is not valid
+ * @return OK if the device is valid and registered
+ * @return NOT_OK if the device is not valid or registered
  */
 int is_device_valid(const struct device_identification device);
 

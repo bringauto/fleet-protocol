@@ -41,7 +41,7 @@ enum mm_error_codes {
  * @return WRONG_FORMAT if wrong status format
  * @return NOT_OK if other error occurred
 */
-int send_status_condition(const struct buffer current_status, const struct buffer new_status, int device_type);
+int send_status_condition(const struct buffer current_status, const struct buffer new_status, unsigned int device_type);
 
 /**
  * @brief generate new command based on current status and command and new status
@@ -56,7 +56,7 @@ int send_status_condition(const struct buffer current_status, const struct buffe
  * @return WRONG_FORMAT if a message has a bad format
  * @return NOT_OK if other error occurred
 */
-int generate_command(struct buffer *generated_command, const struct buffer new_status, const struct buffer current_status, const struct buffer current_command, int device_type);
+int generate_command(struct buffer *generated_command, const struct buffer new_status, const struct buffer current_status, const struct buffer current_command, unsigned int device_type);
 
 /**
  * @brief aggregate current status and new status
@@ -70,7 +70,7 @@ int generate_command(struct buffer *generated_command, const struct buffer new_s
  * @return WRONG_FORMAT if a status has a bad format
  * @return NOT_OK if other error occurred
 */
-int aggregate_status(struct buffer *aggregated_status, const struct buffer current_status, const struct buffer new_status, int device_type);
+int aggregate_status(struct buffer *aggregated_status, const struct buffer current_status, const struct buffer new_status, unsigned int device_type);
 
 /**
  * @brief aggregate error message
@@ -84,7 +84,7 @@ int aggregate_status(struct buffer *aggregated_status, const struct buffer curre
  * @return WRONG_FORMAT if a status or error message has a bad format
  * @return NOT_OK if other error occurred
  */
-int aggregate_error(struct buffer *error_message, const struct buffer current_error_message, const struct buffer status, int device_type);
+int aggregate_error(struct buffer *error_message, const struct buffer current_error_message, const struct buffer status, unsigned int device_type);
 
 /**
  * @brief generate default command
@@ -96,7 +96,7 @@ int aggregate_error(struct buffer *error_message, const struct buffer current_er
  * @return WRONG_FORMAT if default command has a bad format
  * @return NOT_OK if other error occurred
 */
-int generate_first_command(struct buffer *default_command, int device_type);
+int generate_first_command(struct buffer *default_command, unsigned int device_type);
 
 /**
  * @brief Control whether buffer contains valid data
@@ -106,7 +106,7 @@ int generate_first_command(struct buffer *default_command, int device_type);
  * @return OK if status data are valid
  *         NOT_OK if status data are invalid
  */
-int status_data_valid(const struct buffer status, int device_type);
+int status_data_valid(const struct buffer status, unsigned int device_type);
 
 /**
  * @brief Control whether buffer contains valid data
@@ -116,17 +116,7 @@ int status_data_valid(const struct buffer status, int device_type);
  * @return OK if command data are valid
  *         NOT_OK if command data are invalid
  */
-int command_data_valid(const struct buffer command, int device_type);
-
-/**
- * @short Check if device is supported and registered
- *
- * @param device
- *
- * @return OK if the device type is valid
- * @return NOT_OK if the device type is not supported
- */
-int is_device_type_supported(int device_type);
+int command_data_valid(const struct buffer command, unsigned int device_type);
 
 #ifdef __cplusplus
 }
