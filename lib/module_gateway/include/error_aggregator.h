@@ -22,10 +22,14 @@ extern "C" {
  * safe, you can call function on device1 in thread1 and function on device2 in thread2 without any problem this is thread safe, but working with one
  * device in multiple threads is NOT thread safe.
  *
+ * Opens dynamic library, that will be used
+ *
+ * @param path path to dynamic library
+ *
  * @return OK if initialization was successful
  * @return NOT_OK if an error occurred
  */
-int init_error_aggregator();
+int init_error_aggregator(const char * const path);
 
 /**
  * @short Clean up.
@@ -44,7 +48,7 @@ int destroy_error_aggregator();
  * The target of error aggregation function is to create one status and one error message from all unsent messages during connection outage
  * If device is not registered, error code is returned.
  *
- * @param status protobuf status message in binary form
+ * @param status status message in binary form
  * @param device identification of the device
  *
  * @return OK if successful
@@ -61,7 +65,7 @@ int add_status_to_error_aggregator(const struct buffer status, const struct devi
  * If device is not registered an error is returned. If no messages for given device are present, no error status message is created and 0 is returned.
  * This function will not clear error status container.
  *
- * @param error_status user allocated message_buffer for the error status. Look at 'memory management' section
+ * @param generated_status status message buffer, that will be allocated and must be DEALLOCATED after use.
  * @param device identification of the device
  *
  * @return OK if successful
@@ -79,7 +83,7 @@ int get_error_status(struct buffer *error_status, const struct device_identifica
  * no error status message is created and 0 is returned;
  * This function will not clear error status container.
  *
- * @param error user allocated message_buffer for created protobuf error status. Look at 'memory management' section.
+ * @param error user allocated message_buffer for the error status. Look at 'memory management' section
  * @param device identification of the device
  *
  * @return OK if successful

@@ -27,7 +27,7 @@ extern "C" {
  * @return OK if initialization was successful
  *         NOT_OK if an error occurred
  */
-int init_status_aggregator(const char *path);
+int init_status_aggregator(const char * const path);
 
 /**
  * @short Clean up.
@@ -114,9 +114,7 @@ int add_status_to_aggregator(const struct buffer status, const struct device_ide
  * Function will take an oldest message from given device from container with aggregated messages and put it in protobuf_status.
  * If device is not registered, or no aggregated message for given device is present and error is returned.
  *
- * If return code is equal to -3 then the allocated buffer size is not huge enought to hold a message
- *
- * @param generated_status status message buffer, have to be already allocated by user. Look at 'memory_management' section
+ * @param generated_status status message buffer, that will be allocated and must be DEALLOCATED after use.
  * @param device identification of the device
  *
  * @return OK if successful
