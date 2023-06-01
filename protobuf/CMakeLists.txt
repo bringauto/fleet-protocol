@@ -15,6 +15,3 @@ TARGET_INCLUDE_DIRECTORIES(protobuf_cpp PUBLIC "compiled/cpp/")
 TARGET_LINK_LIBRARIES(protobuf_cpp PUBLIC protobuf::libprotobuf)
 
 ADD_LIBRARY(fleet-protocol::protobuf_cpp ALIAS protobuf_cpp )
-
-#TARGET_SOURCES(protobuf_cpp PUBLIC
-#        FILE_SET protobuf_cpp TYPE HEADERS FILES include/internal_client.h BASE_DIRS include)
