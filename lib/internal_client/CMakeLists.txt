@@ -6,8 +6,9 @@ TARGET_INCLUDE_DIRECTORIES(internal_client_interface INTERFACE "$<BUILD_INTERFAC
         "$<INSTALL_INTERFACE:include/>")
 TARGET_LINK_LIBRARIES(internal_client_interface INTERFACE fleet-protocol::common_headers)
 
+FILE(GLOB_RECURSE include_files include/*)
 TARGET_SOURCES(internal_client_interface INTERFACE
-        FILE_SET internal_client_interface TYPE HEADERS FILES include/internal_client.h BASE_DIRS include)
+        FILE_SET internal_client_interface TYPE HEADERS FILES ${include_files} BASE_DIRS include)
 
 ADD_LIBRARY(fleet-protocol::internal_client_interface ALIAS internal_client_interface)
 

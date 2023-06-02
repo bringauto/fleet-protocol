@@ -35,13 +35,13 @@ int update_command(const struct buffer command, const struct device_identificati
  *
  * @param status new protobuf status message in binary form. Look at memory_management section
  * @param device specification of device
- * @param command user allocated message_buffer structure, command message structure will be copied to it,
+ * @param command pointer to buffer structure, the buffer will be allocated and the command message will be copied to it,
  *        structures are defined in device specific header file. Look at memory_management section
+ *        the command buffer MUST be deallocated after use by caller.
  *
- * @return size of command in bytes
+ * @return OK If command was successfully saved into buffer
  * @return STATUS_INVALID if status_message is incorrect
- * @return BUFFER_TOO_SMALL if buffer is too small
- * @return DEVICE_NOT_SUPPORTED if device_type is not supported by concrete module
+ * @return DEVICE_NOT_SUPPORTED if device_type is not supported by the concrete module
  * @return NOT_OK for other error
  */
 int get_command(const struct buffer status, const struct device_identification device, struct buffer* command);
