@@ -22,14 +22,14 @@ extern "C" {
  * safe, you can call function on device1 in thread1 and function on device2 in thread2 without any problem this is thread safe, but working with one
  * device in multiple threads is NOT thread safe.
  *
- * Opens dynamic library, that will be used
+ * Saves dynamic library into aggregator context
  *
- * @param path path to dynamic library
+ * @param library loaded dynamic library
  *
  * @return OK if initialization was successful
  * @return NOT_OK if an error occurred
  */
-int init_error_aggregator(const char * const path);
+int init_error_aggregator(const void * const path);
 
 /**
  * @short Clean up.
