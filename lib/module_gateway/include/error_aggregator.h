@@ -57,15 +57,14 @@ int destroy_error_aggregator();
  */
 int add_status_to_error_aggregator(const struct buffer status, const struct device_identification device);
 
-//todo this function might be not needed
 /**
- * @short Get status from error aggregator for a specific device.
+ * @short Get last status from error aggregator for a specific device.
  *
  * Create error status using an error aggregation function and return it through given buffer.
  * If device is not registered an error is returned. If no messages for given device are present, no error status message is created and 0 is returned.
  * This function will not clear error status container.
  *
- * @param generated_status status message buffer, that will be allocated and must be DEALLOCATED after use.
+ * @param status status message buffer, that will be allocated and must be DEALLOCATED after use.
  * @param device identification of the device
  *
  * @return OK if successful
@@ -73,7 +72,7 @@ int add_status_to_error_aggregator(const struct buffer status, const struct devi
  * @return DEVICE_NOT_REGISTERED if device was not registered
  * @return NOT_OK for other errors
  */
-int get_error_status(struct buffer *error_status, const struct device_identification device);
+int get_last_status(struct buffer *status, const struct device_identification device);
 
 /**
  * @short Get error message from error aggregator for a specific device.
