@@ -13,11 +13,11 @@ extern "C" {
  * @brief Device identification
  */
 struct device_identification {
-	int module;                     /// module identification number
-	unsigned int device_type;                /// integer specifying module specific device, device type is defined in specific module header
-	char *device_role;  /// null terminated role of device
-	char *device_name;  /// null terminated name of unique device
-	unsigned int priority;                   /// specify priority of the device, smaller number equals higher priority (0 is highest)
+	int module;                     	/// module identification number
+	unsigned int device_type;           /// integer specifying module specific device, device type is defined in specific module header
+	char *device_role;  				/// null terminated role of device
+	char *device_name;  				/// null terminated name of unique device
+	unsigned int priority;              /// specify priority of the device, smaller number equals higher priority (0 is highest)
 };
 
 /**
