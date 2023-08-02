@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory_management.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -15,8 +17,8 @@ extern "C" {
 struct device_identification {
 	int module;                     	/// module identification number
 	unsigned int device_type;           /// integer specifying module specific device, device type is defined in specific module header
-	char *device_role;  				/// null terminated role of device
-	char *device_name;  				/// null terminated name of unique device
+	struct buffer device_role;  				/// null terminated role of device
+	struct buffer device_name;  				/// null terminated name of unique device
 	unsigned int priority;              /// specify priority of the device, smaller number equals higher priority (0 is highest)
 };
 
