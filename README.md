@@ -28,6 +28,8 @@ no data will be sent from BAD to Client!**
 
 detailed description at [BringAuto Autonomy Host Protocol].
 
+Protobuf **v3.17.3** is recommanded with use with [Etna] simulator and other parts of BringAuto Robot.
+
 ## Protocol messages
 
 Messages are described by ProtoBuff v3.
@@ -59,7 +61,7 @@ The Autonomy system must receive this message.
 - plan route according to received commands,
 - change/drive car state according to commands which it receives
 
-
+[Etna]: https://github.com/bringauto/etna
 [CarStateProtocol]: ./CarStateProtocol.proto
 [IndustrialPortalProtocol]: ./IndustrialPortalProtocol.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
