@@ -28,7 +28,7 @@ no data will be sent from BAD to Client!**
 
 detailed description at [BringAuto Autonomy Host Protocol].
 
-Protobuf **v3.17.3** is recomanded with use with [Etna] simulator and other parts of BringAuto robot.
+Protobuf **v3.17.3** is recommanded with use with [Etna] simulator and other parts of BringAuto Robot.
 
 ## Protocol messages
 
