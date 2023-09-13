@@ -12,15 +12,6 @@ enum es_error_codes {
 };
 
 /**
- * @brief Types of device disconnection
- */
-enum disconnect_types {
-	announced = 0,
-	timeout = 1,
-	error = 2
-};
-
-/**
  * @brief Parameter structure containing the parameters key and its value in buffers
  */
 struct key_value {

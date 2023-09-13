@@ -84,7 +84,7 @@ int forward_error_message(const struct buffer error_msg, const struct device_ide
 /**
  * @brief Notify that a device has disconnected
  *
- * @param disconnect_type enumeration of disconnection type
+ * @param disconnect_type enumeration of disconnection type announced = 0, timeout = 1, error = 2
  * @param context context created by init() function
  *
  * @return OK if successful
@@ -92,7 +92,7 @@ int forward_error_message(const struct buffer error_msg, const struct device_ide
  * @return TIMEOUT_OCCURRED if timeout occurred
  * @return NOT_OK other error
  */
-int device_disconnected(const disconnect_types disconnect_type, const struct device_identification device, void *context);
+int device_disconnected(const int disconnect_type, const struct device_identification device, void *context);
 
 /**
  * @brief Notify that a device has connected
