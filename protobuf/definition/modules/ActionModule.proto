@@ -1,0 +1,87 @@
+/**
+ * Detailed description can be found at Action module
+ * document located at our Google Disk
+ * TODO
+ */
+
+syntax = "proto3";
+/*
+ * Action module contains support only for BringAuto devices
+ */
+package ActionModule;
+option go_package = "../internal/pkg/ba_proto;ba_proto";
+option csharp_namespace = "Google.Protobuf.ba_proto";
+
+/////////////////////////////////
+message SystemLoggerStatus{
+	enum Verbosity{
+		DEBUG = 0;
+		INFO = 5;
+		WARNING = 10;
+		ERROR = 15;
+	}
+	string sourceDevice = 1;
+	repeated string logs = 2;
+	Verbosity verbosity = 3;
+}
+
+message GreenButtonStatus{
+	bool isPressed = 1;
+	bool isAlive = 2;
+}
+
+message RedButtonStatus{
+	bool isPressed = 1;
+}
+
+message WatchdogStatus{
+	bool isAlive = 1;
+	string state = 2;
+}
+//////////////////////////////////////////////////
+
+message SystemLoggerCommand{
+	enum Command{
+		LOG = 0;
+	}
+	Command command = 1;
+}
+
+message GreenButtonCommand{
+	enum Command{
+		PRESS = 0;
+	}
+	Command command = 1;
+}
+
+message RedButtonCommand{
+	enum Command{
+		PRESS = 0;
+	}
+	Command command = 1;
+}
+
+message WatchdogCommand{
+	enum Command{
+		RESET = 0;
+	}
+	Command command = 1;
+}
+
+//////////////////////////////////////////////////
+
+message SystemLoggerError{
+	string errorMessage = 1;
+}
+
+message GreenButtonError{
+	string errorMessage = 1;
+}
+
+message RedButtonError{
+	string errorMessage = 1;
+}
+
+message WatchdogError{
+	string errorMessage = 1;
+}

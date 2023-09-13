@@ -1,0 +1,181 @@
+syntax = "proto3";
+
+/*
+ * Mission module contains support for controlling the missions of a CAR.
+ * Missions are a set of destination points, that the CAR should drive to and stop there.
+ */
+package MissionModule;
+option go_package = "../internal/pkg/ba_proto;ba_proto";
+option csharp_namespace = "Google.Protobuf.ba_proto";
+
+
+/*
+ * Message sent by the autonomy, containing its telemetry information, state and next destination
+ */
+message AutonomyStatus{
+
+  message Telemetry {
+
+    /**
+     * vehicle speed in [m/s]
+     * - positive value implies Forward car moving,
+     * - negative value implies Backward car moving,
+     * - zero value implies that the car stays at a place.
+     */
+    double speed = 1;
+
+    /**
+     * Fuel of the car in percents.
+     * - 0.0 means empty battery or tank,
+     * - 1.0 means full battery or tank.
+     * Interpolation between 0.0 and 1.0 must be linear!
+     */
+    double fuel = 2;
+
+    /**
+      * Car position in the global map (WGS84)
+      */
+    Position position = 3;
+  }
+
+  /**
+   * Current state of the Car.
+   */
+  enum State {
+    /**
+     * Car is in IDLE mode. Waiting for CarCommand message receive.
+     * This state assume that the CarStatus::telemetry::speed is zero!
+     */
+    IDLE = 0;
+
+    /**
+     * Car is driving (to the target stop).
+     */
+    DRIVE = 1;
+
+    /**
+     * Car is in the specified stop. It does not imply that the car is IDLE.
+     * This state assume that the CarStatus::telemetry::speed is zero!
+     */
+    IN_STOP = 2;
+
+    /**
+     * There is an Obstacle which will cause collision if not removed.
+     * The transition from this state to another is defined by The Autonomy implementation.
+     */
+    OBSTACLE = 3;
+
+    /**
+     * Car is in an error state.
+     * State reflects that the car is in critical condition and needs an assistance.
+     * The transition from this state to another is defined by The Autonomy implementation.
+     */
+    ERROR = 4;
+  }
+  /*
+   * Information about the car position, speed and fuel level
+   */
+  Telemetry telemetry = 1;
+
+  /**
+   * Current state. If not set Car is in the IDLE state!
+   */
+  State state = 2;
+
+  /**
+   * Name of the stop as specified in CarCommand::stops.
+   * will not be defined if there is no station in the mission
+   */
+  optional Station nextStop = 3;
+}
+
+/*
+ * Command for the autonomy, containing Action and list of destinations where the autonomy should go.
+ */
+message AutonomyCommand{
+  /**
+ * Action which the autonomy must take.
+ * Received action has an immediate effect to the state of the car (CarStatus::state)
+ * @see MissionStatus::State
+ */
+  enum Action {
+    /**
+     * No action performed. Used as a default value.
+     * Does not interact with CarCommand::stops logic.
+     */
+    NO_ACTION = 0;
+
+    /**
+     * Stop The car!
+     * Independent on content of CarCommands::stops
+     */
+    STOP = 1;
+
+    /**
+     * Start the car!
+     * If there are stops in CarCommands::stops the car shall start driving to the next stop.
+     */
+    START = 2;
+  }
+
+  /**
+   * List of stops where the car shall go. Car goes from one stop to another following the order specified by the list.
+   * May be empty
+   */
+  repeated Station stops = 1;
+
+  /**
+   * Name of the route, that the autonomy will follow
+   */
+  string route = 2;
+
+  Action action = 3;
+}
+
+/*
+ * Autonomy error message containing list of Stops that the autonomy has finished.
+ * The server marks the stops of a mission as finished based on this list.
+ */
+message AutonomyError{
+  /**
+   * All stops, which were finished, when the server has been down
+   */
+  repeated Station finishedStops = 1;
+}
+
+// ------------------------------------------------------ //
+
+/**
+ * Stop on the route.
+ */
+message Station {
+  /**
+   * The name of the station.
+   */
+  string name = 1;
+
+  /**
+   * Position of the station
+   */
+  Position position = 2;
+}
+
+/*
+ * GPS position
+ */
+message Position {
+  /**
+   * WGS84 latitude,
+   */
+  double latitude = 1;
+
+  /**
+   * WGS84 longitude
+   */
+  double longitude = 2;
+
+  /**
+   * altitude in [m]
+   */
+  double altitude = 3;
+}
