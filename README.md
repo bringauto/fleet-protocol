@@ -1,34 +1,22 @@
+# Fleet protocol
 
-# BringAuto daemon
+Fleet protocol is a communication protocol developed by BringAuto to allow simple and reliable communication between multiple devices and cloud infrastructure. 
+**Complete protocol documentation will be released soon**. Protocol consists of three parts:
+* internal client - specific part of device that communicates with module gateway
+* module gateway:
+  - internal server - communicates with internal client
+  - aggregator - aggregates status messages
+  - external client - communicates with external server
+* external server - communicates with server infrastructure that gives user the ability to control devices
 
-As a BringAuto we need to publish/receive context data like
-
-- location of the platform
-- platform HW status - "all sensors are ok", "" 
-- commands from Industrial Portal like "go to the next stop", "park yourself", ...
-
-Because security, redundancy and easy to integrate approach for The Autonomy we provide the BringAuto Daemon - called BAD which acts as a bridge between
-The Autonomy system, and the BringAuto cloud infrastructure.
-
-The Autonomy system communicates with BAD by stable communication protocol which does not
-depend on our cloud implementation.
 
 # Communication protocol
 
-We use [ProtoBuf] v3 library for message format and serialization/deserialization - protocol specification
-can be found at the [CarStateProtocol] and [IndustrialPortalProtocol] files.
+We use [ProtoBuf] library for message format (version [Protobuf version]) and serialization/deserialization - protocol specification
+can be found in protobuff folder.
 
 Each message must be prefixed with four bytes long (uint32_t data type) header which holds
 information about size  of the ProtoBuf message.
-
-As a transfer layer the TCP/IP is chosen for comunication between modules and daemon and mqtt for communication between daemon and fleet management. Daemon listens on localhost network under port 1636 if port was not changed.
-
-**In order to receive data from BAD you must send CarStatus message first. If you do not send CarStatus message
-no data will be sent from BAD to Client!**
-
-detailed description at [BringAuto Autonomy Host Protocol].
-
-Protobuf **v3.17.3** is recommanded with use with [Etna] simulator and other parts of BringAuto Robot.
 
 ## Protocol messages
 
@@ -38,31 +26,20 @@ If the message filed is not mandatory then it's marked as OPTIONAL by "OPTIONAL"
 as the last comment in documentation for the given field.
 Optional fields has defaults as described in [ProtoBuf] v3 doc.
 
-### CarStatus
+# Repo structure
+## Examples
+Samples of fleet-protocol features usage.
 
-Message from Client to the BringAuto Daemon
+Use CMake option `BRINGAUTO_SAMPLES=ON` to configure them.
 
-The Autonomy system should send this message in rate of one per minute at least.
+## Lib
+Header files of interfaces
 
-Data specified in CarStatus message are
+## Protobuf
+Protobuf compiled and non-compiled files
 
-- Car state
-- Telemetry (speed, position, ...)
-- next stop identified by order from CarCommand::stops
 
-For detailed message specification look at [BringAutoDaemon.proto]
-
-### CarCommand
-
-Message from BAD to the Client.
-
-The Autonomy system must receive this message.
-
-- plan route according to received commands,
-- change/drive car state according to commands which it receives
-
-[Etna]: https://github.com/bringauto/etna
-[CarStateProtocol]: ./CarStateProtocol.proto
-[IndustrialPortalProtocol]: ./IndustrialPortalProtocol.proto
-[ProtoBuf]: https://developers.google.com/protocol-buffers
-[BringAuto Autonomy Host Protocol]: https://docs.google.com/document/d/1jgSrBhZm73j_DkxNMtRgBLvnh_K-MUsL7z576hUat-I/
+[BringAutoDaemon.proto]: ./BringAutoDaemon.proto
+[ProtoBuf]: https://github.com/protocolbuffers/protobuf/releases/tag/v3.21.12
+[BringAuto Autonomy Host Protocol]: https://drive.google.com/drive/folders/1-cfU5wgbO1O8DOk4bDOufZ_aqJ0U61nP
+[Protobuf version]: https://developers.google.com/protocol-buffers

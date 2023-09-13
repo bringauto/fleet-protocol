@@ -1,0 +1,4 @@
+PROJECT(fleet-protocol C CXX)
+
+ADD_SUBDIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/module_gateway")
+ADD_SUBDIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/external_server")

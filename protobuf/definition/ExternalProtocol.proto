@@ -1,0 +1,156 @@
+/**
+ * Detailed description can be found at Message structure
+ * document located at our Google Disk
+ * https://docs.google.com/document/d/1ts1DDmu5vxEagHPvB-IHTW-5ts06XoZTdIjUIOGylGo/
+ *
+ */
+syntax = "proto3";
+/*
+ * ExternalProtocol package contains external protocol messages. Those are the messages between the robot and cloud.
+ */
+package ExternalProtocol;
+
+import "InternalProtocol.proto";
+option go_package = "../internal/pkg/ba_proto;ba_proto";
+option csharp_namespace = "Google.Protobuf.ba_proto";
+
+/**
+ * Special message which contains other fleet server messages
+ * Every message of this type can contain only one of the fleet server messages
+ * From Server to Client only.
+ */
+message ExternalServer {
+    oneof MessageType {
+        ConnectResponse connectResponse = 1;
+        StatusResponse statusResponse = 2;
+        Command command = 3;
+    }
+}
+
+/**
+ * Special message which contains other fleet client messages
+ * Every message of this type can contain only one of the fleet client messages
+ * From Client to Server only.
+ */
+message ExternalClient {
+    oneof MessageType {
+        Connect connect = 1;
+        Status status = 2;
+        CommandResponse commandResponse = 3;
+    }
+}
+
+/**
+ * Connect message information
+ * First message in new communication.
+ */
+message Connect {
+    /*
+     * sessionId of the car
+     * - generated before sending first message
+     * - stays same in each session
+     * - is for check if server communicates with the same car
+     */
+    string sessionId = 1;
+    /*
+     * Company name
+     */
+    string company = 2;
+    /*
+     * Car name
+     */
+    string vehicleName = 3;
+    /*
+     * Unique names of all connected devices
+     */
+    repeated InternalProtocol.Device devices = 4;
+}
+
+/**
+ * ConnectResponse information
+ * Response only to Connect message
+ */
+message ConnectResponse {
+    enum Type {
+        OK = 0;
+        /**
+          * If some car is already logged in under same company and name
+          */
+        ALREADY_LOGGED = 1;
+    }
+    string sessionId = 1;
+    Type type = 2;
+}
+
+//todo reserved statuses and errors and commands
+/**
+ * Status information with error type, contains status from a device
+ */
+message Status {
+    enum DeviceState {
+        CONNECTING = 0;
+        RUNNING = 1;
+        ERROR = 2;
+        DISCONNECT = 3;
+    }
+    string sessionId = 1;
+    /**
+     * State of the device sending the Status
+     */
+    DeviceState deviceState = 2;
+    /**
+     * Message ID
+     */
+    uint32 messageCounter = 3;
+    /**
+     * Device specific status message, containing device information and status data
+     */
+    InternalProtocol.DeviceStatus deviceStatus = 4;
+    /**
+     * Device specific error message
+     */
+    optional bytes errorMessage = 5;
+}
+
+/**
+ * StatusResponse information
+ * Response only to Status message
+ */
+message StatusResponse {
+    enum Type {
+        OK = 0;
+    }
+    string sessionId = 1;
+    Type type = 2;
+    uint32 messageCounter = 3;
+}
+
+/**
+ * Command message information
+ * - contains command for a device
+ */
+message Command {
+    string sessionId = 1;
+    uint32 messageCounter = 2;
+
+    /**
+     * command binary data and target device
+     */
+    InternalProtocol.DeviceCommand deviceCommand = 3;
+}
+
+/**
+ * CommandResponse information
+ * Response only to Command message
+ */
+message CommandResponse {
+    enum Type {
+        OK = 0;
+        DEVICE_NOT_CONNECTED = 1;
+        DEVICE_NOT_SUPPORTED = 2;
+        INVALID_COMMAND = 3;
+    }
+    string sessionId = 1;
+    Type type = 2;
+    uint32 messageCounter = 3;
+}
