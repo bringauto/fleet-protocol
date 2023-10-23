@@ -25,8 +25,7 @@ extern "C" {
 */
 
 enum mm_error_codes {
-	CONDITION_NOT_MET = RESERVED -1,
-	WRONG_FORMAT = RESERVED -2
+	CONDITION_NOT_MET = RESERVED -1
 };
 
 /**
@@ -38,7 +37,6 @@ enum mm_error_codes {
  * 
  * @return OK if condition met.
  * @return CONDITION_NOT_MET if condition was not met
- * @return WRONG_FORMAT if wrong status format
  * @return NOT_OK if other error occurred
 */
 int send_status_condition(const struct buffer current_status, const struct buffer new_status, unsigned int device_type);
@@ -53,7 +51,6 @@ int send_status_condition(const struct buffer current_status, const struct buffe
  * @param device_type type of device
  *
  * @return OK if command generated successfully
- * @return WRONG_FORMAT if a message has a bad format
  * @return NOT_OK if other error occurred
 */
 int generate_command(struct buffer *generated_command, const struct buffer new_status, const struct buffer current_status, const struct buffer current_command, unsigned int device_type);
@@ -67,7 +64,6 @@ int generate_command(struct buffer *generated_command, const struct buffer new_s
  * @param device_type type of device
  *
  * @return OK if status aggregated successfully
- * @return WRONG_FORMAT if a status has a bad format
  * @return NOT_OK if other error occurred
 */
 int aggregate_status(struct buffer *aggregated_status, const struct buffer current_status, const struct buffer new_status, unsigned int device_type);
@@ -81,7 +77,6 @@ int aggregate_status(struct buffer *aggregated_status, const struct buffer curre
  * @param device_type type of device
  *
  * @return OK if error message aggregated successfully
- * @return WRONG_FORMAT if a status or error message has a bad format
  * @return NOT_OK if other error occurred
  */
 int aggregate_error(struct buffer *error_message, const struct buffer current_error_message, const struct buffer status, unsigned int device_type);
@@ -93,7 +88,6 @@ int aggregate_error(struct buffer *error_message, const struct buffer current_er
  * @param device_type type of device
  *
  * @return OK if default command generated successfully
- * @return WRONG_FORMAT if default command has a bad format
  * @return NOT_OK if other error occurred
 */
 int generate_first_command(struct buffer *default_command, unsigned int device_type);
