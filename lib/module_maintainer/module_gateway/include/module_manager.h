@@ -30,6 +30,9 @@ enum mm_error_codes {
 
 /**
  * @brief Determine whether condition for sending new status was met.
+ *
+ * If current_status is empty, device has just connected.
+ * In this situation it is recommended to return OK, so the status will be sent and the External server will be acknowledged about this device
  * 
  * @param current_status status data currently present in aggregator in binary form
  * @param new_status status data sent by client in binary form
