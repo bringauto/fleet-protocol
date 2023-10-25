@@ -1,7 +1,7 @@
 # Fleet protocol
 
 Fleet protocol is a communication protocol developed by BringAuto to allow simple and reliable communication between multiple devices and cloud infrastructure. 
-For complete protocol documentation see [TODO](). Protocol consists of three parts:
+**Complete protocol documentation will be released soon**. Protocol consists of three parts:
 * internal client - specific part of device that communicates with module gateway
 * module gateway:
   - internal server - communicates with internal client
@@ -12,7 +12,7 @@ For complete protocol documentation see [TODO](). Protocol consists of three par
 
 # Communication protocol
 
-We use [ProtoBuf] v3 library for message format and serialization/deserialization - protocol specification
+We use [ProtoBuf] library for message format (version [Protobuf version]) and serialization/deserialization - protocol specification
 can be found in protobuff folder.
 
 Each message must be prefixed with four bytes long (uint32_t data type) header which holds
@@ -40,5 +40,6 @@ Protobuf compiled and non-compiled files
 
 
 [BringAutoDaemon.proto]: ./BringAutoDaemon.proto
-[ProtoBuf]: https://developers.google.com/protocol-buffers
+[ProtoBuf]: https://github.com/protocolbuffers/protobuf/releases/tag/v3.21.12
 [BringAuto Autonomy Host Protocol]: https://drive.google.com/drive/folders/1-cfU5wgbO1O8DOk4bDOufZ_aqJ0U61nP
+[Protobuf version]: https://developers.google.com/protocol-buffers
