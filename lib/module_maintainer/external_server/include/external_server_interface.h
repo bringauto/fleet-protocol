@@ -35,7 +35,7 @@ extern "C" {
  * @param config_data - parameters from a configuration file
  *
  * @return context of the device used for calling other library functions
- * @return NOT_OK if an error occurs
+ * @return nullptr if an error occurs
  */
 void *init(const struct config config_data);
 
