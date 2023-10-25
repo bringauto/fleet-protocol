@@ -109,7 +109,7 @@ int device_connected(const struct device_identification device, void *context);
 
 /**
  * @brief Blocking function waiting for an event.
- * This event signalize, that there is a command, that can be obtained with get_command() function.
+ * This event signalize, that there is a command, that can be obtained with pop_command() function.
  * If the event didn't happened, the function MUST timeout in time given by parameter timeout_time_in_ms
  *
  * @param timeout_time_in_ms - maximum blocking time until timeout
@@ -122,8 +122,10 @@ int device_connected(const struct device_identification device, void *context);
 int wait_for_command(int timeout_time_in_ms, void *context);
 
 /**
- * @brief Obtain a single command from API
- * Function is called for each command that is available in API
+ * @brief Obtain a single command from API.
+ * The function is called for each command that is available in API.
+ * The function pops first command from command array and fills command data and target device.
+ * Command must be deleted from the API after obtaining. The External Server takes care of successful delivery.
  *
  * @param command - buffer pointer, where the command will be put
  * @param device - identification of the target device of the command
@@ -133,7 +135,7 @@ int wait_for_command(int timeout_time_in_ms, void *context);
  * @return CONTEXT_INCORRECT if the context is incorrect
  * @return NOT_OK an error occurred
  */
-int get_command(buffer* command, device_identification* device, void *context);
+int pop_command(buffer* command, device_identification* device, void *context);
 
 /**
  * @brief Acknowledge that command has been successfully delivered to the device
