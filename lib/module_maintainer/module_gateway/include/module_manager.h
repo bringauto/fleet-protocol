@@ -34,7 +34,7 @@ enum mm_error_codes {
  * If current_status is empty, device has just connected.
  * In this situation it is recommended to return OK, so the status will be sent and the External server will be acknowledged about this device
  * 
- * @param current_status status data currently present in aggregator in binary form
+ * @param current_status status data currently present in aggregator in binary form. Can be null
  * @param new_status status data sent by client in binary form
  * @param device_type type of device which sent status data
  * 
@@ -49,8 +49,8 @@ int send_status_condition(const struct buffer current_status, const struct buffe
  *
  * @param generated_command buffer for storing newly generated command. Look at memory management section
  * @param new_status newly received status
- * @param current_status current status present in aggregator
- * @param current_command current command, that will be updated by the command this function generates
+ * @param current_status current status present in aggregator. Can be null
+ * @param current_command current command, that will be updated by the command this function generates. Can be null
  * @param device_type type of device
  *
  * @return OK if command generated successfully
@@ -62,7 +62,7 @@ int generate_command(struct buffer *generated_command, const struct buffer new_s
  * @brief aggregate current status and new status
  *
  * @param aggregated_status buffer for storing newly generated status. Look at memory_management section
- * @param current_status current status present in the aggregator
+ * @param current_status current status present in the aggregator. Can be null
  * @param new_status newly received status
  * @param device_type type of device
  *
@@ -75,7 +75,7 @@ int aggregate_status(struct buffer *aggregated_status, const struct buffer curre
  * @brief aggregate error message
  *
  * @param error_message buffer for storing newly generated error message. Look at memory_management section
- * @param current_error_message current error message present in the aggregator
+ * @param current_error_message current error message present in the aggregator. Can be null
  * @param status newly received status
  * @param device_type type of device
  *
