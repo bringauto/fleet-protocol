@@ -40,6 +40,6 @@ Protobuf compiled and non-compiled files
 
 
 [BringAutoDaemon.proto]: ./BringAutoDaemon.proto
-[ProtoBuf]: https://github.com/protocolbuffers/protobuf/releases/tag/v3.21.12
+[ProtoBuf]: https://developers.google.com/protocol-buffers
 [BringAuto Autonomy Host Protocol]: https://drive.google.com/drive/folders/1-cfU5wgbO1O8DOk4bDOufZ_aqJ0U61nP
-[Protobuf version]: https://developers.google.com/protocol-buffers
+[Protobuf version]: https://github.com/protocolbuffers/protobuf/releases/tag/v3.21.12
