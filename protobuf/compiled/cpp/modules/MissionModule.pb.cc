@@ -55,6 +55,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR AutonomyCommand::AutonomyCommand(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.stops_)*/{}
+  , /*decltype(_impl_.routestations_)*/{}
   , /*decltype(_impl_.route_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.action_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -145,6 +146,7 @@ const uint32_t TableStruct_modules_2fMissionModule_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::MissionModule::AutonomyCommand, _impl_.stops_),
   PROTOBUF_FIELD_OFFSET(::MissionModule::AutonomyCommand, _impl_.route_),
   PROTOBUF_FIELD_OFFSET(::MissionModule::AutonomyCommand, _impl_.action_),
+  PROTOBUF_FIELD_OFFSET(::MissionModule::AutonomyCommand, _impl_.routestations_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::MissionModule::AutonomyError, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -174,9 +176,9 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 0, -1, -1, sizeof(::MissionModule::AutonomyStatus_Telemetry)},
   { 9, 18, -1, sizeof(::MissionModule::AutonomyStatus)},
   { 21, -1, -1, sizeof(::MissionModule::AutonomyCommand)},
-  { 30, -1, -1, sizeof(::MissionModule::AutonomyError)},
-  { 37, -1, -1, sizeof(::MissionModule::Station)},
-  { 45, -1, -1, sizeof(::MissionModule::Position)},
+  { 31, -1, -1, sizeof(::MissionModule::AutonomyError)},
+  { 38, -1, -1, sizeof(::MissionModule::Station)},
+  { 46, -1, -1, sizeof(::MissionModule::Position)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -198,22 +200,24 @@ const char descriptor_table_protodef_modules_2fMissionModule_2eproto[] PROTOBUF_
   "peed\030\001 \001(\001\022\014\n\004fuel\030\002 \001(\001\022)\n\010position\030\003 \001"
   "(\0132\027.MissionModule.Position\"B\n\005State\022\010\n\004"
   "IDLE\020\000\022\t\n\005DRIVE\020\001\022\013\n\007IN_STOP\020\002\022\014\n\010OBSTAC"
-  "LE\020\003\022\t\n\005ERROR\020\004B\013\n\t_nextStop\"\254\001\n\017Autonom"
+  "LE\020\003\022\t\n\005ERROR\020\004B\013\n\t_nextStop\"\333\001\n\017Autonom"
   "yCommand\022%\n\005stops\030\001 \003(\0132\026.MissionModule."
   "Station\022\r\n\005route\030\002 \001(\t\0225\n\006action\030\003 \001(\0162%"
-  ".MissionModule.AutonomyCommand.Action\",\n"
-  "\006Action\022\r\n\tNO_ACTION\020\000\022\010\n\004STOP\020\001\022\t\n\005STAR"
-  "T\020\002\">\n\rAutonomyError\022-\n\rfinishedStops\030\001 "
-  "\003(\0132\026.MissionModule.Station\"B\n\007Station\022\014"
-  "\n\004name\030\001 \001(\t\022)\n\010position\030\002 \001(\0132\027.Mission"
-  "Module.Position\"A\n\010Position\022\020\n\010latitude\030"
-  "\001 \001(\001\022\021\n\tlongitude\030\002 \001(\001\022\020\n\010altitude\030\003 \001"
-  "(\001B>Z!../internal/pkg/ba_proto;ba_proto\252"
-  "\002\030Google.Protobuf.ba_protob\006proto3"
+  ".MissionModule.AutonomyCommand.Action\022-\n"
+  "\rrouteStations\030\004 \003(\0132\026.MissionModule.Sta"
+  "tion\",\n\006Action\022\r\n\tNO_ACTION\020\000\022\010\n\004STOP\020\001\022"
+  "\t\n\005START\020\002\">\n\rAutonomyError\022-\n\rfinishedS"
+  "tops\030\001 \003(\0132\026.MissionModule.Station\"B\n\007St"
+  "ation\022\014\n\004name\030\001 \001(\t\022)\n\010position\030\002 \001(\0132\027."
+  "MissionModule.Position\"A\n\010Position\022\020\n\010la"
+  "titude\030\001 \001(\001\022\021\n\tlongitude\030\002 \001(\001\022\020\n\010altit"
+  "ude\030\003 \001(\001B>Z!../internal/pkg/ba_proto;ba"
+  "_proto\252\002\030Google.Protobuf.ba_protob\006proto"
+  "3"
   ;
 static ::_pbi::once_flag descriptor_table_modules_2fMissionModule_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_modules_2fMissionModule_2eproto = {
-    false, false, 834, descriptor_table_protodef_modules_2fMissionModule_2eproto,
+    false, false, 881, descriptor_table_protodef_modules_2fMissionModule_2eproto,
     "modules/MissionModule.proto",
     &descriptor_table_modules_2fMissionModule_2eproto_once, nullptr, 0, 6,
     schemas, file_default_instances, TableStruct_modules_2fMissionModule_2eproto::offsets,
@@ -851,6 +855,7 @@ AutonomyCommand::AutonomyCommand(const AutonomyCommand& from)
   AutonomyCommand* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.stops_){from._impl_.stops_}
+    , decltype(_impl_.routestations_){from._impl_.routestations_}
     , decltype(_impl_.route_){}
     , decltype(_impl_.action_){}
     , /*decltype(_impl_._cached_size_)*/{}};
@@ -874,6 +879,7 @@ inline void AutonomyCommand::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.stops_){arena}
+    , decltype(_impl_.routestations_){arena}
     , decltype(_impl_.route_){}
     , decltype(_impl_.action_){0}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -896,6 +902,7 @@ AutonomyCommand::~AutonomyCommand() {
 inline void AutonomyCommand::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.stops_.~RepeatedPtrField();
+  _impl_.routestations_.~RepeatedPtrField();
   _impl_.route_.Destroy();
 }
 
@@ -910,6 +917,7 @@ void AutonomyCommand::Clear() {
   (void) cached_has_bits;
 
   _impl_.stops_.Clear();
+  _impl_.routestations_.Clear();
   _impl_.route_.ClearToEmpty();
   _impl_.action_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -950,6 +958,19 @@ const char* AutonomyCommand::_InternalParse(const char* ptr, ::_pbi::ParseContex
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_action(static_cast<::MissionModule::AutonomyCommand_Action>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .MissionModule.Station routeStations = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_routestations(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -1007,6 +1028,14 @@ uint8_t* AutonomyCommand::_InternalSerialize(
       3, this->_internal_action(), target);
   }
 
+  // repeated .MissionModule.Station routeStations = 4;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_routestations_size()); i < n; i++) {
+    const auto& repfield = this->_internal_routestations(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1026,6 +1055,13 @@ size_t AutonomyCommand::ByteSizeLong() const {
   // repeated .MissionModule.Station stops = 1;
   total_size += 1UL * this->_internal_stops_size();
   for (const auto& msg : this->_impl_.stops_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .MissionModule.Station routeStations = 4;
+  total_size += 1UL * this->_internal_routestations_size();
+  for (const auto& msg : this->_impl_.routestations_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1062,6 +1098,7 @@ void AutonomyCommand::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   (void) cached_has_bits;
 
   _this->_impl_.stops_.MergeFrom(from._impl_.stops_);
+  _this->_impl_.routestations_.MergeFrom(from._impl_.routestations_);
   if (!from._internal_route().empty()) {
     _this->_internal_set_route(from._internal_route());
   }
@@ -1088,6 +1125,7 @@ void AutonomyCommand::InternalSwap(AutonomyCommand* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.stops_.InternalSwap(&other->_impl_.stops_);
+  _impl_.routestations_.InternalSwap(&other->_impl_.routestations_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.route_, lhs_arena,
       &other->_impl_.route_, rhs_arena

@@ -32,22 +32,23 @@ namespace Google.Protobuf.ba_proto {
             "CVRlbGVtZXRyeRINCgVzcGVlZBgBIAEoARIMCgRmdWVsGAIgASgBEikKCHBv",
             "c2l0aW9uGAMgASgLMhcuTWlzc2lvbk1vZHVsZS5Qb3NpdGlvbiJCCgVTdGF0",
             "ZRIICgRJRExFEAASCQoFRFJJVkUQARILCgdJTl9TVE9QEAISDAoIT0JTVEFD",
-            "TEUQAxIJCgVFUlJPUhAEQgsKCV9uZXh0U3RvcCKsAQoPQXV0b25vbXlDb21t",
+            "TEUQAxIJCgVFUlJPUhAEQgsKCV9uZXh0U3RvcCLbAQoPQXV0b25vbXlDb21t",
             "YW5kEiUKBXN0b3BzGAEgAygLMhYuTWlzc2lvbk1vZHVsZS5TdGF0aW9uEg0K",
             "BXJvdXRlGAIgASgJEjUKBmFjdGlvbhgDIAEoDjIlLk1pc3Npb25Nb2R1bGUu",
-            "QXV0b25vbXlDb21tYW5kLkFjdGlvbiIsCgZBY3Rpb24SDQoJTk9fQUNUSU9O",
-            "EAASCAoEU1RPUBABEgkKBVNUQVJUEAIiPgoNQXV0b25vbXlFcnJvchItCg1m",
-            "aW5pc2hlZFN0b3BzGAEgAygLMhYuTWlzc2lvbk1vZHVsZS5TdGF0aW9uIkIK",
-            "B1N0YXRpb24SDAoEbmFtZRgBIAEoCRIpCghwb3NpdGlvbhgCIAEoCzIXLk1p",
-            "c3Npb25Nb2R1bGUuUG9zaXRpb24iQQoIUG9zaXRpb24SEAoIbGF0aXR1ZGUY",
-            "ASABKAESEQoJbG9uZ2l0dWRlGAIgASgBEhAKCGFsdGl0dWRlGAMgASgBQj5a",
-            "IS4uL2ludGVybmFsL3BrZy9iYV9wcm90bztiYV9wcm90b6oCGEdvb2dsZS5Q",
-            "cm90b2J1Zi5iYV9wcm90b2IGcHJvdG8z"));
+            "QXV0b25vbXlDb21tYW5kLkFjdGlvbhItCg1yb3V0ZVN0YXRpb25zGAQgAygL",
+            "MhYuTWlzc2lvbk1vZHVsZS5TdGF0aW9uIiwKBkFjdGlvbhINCglOT19BQ1RJ",
+            "T04QABIICgRTVE9QEAESCQoFU1RBUlQQAiI+Cg1BdXRvbm9teUVycm9yEi0K",
+            "DWZpbmlzaGVkU3RvcHMYASADKAsyFi5NaXNzaW9uTW9kdWxlLlN0YXRpb24i",
+            "QgoHU3RhdGlvbhIMCgRuYW1lGAEgASgJEikKCHBvc2l0aW9uGAIgASgLMhcu",
+            "TWlzc2lvbk1vZHVsZS5Qb3NpdGlvbiJBCghQb3NpdGlvbhIQCghsYXRpdHVk",
+            "ZRgBIAEoARIRCglsb25naXR1ZGUYAiABKAESEAoIYWx0aXR1ZGUYAyABKAFC",
+            "PlohLi4vaW50ZXJuYWwvcGtnL2JhX3Byb3RvO2JhX3Byb3RvqgIYR29vZ2xl",
+            "LlByb3RvYnVmLmJhX3Byb3RvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.AutonomyStatus), global::Google.Protobuf.ba_proto.AutonomyStatus.Parser, new[]{ "Telemetry", "State", "NextStop" }, new[]{ "NextStop" }, new[]{ typeof(global::Google.Protobuf.ba_proto.AutonomyStatus.Types.State) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.AutonomyStatus.Types.Telemetry), global::Google.Protobuf.ba_proto.AutonomyStatus.Types.Telemetry.Parser, new[]{ "Speed", "Fuel", "Position" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.AutonomyCommand), global::Google.Protobuf.ba_proto.AutonomyCommand.Parser, new[]{ "Stops", "Route", "Action" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.AutonomyCommand.Types.Action) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.AutonomyCommand), global::Google.Protobuf.ba_proto.AutonomyCommand.Parser, new[]{ "Stops", "Route", "Action", "RouteStations" }, null, new[]{ typeof(global::Google.Protobuf.ba_proto.AutonomyCommand.Types.Action) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.AutonomyError), global::Google.Protobuf.ba_proto.AutonomyError.Parser, new[]{ "FinishedStops" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.Station), global::Google.Protobuf.ba_proto.Station.Parser, new[]{ "Name", "Position" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ba_proto.Position), global::Google.Protobuf.ba_proto.Position.Parser, new[]{ "Latitude", "Longitude", "Altitude" }, null, null, null, null)
@@ -731,6 +732,7 @@ namespace Google.Protobuf.ba_proto {
       stops_ = other.stops_.Clone();
       route_ = other.route_;
       action_ = other.action_;
+      routeStations_ = other.routeStations_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -784,6 +786,21 @@ namespace Google.Protobuf.ba_proto {
       }
     }
 
+    /// <summary>Field number for the "routeStations" field.</summary>
+    public const int RouteStationsFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.ba_proto.Station> _repeated_routeStations_codec
+        = pb::FieldCodec.ForMessage(34, global::Google.Protobuf.ba_proto.Station.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.ba_proto.Station> routeStations_ = new pbc::RepeatedField<global::Google.Protobuf.ba_proto.Station>();
+    /// <summary>
+    ///*
+    /// Positions of all stations on the route
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Google.Protobuf.ba_proto.Station> RouteStations {
+      get { return routeStations_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -802,6 +819,7 @@ namespace Google.Protobuf.ba_proto {
       if(!stops_.Equals(other.stops_)) return false;
       if (Route != other.Route) return false;
       if (Action != other.Action) return false;
+      if(!routeStations_.Equals(other.routeStations_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -812,6 +830,7 @@ namespace Google.Protobuf.ba_proto {
       hash ^= stops_.GetHashCode();
       if (Route.Length != 0) hash ^= Route.GetHashCode();
       if (Action != global::Google.Protobuf.ba_proto.AutonomyCommand.Types.Action.NoAction) hash ^= Action.GetHashCode();
+      hash ^= routeStations_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -839,6 +858,7 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(24);
         output.WriteEnum((int) Action);
       }
+      routeStations_.WriteTo(output, _repeated_routeStations_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -858,6 +878,7 @@ namespace Google.Protobuf.ba_proto {
         output.WriteRawTag(24);
         output.WriteEnum((int) Action);
       }
+      routeStations_.WriteTo(ref output, _repeated_routeStations_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -875,6 +896,7 @@ namespace Google.Protobuf.ba_proto {
       if (Action != global::Google.Protobuf.ba_proto.AutonomyCommand.Types.Action.NoAction) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Action);
       }
+      size += routeStations_.CalculateSize(_repeated_routeStations_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -894,6 +916,7 @@ namespace Google.Protobuf.ba_proto {
       if (other.Action != global::Google.Protobuf.ba_proto.AutonomyCommand.Types.Action.NoAction) {
         Action = other.Action;
       }
+      routeStations_.Add(other.routeStations_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -921,6 +944,10 @@ namespace Google.Protobuf.ba_proto {
             Action = (global::Google.Protobuf.ba_proto.AutonomyCommand.Types.Action) input.ReadEnum();
             break;
           }
+          case 34: {
+            routeStations_.AddEntriesFrom(input, _repeated_routeStations_codec);
+            break;
+          }
         }
       }
     #endif
@@ -946,6 +973,10 @@ namespace Google.Protobuf.ba_proto {
           }
           case 24: {
             Action = (global::Google.Protobuf.ba_proto.AutonomyCommand.Types.Action) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            routeStations_.AddEntriesFrom(ref input, _repeated_routeStations_codec);
             break;
           }
         }

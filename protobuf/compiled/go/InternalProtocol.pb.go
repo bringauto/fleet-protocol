@@ -30,24 +30,24 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//*
+// *
 // Indicates if connection was successful or which error occurred
 type DeviceConnectResponse_ResponseType int32
 
 const (
-	//*
+	// *
 	// Connection successful
 	DeviceConnectResponse_OK DeviceConnectResponse_ResponseType = 0
-	//*
+	// *
 	// Device with given name is already connected
 	DeviceConnectResponse_ALREADY_CONNECTED DeviceConnectResponse_ResponseType = 1
-	//*
+	// *
 	// Module server does not support given module
 	DeviceConnectResponse_MODULE_NOT_SUPPORTED DeviceConnectResponse_ResponseType = 2
-	//*
+	// *
 	// Module loaded by module server does not recognize given device type
 	DeviceConnectResponse_DEVICE_NOT_SUPPORTED DeviceConnectResponse_ResponseType = 3
-	//*
+	// *
 	// Device of the same deviceType with higher priority is already connected
 	DeviceConnectResponse_HIGHER_PRIORITY_ALREADY_CONNECTED DeviceConnectResponse_ResponseType = 4
 )
@@ -97,14 +97,13 @@ func (DeviceConnectResponse_ResponseType) EnumDescriptor() ([]byte, []int) {
 	return file_InternalProtocol_proto_rawDescGZIP(), []int{3, 0}
 }
 
-//
 // Enum for specification to which module the messages should be forwarded by internal server.
 // Must mirror the enum number in InternalProtocol.proto
 // RESERVED_MODULE is default module taking control of unspecified messages.
 type Device_Module int32
 
 const (
-	//*
+	// *
 	// This is reserved place for a control module, which is default for devices that didn't set correct module
 	// It may serve for messages that are not aggregated. TODO will be implemented
 	Device_RESERVED_MODULE Device_Module = 0
@@ -164,6 +163,7 @@ type InternalClient struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to MessageType:
+	//
 	//	*InternalClient_DeviceConnect
 	//	*InternalClient_DeviceStatus
 	MessageType isInternalClient_MessageType `protobuf_oneof:"MessageType"`
@@ -244,6 +244,7 @@ type InternalServer struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to MessageType:
+	//
 	//	*InternalServer_DeviceConnectResponse
 	//	*InternalServer_DeviceCommand
 	MessageType isInternalServer_MessageType `protobuf_oneof:"MessageType"`
@@ -318,7 +319,7 @@ func (*InternalServer_DeviceConnectResponse) isInternalServer_MessageType() {}
 
 func (*InternalServer_DeviceCommand) isInternalServer_MessageType() {}
 
-//*
+// *
 // Device connect information.
 // Device connect message is used for establishing connection from module client to module server
 // send as first message from module client to module server
@@ -369,7 +370,7 @@ func (x *DeviceConnect) GetDevice() *Device {
 	return nil
 }
 
-//*
+// *
 // Device connect response information.
 // Device connect response message is used for establishing connection from module client to module server
 // send as response to deviceConnect message from module server to module client
@@ -483,7 +484,6 @@ func (x *DeviceStatus) GetStatusData() []byte {
 	return nil
 }
 
-//
 // binary command data
 type DeviceCommand struct {
 	state         protoimpl.MessageState
@@ -540,27 +540,23 @@ func (x *DeviceCommand) GetCommandData() []byte {
 	return nil
 }
 
-//
 // Identification of a device. Only devices with unique module-deviceType-dataProvider combination can be connected.
 type Device struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	//*
+	// *
 	// Serves for internal client to forward message to the correct module.
 	Module Device_Module `protobuf:"varint,1,opt,name=module,proto3,enum=InternalProtocol.Device_Module" json:"module,omitempty"`
-	//
 	// Device type is module implementation dependent, it is recommended to implement as enumeration.
 	DeviceType uint32 `protobuf:"varint,2,opt,name=deviceType,proto3" json:"deviceType,omitempty"`
-	//*
+	// *
 	// name of role that the device provides, serves for distinction of devices
 	// important in device connection, where only single device of a deviceRole type can be connected to a module.
 	DeviceRole string `protobuf:"bytes,3,opt,name=deviceRole,proto3" json:"deviceRole,omitempty"`
-	//
 	// device name
 	DeviceName string `protobuf:"bytes,4,opt,name=deviceName,proto3" json:"deviceName,omitempty"`
-	//
 	// Priority of the device. Max priority = 0
 	Priority uint32 `protobuf:"varint,5,opt,name=priority,proto3" json:"priority,omitempty"`
 }
