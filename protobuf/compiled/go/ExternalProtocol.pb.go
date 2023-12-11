@@ -33,7 +33,7 @@ type ConnectResponse_Type int32
 
 const (
 	ConnectResponse_OK ConnectResponse_Type = 0
-	//*
+	// *
 	// If some car is already logged in under same company and name
 	ConnectResponse_ALREADY_LOGGED ConnectResponse_Type = 1
 )
@@ -224,7 +224,7 @@ func (CommandResponse_Type) EnumDescriptor() ([]byte, []int) {
 	return file_ExternalProtocol_proto_rawDescGZIP(), []int{7, 0}
 }
 
-//*
+// *
 // Special message which contains other fleet server messages
 // Every message of this type can contain only one of the fleet server messages
 // From Server to Client only.
@@ -234,6 +234,7 @@ type ExternalServer struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to MessageType:
+	//
 	//	*ExternalServer_ConnectResponse
 	//	*ExternalServer_StatusResponse
 	//	*ExternalServer_Command
@@ -322,7 +323,7 @@ func (*ExternalServer_StatusResponse) isExternalServer_MessageType() {}
 
 func (*ExternalServer_Command) isExternalServer_MessageType() {}
 
-//*
+// *
 // Special message which contains other fleet client messages
 // Every message of this type can contain only one of the fleet client messages
 // From Client to Server only.
@@ -332,6 +333,7 @@ type ExternalClient struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to MessageType:
+	//
 	//	*ExternalClient_Connect
 	//	*ExternalClient_Status
 	//	*ExternalClient_CommandResponse
@@ -420,7 +422,7 @@ func (*ExternalClient_Status) isExternalClient_MessageType() {}
 
 func (*ExternalClient_CommandResponse) isExternalClient_MessageType() {}
 
-//*
+// *
 // Connect message information
 // First message in new communication.
 type Connect struct {
@@ -428,19 +430,15 @@ type Connect struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	//
 	// sessionId of the car
 	// - generated before sending first message
 	// - stays same in each session
 	// - is for check if server communicates with the same car
 	SessionId string `protobuf:"bytes,1,opt,name=sessionId,proto3" json:"sessionId,omitempty"`
-	//
 	// Company name
 	Company string `protobuf:"bytes,2,opt,name=company,proto3" json:"company,omitempty"`
-	//
 	// Car name
 	VehicleName string `protobuf:"bytes,3,opt,name=vehicleName,proto3" json:"vehicleName,omitempty"`
-	//
 	// Unique names of all connected devices
 	Devices []*Device `protobuf:"bytes,4,rep,name=devices,proto3" json:"devices,omitempty"`
 }
@@ -505,7 +503,7 @@ func (x *Connect) GetDevices() []*Device {
 	return nil
 }
 
-//*
+// *
 // ConnectResponse information
 // Response only to Connect message
 type ConnectResponse struct {
@@ -563,7 +561,7 @@ func (x *ConnectResponse) GetType() ConnectResponse_Type {
 	return ConnectResponse_OK
 }
 
-//*
+// *
 // Status information with error type, contains status from a device
 type Status struct {
 	state         protoimpl.MessageState
@@ -571,16 +569,16 @@ type Status struct {
 	unknownFields protoimpl.UnknownFields
 
 	SessionId string `protobuf:"bytes,1,opt,name=sessionId,proto3" json:"sessionId,omitempty"`
-	//*
+	// *
 	// State of the device sending the Status
 	DeviceState Status_DeviceState `protobuf:"varint,2,opt,name=deviceState,proto3,enum=ExternalProtocol.Status_DeviceState" json:"deviceState,omitempty"`
-	//*
+	// *
 	// Message ID
 	MessageCounter uint32 `protobuf:"varint,3,opt,name=messageCounter,proto3" json:"messageCounter,omitempty"`
-	//*
+	// *
 	// Device specific status message, containing device information and status data
 	DeviceStatus *DeviceStatus `protobuf:"bytes,4,opt,name=deviceStatus,proto3" json:"deviceStatus,omitempty"`
-	//*
+	// *
 	// Device specific error message
 	ErrorMessage []byte `protobuf:"bytes,5,opt,name=errorMessage,proto3,oneof" json:"errorMessage,omitempty"`
 }
@@ -652,7 +650,7 @@ func (x *Status) GetErrorMessage() []byte {
 	return nil
 }
 
-//*
+// *
 // StatusResponse information
 // Response only to Status message
 type StatusResponse struct {
@@ -718,7 +716,7 @@ func (x *StatusResponse) GetMessageCounter() uint32 {
 	return 0
 }
 
-//*
+// *
 // Command message information
 // - contains command for a device
 type Command struct {
@@ -728,7 +726,7 @@ type Command struct {
 
 	SessionId      string `protobuf:"bytes,1,opt,name=sessionId,proto3" json:"sessionId,omitempty"`
 	MessageCounter uint32 `protobuf:"varint,2,opt,name=messageCounter,proto3" json:"messageCounter,omitempty"`
-	//*
+	// *
 	// command binary data and target device
 	DeviceCommand *DeviceCommand `protobuf:"bytes,3,opt,name=deviceCommand,proto3" json:"deviceCommand,omitempty"`
 }
@@ -786,7 +784,7 @@ func (x *Command) GetDeviceCommand() *DeviceCommand {
 	return nil
 }
 
-//*
+// *
 // CommandResponse information
 // Response only to Command message
 type CommandResponse struct {

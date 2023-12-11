@@ -252,7 +252,7 @@ func (WatchdogCommand_Command) EnumDescriptor() ([]byte, []int) {
 	return file_modules_ActionModule_proto_rawDescGZIP(), []int{7, 0}
 }
 
-/////////////////////////////////
+// ///////////////////////////////
 type SystemLoggerStatus struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
