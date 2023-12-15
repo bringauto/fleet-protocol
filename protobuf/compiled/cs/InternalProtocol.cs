@@ -43,14 +43,13 @@ namespace Google.Protobuf.ba_proto {
             "dmljZRgBIAEoCzIYLkludGVybmFsUHJvdG9jb2wuRGV2aWNlEhIKCnN0YXR1",
             "c0RhdGEYAiABKAwiTgoNRGV2aWNlQ29tbWFuZBIoCgZkZXZpY2UYASABKAsy",
             "GC5JbnRlcm5hbFByb3RvY29sLkRldmljZRITCgtjb21tYW5kRGF0YRgCIAEo",
-            "DCLwAQoGRGV2aWNlEi8KBm1vZHVsZRgBIAEoDjIfLkludGVybmFsUHJvdG9j",
+            "DCLlAQoGRGV2aWNlEi8KBm1vZHVsZRgBIAEoDjIfLkludGVybmFsUHJvdG9j",
             "b2wuRGV2aWNlLk1vZHVsZRISCgpkZXZpY2VUeXBlGAIgASgNEhIKCmRldmlj",
             "ZVJvbGUYAyABKAkSEgoKZGV2aWNlTmFtZRgEIAEoCRIQCghwcmlvcml0eRgF",
-            "IAEoDSJnCgZNb2R1bGUSEwoPUkVTRVJWRURfTU9EVUxFEAASEgoOTUlTU0lP",
-            "Tl9NT0RVTEUQARIYChRDQVJfQUNDRVNTT1JZX01PRFVMRRACEhMKDkVYQU1Q",
-            "TEVfTU9EVUxFEOcHIgUIAxDmB0I+WiEuLi9pbnRlcm5hbC9wa2cvYmFfcHJv",
-            "dG87YmFfcHJvdG+qAhhHb29nbGUuUHJvdG9idWYuYmFfcHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "IAEoDSJcCgZNb2R1bGUSEwoPUkVTRVJWRURfTU9EVUxFEAASEgoOTUlTU0lP",
+            "Tl9NT0RVTEUQARINCglJT19NT0RVTEUQAhITCg5FWEFNUExFX01PRFVMRRDo",
+            "ByIFCAMQ5wdCPlohLi4vaW50ZXJuYWwvcGtnL2JhX3Byb3RvO2JhX3Byb3Rv",
+            "qgIYR29vZ2xlLlByb3RvYnVmLmJhX3Byb3RvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -1979,10 +1978,13 @@ namespace Google.Protobuf.ba_proto {
         /// </summary>
         [pbr::OriginalName("MISSION_MODULE")] MissionModule = 1,
         /// <summary>
-        /// Control of car accessories
+        /// Control of IO devices
         /// </summary>
-        [pbr::OriginalName("CAR_ACCESSORY_MODULE")] CarAccessoryModule = 2,
-        [pbr::OriginalName("EXAMPLE_MODULE")] ExampleModule = 999,
+        [pbr::OriginalName("IO_MODULE")] IoModule = 2,
+        /// <summary>
+        //// First additional module, can be changed
+        /// </summary>
+        [pbr::OriginalName("EXAMPLE_MODULE")] ExampleModule = 1000,
       }
 
     }
