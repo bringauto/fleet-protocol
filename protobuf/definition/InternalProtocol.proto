@@ -106,7 +106,7 @@ message Device{
     // Sending missions with the information about the route and stops to the autonomy
     MISSION_MODULE = 1;
     // Control of IO devices
-    IO_MODULE = 2
+    IO_MODULE = 2;
     /// Modules 0-999 are base modules and cannot be changed
     reserved 3 to 999;
     /// First additional module, can be changed
