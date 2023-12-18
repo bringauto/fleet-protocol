@@ -230,19 +230,18 @@ const char descriptor_table_protodef_InternalProtocol_2eproto[] PROTOBUF_SECTION
   "vice\030\001 \001(\0132\030.InternalProtocol.Device\022\022\n\n"
   "statusData\030\002 \001(\014\"N\n\rDeviceCommand\022(\n\006dev"
   "ice\030\001 \001(\0132\030.InternalProtocol.Device\022\023\n\013c"
-  "ommandData\030\002 \001(\014\"\360\001\n\006Device\022/\n\006module\030\001 "
+  "ommandData\030\002 \001(\014\"\345\001\n\006Device\022/\n\006module\030\001 "
   "\001(\0162\037.InternalProtocol.Device.Module\022\022\n\n"
   "deviceType\030\002 \001(\r\022\022\n\ndeviceRole\030\003 \001(\t\022\022\n\n"
-  "deviceName\030\004 \001(\t\022\020\n\010priority\030\005 \001(\r\"g\n\006Mo"
+  "deviceName\030\004 \001(\t\022\020\n\010priority\030\005 \001(\r\"\\\n\006Mo"
   "dule\022\023\n\017RESERVED_MODULE\020\000\022\022\n\016MISSION_MOD"
-  "ULE\020\001\022\030\n\024CAR_ACCESSORY_MODULE\020\002\022\023\n\016EXAMP"
-  "LE_MODULE\020\347\007\"\005\010\003\020\346\007B>Z!../internal/pkg/b"
-  "a_proto;ba_proto\252\002\030Google.Protobuf.ba_pr"
-  "otob\006proto3"
+  "ULE\020\001\022\r\n\tIO_MODULE\020\002\022\023\n\016EXAMPLE_MODULE\020\350"
+  "\007\"\005\010\003\020\347\007B>Z!../internal/pkg/ba_proto;ba_"
+  "proto\252\002\030Google.Protobuf.ba_protob\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_InternalProtocol_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_InternalProtocol_2eproto = {
-    false, false, 1171, descriptor_table_protodef_InternalProtocol_2eproto,
+    false, false, 1160, descriptor_table_protodef_InternalProtocol_2eproto,
     "InternalProtocol.proto",
     &descriptor_table_InternalProtocol_2eproto_once, nullptr, 0, 7,
     schemas, file_default_instances, TableStruct_InternalProtocol_2eproto::offsets,
@@ -292,7 +291,7 @@ bool Device_Module_IsValid(int value) {
     case 0:
     case 1:
     case 2:
-    case 999:
+    case 1000:
       return true;
     default:
       return false;
@@ -302,7 +301,7 @@ bool Device_Module_IsValid(int value) {
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Device_Module Device::RESERVED_MODULE;
 constexpr Device_Module Device::MISSION_MODULE;
-constexpr Device_Module Device::CAR_ACCESSORY_MODULE;
+constexpr Device_Module Device::IO_MODULE;
 constexpr Device_Module Device::EXAMPLE_MODULE;
 constexpr Device_Module Device::Module_MIN;
 constexpr Device_Module Device::Module_MAX;

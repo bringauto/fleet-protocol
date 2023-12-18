@@ -110,8 +110,8 @@ inline bool DeviceConnectResponse_ResponseType_Parse(
 enum Device_Module : int {
   Device_Module_RESERVED_MODULE = 0,
   Device_Module_MISSION_MODULE = 1,
-  Device_Module_CAR_ACCESSORY_MODULE = 2,
-  Device_Module_EXAMPLE_MODULE = 999,
+  Device_Module_IO_MODULE = 2,
+  Device_Module_EXAMPLE_MODULE = 1000,
   Device_Module_Device_Module_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   Device_Module_Device_Module_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
@@ -1358,8 +1358,8 @@ class Device final :
     Device_Module_RESERVED_MODULE;
   static constexpr Module MISSION_MODULE =
     Device_Module_MISSION_MODULE;
-  static constexpr Module CAR_ACCESSORY_MODULE =
-    Device_Module_CAR_ACCESSORY_MODULE;
+  static constexpr Module IO_MODULE =
+    Device_Module_IO_MODULE;
   static constexpr Module EXAMPLE_MODULE =
     Device_Module_EXAMPLE_MODULE;
   static inline bool Module_IsValid(int value) {
