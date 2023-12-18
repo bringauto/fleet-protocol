@@ -691,6 +691,7 @@ class AutonomyCommand final :
 
   enum : int {
     kStopsFieldNumber = 1,
+    kRouteStationsFieldNumber = 4,
     kRouteFieldNumber = 2,
     kActionFieldNumber = 3,
   };
@@ -711,6 +712,24 @@ class AutonomyCommand final :
   ::MissionModule::Station* add_stops();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MissionModule::Station >&
       stops() const;
+
+  // repeated .MissionModule.Station routeStations = 4;
+  int routestations_size() const;
+  private:
+  int _internal_routestations_size() const;
+  public:
+  void clear_routestations();
+  ::MissionModule::Station* mutable_routestations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MissionModule::Station >*
+      mutable_routestations();
+  private:
+  const ::MissionModule::Station& _internal_routestations(int index) const;
+  ::MissionModule::Station* _internal_add_routestations();
+  public:
+  const ::MissionModule::Station& routestations(int index) const;
+  ::MissionModule::Station* add_routestations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MissionModule::Station >&
+      routestations() const;
 
   // string route = 2;
   void clear_route();
@@ -744,6 +763,7 @@ class AutonomyCommand final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MissionModule::Station > stops_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MissionModule::Station > routestations_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr route_;
     int action_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1708,6 +1728,46 @@ inline void AutonomyCommand::_internal_set_action(::MissionModule::AutonomyComma
 inline void AutonomyCommand::set_action(::MissionModule::AutonomyCommand_Action value) {
   _internal_set_action(value);
   // @@protoc_insertion_point(field_set:MissionModule.AutonomyCommand.action)
+}
+
+// repeated .MissionModule.Station routeStations = 4;
+inline int AutonomyCommand::_internal_routestations_size() const {
+  return _impl_.routestations_.size();
+}
+inline int AutonomyCommand::routestations_size() const {
+  return _internal_routestations_size();
+}
+inline void AutonomyCommand::clear_routestations() {
+  _impl_.routestations_.Clear();
+}
+inline ::MissionModule::Station* AutonomyCommand::mutable_routestations(int index) {
+  // @@protoc_insertion_point(field_mutable:MissionModule.AutonomyCommand.routeStations)
+  return _impl_.routestations_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MissionModule::Station >*
+AutonomyCommand::mutable_routestations() {
+  // @@protoc_insertion_point(field_mutable_list:MissionModule.AutonomyCommand.routeStations)
+  return &_impl_.routestations_;
+}
+inline const ::MissionModule::Station& AutonomyCommand::_internal_routestations(int index) const {
+  return _impl_.routestations_.Get(index);
+}
+inline const ::MissionModule::Station& AutonomyCommand::routestations(int index) const {
+  // @@protoc_insertion_point(field_get:MissionModule.AutonomyCommand.routeStations)
+  return _internal_routestations(index);
+}
+inline ::MissionModule::Station* AutonomyCommand::_internal_add_routestations() {
+  return _impl_.routestations_.Add();
+}
+inline ::MissionModule::Station* AutonomyCommand::add_routestations() {
+  ::MissionModule::Station* _add = _internal_add_routestations();
+  // @@protoc_insertion_point(field_add:MissionModule.AutonomyCommand.routeStations)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MissionModule::Station >&
+AutonomyCommand::routestations() const {
+  // @@protoc_insertion_point(field_list:MissionModule.AutonomyCommand.routeStations)
+  return _impl_.routestations_;
 }
 
 // -------------------------------------------------------------------

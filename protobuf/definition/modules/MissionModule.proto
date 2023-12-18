@@ -130,6 +130,11 @@ message AutonomyCommand{
   string route = 2;
 
   Action action = 3;
+
+  /**
+   * Positions of all stations on the route
+   */
+  repeated Station routeStations = 4;
 }
 
 /*

@@ -105,10 +105,12 @@ message Device{
     RESERVED_MODULE = 0;
     // Sending missions with the information about the route and stops to the autonomy
     MISSION_MODULE = 1;
-    // Control of car accessories
-    CAR_ACCESSORY_MODULE = 2;
-    reserved 3 to 998;
-    EXAMPLE_MODULE = 999;
+    // Control of IO devices
+    IO_MODULE = 2;
+    /// Modules 0-999 are base modules and cannot be changed
+    reserved 3 to 999;
+    /// First additional module, can be changed
+    EXAMPLE_MODULE = 1000;
   }
 
   /**
