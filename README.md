@@ -18,6 +18,20 @@ can be found in protobuff folder.
 Each message must be prefixed with four bytes long (uint32_t data type) header which holds
 information about size  of the ProtoBuf message.
 
+To read more about the system architecture look at Fleet Protocol v2 documentation:
+- [Summary]
+- [Fleet Protocol Requirements]
+- [Internal Client]
+- [Module Gateway]
+- [External Server]
+- [Modules]
+- [Message Structure]
+- [Internal Client design]
+- [Module Gateway design]
+- [External Server design]
+- [HTTP API]
+- [HTTP API Wait Mechanism]
+
 ## Protocol messages
 
 Messages are described by ProtoBuff v3.
@@ -41,5 +55,16 @@ Protobuf compiled and non-compiled files
 
 [BringAutoDaemon.proto]: ./BringAutoDaemon.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
-[BringAuto Autonomy Host Protocol]: https://drive.google.com/drive/folders/1-cfU5wgbO1O8DOk4bDOufZ_aqJ0U61nP
 [Protobuf version]: https://github.com/protocolbuffers/protobuf/releases/tag/v3.21.12
+[Summary]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/summary
+[Fleet Protocol Requirements]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/protocol-requirements
+[Internal Client]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/internal-client
+[Module Gateway]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/module-gateway
+[External Server]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/external-server
+[Modules]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/modules
+[Message Structure]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/message-structure
+[Internal Client design]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/internal-client-design 
+[Module Gateway design]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/module-gateway-design
+[External Server design]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/external-server-design
+[HTTP API]: https://ref.bringautofleet.com/r/protocol/http-api/1.0.0/http-api
+[HTTP API Wait Mechanism]: https://ref.bringautofleet.com/r/protocol/http-api/1.0.0/wait-mechanism
