@@ -33,12 +33,16 @@ TARGET_LINK_LIBRARIES(fleet_protocol INTERFACE
                             fleet-protocol::internal_client_interface
                             fleet-protocol::module_gateway
                             fleet-protocol::module_maintainer::external_server
-                            fleet-protocol::module_maintainer::module_gateway)
+                            fleet-protocol::module_maintainer::module_gateway
+                            fleet-protocol::protobuf_cpp)
 
 IF (BRINGAUTO_INSTALL)
+    #INSTALL(TARGETS fleet_protocol
+    #        EXPORT ${PROJECT_NAME})
     INSTALL(EXPORT ${PROJECT_NAME}
         FILE ${PROJECT_NAME}Targets.cmake
-        DESTINATION "cmake/")
+        DESTINATION "cmake/"
+        NAMESPACE ${PROJECT_NAME}::)
 ENDIF ()
 
 IF (BRINGAUTO_PACKAGE)

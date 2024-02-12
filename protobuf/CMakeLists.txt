@@ -7,7 +7,7 @@ IF (NOT BRINGAUTO_SYSTEM_DEP)
 ENDIF ()
 
 SET(Protobuf_USE_STATIC_LIBS ON)
-FIND_PACKAGE(Protobuf 3.21.12)
+FIND_PACKAGE(Protobuf 3.21.12 REQUIRED)
 
 FILE(GLOB_RECURSE protobuf_cpp_files "compiled/cpp/*")
 ADD_LIBRARY(protobuf_cpp STATIC ${protobuf_cpp_files})
