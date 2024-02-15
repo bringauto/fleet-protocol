@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <ExampleModule.pb.h>
+#include <ProtobufModule.pb.h>
 #include <ProtocolMaintainer.hpp>
 #include <ModuleMaintainer.hpp>
 
