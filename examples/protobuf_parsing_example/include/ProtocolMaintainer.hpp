@@ -1,6 +1,6 @@
 #pragma once
 
-#include <modules/ExampleModule.pb.h>
+#include <ProtobufModule.pb.h>
 #include <InternalProtocol.pb.h>
 #include <ExternalProtocol.pb.h>
 
