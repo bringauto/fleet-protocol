@@ -5,9 +5,9 @@ SET(CMAKE_CXX_STANDARD 20)
 
 SET(CMAKE_BUILD_RPATH_USE_ORIGIN ON)
 
-FILE(GLOB_RECURSE source_files "source/*")
+FILE(GLOB_RECURSE source_files "source/*" "lib/protobuf/*")
 ADD_LIBRARY(parsing_example_lib STATIC ${source_files})
-TARGET_INCLUDE_DIRECTORIES(parsing_example_lib PUBLIC "include/")
+TARGET_INCLUDE_DIRECTORIES(parsing_example_lib PUBLIC "include/" "lib/protobuf/")
 TARGET_LINK_LIBRARIES(parsing_example_lib PUBLIC ${PROJECT_NAME}::protobuf_cpp)
 
 
