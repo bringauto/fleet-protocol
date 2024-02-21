@@ -1,6 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.25 FATAL_ERROR)
 PROJECT(fleet-protocol C CXX)
 
+#[[
 ADD_LIBRARY(module_gateway INTERFACE)
 TARGET_INCLUDE_DIRECTORIES(module_gateway INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include/>"
                                                     "$<INSTALL_INTERFACE:include/>")
@@ -15,7 +16,7 @@ ADD_LIBRARY(${PROJECT_NAME}::module_gateway ALIAS module_gateway )
 
 INSTALL(
     TARGETS module_gateway
-    EXPORT ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}Targets
     LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
@@ -25,3 +26,14 @@ INSTALL(
     DIRECTORY ${PROJECT_SOURCE_DIR}/include/
     DESTINATION include/bringauto/fleet-protocol/module-gateway
 )
+]]
+
+CMDEF_ADD_LIBRARY(
+        LIBRARY_GROUP module-gateway
+        TYPE INTERFACE
+        VERSION 1.0.0
+        INCLUDE_DIRECTORIES include/
+        INSTALL_INCLUDE_DIRECTORIES include/
+)
+TARGET_LINK_LIBRARIES(module-gateway-interface INTERFACE common-headers-interface)
+CMDEF_INSTALL(TARGET module-gateway-interface)

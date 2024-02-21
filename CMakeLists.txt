@@ -3,7 +3,7 @@ PROJECT(fleet-protocol C CXX)
 INCLUDE(GNUInstallDirs)
 
 SET(FLEET_PROTOCOL_VERSION 1.0.0)
-SET(CMAKE_INSTALL_RPATH "$ORIGIN/../${CMAKE_INSTALL_LIBDIR}") #TODO zeptat se Maria
+SET(CMAKE_INSTALL_RPATH "$ORIGIN/../${CMAKE_INSTALL_LIBDIR}") # TODO is this needed?
 
 OPTION(BRINGAUTO_PACKAGE "Package creation" OFF)
 OPTION(BRINGAUTO_INSTALL "Enable install" OFF)
@@ -27,29 +27,29 @@ ENDIF()
 ADD_SUBDIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/lib")
 ADD_SUBDIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/protobuf")
 
-ADD_LIBRARY(fleet_protocol INTERFACE)
-TARGET_LINK_LIBRARIES(fleet_protocol INTERFACE
-                        fleet-protocol::common_headers
-                        fleet-protocol::internal_client_interface
-                        fleet-protocol::module_gateway
-                        fleet-protocol::module_maintainer::external_server
-                        fleet-protocol::module_maintainer::module_gateway
-                        fleet-protocol::protobuf_cpp)
+CMDEF_ADD_LIBRARY(
+        LIBRARY_GROUP fleet-protocol
+        TYPE INTERFACE
+        VERSION ${FLEET_PROTOCOL_VERSION}
+)
+TARGET_LINK_LIBRARIES(fleet-protocol-interface INTERFACE
+                        common-headers-interface
+                        internal-client-interface
+                        module-gateway-interface
+                        module-maintainer-external-server-interface
+                        module-maintainer-module-gateway-interface
+                        protobuf-cpp-interface
+)
+
 
 IF (BRINGAUTO_INSTALL)
-    #INSTALL(TARGETS fleet_protocol
-    #        EXPORT ${PROJECT_NAME})
-    # TODO je potreba pridat Build-type
-    # TODO nepridava se protobuf_cpp
-    INSTALL(EXPORT ${PROJECT_NAME}
-        FILE ${PROJECT_NAME}Targets.cmake
-        DESTINATION "cmake/"
-        NAMESPACE ${PROJECT_NAME}::)
+    CMDEF_INSTALL(TARGET fleet-protocol-interface)
+
 ENDIF ()
 
 IF (BRINGAUTO_PACKAGE)
     CMDEF_PACKAGE(
-            MAIN_TARGET fleet_protocol
+            MAIN_TARGET fleet-protocol-interface
             VERSION ${FLEET_PROTOCOL_VERSION}
     )
     SET(CPACK_GENERATOR ZIP)
