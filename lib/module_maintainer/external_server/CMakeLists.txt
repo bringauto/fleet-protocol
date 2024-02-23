@@ -9,4 +9,6 @@ CMDEF_ADD_LIBRARY(
         INSTALL_INCLUDE_DIRECTORIES include/
 )
 TARGET_LINK_LIBRARIES(module-maintainer-external-server-interface INTERFACE common-headers-interface)
-CMDEF_INSTALL(TARGET module-maintainer-external-server-interface)
+CMDEF_INSTALL(TARGET module-maintainer-external-server-interface
+              NAMESPACE fleet-protocol-interface::
+)

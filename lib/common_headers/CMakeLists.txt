@@ -9,4 +9,6 @@ CMDEF_ADD_LIBRARY(
         INSTALL_INCLUDE_DIRECTORIES include/
 )
 
-CMDEF_INSTALL(TARGET common-headers-interface)
+CMDEF_INSTALL(TARGET common-headers-interface
+              NAMESPACE fleet-protocol-interface::
+)

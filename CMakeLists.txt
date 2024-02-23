@@ -42,7 +42,10 @@ TARGET_LINK_LIBRARIES(fleet-protocol-interface INTERFACE
 
 
 IF (BRINGAUTO_INSTALL)
-    CMDEF_INSTALL(TARGET fleet-protocol-interface)
+    CMDEF_INSTALL(
+            TARGET fleet-protocol-interface
+            NAMESPACE fleet-protocol-interface::
+    )
 
 ENDIF ()
 

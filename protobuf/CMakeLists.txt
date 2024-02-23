@@ -15,4 +15,6 @@ CMDEF_ADD_LIBRARY(
         INSTALL_INCLUDE_DIRECTORIES "compiled/cpp/"
 )
 
-CMDEF_INSTALL(TARGET protobuf-cpp-interface)
+CMDEF_INSTALL(TARGET protobuf-cpp-interface
+              NAMESPACE fleet-protocol-interface::
+)
