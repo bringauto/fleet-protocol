@@ -10,7 +10,8 @@ CMDEF_ADD_LIBRARY(
 )
 TARGET_LINK_LIBRARIES(internal-client-interface INTERFACE common-headers-interface)
 
-CMDEF_INSTALL(TARGET internal-client-interface
-              NAMESPACE fleet-protocol-interface::
+CMDEF_INSTALL(
+        TARGET internal-client-interface
+        NAMESPACE fleet-protocol-interface::
 )
 

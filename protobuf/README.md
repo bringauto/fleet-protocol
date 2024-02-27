@@ -1,13 +1,17 @@
 # Protobuf
 Using Protobuf version 21.12
 
-## Link
-CMakeLists in this directory adds two static library `protobuf_cpp`
+## Usage
+CMakeLists in this directory adds library `protobuf-cpp-interface`. 
+To use this library, it is necessary to link `libprotobuf` library.
 
-To link it, use the following statements in CMakeLists.txt:
+Usage example is in [examples/protobuf_parsing_example](examples/protobuf_parsing_example).
 
-```angular2html
-TARGET_LINK_LIBRARIES(<target> PUBLIC ${PROJECT_NAME}::protobuf_cpp)
+To link the library, use the following CMake command in your CMakeLists.txt file.
+```cmake
+FIND_PACKAGE(Protobuf 3.21.12 REQUIRED)
+
+TARGET_LINK_LIBRARIES(<target> PUBLIC protobuf::libprotobuf protobuf-cpp-interface)
 ```
 
 ## Compilation

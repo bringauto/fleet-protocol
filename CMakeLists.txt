@@ -18,7 +18,7 @@ ENDIF()
 FIND_PACKAGE(CMLIB
         COMPONENTS CMDEF CMUTIL
         REQUIRED
-        )
+)
 
 IF(BRINGAUTO_SAMPLES)
     ADD_SUBDIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/examples")
@@ -32,12 +32,12 @@ CMDEF_ADD_LIBRARY(
         VERSION ${FLEET_PROTOCOL_VERSION}
 )
 TARGET_LINK_LIBRARIES(fleet-protocol-interface INTERFACE
-                        common-headers-interface
-                        internal-client-interface
-                        module-gateway-interface
-                        module-maintainer-external-server-interface
-                        module-maintainer-module-gateway-interface
-                        protobuf-cpp-interface
+                    common-headers-interface
+                    internal-client-interface
+                    module-gateway-interface
+                    module-maintainer-external-server-interface
+                    module-maintainer-module-gateway-interface
+                    protobuf-cpp-interface
 )
 
 
