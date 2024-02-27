@@ -4,10 +4,10 @@
 extern "C" {
 #endif
 
-#include <device_management.h>
-#include <general_error_codes.h>
-#include <memory_management.h>
-#include <ic_error_codes.h>
+#include <fleet_protocol/common_headers/device_management.h>
+#include <fleet_protocol/common_headers/general_error_codes.h>
+#include <fleet_protocol/common_headers/memory_management.h>
+#include <fleet_protocol/internal_client/ic_error_codes.h>
 
 /**
  * @section internal_client

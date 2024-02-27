@@ -3,7 +3,7 @@ PROJECT(fleet-protocol CXX)
 
 SET(Protobuf_USE_STATIC_LIBS ON)
 
-FILE(GLOB_RECURSE source_files "compiled/cpp/source/fleet_protocol/protobuf/*.cc")
+FILE(GLOB_RECURSE source_files "compiled/cpp/source/*.cc")
 
 CMDEF_ADD_LIBRARY(
         LIBRARY_GROUP protobuf-cpp
@@ -11,7 +11,7 @@ CMDEF_ADD_LIBRARY(
         VERSION 1.0.0
         SOURCES ${source_files}
         SOURCE_BASE_DIRECTORY compiled/cpp/source/
-        INCLUDE_DIRECTORIES "${CMAKE_CURRENT_LIST_DIR}/compiled/cpp/include/fleet_protocol/protobuf/"
+        INCLUDE_DIRECTORIES "${CMAKE_CURRENT_LIST_DIR}/compiled/cpp/include/"
         INSTALL_INCLUDE_DIRECTORIES "compiled/cpp/include/"
 )
 
