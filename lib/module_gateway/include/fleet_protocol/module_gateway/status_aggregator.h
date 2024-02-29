@@ -6,7 +6,7 @@ extern "C" {
 
 #include <fleet_protocol/common_headers/device_management.h>
 #include <fleet_protocol/common_headers/memory_management.h>
-#include <fleet_protocol/module_gateway/mg_error_codes.h>
+#include <fleet_protocol/module_gateway/error_codes.h>
 
 /**
  * @section module_gateway

@@ -7,7 +7,7 @@ extern "C" {
 #include <fleet_protocol/common_headers/device_management.h>
 #include <fleet_protocol/common_headers/general_error_codes.h>
 #include <fleet_protocol/common_headers/memory_management.h>
-#include <fleet_protocol/internal_client/ic_error_codes.h>
+#include <fleet_protocol/internal_client/error_codes.h>
 
 /**
  * @section internal_client
