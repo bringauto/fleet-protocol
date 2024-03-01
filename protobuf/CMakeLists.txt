@@ -8,7 +8,7 @@ FILE(GLOB_RECURSE source_files "compiled/cpp/source/*.cc")
 CMDEF_ADD_LIBRARY(
         LIBRARY_GROUP protobuf-cpp
         TYPE INTERFACE
-        VERSION 1.0.0
+        VERSION ${FLEET_PROTOCOL_VERSION}
         SOURCES ${source_files}
         SOURCE_BASE_DIRECTORY compiled/cpp/source/
         INCLUDE_DIRECTORIES "${CMAKE_CURRENT_LIST_DIR}/compiled/cpp/include/"
@@ -17,5 +17,5 @@ CMDEF_ADD_LIBRARY(
 
 CMDEF_INSTALL(
         TARGET protobuf-cpp-interface
-        NAMESPACE fleet-protocol-interface::
+        NAMESPACE ${FLEET_PROTOCOL_NAMESPACE}
 )

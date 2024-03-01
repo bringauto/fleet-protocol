@@ -1,8 +1,8 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.25 FATAL_ERROR)
 PROJECT(fleet-protocol C CXX)
-INCLUDE(GNUInstallDirs)
 
 SET(FLEET_PROTOCOL_VERSION 2.0.0)
+SET(FLEET_PROTOCOL_NAMESPACE "fleet-protocol-interface::")
 
 OPTION(BRINGAUTO_PACKAGE "Package creation" OFF)
 OPTION(BRINGAUTO_INSTALL "Enable install" OFF)
@@ -44,7 +44,7 @@ TARGET_LINK_LIBRARIES(fleet-protocol-interface INTERFACE
 IF (BRINGAUTO_INSTALL)
     CMDEF_INSTALL(
             TARGET fleet-protocol-interface
-            NAMESPACE fleet-protocol-interface::
+            NAMESPACE ${FLEET_PROTOCOL_NAMESPACE}
     )
 
 ENDIF ()
@@ -56,8 +56,5 @@ IF (BRINGAUTO_PACKAGE)
     )
     SET(CPACK_GENERATOR ZIP)
     SET(CPACK_PACKAGE_CONTACT "BringAuto s.r.o. <maintainers@bringauto.com>")
-    SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "BringAuto s.r.o <maintainers@bringauto.com>")
-    SET(CPACK_DEBIAN_PACKAGE_GENERATE_SHLIBS ON)
-    SET(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
     INCLUDE(CPack)
 ENDIF()

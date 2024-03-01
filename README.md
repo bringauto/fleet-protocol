@@ -1,6 +1,6 @@
-# Fleet protocol
+# Fleet Protocol
 
-Fleet protocol is a communication protocol developed by BringAuto to allow simple and reliable communication between
+Fleet Protocol is a communication protocol developed by BringAuto to allow simple and reliable communication between
 multiple devices and cloud infrastructure.
 **Complete protocol documentation will be released soon**. Protocol consists of three parts:
 
