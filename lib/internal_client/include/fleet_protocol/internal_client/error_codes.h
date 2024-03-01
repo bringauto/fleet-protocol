@@ -1,6 +1,6 @@
 #pragma once
 
-#include <general_error_codes.h>
+#include <fleet_protocol/common_headers/general_error_codes.h>
 /**
  * @brief Specific error codes for internal_client
  */

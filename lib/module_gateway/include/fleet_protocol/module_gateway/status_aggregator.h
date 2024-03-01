@@ -4,9 +4,9 @@
 extern "C" {
 #endif
 
-#include <device_management.h>
-#include <mg_error_codes.h>
-#include <memory_management.h>
+#include <fleet_protocol/common_headers/device_management.h>
+#include <fleet_protocol/common_headers/memory_management.h>
+#include <fleet_protocol/module_gateway/error_codes.h>
 
 /**
  * @section module_gateway

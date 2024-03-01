@@ -1,6 +1,6 @@
 #pragma once
 
-#include <general_error_codes.h>
+#include <fleet_protocol/common_headers/general_error_codes.h>
 
 enum mg_error_codes {
 	DEVICE_NOT_SUPPORTED = RESERVED -1,

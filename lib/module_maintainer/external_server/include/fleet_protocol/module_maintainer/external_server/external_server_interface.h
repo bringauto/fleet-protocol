@@ -4,11 +4,11 @@
 extern "C" {
 #endif
 
-#include <device_management.h>
-#include <general_error_codes.h>
-#include <memory_management.h>
+#include <fleet_protocol/common_headers/device_management.h>
+#include <fleet_protocol/common_headers/general_error_codes.h>
+#include <fleet_protocol/common_headers/memory_management.h>
 
-#include <external_server_structures.h>
+#include <fleet_protocol/module_maintainer/external_server/external_server_structures.h>
 
 /**
  * @file external_server_interface.h
