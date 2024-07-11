@@ -5,7 +5,7 @@
  *
  */
 
-syntax = "proto3";
+edition = "2023";
 
 /*
  * Internal protocol contains messages for module control.
@@ -68,7 +68,7 @@ message DeviceConnectResponse{
      */
     HIGHER_PRIORITY_ALREADY_CONNECTED = 4;
   }
-  ResponseType responseType = 1;
+  ResponseType responseType = 1 [features.field_presence = IMPLICIT];
 
   Device device = 2;
 }
@@ -76,7 +76,7 @@ message DeviceConnectResponse{
 message DeviceStatus{
   Device device = 1;
 
-  bytes statusData = 2;
+  bytes statusData = 2 [features.field_presence = IMPLICIT];
 }
 
 /*
@@ -85,7 +85,7 @@ message DeviceStatus{
 message DeviceCommand{
   Device device = 1;
 
-  bytes commandData = 2;
+  bytes commandData = 2 [features.field_presence = IMPLICIT];
 }
 
 /*
@@ -116,26 +116,26 @@ message Device{
   /**
    * Serves for internal client to forward message to the correct module.
    */
-  Module module = 1;
+  Module module = 1 [features.field_presence = IMPLICIT];
 
   /*
    * Device type is module implementation dependent, it is recommended to implement as enumeration.
    */
-  uint32 deviceType = 2;
+  uint32 deviceType = 2 [features.field_presence = IMPLICIT];
 
   /**
    * name of role that the device provides, serves for distinction of devices
    * important in device connection, where only single device of a deviceRole type can be connected to a module.
    */
-  string deviceRole = 3;
+  string deviceRole = 3 [features.field_presence = IMPLICIT];
 
   /*
    * device name
    */
-  string deviceName = 4;
+  string deviceName = 4 [features.field_presence = IMPLICIT];
 
   /*
    * Priority of the device. Max priority = 0
    */
-  uint32 priority = 5;
+  uint32 priority = 5 [features.field_presence = IMPLICIT];
 }

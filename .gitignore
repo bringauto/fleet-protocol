@@ -2,3 +2,4 @@ _tmp/
 _build/
 cmake-build-*
 .idea
+__pycache__/

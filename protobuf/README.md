@@ -1,6 +1,6 @@
 # Protobuf
 
-Using Protobuf version 21.12
+Using Protobuf version 5.27.2
 
 ## Usage
 
@@ -12,16 +12,26 @@ Usage example is in [examples/protobuf_parsing_example](examples/protobuf_parsin
 To link the library, use the following CMake commands in your CMakeLists.txt file.
 
 ```cmake
-FIND_PACKAGE(Protobuf 3.21.12 REQUIRED)
+FIND_PACKAGE(Protobuf 5.27.2 REQUIRED)
 TARGET_LINK_LIBRARIES(<target> PUBLIC protobuf::libprotobuf protobuf-cpp-interface)
 ```
 
 ## Compilation
 
+#### Requirements
+
+- desired version of `protoc` installed ([prebuilt binaries](https://github.com/protocolbuffers/protobuf/releases))
+- `protoc-gen-go` needs to be installed to generate go files (set env value GOBIN to the path where protoc is installed first)
+```bash
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+```
+
+##
+
 Compile to all languages:
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=protobuf/definition --cpp_out=compiled/cpp --csharp_out=compiled/cs --python_out=compiled/python --go_out=compiled/go/ --go_opt=paths=source_relative {} +
+find protobuf/definition -name "*.proto" -exec protoc -I=./protobuf/definition --cpp_out=./protobuf/compiled/cpp --csharp_out=./protobuf/compiled/cs --python_out=./protobuf/compiled/python --go_out=./protobuf/compiled/go/ --go_opt=paths=source_relative {} +
 ```
 
 To compile files to a specific language only, use the specific `*_out` options in command.
@@ -30,26 +40,24 @@ Note that protoc doesn't support double asterisks (**), so it should be used wit
 **C++**
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=./definition --cpp_out=./compiled/cpp {} +
+find protobuf/definition -name "*.proto" -exec protoc -I=./protobuf/definition --cpp_out=./protobuf/compiled/cpp {} +
 ```
 
 **C#**
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=./definition --csharp_out=./compiled/cpp {} +
+find protobuf/definition -name "*.proto" -exec protoc -I=./protobuf/definition --csharp_out=./protobuf/compiled/cs {} +
 ```
 
 **Python**
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=./definition --python_out=./compiled/cpp {} +
+find protobuf/definition -name "*.proto" -exec protoc -I=./protobuf/definition --python_out=./protobuf/compiled/python {} +
 ```
 
 **GO**
 
-protoc-gen-go needs to be installed!
-
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=./definition --go_out=./compiled/go --go_opt=paths=source_relative {} +
+find protobuf/definition -name "*.proto" -exec protoc -I=./protobuf/definition --go_out=./protobuf/compiled/go --go_opt=paths=source_relative {} +
 ```
 

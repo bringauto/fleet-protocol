@@ -33,23 +33,25 @@ namespace Google.Protobuf.ba_proto {
             "ZWN0UmVzcG9uc2VIABI4Cg1kZXZpY2VDb21tYW5kGAIgASgLMh8uSW50ZXJu",
             "YWxQcm90b2NvbC5EZXZpY2VDb21tYW5kSABCDQoLTWVzc2FnZVR5cGUiOQoN",
             "RGV2aWNlQ29ubmVjdBIoCgZkZXZpY2UYASABKAsyGC5JbnRlcm5hbFByb3Rv",
-            "Y29sLkRldmljZSKYAgoVRGV2aWNlQ29ubmVjdFJlc3BvbnNlEkoKDHJlc3Bv",
+            "Y29sLkRldmljZSKfAgoVRGV2aWNlQ29ubmVjdFJlc3BvbnNlElEKDHJlc3Bv",
             "bnNlVHlwZRgBIAEoDjI0LkludGVybmFsUHJvdG9jb2wuRGV2aWNlQ29ubmVj",
-            "dFJlc3BvbnNlLlJlc3BvbnNlVHlwZRIoCgZkZXZpY2UYAiABKAsyGC5JbnRl",
-            "cm5hbFByb3RvY29sLkRldmljZSKIAQoMUmVzcG9uc2VUeXBlEgYKAk9LEAAS",
-            "FQoRQUxSRUFEWV9DT05ORUNURUQQARIYChRNT0RVTEVfTk9UX1NVUFBPUlRF",
-            "RBACEhgKFERFVklDRV9OT1RfU1VQUE9SVEVEEAMSJQohSElHSEVSX1BSSU9S",
-            "SVRZX0FMUkVBRFlfQ09OTkVDVEVEEAQiTAoMRGV2aWNlU3RhdHVzEigKBmRl",
-            "dmljZRgBIAEoCzIYLkludGVybmFsUHJvdG9jb2wuRGV2aWNlEhIKCnN0YXR1",
-            "c0RhdGEYAiABKAwiTgoNRGV2aWNlQ29tbWFuZBIoCgZkZXZpY2UYASABKAsy",
-            "GC5JbnRlcm5hbFByb3RvY29sLkRldmljZRITCgtjb21tYW5kRGF0YRgCIAEo",
-            "DCLlAQoGRGV2aWNlEi8KBm1vZHVsZRgBIAEoDjIfLkludGVybmFsUHJvdG9j",
-            "b2wuRGV2aWNlLk1vZHVsZRISCgpkZXZpY2VUeXBlGAIgASgNEhIKCmRldmlj",
-            "ZVJvbGUYAyABKAkSEgoKZGV2aWNlTmFtZRgEIAEoCRIQCghwcmlvcml0eRgF",
-            "IAEoDSJcCgZNb2R1bGUSEwoPUkVTRVJWRURfTU9EVUxFEAASEgoOTUlTU0lP",
-            "Tl9NT0RVTEUQARINCglJT19NT0RVTEUQAhITCg5FWEFNUExFX01PRFVMRRDo",
-            "ByIFCAMQ5wdCPlohLi4vaW50ZXJuYWwvcGtnL2JhX3Byb3RvO2JhX3Byb3Rv",
-            "qgIYR29vZ2xlLlByb3RvYnVmLmJhX3Byb3RvYgZwcm90bzM="));
+            "dFJlc3BvbnNlLlJlc3BvbnNlVHlwZUIFqgECCAISKAoGZGV2aWNlGAIgASgL",
+            "MhguSW50ZXJuYWxQcm90b2NvbC5EZXZpY2UiiAEKDFJlc3BvbnNlVHlwZRIG",
+            "CgJPSxAAEhUKEUFMUkVBRFlfQ09OTkVDVEVEEAESGAoUTU9EVUxFX05PVF9T",
+            "VVBQT1JURUQQAhIYChRERVZJQ0VfTk9UX1NVUFBPUlRFRBADEiUKIUhJR0hF",
+            "Ul9QUklPUklUWV9BTFJFQURZX0NPTk5FQ1RFRBAEIlMKDERldmljZVN0YXR1",
+            "cxIoCgZkZXZpY2UYASABKAsyGC5JbnRlcm5hbFByb3RvY29sLkRldmljZRIZ",
+            "CgpzdGF0dXNEYXRhGAIgASgMQgWqAQIIAiJVCg1EZXZpY2VDb21tYW5kEigK",
+            "BmRldmljZRgBIAEoCzIYLkludGVybmFsUHJvdG9jb2wuRGV2aWNlEhoKC2Nv",
+            "bW1hbmREYXRhGAIgASgMQgWqAQIIAiKIAgoGRGV2aWNlEjYKBm1vZHVsZRgB",
+            "IAEoDjIfLkludGVybmFsUHJvdG9jb2wuRGV2aWNlLk1vZHVsZUIFqgECCAIS",
+            "GQoKZGV2aWNlVHlwZRgCIAEoDUIFqgECCAISGQoKZGV2aWNlUm9sZRgDIAEo",
+            "CUIFqgECCAISGQoKZGV2aWNlTmFtZRgEIAEoCUIFqgECCAISFwoIcHJpb3Jp",
+            "dHkYBSABKA1CBaoBAggCIlwKBk1vZHVsZRITCg9SRVNFUlZFRF9NT0RVTEUQ",
+            "ABISCg5NSVNTSU9OX01PRFVMRRABEg0KCUlPX01PRFVMRRACEhMKDkVYQU1Q",
+            "TEVfTU9EVUxFEOgHIgUIAxDnB0I+WiEuLi9pbnRlcm5hbC9wa2cvYmFfcHJv",
+            "dG87YmFfcHJvdG+qAhhHb29nbGUuUHJvdG9idWYuYmFfcHJvdG9iCGVkaXRp",
+            "b25zcOgH"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -66,6 +68,7 @@ namespace Google.Protobuf.ba_proto {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class InternalClient : pb::IMessage<InternalClient>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -289,7 +292,11 @@ namespace Google.Protobuf.ba_proto {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -322,7 +329,11 @@ namespace Google.Protobuf.ba_proto {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -351,6 +362,7 @@ namespace Google.Protobuf.ba_proto {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class InternalServer : pb::IMessage<InternalServer>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -574,7 +586,11 @@ namespace Google.Protobuf.ba_proto {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -607,7 +623,11 @@ namespace Google.Protobuf.ba_proto {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -642,6 +662,7 @@ namespace Google.Protobuf.ba_proto {
   /// Device connect message is used for establishing connection from module client to module server
   /// send as first message from module client to module server
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class DeviceConnect : pb::IMessage<DeviceConnect>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -800,7 +821,11 @@ namespace Google.Protobuf.ba_proto {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -822,7 +847,11 @@ namespace Google.Protobuf.ba_proto {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -846,6 +875,7 @@ namespace Google.Protobuf.ba_proto {
   /// Device connect response message is used for establishing connection from module client to module server
   /// send as response to deviceConnect message from module server to module client
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class DeviceConnectResponse : pb::IMessage<DeviceConnectResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1033,7 +1063,11 @@ namespace Google.Protobuf.ba_proto {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1059,7 +1093,11 @@ namespace Google.Protobuf.ba_proto {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1121,6 +1159,7 @@ namespace Google.Protobuf.ba_proto {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class DeviceStatus : pb::IMessage<DeviceStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1308,7 +1347,11 @@ namespace Google.Protobuf.ba_proto {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1334,7 +1377,11 @@ namespace Google.Protobuf.ba_proto {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1360,6 +1407,7 @@ namespace Google.Protobuf.ba_proto {
   ///
   /// binary command data
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class DeviceCommand : pb::IMessage<DeviceCommand>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1547,7 +1595,11 @@ namespace Google.Protobuf.ba_proto {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1573,7 +1625,11 @@ namespace Google.Protobuf.ba_proto {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1599,6 +1655,7 @@ namespace Google.Protobuf.ba_proto {
   ///
   /// Identification of a device. Only devices with unique module-deviceType-dataProvider combination can be connected.
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Device : pb::IMessage<Device>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1891,7 +1948,11 @@ namespace Google.Protobuf.ba_proto {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1926,7 +1987,11 @@ namespace Google.Protobuf.ba_proto {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1982,7 +2047,7 @@ namespace Google.Protobuf.ba_proto {
         /// </summary>
         [pbr::OriginalName("IO_MODULE")] IoModule = 2,
         /// <summary>
-        //// First additional module, can be changed
+        ///&#x2F; First additional module, can be changed
         /// </summary>
         [pbr::OriginalName("EXAMPLE_MODULE")] ExampleModule = 1000,
       }
