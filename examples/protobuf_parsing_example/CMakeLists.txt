@@ -10,7 +10,7 @@ ENDIF ()
 
 SET(CMAKE_BUILD_RPATH_USE_ORIGIN ON)
 
-FIND_PACKAGE(Protobuf 5.27.2 REQUIRED)
+FIND_PACKAGE(Protobuf 5.27.2 CONFIG REQUIRED)
 
 FILE(GLOB_RECURSE source_files "source/*")
 FILE(GLOB_RECURSE protobuf_files "lib/protobuf/*")
