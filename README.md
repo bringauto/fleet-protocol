@@ -1,7 +1,7 @@
 # Fleet Protocol
 
 Fleet Protocol is a communication technology developed by BringAuto to allow **simple and reliable** communication between
-devices deployed in **internet-connection-unstable** environment and the cloud infrastructure.
+devices deployed in **an internet-connection-unstable** environment and the cloud infrastructure.
 
 Protocol consists of three parts:
 
@@ -21,7 +21,7 @@ can be found in protobuff folder.
 Each message must be prefixed with four bytes long (uint32_t data type) header which holds
 information about size of the ProtoBuf message.
 
-To read more about the system architecture check Fleet Protocol v2 documentation:
+To read more about the system architecture, check Fleet Protocol v2 documentation:
 
 - [Summary] - overall hight level summary
 - [Fleet Protocol Requirements]
@@ -36,10 +36,10 @@ To read more about the system architecture check Fleet Protocol v2 documentation
 
 ## HTTP Interface
 
-The Fleet Protocol HTTP API is and HTTP API protocol representation.
+The Fleet Protocol HTTP API is an HTTP API protocol representation.
 
 Fleet Protocol Module can use the HTTP API to provide its statuses and commands
-thru simple and undestable REST API to easy integration with other services.
+through simple and undestable REST API to easy integration with other services.
 
 Fleet Protocol HTTP API is a standalone project and is not part of the Fleet Protocol v2 core specification.
 
@@ -80,7 +80,7 @@ Protobuf compiled and non-compiled files
 
 ### Installation
 
-To install the library first configure the project with CMake option BRINGAUTO_INSTALL=ON and BRINGAUTO_PACKAGE=ON and then install it.
+To install the library, first configure the project with CMake option BRINGAUTO_INSTALL=ON and BRINGAUTO_PACKAGE=ON and then install it.
 
 ```bash
 mkdir _build && cd _build
@@ -90,7 +90,7 @@ make install
 
 ### Package
 
-To create a package configure the project with CMake option BRINGAUTO_PACKAGE=ON and then create it using `cpack`.
+To create a package, configure the project with CMake option BRINGAUTO_PACKAGE=ON and then create it using `cpack`.
 
 ```bash
 mkdir _build && cd _build
@@ -100,7 +100,7 @@ cpack
 
 ### Using library in CMake projects
 
-Once the library is installed it can be used in other projects by adding the following lines to the `CMakeLists.txt`
+Once the library is installed, it can be used in other projects by adding the following lines to the `CMakeLists.txt`
 file:
 
 ```cmake
@@ -108,7 +108,7 @@ FIND_PACKAGE(fleet-protocol-interface REQUIRED)
 TARGET_LINK_LIBRARIES(<target> PUBLIC fleet-protocol-interface::fleet-protocol-interface)
 ```
 
-This will link all interfaces. If you want to link only specific interface use the interfaces from the list below:
+This will link all interfaces. If you want to link only specific interface, use the interfaces from the list below:
 
 * fleet-protocol-interface::common-headers-interface
 * fleet-protocol-interface::internal-client-interface
