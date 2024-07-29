@@ -1,11 +1,11 @@
 # Fleet Protocol
 
-Fleet Protocol is a communication technology developed by BringAuto to allow **simple and reliable** communication between
-devices deployed in **an internet-connection-unstable** environment and the cloud infrastructure.
+Fleet Protocol is a communication technology developed by BringAuto to allow for **simple and reliable** communication between
+devices deployed in an **internet-connection-unstable** environment and cloud infrastructure.
 
 Protocol consists of three parts:
 
-* Internal Client (Remote) - specific part of device which communicates with Module Gateway
+* Internal Client (Remote) - part of a device which communicates with Module Gateway
 * Module Gateway (Remote):
     - internal server - communicates with internal client
     - aggregator - aggregates status messages, gathers and aggragates messages in case of connection outage, ...
@@ -14,16 +14,16 @@ Protocol consists of three parts:
 
 ## Communication protocol
 
-We use [ProtoBuf] library for message format (version [Protobuf version]) and serialization/deserialization - protocol
+We use the [ProtoBuf] library for message format (version [Protobuf version]) and serialization/deserialization - protocol
 specification
-can be found in protobuff folder.
+can be found in protobuf folder.
 
-Each message must be prefixed with four bytes long (uint32_t data type) header which holds
-information about size of the ProtoBuf message.
+Each message must be prefixed with a four bytes long (uint32_t data type) header which holds
+information about the size of the ProtoBuf message.
 
-To read more about the system architecture, check Fleet Protocol v2 documentation:
+To read more about the system architecture, check the Fleet Protocol v2 documentation:
 
-- [Summary] - overall hight level summary
+- [Summary] - overall high level summary
 - [Fleet Protocol Requirements]
 - [Internal Client]
 - [Module Gateway]
@@ -36,10 +36,10 @@ To read more about the system architecture, check Fleet Protocol v2 documentatio
 
 ## HTTP Interface
 
-The Fleet Protocol HTTP API is an HTTP API protocol representation.
+The Fleet Protocol HTTP API represents the protocol in the form of an HTTP API.
 
-Fleet Protocol Module can use the HTTP API to provide its statuses and commands
-through simple and undestable REST API to easy integration with other services.
+A Fleet Protocol Module can use the HTTP API to provide its statuses and retrieve its commands
+through a simple and undestable REST API for easy integration with other services.
 
 Fleet Protocol HTTP API is a standalone project and is not part of the Fleet Protocol v2 core specification.
 
@@ -50,11 +50,11 @@ Fleet Protocol HTTP API is a standalone project and is not part of the Fleet Pro
 
 ## Protocol messages
 
-Messages are described by ProtoBuff v3.
+Messages are described by ProtoBuf v3.
 
-If the message filed is not mandatory then it's marked as OPTIONAL by "OPTIONAL"
+If a message field is not mandatory then it's marked as OPTIONAL by "OPTIONAL"
 as the last comment in documentation for the given field.
-Optional fields has defaults as described in [ProtoBuf] v3 doc.
+Optional fields have defaults as described in the [ProtoBuf] v3 doc.
 
 ## Repo structure
 
@@ -70,7 +70,7 @@ Header files of interfaces
 
 ### Protobuf
 
-Protobuf compiled and non-compiled files
+Compiled and non-compiled protobuf files
 
 ## Usage
 
@@ -80,7 +80,7 @@ Protobuf compiled and non-compiled files
 
 ### Installation
 
-To install the library, first configure the project with CMake option BRINGAUTO_INSTALL=ON and BRINGAUTO_PACKAGE=ON and then install it.
+To install the library, first configure the project with the CMake option BRINGAUTO_INSTALL=ON and BRINGAUTO_PACKAGE=ON, and then install it.
 
 ```bash
 mkdir _build && cd _build
@@ -108,7 +108,7 @@ FIND_PACKAGE(fleet-protocol-interface REQUIRED)
 TARGET_LINK_LIBRARIES(<target> PUBLIC fleet-protocol-interface::fleet-protocol-interface)
 ```
 
-This will link all interfaces. If you want to link only specific interface, use the interfaces from the list below:
+This will link all interfaces. If you want to only link a specific interface, chose from the interfaces listed below:
 
 * fleet-protocol-interface::common-headers-interface
 * fleet-protocol-interface::internal-client-interface
