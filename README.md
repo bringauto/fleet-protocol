@@ -5,11 +5,11 @@ devices deployed in an **internet-connection-unstable** environment and cloud in
 
 Protocol consists of three parts:
 
-* Internal Client (Remote) - part of a device which communicates with Module Gateway
+* Internal Client (Remote) - part of a device which communicates with a Module Gateway
 * Module Gateway (Remote):
-    - internal server - communicates with internal client
+    - internal server - communicates with internal clients
     - aggregator - aggregates status messages, gathers and aggragates messages in case of connection outage, ...
-    - external client - communicates with External Server
+    - external client - communicates with an External Server
 * External Server (Cloud) - deployed as part of the cloud infrastructure. It provides status messages and can be used to control devices by command messages.
 
 ## Communication protocol
@@ -18,12 +18,12 @@ We use the [ProtoBuf] library for message format (version [Protobuf version]) an
 specification
 can be found in protobuf folder.
 
-Each message must be prefixed with a four bytes long (uint32_t data type) header which holds
+Each message must be prefixed with a four bytes long (uint32_t data type) header, which holds
 information about the size of the ProtoBuf message.
 
 To read more about the system architecture, check the Fleet Protocol v2 documentation:
 
-- [Summary] - overall high level summary
+- [Summary] - overall high-level summary
 - [Fleet Protocol Requirements]
 - [Internal Client]
 - [Module Gateway]
@@ -39,7 +39,7 @@ To read more about the system architecture, check the Fleet Protocol v2 document
 The Fleet Protocol HTTP API represents the protocol in the form of an HTTP API.
 
 A Fleet Protocol Module can use the HTTP API to provide its statuses and retrieve its commands
-through a simple and undestable REST API for easy integration with other services.
+through a simple and understandable REST API for easy integration with other services.
 
 Fleet Protocol HTTP API is a standalone project and is not part of the Fleet Protocol v2 core specification.
 
@@ -52,7 +52,7 @@ Fleet Protocol HTTP API is a standalone project and is not part of the Fleet Pro
 
 Messages are described by ProtoBuf v3.
 
-If a message field is not mandatory then it's marked as OPTIONAL by "OPTIONAL"
+If a message field is not mandatory, then it's marked as OPTIONAL by "OPTIONAL"
 as the last comment in documentation for the given field.
 Optional fields have defaults as described in the [ProtoBuf] v3 doc.
 
