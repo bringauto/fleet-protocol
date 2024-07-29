@@ -1,4 +1,3 @@
-_tmp/
-_build/
+_*
 cmake-build-*
 .idea
