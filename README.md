@@ -134,7 +134,6 @@ This will link all interfaces. If you want to only link a specific interface, ch
 
 > Note that `protobuf-cpp-interface` also needs `protobuf::libprotobuf` to be linked to the target
 
-[BringAutoDaemon.proto]: ./BringAutoDaemon.proto
 [ProtoBuf]: https://developers.google.com/protocol-buffers
 [Protobuf version]: https://github.com/protocolbuffers/protobuf/releases/tag/v3.21.12
 [Summary]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/summary
