@@ -1,6 +1,13 @@
 # Fleet Protocol
 
-Fleet Protocol is a communication technology developed by BringAuto to allow for **simple and reliable** communication between
+**Connect any device from anywhere to everywhere!**
+
+![Fleet Protocol](./doc/img/FleetProtocolImg.webp width=500px)
+
+
+## General
+
+Fleet Protocol is a **modular** communication technology developed by BringAuto to allow for **simple and reliable** communication between
 devices deployed in an **internet-connection-unstable** environment and cloud infrastructure.
 
 Protocol consists of three parts:
@@ -72,6 +79,9 @@ as the last comment in documentation for the given field.
 Optional fields have defaults as described in the [ProtoBuf] v3 doc.
 
 ## Repo structure
+
+This repository contains base C API and CMake project to easy
+implement Fleet Protocol Modules.
 
 ### Examples
 
