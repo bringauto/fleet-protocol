@@ -4,7 +4,6 @@
 
 ![Fleet Protocol](./doc/img/FleetProtocolImg.webp)
 
-
 ## General
 
 Fleet Protocol is a **modular** communication technology developed by BringAuto to allow for **simple and reliable** communication between
@@ -21,14 +20,13 @@ Protocol consists of three parts:
 
 ## Communication protocol
 
-We use the [ProtoBuf] library for message format (version [Protobuf version]) and serialization/deserialization - protocol
-specification
-can be found in protobuf folder.
+The [ProtoBuf] (see [Protobuf version]) is used to serialize and deserialize messages. The message format
+specification can be found in the protobuf folder.
 
 Each message must be prefixed with a four bytes long (uint32_t data type) header, which holds
 information about the size of the ProtoBuf message.
 
-To read more about the system architecture, check the Fleet Protocol v2 documentation:
+Check the Fleet Protocol v2 documentation tolearn more about the system architecture:
 
 - [Summary] - overall high-level summary
 - [Fleet Protocol Requirements]
