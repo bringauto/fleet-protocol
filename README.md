@@ -2,7 +2,7 @@
 
 **Connect any device from anywhere to everywhere!**
 
-![Fleet Protocol](./doc/img/FleetProtocolImg.webp width=500px)
+![Fleet Protocol](./doc/img/FleetProtocolImg.webp)
 
 
 ## General
