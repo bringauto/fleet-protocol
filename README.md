@@ -20,13 +20,13 @@ Protocol consists of three parts:
 
 ## Communication protocol
 
-The [ProtoBuf] (see [Protobuf version]) is used to serialize and deserialize messages. The message format
+[ProtoBuf] (see [Protobuf version]) is used to serialize and deserialize messages. The message format
 specification can be found in the protobuf folder.
 
 Each message must be prefixed with a four bytes long (uint32_t data type) header, which holds
-information about the size of the ProtoBuf message.
+information about the size of the Protobuf message.
 
-Check the Fleet Protocol v2 documentation tolearn more about the system architecture:
+Check the Fleet Protocol v2 documentation to learn more about the system architecture:
 
 - [Summary] - overall high-level summary
 - [Fleet Protocol Requirements]
@@ -78,7 +78,7 @@ Optional fields have defaults as described in the [ProtoBuf] v3 doc.
 
 ## Repo structure
 
-This repository contains base C API and CMake project to easy
+This repository contains a basic C API and CMake project to easily
 implement Fleet Protocol Modules.
 
 ### Examples
