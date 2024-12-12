@@ -68,6 +68,8 @@ Fleet Protocol HTTP API is a standalone project and is not part of the Fleet Pro
 - [HTTP API Python3 Client]
 - [HTTP API Wait Mechanism]
 
+
+
 ## Protocol messages
 
 Messages are described by ProtoBuf v3.
@@ -154,7 +156,7 @@ This will link all interfaces. If you want to only link a specific interface, ch
 [Internal Client design]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/internal-client-design
 [Module Gateway design]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/module-gateway-design
 [External Server design]: https://ref.bringautofleet.com/r/protocol/v2/2.0.1/external-server-design
-[HTTP API]: https://ref.bringautofleet.com/r/protocol/http-api/1.0.0/http-api
+[HTTP API]: https://github.com/bringauto/fleet-protocol-http-api
 [HTTP API Wait Mechanism]: https://ref.bringautofleet.com/r/protocol/http-api/1.0.0/wait-mechanism
 [HTTP API C++ Client]: https://github.com/bringauto/fleet-protocol-http-client-cxx
 [HTTP API Python3 Client]: https://github.com/bringauto/fleet-protocol-http-client-python
