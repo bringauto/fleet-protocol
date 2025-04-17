@@ -18,10 +18,11 @@ TARGET_LINK_LIBRARIES(<target> PUBLIC protobuf::libprotobuf protobuf-cpp-interfa
 
 ## Compilation
 
-Compile to all languages:
+Compile to all languages: (compiling python requires an extra step!)
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=protobuf/definition --cpp_out=compiled/cpp --csharp_out=compiled/cs --python_out=compiled/python --go_out=compiled/go/ --go_opt=paths=source_relative {} +
+find definition -name "*.proto" -exec protoc -I=./definition --cpp_out=./compiled/cpp --csharp_out=./compiled/cs
+--python_out=./compiled/python/fleet_protocol_protobuf_files --go_out=./compiled/go/ --go_opt=paths=source_relative {} +
 ```
 
 To compile files to a specific language only, use the specific `*_out` options in command.
@@ -30,20 +31,28 @@ Note that protoc doesn't support double asterisks (**), so it should be used wit
 **C++**
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=./definition --cpp_out=./compiled/cpp {} +
+find definition -name "*.proto" -exec protoc -I=./definition --cpp_out=./compiled/cpp {} +
 ```
 
 **C#**
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=./definition --csharp_out=./compiled/cpp {} +
+find definition -name "*.proto" -exec protoc -I=./definition --csharp_out=./compiled/cs {} +
 ```
 
 **Python**
 
 ```
-find protobuf/definition -name "*.proto" -exec protoc -I=./definition --python_out=./compiled/cpp {} +
+find definition -name "*.proto" -exec protoc -I=./definition --python_out=./compiled/python/fleet_protocol_protobuf_files {} +
 ```
+
+Afterwards, edit all local imports to start with `fleet_protocol_protobuf_files.`
+
+e.g.:
+
+from `import InternalProtocol_pb2 as InternalProtocol__pb2`
+
+to `import fleet_protocol_protobuf_files.InternalProtocol_pb2 as InternalProtocol__pb2`
 
 **GO**
 
