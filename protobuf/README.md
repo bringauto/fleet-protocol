@@ -49,9 +49,15 @@ Afterwards, edit all local imports to start with `fleet_protocol_protobuf_files.
 
 e.g.:
 
-from `import InternalProtocol_pb2 as InternalProtocol__pb2`
+from
+```python
+import InternalProtocol_pb2 as InternalProtocol__pb2
+```
 
-to `import fleet_protocol_protobuf_files.InternalProtocol_pb2 as InternalProtocol__pb2`
+to
+```python
+import fleet_protocol_protobuf_files.InternalProtocol_pb2 as InternalProtocol__pb2
+```
 
 **GO**
 
