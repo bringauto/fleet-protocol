@@ -21,8 +21,7 @@ TARGET_LINK_LIBRARIES(<target> PUBLIC protobuf::libprotobuf protobuf-cpp-interfa
 Compile to all languages: (compiling python requires an extra step!)
 
 ```
-find definition -name "*.proto" -exec protoc -I=./definition --cpp_out=./compiled/cpp --csharp_out=./compiled/cs
---python_out=./compiled/python/fleet_protocol_protobuf_files --go_out=./compiled/go/ --go_opt=paths=source_relative {} +
+find definition -name "*.proto" -exec protoc -I=./definition --cpp_out=./compiled/cpp --csharp_out=./compiled/cs --python_out=./compiled/python/fleet_protocol_protobuf_files --go_out=./compiled/go/ --go_opt=paths=source_relative {} +
 ```
 
 To compile files to a specific language only, use the specific `*_out` options in command.

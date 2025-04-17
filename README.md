@@ -78,6 +78,11 @@ If a message field is not mandatory, then it's marked as OPTIONAL by "OPTIONAL"
 as the last comment in documentation for the given field.
 Optional fields have defaults as described in the [ProtoBuf] v3 doc.
 
+### Python protobuf files
+
+To use the compiled python protobuf files in a project, install the module in `protobuf/compiled/python`.
+For example: add this project as a submodule and add `file:fleet-protocol/protobuf/compiled/python` to `requirements.txt`. Then it can be imported as `fleet_protocol_protobuf_files`.
+
 ## Repo structure
 
 This repository contains a basic C API and CMake project to easily
